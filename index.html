@@ -3,156 +3,327 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CNBLUE LIVE NOTE</title>
 
+<!-- フォント -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- アイコン -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
+
+/* =====================
+   BASE
+===================== */
 body {
-  font-family: 'Noto Sans JP', sans-serif; 
-  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
+  font-family: 'Noto Sans JP', sans-serif;
   margin: 0;
-  padding: 20px;
-  line-height: 1.6;
+  background: #f5f7ff;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =====================
+   HEADER
+===================== */
+.header {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 14px 16px;
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  z-index: 100;
+}
+
+/* =====================
+   CONTAINER
+===================== */
 .container {
   max-width: 900px;
   margin: auto;
+  padding: 16px;
 }
 
-.header {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+/* =====================
+   HERO
+===================== */
+.hero img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 12px;
 }
 
-.desc {
-  margin-bottom: 20px;
-  color: #555;
+/* =====================
+   SECTION TITLE
+===================== */
+.section {
+  font-size: 13px;
+  color: #888;
+  margin: 18px 4px 8px;
 }
 
+/* =====================
+   CARD（共通）
+===================== */
 .card {
   background: white;
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 16px;
+  overflow: hidden;
   margin-bottom: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  transition: 0.2s;
 }
 
-.card a {
-  text-decoration: none;
-  color: black;
-  display: block;
+.card:hover {
+  transform: translateY(-2px);
 }
 
-/* タイトル行 */
-.card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.card-body {
+  padding: 12px;
 }
 
-/* タイトル */
-.card-title {
-  font-size: 16px;
+.title {
+  font-size: 15px;
   font-weight: bold;
 }
 
-/* 日付 */
-.date {
-  font-size: 13px;
-  color: #777;
+.sub {
+  font-size: 12px;
+  color: #666;
   margin-top: 4px;
 }
 
-/* バッジ共通 */
-.badge {
-  font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-weight: bold;
+/* =====================
+   LIVE IMAGE
+===================== */
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
 }
 
-/* CNBLUE */
-.badge-cnblue {
-  background: #e6f0ff;
+/* =====================
+   SMALL CARD
+===================== */
+.small-card {
+  padding: 14px;
+}
+
+/* =====================
+   LINK CARD
+===================== */
+.link-card {
+  padding: 14px;
+  font-weight: bold;
+  text-align: center;
   color: #2b5cff;
 }
 
-/* SOLO */
-.badge-solo {
-  background: #fff0f6;
-  color: #d63384;
-}
-
-/* ボタン */
-.button {
+/* =====================
+   BADGE
+===================== */
+.badge {
+  font-size: 11px;
+  padding: 3px 6px;
+  background: #e6f0ff;
+  color: #2b5cff;
+  border-radius: 6px;
   display: inline-block;
-  background: #2b5cff;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 10px;
+  margin-top: 6px;
 }
-</style>
 
+/* =====================
+   SNS
+===================== */
+.sns {
+  text-align: center;
+  margin-top: 20px;
+  color: #555;
+  font-size: 13px;
+}
+
+/* =====================
+   SIDE MENU（左上）
+===================== */
+.nav-wrapper {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 9999;
+}
+
+.nav-icon {
+  font-size: 26px;
+  cursor: pointer;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+#nav-toggle {
+  display: none;
+}
+
+/* 背景 */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s;
+}
+
+/* メニュー */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: white;
+  padding: 70px 16px;
+  box-shadow: 2px 0 20px rgba(0,0,0,0.08);
+  transform: translateX(-100%);
+  transition: 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#nav-toggle:checked ~ .side-nav {
+  transform: translateX(0);
+}
+
+#nav-toggle:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* メニューリンク */
+.side-nav a {
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.side-nav a:hover {
+  background: #f3f5ff;
+}
+
+/* アイコン */
+.side-nav a i {
+  margin-right: 10px;
+  width: 18px;
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- =====================
+   SIDE MENU
+===================== -->
+<div class="nav-wrapper">
+  <input type="checkbox" id="nav-toggle">
+
+  <label for="nav-toggle" class="nav-icon">☰</label>
+
+  <label for="nav-toggle" class="overlay"></label>
+
+  <div class="side-nav">
+    <a href="index.html"><i class="fa-solid fa-house"></i>HOME</a>
+    <a href="lives/3LOGY.html"><i class="fa-solid fa-music"></i>LIVE</a>
+    <a href="https://mii622.github.io/CNBLUE_goods/"><i class="fa-solid fa-calculator"></i>GOODS</a>
+    <a href="first.html"><i class="fa-solid fa-book"></i>GUIDE</a>
+  </div>
+</div>
+
+<!-- =====================
+   HEADER
+===================== -->
+<div class="header">CNBLUE LIVE NOTE</div>
+
 <div class="container">
 
-  <div class="header">
-    CNBLUE LIVE NOTE
+  <!-- HERO -->
+  <div class="hero">
+    <img src="images/top.jpg">
   </div>
 
-  <div class="desc">
-    ライブの基本情報・セトリ・体験メモ・グッズをまとめています
-  </div>
+  <!-- LIVE -->
+  <div class="section">LIVE</div>
 
-  <!-- グッズ -->
-  <div class="card">
-    <div class="card-title">グッズ計算ツール</div>
-    <div class="date">CNBLUE / ソロ共通で使えます</div>
-    <a href="https://mii622.github.io/CNBLUE_goods/" class="button">使う</a>
-  </div>
-
-  <!-- ライブ一覧 -->
-
-  <!-- CNBLUE -->
-  <div class="card">
-    <a href="lives/3LOGY.html">
-      <div class="card-top">
-        <div class="card-title">2026 CNBLUE LIVE'3LOGY'IN JAPAN</div>
-        <div class="badge badge-cnblue">CNBLUE</div>
+  <a href="lives/3LOGY.html">
+    <div class="card">
+      <img src="images/3LOGY.png">
+      <div class="card-body">
+        <div class="title">2026 CNBLUE LIVE '3LOGY'</div>
+        <div class="sub">セトリ・レポ・会場まとめ</div>
       </div>
-      <div class="date">日程・セトリ・レポ</div>
-    </a>
+    </div>
+  </a>
+
+  <div class="card">
+    <img src="images/live2.jpg">
+    <div class="card-body">
+      <div class="title">直近ライブ②</div>
+      <div class="sub">セトリ・レポ</div>
+    </div>
   </div>
 
-  <!-- SOLO -->
   <div class="card">
-    <a href="solo-20250410.html">
-      <div class="card-top">
-        <div class="card-title">2025/4/10 ○○ホール</div>
-        <div class="badge badge-solo">SOLO</div>
-      </div>
-      <div class="date">日程・セトリ・レポ</div>
-    </a>
+    <img src="images/live3.jpg">
+    <div class="card-body">
+      <div class="title">直近ライブ③</div>
+      <div class="sub">セトリ・レポ</div>
+    </div>
   </div>
 
-  <!-- 追加用テンプレ -->
-  <!--
-  <div class="card">
-    <a href="live-XXXX.html">
-      <div class="card-top">
-        <div class="card-title">日付 会場</div>
-        <div class="badge badge-cnblue">CNBLUE</div>
-      </div>
-      <div class="date">説明</div>
-    </a>
+  <div class="card link-card">
+    ライブ一覧を見る →
   </div>
-  -->
+
+  <!-- GOODS -->
+  <div class="section">GOODS</div>
+
+  <div class="card small-card">
+    グッズ計算ツール
+    <div class="badge">電卓で計算</div>
+  </div>
+
+  <!-- VENUE -->
+  <div class="section">VENUE</div>
+
+  <div class="card small-card">
+    主要会場まとめ
+    <div class="badge">ぴあアリーナ / ワールド記念ホール</div>
+  </div>
+
+  <!-- GUIDE -->
+  <div class="section">GUIDE</div>
+
+  <a href="first.html">
+    <div class="card link-card">
+      初めての方へ →
+    </div>
+  </a>
+
+  <!-- SNS -->
+  <div class="section">SNS</div>
+
+  <div class="sns">
+    X（旧Twitter）はこちら →
+  </div>
 
 </div>
 
