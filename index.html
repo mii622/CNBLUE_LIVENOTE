@@ -19,7 +19,7 @@
 ===================== */
 body {
   font-family: 'Noto Sans JP', sans-serif;
-  margin: 0;
+  margin: 0;https://github.com/mii622/CNBLUE_LIVENOTE/edit/main/index.html
   background: #f5f7ff;
 }
 
@@ -107,6 +107,50 @@ a {
   width: 100%;
   height: 140px;
   object-fit: cover;
+}
+
+/* リスト全体 */
+.live-list {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 12px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+.live-list:hover {
+  transform: translateY(-2px);
+}
+
+/* 左画像（アイコン化） */
+.live-list img {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* 右テキスト */
+.live-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 既存流用OK */
+.title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.sub {
+  font-size: 12px;
+  color: #666;
 }
 
 /* =====================
@@ -264,30 +308,29 @@ a {
   <div class="section">LIVE</div>
 
   <a href="lives/3LOGY.html">
-    <div class="card">
-      <img src="images/3LOGY.png">
-      <div class="card-body">
-        <div class="title">2026 CNBLUE LIVE '3LOGY'</div>
-        <div class="sub">セトリ・レポ・会場まとめ</div>
-      </div>
-    </div>
-  </a>
-
-  <div class="card">
-    <img src="images/live2.jpg">
-    <div class="card-body">
-      <div class="title">直近ライブ②</div>
-      <div class="sub">セトリ・レポ</div>
-    </div>
+    <a href="lives/3LOGY.html" class="live-list">
+  <img src="images/3LOGY.png">
+  <div class="live-text">
+    <div class="title">2026 CNBLUE LIVE '3LOGY'</div>
+    <div class="sub">セトリ・レポ・会場まとめ</div>
   </div>
+</a>
 
-  <div class="card">
-    <img src="images/live3.jpg">
-    <div class="card-body">
-      <div class="title">直近ライブ③</div>
-      <div class="sub">セトリ・レポ</div>
-    </div>
+  <a href="lives/3LOGY.html" class="live-list">
+  <img src="images/3LOGY.png">
+  <div class="live-text">
+    <div class="title">2026 CNBLUE LIVE '3LOGY'</div>
+    <div class="sub">セトリ・レポ・会場まとめ</div>
   </div>
+</a>
+
+  <a href="lives/3LOGY.html" class="live-list">
+  <img src="images/3LOGY.png">
+  <div class="live-text">
+    <div class="title">2026 CNBLUE LIVE '3LOGY'</div>
+    <div class="sub">セトリ・レポ・会場まとめ</div>
+  </div>
+</a>
 
   <div class="card link-card">
     ライブ一覧を見る →
