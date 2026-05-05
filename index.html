@@ -65,9 +65,19 @@ a {
    SECTION TITLE
 ===================== */
 .section {
-  font-size: 13px;
-  color: #888;
-  margin: 18px 4px 8px;
+  font-size: 12px;
+  color: #5f6fe0;
+  font-weight: bold;
+  margin-top: 28px;
+  margin: 22px 4px 10px;
+  padding-left: 10px;
+  border-left: 4px solid #6b7cff;
+  letter-spacing: 1px;
+}
+   .section + .card {
+
+  margin-top: 8px;
+
 }
 
 /* =====================
@@ -203,22 +213,20 @@ a {
   left: 14px;
   z-index: 9999;
 }
-.nav-icon {
+   .nav-icon {
   font-size: 22px;
   cursor: pointer;
-  width: 38px;
-  height: 38px;
 
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 6px 8px;
   border-radius: 10px;
 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   color: #333;
+
+  transition: 0.2s;
 }
 
 #nav-toggle {
@@ -236,14 +244,14 @@ a {
 }
 
 /* メニュー */
-.side-nav {
+   .side-nav {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
   position: fixed;
   top: 0;
   left: 0;
   width: 220px;
   height: 100%;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(12px);
   padding: 70px 16px;
   box-shadow: 2px 0 20px rgba(0,0,0,0.08);
   transform: translateX(-100%);
@@ -298,7 +306,7 @@ a {
     <a href="index.html"><i class="fa-solid fa-house"></i>HOME</a>
     <a href="lives/3LOGY.html"><i class="fa-solid fa-music"></i>LIVE</a>
     <a href="https://mii622.github.io/CNBLUE_goods/"><i class="fa-solid fa-calculator"></i>GOODS</a>
-    <a href="first.html"><i class="fa-solid fa-book"></i>GUIDE</a>
+    <a href="first.html"><i class="fa-solid fa-compass"></i> GUIDE</a>
   </div>
 </div>
 
@@ -351,7 +359,6 @@ a {
 
   <div class="card small-card">
     グッズ計算ツール
-    <div class="badge">電卓で計算</div>
   </div>
 
   <!-- VENUE -->
@@ -359,7 +366,6 @@ a {
 
   <div class="card small-card">
     主要会場まとめ
-    <div class="badge">ぴあアリーナ / ワールド記念ホール</div>
   </div>
 
   <!-- GUIDE -->
