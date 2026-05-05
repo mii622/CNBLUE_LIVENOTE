@@ -14,7 +14,7 @@
   padding: 20px;
   line-height: 1.6;
 }
-/* メニュー全体 */
+/* 全体 */
 .menu-wrapper {
   position: fixed;
   top: 16px;
@@ -37,31 +37,56 @@
   display: none;
 }
 
-/* メニュー本体 */
-.menu {
-  display: none;
-  flex-direction: column;
-  margin-top: 10px;
+/* 背景オーバーレイ */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+/* サイドメニュー本体 */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
   background: white;
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  width: 160px;
+  padding: 60px 20px;
+  box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+
+  transform: translateX(-100%);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 /* 開いたとき */
-#menu-toggle:checked + .menu-icon + .menu {
-  display: flex;
+#menu-toggle:checked ~ .side-menu {
+  transform: translateX(0);
 }
 
-.menu a {
+#menu-toggle:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* メニューリンク */
+.side-menu a {
   text-decoration: none;
   color: #333;
-  padding: 8px;
+  padding: 10px;
   border-radius: 8px;
 }
 
-.menu a:hover {
+.side-menu a:hover {
   background: #f3f5ff;
 }
   
@@ -184,9 +209,19 @@
 
   <label for="menu-toggle" class="menu-icon">☰</label>
 
-  <div class="menu">
+  <!-- 黒い背景 -->
+  <label for="menu-toggle" class="overlay"></label>
+
+  <!-- サイドメニュー -->
+  <div class="side-menu">
     <a href="#">TOP</a>
     <a href="https://mii622.github.io/3LOGY/">グッズ計算</a>
+    <a href="#first">初めての方へ</a>
+  </div>
+    
+  <div class="menu">
+    <a href="https://mii622.github.io/CNBLUE_LIVENOTE/">TOP</a>
+    <a href="https://mii622.github.io/CNBLUE_goods/">グッズ計算</a>
     <a href="#first">初めての方へ</a>
   </div>
 </div>
