@@ -13,52 +13,74 @@ body {
   padding: 20px;
 }
 
-/* コンテナ */
 .container {
   max-width: 900px;
   margin: auto;
 }
 
-/* タイトル */
 .header {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-/* 説明 */
 .desc {
   margin-bottom: 20px;
   color: #555;
 }
 
-/* カード */
 .card {
   background: white;
   border-radius: 12px;
   padding: 16px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* リンクカード */
 .card a {
   text-decoration: none;
   color: black;
   display: block;
 }
 
+/* タイトル行 */
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* タイトル */
 .card-title {
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 6px;
 }
 
 /* 日付 */
 .date {
   font-size: 13px;
   color: #777;
+  margin-top: 4px;
+}
+
+/* バッジ共通 */
+.badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* CNBLUE */
+.badge-cnblue {
+  background: #e6f0ff;
+  color: #2b5cff;
+}
+
+/* SOLO */
+.badge-solo {
+  background: #fff0f6;
+  color: #d63384;
 }
 
 /* ボタン */
@@ -79,50 +101,53 @@ body {
 
 <div class="container">
 
-  <!-- サイトタイトル -->
   <div class="header">
     CNBLUE LIVE NOTE
   </div>
 
   <div class="desc">
-    ライブのセトリ・グッズ・体験メモをまとめています
+    ライブのセトリ・体験メモ・グッズをまとめています
   </div>
 
-  <!-- グッズツール -->
+  <!-- グッズ -->
   <div class="card">
     <div class="card-title">グッズ計算ツール</div>
-    <div class="date">物販前に使えます</div>
+    <div class="date">CNBLUE / ソロ共通で使えます</div>
     <a href="グッズページURL" class="button">使う</a>
   </div>
 
   <!-- ライブ一覧 -->
+
+  <!-- CNBLUE -->
   <div class="card">
     <a href="live-20250502.html">
-      <div class="card-title">
-        2025/5/2・5/3 ○○ホール
+      <div class="card-top">
+        <div class="card-title">2026 CNBLUE LIVE'3LOGY'IN JAPAN</div>
+        <div class="badge badge-cnblue">CNBLUE</div>
       </div>
-      <div class="date">
-        セトリ・ハイライトあり
-      </div>
+      <div class="date">セトリ・ハイライトあり</div>
     </a>
   </div>
 
+  <!-- SOLO -->
   <div class="card">
-    <a href="live-20250420.html">
-      <div class="card-title">
-        2025/4/20 ○○ホール
+    <a href="solo-20250410.html">
+      <div class="card-top">
+        <div class="card-title">2025/4/10 ○○ホール</div>
+        <div class="badge badge-solo">SOLO</div>
       </div>
-      <div class="date">
-        セトリ・体験メモ
-      </div>
+      <div class="date">ソロライブ・体験メモ</div>
     </a>
   </div>
 
-  <!-- 追加していく -->
+  <!-- 追加用テンプレ -->
   <!--
   <div class="card">
     <a href="live-XXXX.html">
-      <div class="card-title">タイトル</div>
+      <div class="card-top">
+        <div class="card-title">日付 会場</div>
+        <div class="badge badge-cnblue">CNBLUE</div>
+      </div>
       <div class="date">説明</div>
     </a>
   </div>
