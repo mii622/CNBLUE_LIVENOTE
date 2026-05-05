@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ライブレポ</title>
 
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f7fb;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* コンテナ */
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* タイトル */
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* カード */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* 見出し */
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-left: 4px solid #2b5cff;
+  padding-left: 8px;
+}
+
+/* ボタン */
+.button {
+  display: inline-block;
+  background: #2b5cff;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+/* タグ */
+.tag {
+  display: inline-block;
+  background: #eef2ff;
+  color: #2b5cff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+/* ネタバレ */
+.spoiler {
+  background: #fff4f4;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* ハイライト */
+.highlight li {
+  margin-bottom: 6px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- タイトル -->
+  <div class="title">
+    2025 CNBLUE LIVE – ○○ツアー<br>
+    2025/5/2・5/3 @ ○○ホール
+  </div>
+
+  <!-- 基本情報 -->
+  <div class="card">
+    <h2>基本情報</h2>
+    <p>日程：2025/5/2・5/3</p>
+    <p>会場：○○ホール</p>
+  </div>
+
+  <!-- グッズ -->
+  <div class="card">
+    <h2>グッズ</h2>
+    <p>グッズ合計を計算できます</p>
+    <a href="グッズページURL" class="button">グッズ計算はこちら</a>
+  </div>
+
+  <!-- 特徴 -->
+  <div class="card">
+    <h2>ライブの特徴</h2>
+    <span class="tag">盛り上がり重視</span>
+    <span class="tag">演奏強い</span>
+    <span class="tag">初心者OK</span>
+  </div>
+
+  <!-- セトリ -->
+  <div class="card">
+    <h2>セットリスト（ネタバレあり）</h2>
+    <div class="spoiler">
+      <p>※セトリは参考情報です</p>
+      <ol>
+        <li>曲名</li>
+        <li>曲名</li>
+        <li>曲名</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ハイライト -->
+  <div class="card">
+    <h2>ハイライト</h2>
+    <ul class="highlight">
+      <li>序盤から一気に盛り上がる構成</li>
+      <li>中盤でしっとり聴かせるパートあり</li>
+      <li>ラストに向けて一体感が最大に</li>
+    </ul>
+  </div>
+
+  <!-- 会場メモ -->
+  <div class="card">
+    <h2>会場メモ</h2>
+    <p>見やすさ：〇〇</p>
+    <p>音の印象：〇〇</p>
+    <p>混雑：〇〇</p>
+  </div>
+
+  <!-- おすすめ -->
+  <div class="card">
+    <h2>こんな人におすすめ</h2>
+    <ul>
+      <li>初参戦でも楽しめる</li>
+      <li>バンドサウンド好き</li>
+    </ul>
+  </div>
+
+  <!-- 一言 -->
+  <div class="card">
+    <h2>一言まとめ</h2>
+    <p>初めてでも楽しめる王道ライブ</p>
+  </div>
+
+</div>
+
+</body>
+</html>
