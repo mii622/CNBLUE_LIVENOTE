@@ -137,8 +137,8 @@ a {
 /* リスト全体 */
 .live-list {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
   background: white;
   padding: 12px;
   border-radius: 14px;
@@ -165,6 +165,34 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+   .live-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px;
+  border-radius: 12px;
+  background: #f5f7ff;
+
+  transition: 0.2s;
+}
+
+.live-item:hover {
+  transform: translateX(4px);
+  background: #eaf0ff;
+}
+
+.live-item img {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.live-text {
+  display: flex;
+  flex-direction: column;
 }
 
 /* 既存流用OK */
@@ -367,11 +395,8 @@ a {
 
   <!-- LIVE -->
   <div class="section">LIVE</div>
+<div class="card">
 
-   <div class="card">
-
-  
-  <!-- ライブリスト（画像付き） -->
   <div class="live-list">
 
     <a href="lives/3LOGY.html" class="live-item">
@@ -400,11 +425,10 @@ a {
 
   </div>
 
-  <!-- 一覧 -->
   <a href="lives/index.html" class="more-link">一覧を見る →</a>
 
 </div>
-
+   
   
   <!-- GOODS -->
   <div class="section">GOODS</div>
