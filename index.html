@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CNBLUE LIVE NOTE</title>
 
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f7fb;
+  margin: 0;
+  padding: 20px;
+}
+
+/* コンテナ */
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* タイトル */
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* 説明 */
+.desc {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* カード */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* リンクカード */
+.card a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+/* タイトル */
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* 日付 */
+.date {
+  font-size: 13px;
+  color: #777;
+}
+
+/* ボタン */
+.button {
+  display: inline-block;
+  background: #2b5cff;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- サイトタイトル -->
+  <div class="header">
+    CNBLUE LIVE NOTE
+  </div>
+
+  <div class="desc">
+    ライブのセトリ・グッズ・体験メモをまとめています
+  </div>
+
+  <!-- グッズツール -->
+  <div class="card">
+    <div class="card-title">グッズ計算ツール</div>
+    <div class="date">物販前に使えます</div>
+    <a href="グッズページURL" class="button">使う</a>
+  </div>
+
+  <!-- ライブ一覧 -->
+  <div class="card">
+    <a href="live-20250502.html">
+      <div class="card-title">
+        2025/5/2・5/3 ○○ホール
+      </div>
+      <div class="date">
+        セトリ・ハイライトあり
+      </div>
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="live-20250420.html">
+      <div class="card-title">
+        2025/4/20 ○○ホール
+      </div>
+      <div class="date">
+        セトリ・体験メモ
+      </div>
+    </a>
+  </div>
+
+  <!-- 追加していく -->
+  <!--
+  <div class="card">
+    <a href="live-XXXX.html">
+      <div class="card-title">タイトル</div>
+      <div class="date">説明</div>
+    </a>
+  </div>
+  -->
+
+</div>
+
+</body>
+</html>
