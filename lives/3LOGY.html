@@ -58,6 +58,21 @@
   margin: 8px 0 20px;
 }
 
+  .venue-box {
+  margin-top: 10px;
+}
+
+.venue-name {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.venue-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
 /* カード */
   .card {
   background: white;
@@ -124,7 +139,7 @@
   <div class="tour-name">2026 CNBLUE LIVE '3LOGY' IN JAPAN</div>
   <div class="tour-date">
     2026/5/2・5/3 @ ぴあアリーナMM<br>
-    2026/5/9・5/10 @ 神戸
+    2026/5/9・5/10 @ ワールド記念ホール
   </div>
 </div>
  
@@ -135,17 +150,37 @@
   <!-- 基本情報 -->
   <div class="card">
     <h2>基本情報</h2>
-    <p>日程：2025/5/2・5/3</p>
-    <p>会場：○○ホール</p>
+    <p>横浜：2025/5/2・5/3 @ぴあアリーナMM</p>
+    <p>神戸：2025/5/9・5/10 @ワールド記念ホール</p>
   </div>
 
   <!-- 会場メモ -->
-  <div class="card">
-    <h2>会場メモ</h2>
-    <p>見やすさ：〇〇</p>
-    <p>音の印象：〇〇</p>
-    <p>混雑：〇〇</p>
-  </div>
+  <div class="venue-box">
+  <p class="venue-name">《ぴあアリーナMM》</p>
+
+  <a href="https://pia-arena-mm.jp" target="_blank" class="venue-link">
+    ↗ 会場の公式サイトを見る
+  </a>
+
+  <p class="venue-text">
+    どこの座席でも見やすい！<br>
+    グッズ列は1F屋外(屋根あり)<br>
+    桜木町駅からはデッキを通れば信号なしでスムーズ！
+  </p>
+ 
+  <p class="venue-name">《ワールド記念ホール》</p>
+
+  <a href="https://www.kobe-spokyo.jp/world-kobe/" target="_blank" class="venue-link">
+    ↗ 会場の公式サイトを見る
+  </a>
+
+  <p class="venue-text">
+    スタンドでもよく見える！<br>
+    三宮駅や神戸空港からポートライナーで1本。<br>
+    公演前後は混雑するかも。<br>
+    周辺にカフェ少なめなので注意⚠️
+  </p>
+</div>
 
   <!-- グッズ -->
   <div class="card">
