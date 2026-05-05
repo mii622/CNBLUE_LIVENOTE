@@ -1,1 +1,1 @@
-# CNBLUE_live
+# CNBLUE_LIVENOTE
