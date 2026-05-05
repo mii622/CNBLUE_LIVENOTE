@@ -8,20 +8,13 @@
 
 <style>
   body {
-  font-family: 'Noto Sans JP', sans-serif;
+ font-family: 'Noto Sans JP', sans-serif; 
+  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
 }
-    <div class="menu-wrapper">
-  <input type="checkbox" id="menu-toggle">
-
-  <label for="menu-toggle" class="menu-icon">☰</label>
-
-  <div class="menu">
-    <a href="#">TOP</a>
-    <a href="https://mii622.github.io/3LOGY/">グッズ計算</a>
-    <a href="#first">初めての方へ</a>
-  </div>
-</div>
-    /* メニュー全体 */
+/* メニュー全体 */
 .menu-wrapper {
   position: fixed;
   top: 16px;
@@ -71,12 +64,7 @@
 .menu a:hover {
   background: #f3f5ff;
 }
-  font-family: 'Noto Sans JP', sans-serif; 
-  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
-  margin: 0;
-  padding: 20px;
-  line-height: 1.6;
-}
+  
 
 /* コンテナ */
 .container {
@@ -191,6 +179,17 @@
 </head>
 
 <body>
+  <div class="menu-wrapper">
+  <input type="checkbox" id="menu-toggle">
+
+  <label for="menu-toggle" class="menu-icon">☰</label>
+
+  <div class="menu">
+    <a href="#">TOP</a>
+    <a href="https://mii622.github.io/3LOGY/">グッズ計算</a>
+    <a href="#first">初めての方へ</a>
+  </div>
+</div>
 
 <div class="container">
 
