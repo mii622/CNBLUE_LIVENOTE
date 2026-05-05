@@ -20,7 +20,7 @@
 body {
   font-family: 'Noto Sans JP', sans-serif;
   margin: 0;https://github.com/mii622/CNBLUE_LIVENOTE/edit/main/index.html
-  background: linear-gradient(180deg, #f5f7ff 0%, #eef2ff 100%);
+  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%); 
 }
 
 a {
@@ -31,17 +31,28 @@ a {
 /* =====================
    HEADER
 ===================== */
-.header {
-  position: sticky;
-  top: 0;
-  background: white;
-  padding: 14px 16px;
-  padding-left: 60px;
-  font-weight: bold;
+   .header {
+  font-weight: 800;
   font-size: 16px;
-  border-bottom: 1px solid #eee;
-  z-index: 100;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 14px 0;
+  color: #2b5cff;
+  position: relative;
 }
+
+/* 下のライン（締まり） */
+.header::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #2b5cff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
 
 /* =====================
    CONTAINER
