@@ -211,11 +211,40 @@ a {
 /* =====================
    SNS
 ===================== */
-.sns {
-  text-align: center;
-  margin-top: 20px;
-  color: #555;
+.sns-text {
   font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* ボタン */
+.sns-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: #1d9bf0;
+  color: white;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.sns-button:hover {
+  transform: translateY(-2px);
+  background: #000;
+}
+
+/* Xアイコン */
+.sns-button i {
+  font-size: 14px;
 }
 
 /* =====================
@@ -410,11 +439,21 @@ a {
   </a>
 
   <!-- SNS -->
-  <div class="section">SNS</div>
+   <div class="card">
 
-  <div class="sns">
-    X（旧Twitter）はこちら →
-  </div>
+  <h2>SNS</h2>
+
+  <p class="sns-text">
+    Xでもライブレポやリアルタイムの感想を更新しています。<br>
+    気になることやご質問があれば、気軽にXで聞いてください🫶🏻
+  </p>
+
+  <a href="https://x.com/fumijyh89?s=21" target="_blank" class="sns-button">
+    <i class="fa-brands fa-x-twitter"></i>
+    中の人のXはこちら →
+  </a>
+
+</div>
 
 </div>
 
