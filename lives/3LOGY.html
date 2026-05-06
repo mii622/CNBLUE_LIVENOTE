@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <title>3LOGY</title>
 
 <style>
@@ -204,23 +205,8 @@
 </head>
 
 <body>
-  <div class="menu-wrapper">
-  <input type="checkbox" id="menu-toggle">
-
-  <label for="menu-toggle" class="menu-icon">☰</label>
-
-  <!-- 黒い背景 -->
-  <label for="menu-toggle" class="overlay"></label>
-
-  <!-- サイドメニュー -->
-  <div class="side-menu">
-    <a href="https://mii622.github.io/CNBLUE_LIVENOTE/">TOP</a>
-    <a href="https://mii622.github.io/CNBLUE_goods/">グッズ計算</a>
-    <a href="#first">初めての方へ</a>
-  </div>
-    
-</div>
-
+  <div id="header"></div>
+  
 <div class="container">
 
   <!-- タイトル -->
@@ -368,6 +354,12 @@
   </div>
 
 </div>
-
+<script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
 </body>
 </html>
