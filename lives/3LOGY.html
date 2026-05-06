@@ -38,9 +38,21 @@ body {
   color: #6b7cff;
   letter-spacing: 1px;
   margin-bottom: 6px;
-  border-left: 4px solid #6b7cff;
-  padding-left: 6px;
   display: inline-block;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+/* 細い下線 */
+.page-label::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #6b7cff;
+  margin: 6px auto 0;
+  border-radius: 2px;
+  opacity: 0.6;
 }
 
 .tour-name {
