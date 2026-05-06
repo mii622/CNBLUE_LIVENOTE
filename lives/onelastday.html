@@ -69,15 +69,21 @@ body {
 }
 
 /* バナー */
-banner img {
+.banner {
   width: 100%;
-  height: 200px;      /* ←ここ重要（好きな高さでOK） */
-  object-fit: cover;  /* ←トリミングの本体 */
-  object-position:  50% 40%; /* 中央基準で切る */
+  height: 200px;
+  overflow: hidden;
   border-radius: 16px;
   margin: 8px 0 20px;
 }
 
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+  display: block;
+}
 /* カード */
 .card {
   background: white;
