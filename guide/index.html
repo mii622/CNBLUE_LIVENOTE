@@ -28,7 +28,26 @@ body {
   width: 100%;
   margin: 0 auto;
 }
-  
+.header {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 14px 0;
+  color: #6b7cff;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #6b7cff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  opacity: 0.6;
+}
 /* カード */
 .card {
   background: #fff;
@@ -154,14 +173,11 @@ strong {
 <body>
   <div id="header"></div>
 
-<div class="main-title">
-CNBLUE初心者ガイド
-</div>
 
 <div class="container">
 <div class="card">
 
-<h1 class="section-title">🔰CNBLUEライブ 初心者ガイド</h1>
+<h1 class="section-title">はじめに</h1>
 
 <p>
 こんにちは！CNBLUEに興味を持ってくださり、
