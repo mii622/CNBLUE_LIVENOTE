@@ -156,46 +156,51 @@ body {
 <div class="header">LIVE LIST</div>
 
 <div class="container">
+<!-- 2026 -->
+<div class="section">2026</div>
 
-  <!-- 2026 -->
-  <div class="section">2026</div>
+<div class="live-list">
 
-  <div class="live-list">
+  <a href="3LOGY.html" class="live-item">
+    <img src="../images/3LOGY.png">
+    <div class="live-text">
+      <div class="live-title">2026 CNBLUE LIVE '3LOGY'</div>
+      <div class="live-sub">セトリ・レポ</div>
+    </div>
+  </a>
 
-    <a href="3LOGY.html" class="live-item">
-      <img src="../images/3LOGY.png">
-      <div class="live-text">
-        <div class="live-title">2026 CNBLUE LIVE '3LOGY'</div>
-        <div class="live-sub">セトリ・レポ</div>
+  <a href="/CNBLUE_LIVENOTE/lives/onelastday.html" class="live-item">
+    <img src="/CNBLUE_LIVENOTE/images/old.jpg">
+    <div class="live-text">
+      <div class="live-title">
+        2026 JUNG YONGHWA SOLO LIVE IN JAPAN "One Last Day"
       </div>
-    </a>
-  <div class="live-list">
-    <a href="/CNBLUE_LIVENOTE/lives/onelastday.html" class="live-item">
-      <img src="/CNBLUE_LIVENOTE/images/old.jpg">
-      <div class="live-text">
-        <div class="live-title">2026 JUNG YONGHWA SOLO LIVE IN JAPAN "One Last Day"<div>
-        <div class="live-sub">セトリ・レポ</div>
-      </div>
-    </a>
+      <div class="live-sub">セトリ・レポ</div>
+    </div>
+  </a>
+
+</div>
+
+
 <!-- 2025 -->
-  <div class="section">2025</div>
+<div class="section">2025</div>
 
-  <div class="live-list">
+<div class="live-list">
 
-    <a href="/CNBLUE_LIVENOTE/lives/25kingdom.html" class="live-item">
-      <img src="/CNBLUE_LIVENOTE/images/25kingdom.jpg">
-      <div class="live-text">
-        <div class="live-title">2025 FNC Kingdom AMAZING WONDERLAND</div>
-        <div class="live-sub">セトリ・レポ</div>
+  <a href="/CNBLUE_LIVENOTE/lives/25kingdom.html" class="live-item">
+    <img src="/CNBLUE_LIVENOTE/images/25kingdom.jpg">
+    <div class="live-text">
+      <div class="live-title">
+        2025 FNC Kingdom AMAZING WONDERLAND
       </div>
-    </a>
-
-  </div>
+      <div class="live-sub">セトリ・レポ</div>
+    </div>
+  </a>
 
 </div>
 
 <script>
-fetch("/CNBLUE_LIVENOTE//header.html")
+fetch("/CNBLUE_LIVENOTE/header.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
