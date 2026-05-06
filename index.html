@@ -20,7 +20,7 @@
 body {
   font-family: 'Noto Sans JP', sans-serif;
   margin: 0;
-  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%); 
+  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
 }
 
 a {
@@ -31,7 +31,7 @@ a {
 /* =====================
    HEADER
 ===================== */
-   .header {
+.header {
   font-weight: 800;
   font-size: 16px;
   letter-spacing: 2px;
@@ -41,7 +41,6 @@ a {
   position: relative;
 }
 
-/* 下のライン（締まり） */
 .header::after {
   content: "";
   display: block;
@@ -52,7 +51,6 @@ a {
   border-radius: 2px;
   opacity: 0.6;
 }
-
 
 /* =====================
    CONTAINER
@@ -87,10 +85,9 @@ a {
   border-left: 4px solid #6b7cff;
   letter-spacing: 1px;
 }
-   .section + .card {
 
+.section + .card {
   margin-top: 8px;
-
 }
 
 /* =====================
@@ -145,7 +142,7 @@ a {
   transform: translateY(-2px);
 }
 
-/* 左画像（アイコン化） */
+/* 左画像 */
 .live-list img {
   width: 228px;
   height: 128px;
@@ -160,14 +157,13 @@ a {
   flex-direction: column;
   justify-content: center;
 }
-   .live-item {
+
+.live-item {
   display: flex;
   align-items: center;
   gap: 12px;
-
   padding: 10px;
   border-radius: 12px;
-
   transition: 0.2s;
 }
 
@@ -176,7 +172,6 @@ a {
   background: #eaf0ff;
 }
 
-
 .live-item img {
   width: 110px;
   height: 70px;
@@ -184,37 +179,19 @@ a {
   border-radius: 10px;
 }
 
-.live-text {
-  display: flex;
-  flex-direction: column;
-}
-
-/* 既存流用OK */
-.title {
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.sub {
-  font-size: 12px;
-  color: #666;
-}
-
-   .btn-outline {
+/* =====================
+   BUTTON
+===================== */
+.btn-outline {
   display: block;
   text-align: center;
-
   margin-top: 10px;
   padding: 10px 12px;
-
   border: 1px solid #2b5cff;
   color: #2b5cff;
-
   border-radius: 999px;
-
   font-size: 13px;
   font-weight: 600;
-
   transition: 0.2s;
 }
 
@@ -231,29 +208,6 @@ a {
 }
 
 /* =====================
-   LINK CARD
-===================== */
-.link-card {
-  padding: 14px;
-  font-weight: bold;
-  text-align: center;
-  color: #2b5cff;
-}
-
-/* =====================
-   BADGE
-===================== */
-.badge {
-  font-size: 11px;
-  padding: 3px 6px;
-  background: #e6f0ff;
-  color: #2b5cff;
-  border-radius: 6px;
-  display: inline-block;
-  margin-top: 6px;
-}
-
-/* =====================
    SNS
 ===================== */
 .sns-text {
@@ -263,21 +217,16 @@ a {
   margin-bottom: 12px;
 }
 
-/* ボタン */
 .sns-button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   background: #0F1419;
   color: white;
-
   padding: 10px 14px;
   border-radius: 999px;
-
   font-size: 13px;
   font-weight: 500;
-
   text-decoration: none;
   transition: 0.2s;
 }
@@ -287,16 +236,19 @@ a {
   background: #000;
 }
 
-/* Xアイコン */
 .sns-button i {
   font-size: 14px;
 }
 
-<!-- =====================
-   HEADER
-===================== -->
-   <body>
-   <div id="header"></div>
+</style>
+</head>
+
+<body>
+
+<!-- ヘッダー読み込み -->
+<div id="header"></div>
+
+<!-- タイトル -->
 <div class="header">CNBLUE LIVE NOTE</div>
 
 <div class="container">
@@ -308,50 +260,50 @@ a {
 
   <!-- LIVE -->
   <div class="section">LIVE</div>
-<div class="card">
+  <div class="card">
 
-  <div class="live-list">
+    <div class="live-list">
 
-    <a href="lives/3LOGY.html" class="live-item">
-      <img src="images/3LOGY.png">
-      <div class="live-text">
-        <div class="live-title">2026 CNBLUE LIVE '3LOGY'</div>
-        <div class="live-sub">セトリ・レポ</div>
-      </div>
-    </a>
+      <a href="lives/3LOGY.html" class="live-item">
+        <img src="images/3LOGY.png">
+        <div class="live-text">
+          <div class="live-title">2026 CNBLUE LIVE '3LOGY'</div>
+          <div class="live-sub">セトリ・レポ</div>
+        </div>
+      </a>
 
-    <a href="lives/live2.html" class="live-item">
-      <img src="images/live2.jpg">
-      <div class="live-text">
-        <div class="live-title">2025 ○○ LIVE</div>
-        <div class="live-sub">セトリ・レポ</div>
-      </div>
-    </a>
+      <a href="lives/live2.html" class="live-item">
+        <img src="images/live2.jpg">
+        <div class="live-text">
+          <div class="live-title">2025 ○○ LIVE</div>
+          <div class="live-sub">セトリ・レポ</div>
+        </div>
+      </a>
 
-    <a href="lives/live3.html" class="live-item">
-      <img src="images/live3.jpg">
-      <div class="live-text">
-        <div class="live-title">2025 ○○ TOUR</div>
-        <div class="live-sub">セトリ・レポ</div>
-      </div>
+      <a href="lives/live3.html" class="live-item">
+        <img src="images/live3.jpg">
+        <div class="live-text">
+          <div class="live-title">2025 ○○ TOUR</div>
+          <div class="live-sub">セトリ・レポ</div>
+        </div>
+      </a>
+
+    </div>
+
+    <a href="lives/index.html" class="btn-outline">
+      一覧を見る →
     </a>
 
   </div>
 
-  <a href="lives/index.html" class="btn-outline">
-    一覧を見る →
-  </a>
-
-</div>
   <!-- GOODS -->
   <div class="section">GOODS</div>
 
   <div class="card small-card">
     グッズ一覧と合計金額が計算できます!
-     <a href="https://mii622.github.io/CNBLUE_goods/" class="btn-outline">
-    グッズ計算ツールはこちら →
-  </a>
-     
+    <a href="https://mii622.github.io/CNBLUE_goods/" class="btn-outline">
+      グッズ計算ツールはこちら →
+    </a>
   </div>
 
   <!-- VENUE -->
@@ -364,32 +316,32 @@ a {
   <!-- GUIDE -->
   <div class="section">GUIDE</div>
 
-    <div class="card small-card">
-      CNBLUEのライブに初めて行く!という方へ、ライブが3倍楽しくなるポイントをまとめました♡
-       <a href="guide/index.html" class="btn-outline">
+  <div class="card small-card">
+    CNBLUEのライブに初めて行く!という方へ、ライブが3倍楽しくなるポイントをまとめました♡
+    <a href="guide/index.html" class="btn-outline">
       CNBLUE初心者ガイド →
     </a>
-       
-    </div>
-  
+  </div>
 
   <!-- SNS -->
-   <div class="section">SNS</div>
-   <div class="card">
+  <div class="section">SNS</div>
+  <div class="card">
 
-  <p class="sns-text">
-    Xでもライブレポやリアルタイムの感想を更新しています。<br>
-    気になることやご質問があれば、気軽にXで聞いてください🫶🏻
-  </p>
+    <p class="sns-text">
+      Xでもライブレポやリアルタイムの感想を更新しています。<br>
+      気になることやご質問があれば、気軽にXで聞いてください🫶🏻
+    </p>
 
-  <a href="https://x.com/fumijyh89?s=21" target="_blank" class="sns-button">
-    <i class="fa-brands fa-x-twitter"></i>
-    中の人のXはこちら →
-  </a>
+    <a href="https://x.com/fumijyh89?s=21" target="_blank" class="sns-button">
+      <i class="fa-brands fa-x-twitter"></i>
+      中の人のXはこちら →
+    </a>
+
+  </div>
 
 </div>
 
-</div>
+<!-- header.html読み込み -->
 <script>
 fetch("header.html")
   .then(res => res.text())
@@ -397,5 +349,6 @@ fetch("header.html")
     document.getElementById("header").innerHTML = data;
   });
 </script>
+
 </body>
 </html>
