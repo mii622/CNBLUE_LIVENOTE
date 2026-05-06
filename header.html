@@ -1,0 +1,125 @@
+<header>
+
+<!-- ナビ -->
+<div class="nav-wrapper">
+  <input type="checkbox" id="nav-toggle">
+
+  <label for="nav-toggle" class="nav-icon">☰</label>
+
+  <label for="nav-toggle" class="overlay"></label>
+
+  <div class="side-nav">
+    <a href="index.html"><i class="fa-solid fa-house"></i>HOME</a>
+    <a href="lives/3LOGY.html"><i class="fa-solid fa-music"></i>LIVE</a>
+    <a href="https://mii622.github.io/CNBLUE_goods/"><i class="fa-solid fa-calculator"></i>GOODS</a>
+    <a href="guide/index.html"><i class="fa-solid fa-compass"></i>GUIDE</a>
+  </div>
+</div>
+
+<!-- タイトル -->
+<div class="header">CNBLUE GUIDE</div>
+
+</header>
+
+<style>
+
+/* HEADER */
+.header {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 14px 0;
+  color: #6b7cff;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #6b7cff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+/* ナビ */
+.nav-wrapper {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 9999;
+}
+
+.nav-icon {
+  font-size: 22px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  padding: 6px 8px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+#nav-toggle {
+  display: none;
+}
+
+/* 背景 */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s;
+}
+
+/* メニュー */
+.side-nav {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  padding: 70px 16px;
+  box-shadow: 2px 0 20px rgba(0,0,0,0.08);
+  transform: translateX(-100%);
+  transition: 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#nav-toggle:checked ~ .side-nav {
+  transform: translateX(0);
+}
+
+#nav-toggle:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* リンク */
+.side-nav a {
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+}
+
+.side-nav a:hover {
+  background: #f3f5ff;
+}
+
+.side-nav a i {
+  margin-right: 10px;
+  width: 18px;
+}
+
+</style>
