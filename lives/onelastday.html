@@ -1,1 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<title>3LOGY</title>
 
+<style>
+  body {
+ font-family: 'Noto Sans JP', sans-serif; 
+  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+/* 全体 */
+.menu-wrapper {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+}
+
+/* ハンバーガー */
+.menu-icon {
+  font-size: 26px;
+  cursor: pointer;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* チェックボックス非表示 */
+#menu-toggle {
+  display: none;
+}
+
+/* 背景オーバーレイ */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+/* サイドメニュー本体 */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: white;
+  padding: 60px 20px;
+  box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+
+  transform: translateX(-100%);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 開いたとき */
+#menu-toggle:checked ~ .side-menu {
+  transform: translateX(0);
+}
+
+#menu-toggle:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* メニューリンク */
+.side-menu a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.side-menu a:hover {
+  background: #f3f5ff;
+}
+  
+
+/* コンテナ */
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* タイトル */
+  .title-box {
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.tour-name {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 6px 0;
+  color: #333;
+  letter-spacing: 0.5px;
+  
+}
+
+.tour-sub {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+.tour-date {
+  font-size: 16px;
+  color: #888;
+}
+
+  .banner img {
+  width: 100%;
+  border-radius: 16px;
+  margin: 8px 0 20px;
+}
+
+  .venue-box {
+  margin-top: 10px;
+}
+
+.venue-name {
+  margin-bottom: 6px;
+}
+
+.venue-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* カード */
+  .card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid #f3f4f6;
+  transform: translateY(-2px);
+}
+
+/* 見出し */
+  .card h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  border-left: 5px solid #6b7cff;
+  padding-left: 10px;
+}
+
+/* ボタン */
+  .button {
+  display: inline-block;
+  background: linear-gradient(135deg, #6b7cff, #a9c8ff);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* タグ */
+.tag {
+  display: inline-block;
+  background: #f3f5ff;
+  color: #5f6fe0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+/* ネタバレ */
+.spoiler {
+  background: #f8f9fb;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* ハイライト */
+.highlight li {
+  margin-bottom: 6px;
+}
+</style>
+
+</head>
+
+<body>
+  <div class="menu-wrapper">
+  <input type="checkbox" id="menu-toggle">
+
+  <label for="menu-toggle" class="menu-icon">☰</label>
+
+  <!-- 黒い背景 -->
+  <label for="menu-toggle" class="overlay"></label>
+
+  <!-- サイドメニュー -->
+  <div class="side-menu">
+    <a href="https://mii622.github.io/CNBLUE_LIVENOTE/">TOP</a>
+    <a href="https://mii622.github.io/CNBLUE_goods/">グッズ計算</a>
+    <a href="#first">初めての方へ</a>
+  </div>
+    
+</div>
+
+<div class="container">
+
+  <!-- タイトル -->
+  <div class="title-box">
+  <div class="tour-name">2026 CNBLUE LIVE '3LOGY' IN JAPAN</div>
+  <div class="tour-date">
+    2026/5/2・5/3 @ ぴあアリーナMM<br>
+    2026/5/9・5/10 @ ワールド記念ホール
+  </div>
+</div>
+ 
+  <div class="banner">
+  <img src="../images/3LOGY.png">
+</div>
+
+  <!-- 基本情報 -->
+  <div class="card">
+    <h2>基本情報</h2>
+    <p>横浜：2025/5/2 16:00開演・5/3 15:00開演 @ぴあアリーナMM</p>
+    <p>神戸：2025/5/9 16:00開演・5/10 15:00開演 @ワールド記念ホール</p>
+  </div>
+
+  <!-- 会場メモ -->
+  <div class="card">
+    <h2>会場メモ</h2>
+  <div class="venue-box">
+  <p class="venue-name">《ぴあアリーナMM》</p>
+
+  <a href="https://pia-arena-mm.jp" target="_blank" class="venue-link">
+    ↗ 会場の公式サイトを見る
+  </a>
+
+  <p class="venue-text">
+    どこの座席でも見やすい！<br>
+    グッズ列は1F屋外(屋根あり)<br>
+    桜木町駅からはデッキを通れば信号なしでスムーズ！
+  </p>
+ 
+  <p class="venue-name">《ワールド記念ホール》</p>
+
+  <a href="https://www.kobe-spokyo.jp/world-kobe/" target="_blank" class="venue-link">
+    ↗ 会場の公式サイトを見る
+  </a>
+
+  <p class="venue-text">
+    スタンドでもよく見える！<br>
+    三宮駅や神戸空港からポートライナーで1本。公演前後は混雑するかも。<br>
+    周辺にカフェ等少なめなので注意⚠️
+  </p>
+  </div>
+    </div>
+
+  <!-- グッズ -->
+  <div class="card">
+    <h2>グッズ</h2>
+    <p>グッズ合計を計算できます</p>
+    <a href="https://mii622.github.io/3LOGY/" class="button">グッズ計算はこちら</a>
+  </div>
+
+  <!-- セトリ -->
+  <div class="card">
+    <h2>セットリスト（ネタバレあり）</h2>
+    <div class="spoiler">
+      <p style="font-size:11px; color:#aaa; margin-bottom:10px;">
+※本セトリは筆者の記憶およびSNSの投稿を元に再構成しています</p>
+      <ol>
+<li>Ready, Set, Go!</li>
+<li>Catch Me</li>
+<li>Racer</li>
+<li>엉터리(Nothing)</li>
+<li>직감(Intuition)</li>
+<li>Lowkey</li>
+<li>99%</li>
+<li>Bliss</li>
+<li>Domino</li>
+<li>Radio</li>
+<li>Love</li>
+<li>사소한 것들이 좋아서(Little Things)</li>
+<li>기억의 온도(The Temperature of Memory)</li>
+<li>과거 현재 미래(Then, Now and Forever)</li>
+<li>그러나 꽃이었다(Still, a Flower)</li>
+<li>To the Moon and Back</li>
+<li>헷갈리게(BETWEEN US)</li>
+<li>I’m Sorry</li>
+<li>Killer Joy</li>
+
+<li style="list-style:none; margin:10px 0;">
+     ーアンコールー
+</li>
+        
+<li>외톨이야(Loner)</li>
+<li>이렇게 예뻣나(YOU'RE SO FINE)</li>
+<li>우리 다시 만나는 날(Again)</li>
+<li>人生賛歌</li>
+
+<li style="list-style:none; margin:10px 0;">
+     ーWアンコールー
+<li>신데렐라(Cinderella)(5/2) / In My Head(5/3)</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- レポ -->
+  <div class="card">
+    <h2>ハイライト</h2>
+    <ul class="highlight">
+      <li>最新アルバム"３LOGY"の新曲全10曲を披露！</li>
+      <li>登場からテンション爆上がりの演出🔥</li>
+      <li>ポイントは3人の"バランスいいね👍"</li>
+    </ul>
+  </div>
+
+  <!-- オススメ曲　-->
+  <div class="card">
+    <h2>個人的オススメ曲</h2>
+   <div style="margin-bottom:16px;">
+  <strong>"Killer Joy"</strong><br>
+
+  <a href="https://youtu.be/ND5FhEsjVUk?si=2LigYPvxx4_-Ervy" target="_blank">
+    ▶ この曲を聴く🎧
+  </a>
+
+  <p style="margin-top:8px; font-size:14px; color:#555;">
+    アルバム"3LOGY"のタイトル曲。<br>
+    一体感が半端ない!!掛け声もめちゃくちゃ楽しい🔫💥
+  </p>
+     
+     <strong>"그러나 꽃이었다 (Still, a Flower)"</strong><br>
+     <a href="https://youtu.be/YgwGBgZEKaM?si=7W5Qndu35YtoL1sN" target="_blank">
+    ▶ この曲を聴く🎧
+  </a>
+
+  <p style="margin-top:8px; font-size:14px; color:#555;">
+    2026年1月1日に先行公開。<br>
+    優しく、でも力強く応援してくれる、CNBLUEそのもののような曲。<br>
+    歌詞がとっても素敵なので、ぜひ日本語字幕ありで聴いてみてください♡
+  </p>
+　　</div>
+  </div>
+
+  <!-- 一言 -->
+  <div class="card">
+    <h2>一言まとめ</h2>
+    <p>에바뛰からバラード、ロックにシンセ系まで、多彩なCNBLUEを楽しめる🎨</p>
+  </div>
+
+</div>
+
+</body>
+</html>
