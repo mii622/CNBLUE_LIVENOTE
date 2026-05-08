@@ -16,14 +16,14 @@ body {
 /* タイトル */
 .title-box {
   text-align: center;
-  margin-bottom: 18px;
-  padding-bottom: 14px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #edf0f5;
 }
 
 /* VENUE GUIDE */
 .page-label {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: #6b7cff;
   letter-spacing: 1px;
@@ -46,7 +46,7 @@ body {
 
 /* 会場名 */
 .venue-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: bold;
   margin: 6px 0;
   color: #333;
@@ -54,7 +54,7 @@ body {
 }
 
 .venue-subtitle {
-  font-size: 15px;
+  font-size: 16px;
   color: #888;
   line-height: 1.7;
 }
