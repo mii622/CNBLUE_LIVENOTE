@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>日本武道館</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- アイコン -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<div id="header"></div>
+<div class="container">
+
+  <!-- タイトル -->
+  <div class="title-box">
+
+    <div class="page-label">
+      VENUE GUIDE
+    </div>
+
+    <div class="venue-title">
+      日本武道館
+    </div>
+
+    <div class="venue-subtitle">
+      会場アクセス・周辺情報まとめ
+    </div>
+
+  </div>
+
+  <!-- 会場情報 -->
+  <div class="card">
+
+    <h2>👣 アクセス</h2>
+
+    <a href="https://www.nipponbudokan.or.jp"
+       target="_blank"
+       class="venue-link">
+
+      ↗ 会場の公式サイトを見る
+
+    </a>
+
+      <div class="info-text">
+九段下駅から5分<br>
+会場までの道だけでなく、会場周辺も屋根のある場所は限られているので雨の日は傘必須☂️<br>
+終演後は九段下駅の一番近い出口までの道がかなり混むので、<br>
+ちょっと遠回りだが歩道橋を渡って反対側の出口を使うのも手。<br>
+      </div>
+
+    </div>
+
+    <!-- カフェ -->
+  <div class="card">
+    
+  <h2>☕ カフェ</h2>
+  
+      <div class="info-text">
+敷地内にレストランやカフェはあるものの、席数少ないので争奪戦。<br>
+九段下の駅前にスタバあり　1人なら割と座れる…かも！<br>
+      </div>
+
+    </div>
+
+    <!-- ご飯 -->
+  <div class="card">
+  <h2>🍴 ご飯</h2>
+
+      <div class="info-text">
+スタバと同じビルにロイホがあり、公演時はかなり混雑。<br>
+駅前の方が割とチェーン店等も多い。<br>
+      </div>
+
+    </div>
+
+    <!-- 座席 -->
+  <div class="card">
+  <h2>🪑 座席</h2>
+    <div class="info-section">
+      <a href="https://www.nipponbudokan.or.jp/pdf/about/2007.pdf"
+       target="_blank"
+       class="venue-link">
+
+      ↗ 会場公式の座席表を見る
+
+    </a>
+
+
+      <div class="info-text">
+アリーナは構成によってブロック割が異なる。<br>
+スタンドは後ろ側だと天井や柱でステージが見えにくい席もある。<br>
+3F席はかなり勾配がきついので足元に注意！<br>
+ただ、キャパの割には近く感じられるのと、<br>
+やっぱり“武道館でのライブ”というのは特別感があります🔥<br>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 戻る -->
+  <a href="index.html" class="back-link">
+    ← 会場まとめTOPへ戻る
+  </a>
+
+</div>
+<!-- header.html読み込み -->
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+</body>
+</html>
