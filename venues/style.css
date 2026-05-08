@@ -1,1 +1,109 @@
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body {
+ font-family: 'Noto Sans JP', sans-serif; 
+ background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
+ margin: 0;
+ padding: 20px;
+ line-height: 1.6;
+}
 
+/* コンテナ */
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* タイトル */
+.title-box {
+  text-align: center;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+/* LIVE REPORT */
+.page-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7cff;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+/* 細い下線 */
+.page-label::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #6b7cff;
+  margin: 6px auto 0;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+/* バナー */
+.banner img {
+  width: 100%;
+  border-radius: 16px;
+  margin: 8px 0 20px;
+}
+
+/* カード */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid #f3f4f6;
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  border-left: 5px solid #6b7cff;
+  padding-left: 10px;
+}
+
+/* 会場 */
+.venue-box {
+  margin-top: 10px;
+}
+
+.venue-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+.official-link{
+  display:inline-block;
+  margin-top:10px;
+  color:#6b5ca5;
+}
+
+.back-link{
+  display:block;
+  text-align:center;
+  margin-top:40px;
+  color:#666;
+}
+
+@media(max-width:768px){
+.page-title{
+  font-size:1.5rem;
+}
+
+.info-card{
+  padding:22px;
+}
+
+</style>
