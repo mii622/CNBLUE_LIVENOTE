@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>ぴあアリーナMM</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- アイコン -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<div id="header"></div>
+<div class="container">
+
+  <!-- タイトル -->
+  <div class="title-box">
+
+    <div class="page-label">
+      VENUE GUIDE
+    </div>
+
+    <div class="venue-title">
+      東京ガーデンシアター
+    </div>
+
+    <div class="venue-subtitle">
+      会場アクセス・周辺情報まとめ
+    </div>
+
+  </div>
+
+  <!-- 会場情報 -->
+  <div class="card">
+
+    <h2>👣 アクセス</h2>
+
+    <a href="https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/"
+       target="_blank"
+       class="venue-link">
+
+      ↗ 会場の公式サイトを見る
+
+    </a>
+
+      <div class="info-text">
+有明駅から4分、有明テニスの森駅から5分、国際展示場駅から7分<br>
+地下直結ではないので雨の日は傘必須☂️<br>
+      </div>
+
+    </div>
+
+    <!-- カフェ -->
+  <div class="card">
+    
+  <h2>☕ カフェ</h2>
+  
+      <div class="info-text">
+タリーズが隣接で便利(ただしイベント日は激混み)<br>
+商業施設と一体なので休む場所には困らない<br>
+逆に駅周辺には何もない⚠️<br>
+
+      </div>
+
+    </div>
+
+    <!-- ご飯 -->
+  <div class="card">
+  <h2>🍴 ご飯</h2>
+
+      <div class="info-text">
+こちらも商業施設にフードコート、レストラン多数<br>
+会場出て目の前の韓国チキンがオススメ<br>
+当日の公演チケット画面を見せると割引になるお店も！<br>
+※ご飯ではないですが、温泉施設もあるので朝早くから来ている人は<br>
+一度温泉に浸かってひと休みもできちゃいます。横になれるスペースもあって超快適です◎<br>
+
+      </div>
+
+    </div>
+
+    <!-- 座席 -->
+  <div class="card">
+  <h2>🪑 座席</h2>
+    <div class="info-section">
+
+      <div class="info-text">
+スタンド上側でも近く感じられるが、その代わり高さは感じる<br>
+アリーナが2F、バルコニー2は4F(実質スタンド2F)なので座席表示に注意<br>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 戻る -->
+  <a href="index.html" class="back-link">
+    ← 会場まとめTOPへ戻る
+  </a>
+
+</div>
+<!-- header.html読み込み -->
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+</body>
+</html>
