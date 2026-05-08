@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>会場まとめ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+
+/* =====================
+   BASE
+===================== */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
+}
+
+/* =====================
+   HEADER
+===================== */
+.header {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 14px 0;
+  color: #6b7cff;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #6b7cff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+/* =====================
+   CONTAINER
+===================== */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 16px;
+}
+
+/* =====================
+   SECTION
+===================== */
+.section {
+  color: #6b7cff;
+  font-weight: 600;
+  font-size: 12px;
+  margin: 22px 4px 10px;
+  border-left: 4px solid #6b7cff;
+  padding-left: 6px;
+}
+
+/* =====================
+   LIST
+===================== */
+.live-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =====================
+   CARD
+===================== */
+.live-item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+
+  text-decoration: none;
+  color: #000;
+
+  transition: 0.2s;
+}
+
+.live-item:hover {
+  transform: translateX(4px);
+  background: #eaf0ff;
+}
+
+/* =====================
+   IMAGE（ここ重要）
+===================== */
+.live-item img {
+  width: 170px;   /* ← しっかり大きく */
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  object-position: 50% 40%;
+}
+
+/* =====================
+   TEXT
+===================== */
+.live-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.live-title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.live-sub {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* =====================
+   SP調整
+===================== */
+@media (max-width: 600px) {
+
+  .live-item img {
+    width: 150px;
+    height: 90px;
+  }
+
+  .live-title {
+    font-size: 14px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ヘッダー（共通読み込み） -->
+<div id="header"></div>
+
+<div class="header">VENUES LIST</div>
+
+<div class="container">
+<!-- 2026 -->
+<div class="section">関東</div>
+
+<div class="live-list">
+
+  <a href="pia.html" class="live-item">
+    <div class="live-text">
+      <div class="live-title">【横浜】ぴあアリーナMM</div>
+    </div>
+  </a>
+
+  <a href="garden.html" class="live-item">
+    <div class="live-text">
+      <div class="live-title">
+        【有明】東京ガーデンシアター
+      </div>
+    </div>
+  </a>
+
+  <a href="pacifico.html" class="live-item">
+    <div class="live-text">
+      <div class="live-title">
+        【横浜】パシフィコ横浜国立大ホール
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<script>
+fetch("/CNBLUE_LIVENOTE/header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+
+</body>
+</html>
