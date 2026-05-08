@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>パシフィコ横浜</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- アイコン -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<div id="header"></div>
+<div class="container">
+
+  <!-- タイトル -->
+  <div class="title-box">
+
+    <div class="page-label">
+      VENUE GUIDE
+    </div>
+
+    <div class="venue-title">
+      パシフィコ横浜国立大ホール
+    </div>
+
+    <div class="venue-subtitle">
+      会場アクセス・周辺情報まとめ
+    </div>
+
+  </div>
+
+  <!-- 会場情報 -->
+  <div class="card">
+
+    <h2>👣 アクセス</h2>
+
+    <a href="https://www.pacifico.co.jp/guide/convention"
+       target="_blank"
+       class="venue-link">
+
+      ↗ 会場の公式サイトを見る
+
+    </a>
+
+      <div class="info-text">
+みなとみらい駅から5分<br>
+屋根が所々無いので雨の日は傘必要☂️<br>
+早朝だとクイーンズスクエア通路が開いていないため、外を回る必要あり<br>
+      </div>
+
+    </div>
+
+    <!-- カフェ -->
+  <div class="card">
+    
+  <h2>☕ カフェ</h2>
+  
+      <div class="info-text">
+駅直結の商業施設"クイーンズスクエア"、その先の"ランドマークタワー"にカフェ複数<br>
+土日の公演だとかなり混みやすいので注意<br>
+
+      </div>
+
+    </div>
+
+    <!-- ご飯 -->
+  <div class="card">
+  <h2>🍴 ご飯</h2>
+
+      <div class="info-text">
+レストランも商業施設に色々入っており、バラエティ豊富<br>
+1人でも入れるレストランも複数ある…が、フードコートのマックが一番便利だったりする笑<br>
+
+      </div>
+
+    </div>
+
+    <!-- 座席 -->
+  <div class="card">
+  <h2>🪑 座席</h2>
+    <div class="info-section">
+
+      <div class="info-text">
+CNBLUEではコンサートというよりファンミーティングでよく使われる会場。<br>
+ホールなので椅子がふかふかしてて座り心地がいい。<br>
+2F、3F席はかなり高さがある+距離は比較的感じてしまうが、照明演出など全体を俯瞰できる◎<br>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 戻る -->
+  <a href="index.html" class="back-link">
+    ← 会場まとめTOPへ戻る
+  </a>
+
+</div>
+<!-- header.html読み込み -->
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+</body>
+</html>
