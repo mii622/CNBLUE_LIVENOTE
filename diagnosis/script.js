@@ -475,3 +475,10 @@ document.getElementById("shareBtn")
 /* 初期表示 */
 
 updateQuiz();
+document
+.getElementById("restartBtn")
+.addEventListener("click", () => {
+
+  location.reload();
+
+});
