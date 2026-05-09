@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CNBLUE 曲診断</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header class="page-header">
+
+  <h1>CNBLUE 曲診断</h1>
+
+  <p>
+    今の気分にぴったりな<br>
+    CNBLUEを見つけよう。
+  </p>
+
+</header>
+
+<div class="quiz-container">
+
+  <!-- progress -->
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- questions -->
+  <div class="question-wrapper" id="questionWrapper">
+
+    <!-- Q1 -->
+    <section class="question">
+
+      <div class="question-card">
+
+        <p class="question-number">
+          Q1 / 5
+        </p>
+
+        <h2>
+          ライブで一番浴びたいのは？
+        </h2>
+
+        <div class="choices">
+
+          <label>
+            <input type="radio" name="q1"
+            value="hype"
+            data-point="1">
+            <span>パワフルなエネルギー</span>
+          </label>
+
+          <label>
+            <input type="radio" name="q1"
+            value="band"
+            data-point="1">
+            <span>圧倒的な演奏力</span>
+          </label>
+
+          <label>
+            <input type="radio" name="q1"
+            value="emo"
+            data-point="1">
+            <span>世界観に浸れる空気感</span>
+          </label>
+
+          <label>
+            <input type="radio" name="q1"
+            value="soft"
+            data-point="1">
+            <span>優しく包み込むような温かさ</span>
+          </label>
+
+          <label>
+            <input type="radio" name="q1"
+            value="support"
+            data-point="1">
+            <span>前向きになれる明るさ</span>
+          </label>
+
+          <label>
+            <input type="radio" name="q1"
+            value="happy"
+            data-point="1">
+            <span>わちゃわちゃした多幸感</span>
+          </label>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Q2 -->
+    <section class="question">
+
+      <div class="question-card">
+
+        <p class="question-number">
+          Q2 / 5
+        </p>
+
+        <h2>
+          どんなときに音楽を聴きたい？
+        </h2>
+
+        <div class="choices">
+
+          <label>
+            <input type="radio" name="q2"
+            value="hype"
+            data-point="1">
+            <span>気分を上げたいとき</span>
+          </label>
+
+          <label>
+            <input type="radio" name="q2"
+            value="soft"
+            data-point="1">
+            <span>ゆっくりリラックスしたいとき</span>
+          </label>
+
+          <label>
+            <input type="radio" name="q2"
+            value="band"
+            data-point="1">
+            <span>集中したいとき</span>
+          </label>
+
+          <label>
+            <input type="radio" name="q2"
+            value="support"
+            data-point="1">
+            <span>自分を励ましたいとき</span>
+          </label>
+
+          <label>
+            <input type="radio" name="q2"
+            value="emo"
+            data-point="1">
+            <span>夜にゆっくり浸りたいとき</span>
+          </label>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- buttons -->
+  <div class="button-area">
+
+    <button id="prevBtn">
+      ← 戻る
+    </button>
+
+    <button id="nextBtn">
+      次へ →
+    </button>
+
+  </div>
+
+</div>
+
+<!-- result -->
+
+<div class="result-container" id="resultContainer">
+
+  <div class="result-card">
+
+    <p class="result-sub">
+      診断結果
+    </p>
+
+    <h2 id="resultTitle"></h2>
+
+    <p class="result-text" id="resultText"></p>
+
+    <div class="song-list" id="songList"></div>
+
+    <div class="share-area">
+
+      <button id="shareBtn">
+        ✕ 診断結果をシェア
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
