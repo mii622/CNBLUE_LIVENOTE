@@ -1,1 +1,274 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:#f6f8fc;
+  color:#333;
+  overflow-x:hidden;
+}
+
+.page-header{
+  text-align:center;
+  padding:56px 20px 34px;
+}
+
+.page-header h1{
+  font-family:'Kiwi Maru',serif;
+  font-size:2rem;
+  color:#5d84c3;
+  margin-bottom:14px;
+}
+
+.page-header p{
+  color:#666;
+  line-height:1.9;
+  font-size:0.97rem;
+}
+
+.quiz-container{
+  width:min(92%,700px);
+  margin:auto;
+  overflow:hidden;
+  padding-bottom:60px;
+}
+
+.progress{
+  width:100%;
+  height:8px;
+  background:#dfe8f6;
+  border-radius:999px;
+  margin-bottom:30px;
+  overflow:hidden;
+}
+
+.progress-bar{
+  width:20%;
+  height:100%;
+  background:#7ea4de;
+  transition:0.4s;
+}
+
+.question-wrapper{
+  display:flex;
+  transition:transform 0.45s ease-in-out;
+}
+
+.question{
+  min-width:100%;
+}
+
+.question-card{
+  background:white;
+  border-radius:28px;
+  padding:32px 24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.question-number{
+  color:#7ea4de;
+  font-size:0.92rem;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.question-card h2{
+  font-family:'Kiwi Maru',serif;
+  color:#3e5f96;
+  font-size:1.35rem;
+  line-height:1.7;
+  margin-bottom:28px;
+}
+
+.choices{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.choices label{
+  cursor:pointer;
+}
+
+.choices input{
+  display:none;
+}
+
+.choices span{
+  display:block;
+  background:#f3f6fb;
+  border:2px solid transparent;
+  border-radius:18px;
+  padding:16px 18px;
+  line-height:1.7;
+  transition:0.25s;
+}
+
+.choices span:hover{
+  background:#e8f0ff;
+}
+
+.choices input:checked + span{
+  background:#dce9ff;
+  border-color:#7ea4de;
+  color:#3e5f96;
+  transform:translateY(-2px);
+}
+
+.button-area{
+  display:flex;
+  justify-content:space-between;
+  margin-top:30px;
+}
+
+.button-area button{
+  border:none;
+  background:#7ea4de;
+  color:white;
+  padding:14px 24px;
+  border-radius:999px;
+  font-size:0.95rem;
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.button-area button:hover{
+  opacity:0.85;
+}
+
+/* 結果 */
+
+.result-container{
+  display:none;
+  width:min(92%,700px);
+  margin:auto;
+  padding-bottom:80px;
+}
+
+.result-card{
+  background:white;
+  border-radius:28px;
+  padding:34px 24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.result-sub{
+  color:#7ea4de;
+  font-size:0.95rem;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.result-card h2{
+  font-family:'Kiwi Maru',serif;
+  color:#3e5f96;
+  font-size:1.5rem;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.result-text{
+  color:#555;
+  line-height:2;
+  margin-bottom:34px;
+}
+
+.song-list{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.song-card{
+  background:#f7faff;
+  border:1px solid #e1ebfb;
+  border-radius:20px;
+  padding:20px 18px;
+}
+
+.song-card h3{
+  color:#3e5f96;
+  font-size:1.05rem;
+  margin-bottom:14px;
+}
+
+.song-links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.song-links a{
+  text-decoration:none;
+  background:#dce9ff;
+  color:#3e5f96;
+  padding:10px 16px;
+  border-radius:999px;
+  font-size:0.9rem;
+  transition:0.25s;
+}
+
+.song-links a:hover{
+  opacity:0.8;
+}
+
+.share-area{
+  margin-top:40px;
+  text-align:center;
+}
+
+#shareBtn{
+  border:none;
+  background:#111;
+  color:white;
+  padding:14px 24px;
+  border-radius:999px;
+  font-size:0.95rem;
+  cursor:pointer;
+  transition:0.25s;
+}
+
+#shareBtn:hover{
+  opacity:0.85;
+}
+
+@media(max-width:768px){
+
+  .page-header{
+    padding:46px 20px 28px;
+  }
+
+  .page-header h1{
+    font-size:1.7rem;
+  }
+
+  .question-card{
+    padding:28px 18px;
+  }
+
+  .question-card h2{
+    font-size:1.15rem;
+  }
+
+  .choices span{
+    padding:15px;
+    font-size:0.95rem;
+  }
+
+  .button-area button{
+    padding:13px 20px;
+    font-size:0.9rem;
+  }
+
+  .result-card{
+    padding:28px 18px;
+  }
+
+  .result-card h2{
+    font-size:1.25rem;
+  }
+
+}
