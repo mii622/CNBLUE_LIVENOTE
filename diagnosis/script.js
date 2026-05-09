@@ -25,6 +25,9 @@ document.getElementById("resultText");
 const songList =
 document.getElementById("songList");
 
+const resultBlocks =
+document.getElementById("resultBlocks");
+
 let current = 0;
 
 /* =========================
@@ -325,49 +328,82 @@ function showResult(topCategories){
     cat => resultData[cat].title
   ).join(" × ");
 
-  resultText.innerHTML =
-  topCategories.map(
-    cat => resultData[cat].desc
-  ).join("<br><br>");
+  resultBlocks.innerHTML = "";
 
-  songList.innerHTML = "";
+topCategories.forEach(cat => {
 
-  displaySongs.forEach(song => {
+  const block =
+  document.createElement("div");
 
-    const card =
-    document.createElement("div");
+  block.classList.add("result-block");
 
-    card.classList.add("song-card");
+  const songs =
+  resultData[cat].songs;
 
-    card.innerHTML = `
-      <h3>${song.title}</h3>
+  let songCount = 3;
 
-      <div class="song-links">
+  if(topCategories.length === 3){
+    songCount = 2;
+  }
 
-        <a href="${song.youtube}"
-        target="_blank">
+  if(topCategories.length >= 4){
+    songCount = 1;
+  }
 
-          ▶ YouTubeで聴く
+  const displaySongs =
+  songs.slice(0,songCount);
 
-        </a>
+  block.innerHTML = `
 
-        ${song.live ?
+    <div class="result-section">
 
-        `<a href="${song.live}"
-        target="_blank">
+      <p class="result-text">
+        ${resultData[cat].desc}
+      </p>
 
-          🎤 LIVE映像を見る
+      <div class="song-list">
 
-        </a>`
+        ${displaySongs.map(song => `
 
-        : ""}
+          <div class="song-card">
+
+            <h3>${song.title}</h3>
+
+            <div class="song-links">
+
+              <a href="${song.youtube}"
+              target="_blank">
+
+                ▶ YouTubeで聴く
+
+              </a>
+
+              ${song.live ?
+
+              `<a href="${song.live}"
+              target="_blank">
+
+                🎤 LIVE映像を見る
+
+              </a>`
+
+              : ""}
+
+            </div>
+
+          </div>
+
+        `).join("")}
 
       </div>
-    `;
 
-    songList.appendChild(card);
+    </div>
 
-  });
+  `;
+
+  resultBlocks.appendChild(block);
+
+});
 
   window.scrollTo({
     top:0,
