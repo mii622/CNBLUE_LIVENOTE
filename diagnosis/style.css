@@ -46,6 +46,15 @@ body{
   max-width: 90%;
 }
 
+/* タイトル */
+.main-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  margin: 10px 0 16px;
+  color: #333;
+}
+
 .quiz-container{
   width:min(92%,700px);
   margin:auto;
