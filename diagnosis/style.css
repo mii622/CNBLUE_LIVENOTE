@@ -271,4 +271,15 @@ body{
     font-size:1.25rem;
   }
 
+  .result-block{
+  margin-top:32px;
+}
+
+.result-section{
+  background:#f7faff;
+  border-radius:24px;
+  padding:24px 18px;
+  border:1px solid #e2ebfa;
+}
+
 }
