@@ -49,6 +49,14 @@ const resultData = {
       {
         title:"ヘカリゲ",
         youtube:"#"
+      },
+      {
+        title:"I'm sorry",
+        youtube:"#"
+      },
+      {
+        title:"Magic",
+        youtube:"#"
       }
     ]
   },
@@ -67,6 +75,102 @@ const resultData = {
       },
       {
         title:"カーテンコール",
+        youtube:"#"
+      },
+      {
+        title:"人生賛歌",
+        youtube:"#"
+      }
+    ]
+  },
+
+  emo:{
+    title:"エモいCNBLUEに浸りたい",
+    desc:"ゆったり1人の時間を過ごしたいときに。世界観に没頭できる曲たち。",
+    songs:[
+      {
+        title:"tonight",
+        youtube:"#"
+      },
+      {
+        title:"stay sober",
+        youtube:"#"
+      },
+      {
+        title:"Moon",
+        youtube:"#"
+      },
+      {
+        title:"y, why",
+        youtube:"#"
+      }
+    ]
+  },
+
+  band:{
+    title:"バンドサウンドを楽しみたい",
+    desc:"歌詞もいいけどサウンド重視派のあなたへ。多彩なカラーを持つバンドの魅力を感じられる曲たち。",
+    songs:[
+      {
+        title:"have a good night",
+        youtube:"#"
+      },
+      {
+        title:"Synchronize",
+        youtube:"#"
+      },
+      {
+        title:"心盗夜",
+        youtube:"#"
+      },
+      {
+        title:"holiday",
+        youtube:"#"
+      }
+    ]
+  },
+
+  soft:{
+    title:"優しいCNBLUEに包まれたい",
+    desc:"ほっと一息つきたいときに。忙しい1日に癒しを与えてくれる曲たち。",
+    songs:[
+      {
+        title:"hold my hand",
+        youtube:"#"
+      },
+      {
+        title:"stay with me",
+        youtube:"#"
+      },
+      {
+        title:"BLUE stars",
+        youtube:"#"
+      },
+      {
+        title:"manito",
+        youtube:"#"
+      }
+    ]
+  },
+
+  happy:{
+    title:"多幸感CNBLUEを浴びたい",
+    desc:"楽しさも可愛さも120点！HAPPYオーラ満載の曲たち。",
+    songs:[
+      {
+        title:"face to face",
+        youtube:"#"
+      },
+      {
+        title:"you're so fine",
+        youtube:"#"
+      },
+      {
+        title:"how you feel",
+        youtube:"#"
+      },
+      {
+        title:"glory days",
         youtube:"#"
       }
     ]
@@ -87,7 +191,9 @@ function updateQuiz(){
   `${((current + 1) / questions.length) * 100}%`;
 
   prevBtn.style.visibility =
-  current === 0 ? "hidden" : "visible";
+  current === 0
+  ? "hidden"
+  : "visible";
 
   nextBtn.textContent =
   current === questions.length - 1
@@ -127,7 +233,9 @@ function calculateResult(){
   };
 
   document
-  .querySelectorAll("input[type='radio']:checked")
+  .querySelectorAll(
+    "input[type='radio']:checked"
+  )
   .forEach(input => {
 
     const type =
@@ -161,7 +269,8 @@ function showResult(topCategories){
   document.querySelector(".quiz-container")
   .style.display = "none";
 
-  resultContainer.style.display = "block";
+  resultContainer.style.display =
+  "block";
 
   let displaySongs = [];
 
@@ -260,10 +369,15 @@ function showResult(topCategories){
 
   });
 
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
 }
 
 /* =========================
-   ▼ ボタン
+   ▼ ボタン処理
 ========================= */
 
 nextBtn.addEventListener("click", () => {
@@ -301,8 +415,6 @@ prevBtn.addEventListener("click", () => {
 
 });
 
-updateQuiz();
-
 /* =========================
    ▼ シェア
 ========================= */
@@ -323,3 +435,7 @@ document.getElementById("shareBtn")
   );
 
 });
+
+/* 初期表示 */
+
+updateQuiz();
