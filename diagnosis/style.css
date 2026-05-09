@@ -220,7 +220,8 @@ body{
   text-align:center;
 }
 
-#shareBtn{
+#shareBtn,
+#restartBtn{
   border:none;
   background:#111;
   color:white;
@@ -231,7 +232,8 @@ body{
   transition:0.25s;
 }
 
-#shareBtn:hover{
+#shareBtn:hover,
+#restartBtn:hover{
   opacity:0.85;
 }
 
