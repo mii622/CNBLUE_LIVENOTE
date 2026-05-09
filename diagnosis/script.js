@@ -34,7 +34,7 @@ let current = 0;
 const resultData = {
 
   hype:{
-    title:"ライブでぶち上がりたい",
+    title:"ライブでぶち上がりたい💥",
     desc:"全てのストレスを吹き飛ばしてテンション爆上げしたいときに。에바뛰が止まらない曲たち。",
     songs:[
       {
@@ -43,11 +43,11 @@ const resultData = {
         live:"#"
       },
       {
-        title:"killer joy",
+        title:"Killer Joy",
         youtube:"#"
       },
       {
-        title:"ヘカリゲ",
+        title:"헷갈리게",
         youtube:"#"
       },
       {
@@ -62,19 +62,19 @@ const resultData = {
   },
 
   support:{
-    title:"背中を押してほしい",
+    title:"背中を押してほしい📣",
     desc:"一生懸命頑張る自分に、明日への元気をくれる曲たち。",
     songs:[
       {
-        title:"still a flower",
+        title:"그러나 꼿이었다(Still, a Flower)",
         youtube:"#"
       },
       {
-        title:"young forever",
+        title:"YOUNG FOREVER",
         youtube:"#"
       },
       {
-        title:"カーテンコール",
+        title:"Curtain call",
         youtube:"#"
       },
       {
@@ -85,15 +85,15 @@ const resultData = {
   },
 
   emo:{
-    title:"エモいCNBLUEに浸りたい",
+    title:"エモいCNBLUEに浸りたい🥂",
     desc:"ゆったり1人の時間を過ごしたいときに。世界観に没頭できる曲たち。",
     songs:[
       {
-        title:"tonight",
+        title:"Tonight",
         youtube:"#"
       },
       {
-        title:"stay sober",
+        title:"STAY SOBER",
         youtube:"#"
       },
       {
@@ -101,18 +101,18 @@ const resultData = {
         youtube:"#"
       },
       {
-        title:"y, why",
+        title:"Y,Why",
         youtube:"#"
       }
     ]
   },
 
   band:{
-    title:"バンドサウンドを楽しみたい",
+    title:"バンドサウンドを楽しみたい🎸",
     desc:"歌詞もいいけどサウンド重視派のあなたへ。多彩なカラーを持つバンドの魅力を感じられる曲たち。",
     songs:[
       {
-        title:"have a good night",
+        title:"Have a Good Night",
         youtube:"#"
       },
       {
@@ -131,46 +131,46 @@ const resultData = {
   },
 
   soft:{
-    title:"優しいCNBLUEに包まれたい",
+    title:"優しいCNBLUEに包まれたい🩵",
     desc:"ほっと一息つきたいときに。忙しい1日に癒しを与えてくれる曲たち。",
     songs:[
       {
-        title:"hold my hand",
+        title:"Hold My Hand",
         youtube:"#"
       },
       {
-        title:"stay with me",
+        title:"Stay with Me",
         youtube:"#"
       },
       {
-        title:"BLUE stars",
+        title:"Blue Stars",
         youtube:"#"
       },
       {
-        title:"manito",
+        title:"마니또(MANITO)",
         youtube:"#"
       }
     ]
   },
 
   happy:{
-    title:"多幸感CNBLUEを浴びたい",
+    title:"多幸感CNBLUEを浴びたい🍀",
     desc:"楽しさも可愛さも120点！HAPPYオーラ満載の曲たち。",
     songs:[
       {
-        title:"face to face",
+        title:"Face to Face",
         youtube:"#"
       },
       {
-        title:"you're so fine",
+        title:"이렇게 예뻤나(YOU'RE SO FINE)",
         youtube:"#"
       },
       {
-        title:"how you feel",
+        title:"How you feel",
         youtube:"#"
       },
       {
-        title:"glory days",
+        title:"Glory Days",
         youtube:"#"
       }
     ]
@@ -278,7 +278,7 @@ function showResult(topCategories){
 
     displaySongs =
     resultData[topCategories[0]]
-    .songs.slice(0,3);
+    .songs.slice(0,4);
 
   }
 
@@ -313,7 +313,7 @@ function showResult(topCategories){
     topCategories.forEach(cat => {
 
       displaySongs.push(
-        resultData[cat].songs[0]
+        resultData[cat].songs.slice(0,1)
       );
 
     });
