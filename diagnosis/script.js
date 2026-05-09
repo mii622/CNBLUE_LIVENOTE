@@ -316,7 +316,7 @@ function showResult(topCategories){
     topCategories.forEach(cat => {
 
       displaySongs.push(
-        resultData[cat].songs.slice(0,1)
+        ...resultData[cat].songs.slice(0,1)
       );
 
     });
