@@ -42,25 +42,24 @@ const resultData = {
     songs:[
       {
         title:"99%",
-        youtube:"#",
-        live:"#"
+        youtubeKr:"https://youtu.be/502xHLfOlvc?si=IqxUk9DLAPocWSiM",
+        live:"https://youtu.be/vPO0HUg3j10?si=Wp3XvH-hcx4_IH_v"
       },
       {
         title:"Killer Joy",
-        youtube:"#"
+        youtubeKr:"https://youtu.be/ND5FhEsjVUk?si=c_rBGTu8n-RJpKBe"
+        live:"https://youtu.be/1BHDvZChW7Q?si=vMc20CdpJMW3-HNl"
       },
       {
         title:"헷갈리게",
-        youtube:"#"
+        youtubeKr:"https://youtu.be/XqNMTRDS_Gs?si=W5_qzOQ8L-cUb6Nv"
+        live:"https://youtu.be/Zg_8X38eN90?si=3JRhvLBsY_5ZC6CG"
       },
       {
         title:"I'm sorry",
-        youtube:"#"
+        youtubeKr:"https://youtu.be/4p3cKsDCA0Y?si=VsjuJ5hTPKEC9590"
+        live:"https://youtu.be/GQvBYzv-tJc?si=zzi6UM6elFJeU309"
       },
-      {
-        title:"Magic",
-        youtube:"#"
-      }
     ]
   },
 
@@ -70,19 +69,23 @@ const resultData = {
     songs:[
       {
         title:"그러나 꼿이었다(Still, a Flower)",
-        youtube:"#"
+        youtubeKr:"https://youtu.be/YgwGBgZEKaM?si=s_gt5eLYdUl-_Cyp"
+        live:"https://youtu.be/8Hfmayrn_9E?si=g4jII0DWy3eFW9rZ"
       },
       {
         title:"YOUNG FOREVER",
-        youtube:"#"
+        youtubeKr:"https://youtu.be/hfoQ66kGbpE?si=8-T_vXQlWad33Rnf"
+        live:"https://youtu.be/mll-0-yTwos?t=629&si=KIKnR3Tu1kduZ4M8"
       },
       {
         title:"Curtain call",
-        youtube:"#"
+        youtubeJp:"https://youtu.be/0tbkfHVeLlQ?si=qthf693K7g-1y8x2"
       },
       {
         title:"人生賛歌",
-        youtube:"#"
+        youtubeJp:"https://youtu.be/DrUCal6ZANM?si=49vQYkqce9wEAMYY"
+        youtubeKr:"https://youtu.be/zjG2-lnKrhY?si=lsY2L2jUniG0EZBZ"
+        live:"https://youtu.be/H4tXezKs_lY?si=RGjAv4Bo2z2TvcBR"
       }
     ]
   },
@@ -93,19 +96,19 @@ const resultData = {
     songs:[
       {
         title:"Tonight",
-        youtube:"#"
+        youtubeKr:"https://youtu.be/Kta0RThzNj4?si=QcqWgQgJNMguC6fj"
       },
       {
         title:"STAY SOBER",
-        youtube:"#"
+        youtubeKr:"https://youtu.be/q6MYigq7myE?si=81er9wGyDB1yfckF"
       },
       {
         title:"Moon",
-        youtube:"#"
+        youtubeJp:"https://youtu.be/pOoUZyrz0KQ?si=Q2rEhkJFy_E4rM7G"
       },
       {
         title:"Y,Why",
-        youtube:"#"
+        youtubeKr:"https://youtu.be/HfQRHylwn0M?si=oHKqnT3DJQbSGwZr"
       }
     ]
   },
@@ -115,20 +118,21 @@ const resultData = {
     desc:"歌詞もいいけどサウンド重視派のあなたへ。多彩なカラーを持つバンドの魅力を感じられる曲たち。",
     songs:[
       {
-        title:"Have a Good Night",
-        youtube:"#"
+        title:"Magic",
+        youtubeJp:"https://youtu.be/6Foql79_2zM?si=JQ-oaJKXwNHXYSNg"
       },
       {
         title:"Synchronize",
-        youtube:"#"
+        youtubeJp:"https://youtu.be/tntacaAYkXg?si=B5zhkIuxYG8UUb3U"
       },
       {
         title:"心盗夜",
-        youtube:"#"
+        youtubeJp:"https://youtu.be/eZp0QP2xBi4?si=7WtA3jsfRTSSX58D"
       },
       {
-        title:"holiday",
-        youtube:"#"
+        title:"Coffee Shop",
+        youtubeJp:"https://youtu.be/TFZyTFWmXJE?si=EDJTQC1xz5AWIDFE"
+        live:"https://youtu.be/6IZPr_OzdsY?si=F2sFLpZaM2pmtJZP"
       }
     ]
   },
@@ -139,19 +143,20 @@ const resultData = {
     songs:[
       {
         title:"Hold My Hand",
-        youtube:"#"
+        youtubeJp:"https://youtu.be/-4NsuIEJ-WI?si=rfXkHNiZGo3PYD6A"
+        youtubeKr:"https://youtu.be/Aky-cFcQFIg?si=Ma2EZsxDcSyDSgOY"
       },
       {
         title:"Stay with Me",
-        youtube:"#"
+        youtubeJp:"https://youtu.be/dI8xRdALfc8?si=DUXdZ8GqbSIamE20"
       },
       {
         title:"Blue Stars",
-        youtube:"#"
+        youtubeKr:"https://youtu.be/Aky-cFcQFIg?si=Ma2EZsxDcSyDSgOY"
       },
       {
-        title:"마니또(MANITO)",
-        youtube:"#"
+        title:"Hold Me Back",
+        youtubeKr:"https://youtu.be/sv8a197kd8Q?si=o4qUIdsh7hx0Nnf8"
       }
     ]
   },
@@ -162,19 +167,21 @@ const resultData = {
     songs:[
       {
         title:"사소한 것들이 좋아서(Little Things)",
-        youtube:"#"
+        youtubeKr:"https://youtu.be/Ikk9dhBS7T0?si=17SESVjrA7f-eOz1"
       },
       {
         title:"이렇게 예뻤나(YOU'RE SO FINE)",
-        youtube:"#"
+        youtubeKr:"https://youtu.be/wAZJ_9D6lM4?si=sorahBMfT_0HvdYk"
+        live:"https://youtu.be/xMqvm-Gl1JA?si=X9OK-NLEOFCwSN_J"
       },
       {
         title:"How you feel",
-        youtube:"#"
+        youtubeJp:"https://youtu.be/bwPrwc9L8G0?si=wkbTuqJ4Exg7TxDN"
       },
       {
         title:"Glory Days",
-        youtube:"#"
+        youtubeJp:"https://youtu.be/0ASitqUBpWQ?si=kmVq5XzsxKM20vr8"
+        live:"https://youtu.be/XnCEW9Pyt28?t=809&si=hWoc9vhNxhhp9pyx"
       }
     ]
   }
@@ -328,25 +335,33 @@ songs.slice(0,songCount);
 
             <div class="song-links">
 
-              <a href="${song.youtube}"
-              target="_blank">
+  ${song.youtubeJp ? `
+  <a href="${song.youtubeJp}" target="_blank">
 
-                ▶ YouTubeで聴く
+    ▶ YouTubeで聴く
+    ${song.youtubeKr ? "（日本語ver）" : ""}
 
-              </a>
+  </a>
+  ` : ""}
 
-              ${song.live ?
+  ${song.youtubeKr ? `
+  <a href="${song.youtubeKr}" target="_blank">
 
-              `<a href="${song.live}"
-              target="_blank">
+    ▶ YouTubeで聴く
+    ${song.youtubeJp ? "（韓国語ver）" : ""}
 
-                🎤 LIVE映像を見る
+  </a>
+  ` : ""}
 
-              </a>`
+  ${song.live ? `
+  <a href="${song.live}" target="_blank">
 
-              : ""}
+    🎤 LIVE映像を見る
 
-            </div>
+  </a>
+  ` : ""}
+
+</div>
 
           </div>
 
