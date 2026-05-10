@@ -19,12 +19,6 @@ document.getElementById("resultContainer");
 const resultTitle =
 document.getElementById("resultTitle");
 
-const resultText =
-document.getElementById("resultText");
-
-const songList =
-document.getElementById("songList");
-
 const resultBlocks =
 document.getElementById("resultBlocks");
 
@@ -47,17 +41,17 @@ const resultData = {
       },
       {
         title:"Killer Joy",
-        youtubeKr:"https://youtu.be/ND5FhEsjVUk?si=c_rBGTu8n-RJpKBe"
+        youtubeKr:"https://youtu.be/ND5FhEsjVUk?si=c_rBGTu8n-RJpKBe",
         live:"https://youtu.be/1BHDvZChW7Q?si=vMc20CdpJMW3-HNl"
       },
       {
         title:"헷갈리게",
-        youtubeKr:"https://youtu.be/XqNMTRDS_Gs?si=W5_qzOQ8L-cUb6Nv"
+        youtubeKr:"https://youtu.be/XqNMTRDS_Gs?si=W5_qzOQ8L-cUb6Nv",
         live:"https://youtu.be/Zg_8X38eN90?si=3JRhvLBsY_5ZC6CG"
       },
       {
         title:"I'm sorry",
-        youtubeKr:"https://youtu.be/4p3cKsDCA0Y?si=VsjuJ5hTPKEC9590"
+        youtubeKr:"https://youtu.be/4p3cKsDCA0Y?si=VsjuJ5hTPKEC9590",
         live:"https://youtu.be/GQvBYzv-tJc?si=zzi6UM6elFJeU309"
       },
     ]
@@ -69,12 +63,12 @@ const resultData = {
     songs:[
       {
         title:"그러나 꼿이었다(Still, a Flower)",
-        youtubeKr:"https://youtu.be/YgwGBgZEKaM?si=s_gt5eLYdUl-_Cyp"
+        youtubeKr:"https://youtu.be/YgwGBgZEKaM?si=s_gt5eLYdUl-_Cyp",
         live:"https://youtu.be/8Hfmayrn_9E?si=g4jII0DWy3eFW9rZ"
       },
       {
         title:"YOUNG FOREVER",
-        youtubeKr:"https://youtu.be/hfoQ66kGbpE?si=8-T_vXQlWad33Rnf"
+        youtubeKr:"https://youtu.be/hfoQ66kGbpE?si=8-T_vXQlWad33Rnf",
         live:"https://youtu.be/mll-0-yTwos?t=629&si=KIKnR3Tu1kduZ4M8"
       },
       {
@@ -83,8 +77,8 @@ const resultData = {
       },
       {
         title:"人生賛歌",
-        youtubeJp:"https://youtu.be/DrUCal6ZANM?si=49vQYkqce9wEAMYY"
-        youtubeKr:"https://youtu.be/zjG2-lnKrhY?si=lsY2L2jUniG0EZBZ"
+        youtubeJp:"https://youtu.be/DrUCal6ZANM?si=49vQYkqce9wEAMYY",
+        youtubeKr:"https://youtu.be/zjG2-lnKrhY?si=lsY2L2jUniG0EZBZ",
         live:"https://youtu.be/H4tXezKs_lY?si=RGjAv4Bo2z2TvcBR"
       }
     ]
@@ -131,7 +125,7 @@ const resultData = {
       },
       {
         title:"Coffee Shop",
-        youtubeJp:"https://youtu.be/TFZyTFWmXJE?si=EDJTQC1xz5AWIDFE"
+        youtubeJp:"https://youtu.be/TFZyTFWmXJE?si=EDJTQC1xz5AWIDFE",
         live:"https://youtu.be/6IZPr_OzdsY?si=F2sFLpZaM2pmtJZP"
       }
     ]
@@ -143,7 +137,7 @@ const resultData = {
     songs:[
       {
         title:"Hold My Hand",
-        youtubeJp:"https://youtu.be/-4NsuIEJ-WI?si=rfXkHNiZGo3PYD6A"
+        youtubeJp:"https://youtu.be/-4NsuIEJ-WI?si=rfXkHNiZGo3PYD6A",
         youtubeKr:"https://youtu.be/Aky-cFcQFIg?si=Ma2EZsxDcSyDSgOY"
       },
       {
@@ -171,7 +165,7 @@ const resultData = {
       },
       {
         title:"이렇게 예뻤나(YOU'RE SO FINE)",
-        youtubeKr:"https://youtu.be/wAZJ_9D6lM4?si=sorahBMfT_0HvdYk"
+        youtubeKr:"https://youtu.be/wAZJ_9D6lM4?si=sorahBMfT_0HvdYk",
         live:"https://youtu.be/xMqvm-Gl1JA?si=X9OK-NLEOFCwSN_J"
       },
       {
@@ -180,7 +174,7 @@ const resultData = {
       },
       {
         title:"Glory Days",
-        youtubeJp:"https://youtu.be/0ASitqUBpWQ?si=kmVq5XzsxKM20vr8"
+        youtubeJp:"https://youtu.be/0ASitqUBpWQ?si=kmVq5XzsxKM20vr8"k
         live:"https://youtu.be/XnCEW9Pyt28?t=809&si=hWoc9vhNxhhp9pyx"
       }
     ]
@@ -427,7 +421,7 @@ prevBtn.addEventListener("click", () => {
    ▼ シェア
 ========================= */
 
-document.getElementById("shareBtn")
+document.getElementById("shareBtn") 
 .addEventListener("click", () => {
 
   const result = resultTitle.innerText;
