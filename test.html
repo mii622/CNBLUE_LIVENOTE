@@ -28,56 +28,61 @@ body {
   margin-bottom: 20px;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* 商品カード */
+.card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
 }
 
-/* 商品カード */
-.item {
+.card-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* バリエーション */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.price {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-left: 6px;
+}
+
+/* 数量コントロール */
+.counter {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
-  padding: 14px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.06);
-  transition: 0.2s;
+  gap: 6px;
 }
 
-.item:hover {
-  background: rgba(255,255,255,0.1);
+button {
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 6px;
+  background: #1d3b5a;
+  color: #fff;
+  font-size: 16px;
 }
 
-/* チェック */
-.item input {
-  transform: scale(1.2);
-  margin-right: 12px;
-}
-
-/* 左側情報 */
-.info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.name {
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.sub {
-  font-size: 11px;
-  opacity: 0.6;
-  margin-top: 3px;
-}
-
-/* 価格 */
-.price {
-  font-weight: bold;
-  opacity: 0.9;
+input[type="number"] {
+  width: 50px;
+  text-align: center;
+  border-radius: 6px;
+  border: none;
+  padding: 4px;
 }
 
 /* 合計 */
@@ -101,72 +106,59 @@ body {
 
   <div class="title">GOODS CALCULATOR</div>
 
-  <div class="list">
+  <!-- Tシャツ -->
+  <div class="card">
+    <div class="card-title">Tシャツ</div>
 
-    <label class="item">
-      <input type="checkbox" data-price="5000">
-      <div class="info">
-        <div class="name">Tシャツ</div>
-        <div class="sub">2025 TOUR / BLACK</div>
+    <div class="row">
+      <div>
+        <span class="label">WHITE</span>
+        <span class="price">¥5,000</span>
       </div>
-      <div class="price">¥5,000</div>
-    </label>
 
-    <label class="item">
-      <input type="checkbox" data-price="3500">
-      <div class="info">
-        <div class="name">タオル</div>
-        <div class="sub">LOGO DESIGN</div>
+      <div class="counter">
+        <button onclick="changeQty(this, -1, 5000)">−</button>
+        <input type="number" value="0" min="0" data-price="5000" oninput="calc()">
+        <button onclick="changeQty(this, 1, 5000)">＋</button>
       </div>
-      <div class="price">¥3,500</div>
-    </label>
+    </div>
 
-    <label class="item">
-      <input type="checkbox" data-price="1200">
-      <div class="info">
-        <div class="name">アクキー</div>
-        <div class="sub">TOUR LOGO</div>
+    <div class="row">
+      <div>
+        <span class="label">BLACK</span>
+        <span class="price">¥5,000</span>
       </div>
-      <div class="price">¥1,200</div>
-    </label>
 
-    <label class="item">
-      <input type="checkbox" data-price="6000">
-      <div class="info">
-        <div class="name">ペンライト</div>
-        <div class="sub">OFFICIAL LIGHT</div>
+      <div class="counter">
+        <button onclick="changeQty(this, -1, 5000)">−</button>
+        <input type="number" value="0" min="0" data-price="5000" oninput="calc()">
+        <button onclick="changeQty(this, 1, 5000)">＋</button>
       </div>
-      <div class="price">¥6,000</div>
-    </label>
-
+    </div>
   </div>
 
-  <div class="total">
-    TOTAL：<span id="total">0</span>円
+  <!-- タオル -->
+  <div class="card">
+    <div class="card-title">タオル</div>
+
+    <div class="row">
+      <div>
+        <span class="label">LOGO</span>
+        <span class="price">¥3,500</span>
+      </div>
+
+      <div class="counter">
+        <button onclick="changeQty(this, -1, 3500)">−</button>
+        <input type="number" value="0" min="0" data-price="3500" oninput="calc()">
+        <button onclick="changeQty(this, 1, 3500)">＋</button>
+      </div>
+    </div>
   </div>
 
-</div>
+  <!-- アクキー -->
+  <div class="card">
+    <div class="card-title">アクリルキーホルダー</div>
 
-<script>
-const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-const totalEl = document.getElementById('total');
-
-function updateTotal() {
-  let total = 0;
-
-  checkboxes.forEach(cb => {
-    if (cb.checked) {
-      total += Number(cb.dataset.price);
-    }
-  });
-
-  totalEl.textContent = total.toLocaleString();
-}
-
-checkboxes.forEach(cb => {
-  cb.addEventListener('change', updateTotal);
-});
-</script>
-
-</body>
-</html>
+    <div class="row">
+      <div>
+        <span class="label">TOUR
