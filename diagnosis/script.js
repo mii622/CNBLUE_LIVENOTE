@@ -138,7 +138,7 @@ const resultData = {
       {
         title:"Hold My Hand",
         youtubeJp:"https://youtu.be/-4NsuIEJ-WI?si=rfXkHNiZGo3PYD6A",
-        youtubeKr:"https://youtu.be/Aky-cFcQFIg?si=Ma2EZsxDcSyDSgOY"
+        youtubeKr:"https://youtu.be/nOq862vXy8E?si=aMy5AnO_tfrUdByh"
       },
       {
         title:"Stay with Me",
