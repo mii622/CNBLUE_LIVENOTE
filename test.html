@@ -162,3 +162,39 @@ input[type="number"] {
     <div class="row">
       <div>
         <span class="label">TOUR
+
+          <div class="total">
+  TOTAL：<span id="total">0</span>円
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  function calc() {
+    let total = 0;
+
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+      const qty = Number(input.value || 0);
+      const price = Number(input.dataset.price || 0);
+      total += qty * price;
+    });
+
+    const el = document.getElementById('total');
+    if (el) el.textContent = total.toLocaleString();
+  }
+
+  document.querySelectorAll('input[type="number"]').forEach(input => {
+    input.addEventListener("input", calc);
+  });
+
+  window.changeQty = function(btn, diff) {
+    const input = btn.parentElement.querySelector('input');
+    let val = Number(input.value || 0);
+    val = Math.max(0, val + diff);
+    input.value = val;
+    calc();
+  };
+
+  calc();
+});
+</script>
