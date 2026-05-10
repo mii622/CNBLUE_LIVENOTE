@@ -275,54 +275,6 @@ function showResult(topCategories){
   resultContainer.style.display =
   "block";
 
-  let displaySongs = [];
-
-  if(topCategories.length === 1){
-
-    displaySongs =
-    resultData[topCategories[0]]
-    .songs.slice(0,4);
-
-  }
-
-  else if(topCategories.length === 2){
-
-    topCategories.forEach(cat => {
-
-      displaySongs.push(
-        ...resultData[cat]
-        .songs.slice(0,3)
-      );
-
-    });
-
-  }
-
-  else if(topCategories.length === 3){
-
-    topCategories.forEach(cat => {
-
-      displaySongs.push(
-        ...resultData[cat]
-        .songs.slice(0,2)
-      );
-
-    });
-
-  }
-
-  else{
-
-    topCategories.forEach(cat => {
-
-      displaySongs.push(
-        ...resultData[cat].songs.slice(0,1)
-      );
-
-    });
-
-  }
-
   resultTitle.innerHTML =
   topCategories.map(
     cat => resultData[cat].title
