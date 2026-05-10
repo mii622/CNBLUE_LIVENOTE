@@ -21,7 +21,7 @@
 </head>
 
 <body>
-  <div id="../header"></div>
+  <div id="header"></div>
 
   <div class="header">MUSIC TEST</div>
 
@@ -32,8 +32,6 @@
 CNBLUEを見つけよう
 </p>
  
-
-</head>
 
 <div class="quiz-container">
 
@@ -400,6 +398,12 @@ CNBLUEを見つけよう
 </div>
 
 <script src="script.js"></script>
-
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
 </body>
 </html>
