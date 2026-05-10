@@ -11,6 +11,10 @@
 <title>GOODS CALCULATOR</title>
 
 <style>
+:root{
+  --theme-color:#e97520; /* ツアーごとに変更 */
+}
+
 body{
   margin:0;
   font-family:"BIZ UDGothic", sans-serif;
@@ -18,44 +22,27 @@ body{
   color:#222;
 }
 
-.lang-switch{
-  position:fixed;
-  top:10px;
-  right:10px;
-  display:flex;
-  gap:10px;
-  z-index:100;
-}
+/* ヘッダー */
 .site-header{
   text-align:center;
-  padding:30px 16px 10px;
-  max-width:750px;
-  margin:0 auto;
+  padding:28px 16px 18px;
+  background:var(--theme-color);
+  color:#fff;
 }
 
 .main-title{
   font-size:22px;
   font-weight:700;
   letter-spacing:2px;
-  color:#111;
 }
 
 .sub-title{
   font-size:13px;
+  opacity:0.85;
   margin-top:6px;
-  opacity:0.6;
-  letter-spacing:1px;
 }
 
-.flag{
-  width:40px;
-  height:40px;
-  border-radius:50%;
-}
-.flag.active{
-  border:2px solid gold;
-}
-
+/* 商品 */
 #goods-list{
   display:grid;
   grid-template-columns:1fr;
@@ -63,7 +50,7 @@ body{
   padding:16px;
   max-width:750px;
   margin:auto;
-  padding-bottom:120px;
+  padding-bottom:40px;
 }
 
 /* カード */
@@ -98,13 +85,12 @@ body{
   margin-bottom:8px;
 }
 
-/* ラベル */
 label{
   font-size:13px;
   opacity:0.8;
 }
 
-/* ±＋入力 */
+/* ±ボタン（柔らかく） */
 .counter{
   display:flex;
   align-items:center;
@@ -115,9 +101,16 @@ button.qty{
   width:28px;
   height:28px;
   border:none;
-  border-radius:6px;
-  background:#333;
-  color:#fff;
+  border-radius:8px;
+  background:#e9edf2;
+  color:#555;
+  font-size:16px;
+  font-weight:600;
+}
+
+button.qty:active{
+  transform:scale(0.95);
+  background:#dde3ea;
 }
 
 .item-qty{
@@ -128,26 +121,24 @@ button.qty{
   padding:4px;
 }
 
-/* 合計 */
+/* 合計（リスト上・柔らかい） */
 #total{
-  position:fixed;
-  bottom:60px;
-  left:0;
-  width:100%;
+  margin:20px auto 10px;
   text-align:center;
-  font-size:18px;
+  font-size:16px;
   font-weight:700;
-  background:#111;
-  color:#fff;
+  background:#fff;
+  color:#333;
   padding:14px;
+  max-width:750px;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 /* リセット */
 .reset-wrap{
-  position:fixed;
-  bottom:10px;
-  width:100%;
   text-align:center;
+  margin:10px 0 20px;
 }
 
 .reset-btn{
@@ -162,50 +153,50 @@ button.qty{
 /* サマリー */
 #summary{
   max-width:750px;
-  margin:20px auto 100px;
+  margin:10px auto 80px;
   background:#fff;
   padding:16px;
   border-radius:12px;
+}
+
+.summary-item{
+  font-size:13px;
+  margin:5px 0;
+  opacity:0.85;
 }
 </style>
 </head>
 
 <body>
-  <header class="site-header">
+
+<!-- ヘッダー -->
+<header class="site-header">
   <div class="main-title">GOODS CALCULATOR</div>
-  <div class="sub-title">TOUR NAME HERE</div>
-  </header>
+  <div class="sub-title">TOUR NAME</div>
+</header>
 
-<div class="lang-switch">
-  <img src="images/IMG_jp.JPG" id="flag-ja" class="flag active" onclick="setLang('ja')">
-  <img src="images/IMG_kr.JPG" id="flag-ko" class="flag" onclick="setLang('ko')">
-</div>
-
+<!-- 商品 -->
 <div id="goods-list"></div>
 
+<!-- 合計（リストの上） -->
 <div id="total">TOTAL</div>
 
+<!-- リセット -->
 <div class="reset-wrap">
   <button class="reset-btn" onclick="resetAll()">RESET</button>
 </div>
 
+<!-- サマリー -->
 <div id="summary">
-  <h3 id="summary-title"></h3>
+  <h3>選んだ内容</h3>
   <div id="summary-list"></div>
 </div>
 
 <script>
-let currentLang="ja";
 let selections={};
-const KEY="cnblue_goods_final_v2";
+const KEY="cnblue_goods_final_v3";
 
-/* テキスト */
-const texts={
-  ja:{total:"合計",summary:"選んだ内容",none:"なし",yen:"円"},
-  ko:{total:"합계",summary:"선택한 상품",none:"없음",yen:"엔"}
-};
-
-/* 商品 */
+/* 商品データ（完全維持・一切変更なし） */
 const goods=[
   {name:{ja:"LEDブレスレット",ko:"LED 팔찌"},price:2000,types:[]},
   {name:{ja:"Tシャツ",ko:"티셔츠"},price:4000,types:["A black","B white"]},
@@ -245,7 +236,7 @@ function resetAll(){
   update();
 }
 
-/* ± */
+/* ±操作 */
 function change(btn,diff){
   const input=btn.parentElement.querySelector("input");
   let v=Number(input.value||0);
@@ -288,7 +279,7 @@ function render(){
               class="item-qty"
               data-key="${key}"
               data-price="${g.price}"
-              data-name="${g.name[currentLang]}"
+              data-name="${g.name.ja}"
               oninput="saveQty(this)">
 
             <button class="qty" onclick="change(this,1)">＋</button>
@@ -302,7 +293,7 @@ function render(){
 
       body=`
       <div class="variant">
-        <label>${g.name[currentLang]}</label>
+        <label>${g.name.ja}</label>
 
         <div class="counter">
           <button class="qty" onclick="change(this,-1)">−</button>
@@ -312,7 +303,7 @@ function render(){
             class="item-qty"
             data-key="${key}"
             data-price="${g.price}"
-            data-name="${g.name[currentLang]}"
+            data-name="${g.name.ja}"
             oninput="saveQty(this)">
 
           <button class="qty" onclick="change(this,1)">＋</button>
@@ -321,7 +312,7 @@ function render(){
     }
 
     card.innerHTML=`
-      <div class="item-title">${g.name[currentLang]}</div>
+      <div class="item-title">${g.name.ja}</div>
       <div class="item-price">${g.price}円</div>
       ${body}
     `;
@@ -339,32 +330,19 @@ function update(){
     const q=Number(i.value)||0;
     if(!q) return;
 
-    const name=i.dataset.name;
-    const p=Number(i.dataset.price);
-
-    total+=q*p;
-    list+=`<div>${name} × ${q}</div>`;
+    total+=q*Number(i.dataset.price);
+    list+=`<div class="summary-item">${i.dataset.name} × ${q}</div>`;
   });
 
   document.getElementById("total").textContent=
-    `${texts[currentLang].total}: ${total.toLocaleString()} ${texts[currentLang].yen}`;
+    `合計: ${total.toLocaleString()} 円`;
 
-  document.getElementById("summary-title").textContent=texts[currentLang].summary;
-  document.getElementById("summary-list").innerHTML=list||texts[currentLang].none;
-}
-
-/* 言語 */
-function setLang(l){
-  currentLang=l;
-  document.querySelectorAll(".flag").forEach(f=>f.classList.remove("active"));
-  document.getElementById("flag-"+l).classList.add("active");
-  render();
-  update();
+  document.getElementById("summary-list").innerHTML=
+    list || "なし";
 }
 
 /* 初期 */
 load();
-setLang("ja");
 render();
 update();
 </script>
