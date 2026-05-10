@@ -97,12 +97,12 @@ const resultData = {
         youtubeKr:"https://youtu.be/q6MYigq7myE?si=81er9wGyDB1yfckF"
       },
       {
-        title:"Moon",
-        youtubeJp:"https://youtu.be/pOoUZyrz0KQ?si=Q2rEhkJFy_E4rM7G"
-      },
-      {
         title:"Y,Why",
         youtubeKr:"https://youtu.be/HfQRHylwn0M?si=oHKqnT3DJQbSGwZr"
+      },
+      {
+        title:"Moon",
+        youtubeJp:"https://youtu.be/pOoUZyrz0KQ?si=Q2rEhkJFy_E4rM7G"
       }
     ]
   },
@@ -112,8 +112,9 @@ const resultData = {
     desc:"歌詞もいいけどサウンド重視派のあなたへ。多彩なカラーを持つバンドの魅力を感じられる曲たち。",
     songs:[
       {
-        title:"Magic",
-        youtubeJp:"https://youtu.be/6Foql79_2zM?si=JQ-oaJKXwNHXYSNg"
+        title:"Coffee Shop",
+        youtubeJp:"https://youtu.be/TFZyTFWmXJE?si=EDJTQC1xz5AWIDFE",
+        live:"https://youtu.be/6IZPr_OzdsY?si=F2sFLpZaM2pmtJZP"
       },
       {
         title:"Synchronize",
@@ -124,9 +125,8 @@ const resultData = {
         youtubeJp:"https://youtu.be/eZp0QP2xBi4?si=7WtA3jsfRTSSX58D"
       },
       {
-        title:"Coffee Shop",
-        youtubeJp:"https://youtu.be/TFZyTFWmXJE?si=EDJTQC1xz5AWIDFE",
-        live:"https://youtu.be/6IZPr_OzdsY?si=F2sFLpZaM2pmtJZP"
+        title:"Magic",
+        youtubeJp:"https://youtu.be/6Foql79_2zM?si=JQ-oaJKXwNHXYSNg"
       }
     ]
   },
@@ -169,13 +169,13 @@ const resultData = {
         live:"https://youtu.be/xMqvm-Gl1JA?si=X9OK-NLEOFCwSN_J"
       },
       {
-        title:"How you feel",
-        youtubeJp:"https://youtu.be/bwPrwc9L8G0?si=wkbTuqJ4Exg7TxDN"
-      },
-      {
         title:"Glory Days",
         youtubeJp:"https://youtu.be/0ASitqUBpWQ?si=kmVq5XzsxKM20vr8",
         live:"https://youtu.be/XnCEW9Pyt28?t=809&si=hWoc9vhNxhhp9pyx"
+      },
+      {
+        title:"How you feel",
+        youtubeJp:"https://youtu.be/bwPrwc9L8G0?si=wkbTuqJ4Exg7TxDN"
       }
     ]
   }
