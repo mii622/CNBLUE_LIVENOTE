@@ -289,21 +289,26 @@ topCategories.forEach(cat => {
 
   block.classList.add("result-block");
 
-  const songs =
-  resultData[cat].songs;
+   const songs =
+resultData[cat].songs;
 
-  let songCount = 3;
+let songCount = 4;
 
-  if(topCategories.length === 3){
-    songCount = 2;
-  }
+if(topCategories.length === 2){
+  songCount = 3;
+}
 
-  if(topCategories.length >= 4){
-    songCount = 1;
-  }
+if(topCategories.length === 3){
+  songCount = 2;
+}
 
-  const displaySongs =
-  songs.slice(0,songCount);
+if(topCategories.length >= 4){
+  songCount = 1;
+}
+
+const displaySongs =
+songs.slice(0,songCount);
+
 
   block.innerHTML = `
 
