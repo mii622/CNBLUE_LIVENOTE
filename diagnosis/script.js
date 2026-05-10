@@ -196,8 +196,8 @@ function updateQuiz(){
 
   prevBtn.style.display =
   current === 0
-  ? "none"
-  : "inline-block";
+  ? "hidden"
+  : "visible";
 
   nextBtn.textContent =
   current === questions.length - 1
