@@ -15,10 +15,12 @@ body {
   color: #fff;
 }
 
+/* メイン */
 .wrap {
   max-width: 600px;
   margin: auto;
   padding: 20px;
+  padding-bottom: 110px; /* 固定バー対策 */
 }
 
 .title {
@@ -28,39 +30,46 @@ body {
   margin-bottom: 20px;
 }
 
-/* 商品カード */
+/* カード */
 .card {
   background: rgba(255,255,255,0.06);
   border-radius: 12px;
   padding: 14px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .card-title {
   font-weight: bold;
   margin-bottom: 10px;
+  font-size: 15px;
 }
 
-/* バリエーション */
+/* 行 */
 .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 8px 0;
+  margin: 10px 0;
 }
 
+/* 商品名 */
 .label {
   font-size: 14px;
-  opacity: 0.9;
 }
 
+.sub {
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+/* 価格 */
 .price {
   font-size: 12px;
-  opacity: 0.6;
+  opacity: 0.7;
   margin-left: 6px;
 }
 
-/* 数量コントロール */
+/* 数量UI */
 .counter {
   display: flex;
   align-items: center;
@@ -68,8 +77,8 @@ body {
 }
 
 button {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border: none;
   border-radius: 6px;
   background: #1d3b5a;
@@ -83,19 +92,30 @@ input[type="number"] {
   border-radius: 6px;
   border: none;
   padding: 4px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
 }
 
-/* 合計 */
+/* 固定合計バー */
 .total {
-  margin-top: 20px;
-  padding: 16px;
-  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
   background: #142b45;
-  border-radius: 12px;
+  text-align: center;
+
+  padding: 16px;
   font-size: 18px;
   font-weight: bold;
-  position: sticky;
-  bottom: 10px;
+
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+
+#total {
+  font-size: 22px;
 }
 </style>
 </head>
@@ -112,27 +132,29 @@ input[type="number"] {
 
     <div class="row">
       <div>
-        <span class="label">WHITE</span>
-        <span class="price">¥5,000</span>
+        <div class="label">WHITE</div>
+        <div class="sub">2025 TOUR</div>
       </div>
+      <div class="price">¥5,000</div>
 
       <div class="counter">
-        <button onclick="changeQty(this, -1, 5000)">−</button>
+        <button onclick="changeQty(this, -1)">−</button>
         <input type="number" value="0" min="0" data-price="5000" oninput="calc()">
-        <button onclick="changeQty(this, 1, 5000)">＋</button>
+        <button onclick="changeQty(this, 1)">＋</button>
       </div>
     </div>
 
     <div class="row">
       <div>
-        <span class="label">BLACK</span>
-        <span class="price">¥5,000</span>
+        <div class="label">BLACK</div>
+        <div class="sub">2025 TOUR</div>
       </div>
+      <div class="price">¥5,000</div>
 
       <div class="counter">
-        <button onclick="changeQty(this, -1, 5000)">−</button>
+        <button onclick="changeQty(this, -1)">−</button>
         <input type="number" value="0" min="0" data-price="5000" oninput="calc()">
-        <button onclick="changeQty(this, 1, 5000)">＋</button>
+        <button onclick="changeQty(this, 1)">＋</button>
       </div>
     </div>
   </div>
@@ -143,14 +165,15 @@ input[type="number"] {
 
     <div class="row">
       <div>
-        <span class="label">LOGO</span>
-        <span class="price">¥3,500</span>
+        <div class="label">LOGO</div>
+        <div class="sub">TOUR GOODS</div>
       </div>
+      <div class="price">¥3,500</div>
 
       <div class="counter">
-        <button onclick="changeQty(this, -1, 3500)">−</button>
+        <button onclick="changeQty(this, -1)">−</button>
         <input type="number" value="0" min="0" data-price="3500" oninput="calc()">
-        <button onclick="changeQty(this, 1, 3500)">＋</button>
+        <button onclick="changeQty(this, 1)">＋</button>
       </div>
     </div>
   </div>
@@ -161,40 +184,55 @@ input[type="number"] {
 
     <div class="row">
       <div>
-        <span class="label">TOUR
+        <div class="label">TOUR LOGO</div>
+        <div class="sub">LIMITED</div>
+      </div>
+      <div class="price">¥1,200</div>
 
-          <div class="total">
+      <div class="counter">
+        <button onclick="changeQty(this, -1)">−</button>
+        <input type="number" value="0" min="0" data-price="1200" oninput="calc()">
+        <button onclick="changeQty(this, 1)">＋</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 固定合計 -->
+<div class="total">
   TOTAL：<span id="total">0</span>円
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+function changeQty(btn, diff) {
+  const input = btn.parentElement.querySelector('input');
+  let val = Number(input.value || 0);
+  val = Math.max(0, val + diff);
+  input.value = val;
+  calc();
+}
 
-  function calc() {
-    let total = 0;
-
-    document.querySelectorAll('input[type="number"]').forEach(input => {
-      const qty = Number(input.value || 0);
-      const price = Number(input.dataset.price || 0);
-      total += qty * price;
-    });
-
-    const el = document.getElementById('total');
-    if (el) el.textContent = total.toLocaleString();
-  }
+function calc() {
+  let total = 0;
 
   document.querySelectorAll('input[type="number"]').forEach(input => {
-    input.addEventListener("input", calc);
+    const qty = Number(input.value || 0);
+    const price = Number(input.dataset.price || 0);
+    total += qty * price;
   });
 
-  window.changeQty = function(btn, diff) {
-    const input = btn.parentElement.querySelector('input');
-    let val = Number(input.value || 0);
-    val = Math.max(0, val + diff);
-    input.value = val;
-    calc();
-  };
+  const el = document.getElementById('total');
+  el.textContent = total.toLocaleString();
 
-  calc();
-});
+  // 軽いアニメ
+  el.style.transform = "scale(1.1)";
+  setTimeout(() => el.style.transform = "scale(1)", 120);
+}
+
+// 初期計算
+calc();
 </script>
+
+</body>
+</html>
