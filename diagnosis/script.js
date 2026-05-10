@@ -50,7 +50,7 @@ const resultData = {
         live:"https://youtu.be/Zg_8X38eN90?si=3JRhvLBsY_5ZC6CG"
       },
       {
-        title:"I'm sorry",
+        title:"I\'m sorry",
         youtubeKr:"https://youtu.be/4p3cKsDCA0Y?si=VsjuJ5hTPKEC9590",
         live:"https://youtu.be/GQvBYzv-tJc?si=zzi6UM6elFJeU309"
       },
@@ -62,7 +62,7 @@ const resultData = {
     desc:"一生懸命頑張る自分に、明日への元気をくれる曲たち。",
     songs:[
       {
-        title:"그러나 꼿이었다(Still, a Flower)",
+        title:"그러나 꽃이었다(Still, a Flower)",
         youtubeKr:"https://youtu.be/YgwGBgZEKaM?si=s_gt5eLYdUl-_Cyp",
         live:"https://youtu.be/8Hfmayrn_9E?si=g4jII0DWy3eFW9rZ"
       },
