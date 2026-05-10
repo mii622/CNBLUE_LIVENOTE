@@ -1,3 +1,4 @@
+alert("NEW SCRIPT");
 const wrapper =
 document.getElementById("questionWrapper");
 
