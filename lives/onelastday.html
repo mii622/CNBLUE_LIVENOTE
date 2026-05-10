@@ -24,49 +24,53 @@ body {
 }
 
 /* タイトル */
-.title-box {
-  text-align: center;
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #f1f3f5;
-}
+ .title-box{
+  text-align:center;
+  margin-bottom:18px;
+  padding:24px 16px 18px;
+  border-bottom:none;
+ }
 
 /* LIVE REPORT */
-.page-label {
-  font-size: 16px;
-  font-weight: 600;
-  color: #6b7cff;
-  letter-spacing: 1px;
-  margin-bottom: 6px;
-  display: inline-block;
-  position: relative;
-  padding-bottom: 6px;
+ .page-label{
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:3px;
+  color:#6b7cff;
+  opacity:0.8;
+
+  position:relative;
+  display:inline-block;
 }
 
-/* 細い下線 */
-.page-label::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: #6b7cff;
-  margin: 6px auto 0;
-  border-radius: 2px;
-  opacity: 0.6;
+.page-label::after{
+  content:"";
+  display:block;
+  width:36px;
+  height:2px;
+  margin:8px auto 0;
+  background:linear-gradient(90deg,#6b7cff,#a9c8ff);
+  border-radius:2px;
 }
 
-.tour-name {
-  font-size: 26px;
-  font-weight: bold;
-  margin: 6px 0;
-  color: #333;
-  letter-spacing: 0.5px;
-}
+ .tour-name{
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:2px;
+  line-height:1.4;
+  margin:10px 0 6px;
 
-.tour-date {
-  font-size: 16px;
-  color: #888;
-}
+  color:#1f1f1f;
+
+  /* ちょい高級感 */
+  text-shadow:0 2px 10px rgba(0,0,0,0.05);
+ }
+
+ .tour-date{
+  font-size:13px;
+  color:#888;
+  letter-spacing:0.5px;
+ }
 
 /* バナー */
 .banner {
