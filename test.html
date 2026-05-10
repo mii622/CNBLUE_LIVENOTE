@@ -18,7 +18,6 @@ body{
   color:#222;
 }
 
-/* 言語 */
 .lang-switch{
   position:fixed;
   top:10px;
@@ -32,13 +31,11 @@ body{
   width:40px;
   height:40px;
   border-radius:50%;
-  object-fit:cover;
 }
 .flag.active{
   border:2px solid gold;
 }
 
-/* 全体 */
 #goods-list{
   display:grid;
   grid-template-columns:1fr;
@@ -57,31 +54,20 @@ body{
   box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* ヘッダー */
-.item-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  margin-bottom:12px;
-}
-
+/* タイトル */
 .item-title{
   font-size:16px;
   font-weight:700;
+  margin-bottom:4px;
 }
 
 .item-price{
   font-size:13px;
   opacity:0.6;
+  margin-bottom:10px;
 }
 
-/* バリエーション */
-.item-body{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
+/* 行 */
 .variant{
   display:flex;
   justify-content:space-between;
@@ -89,20 +75,37 @@ body{
   padding:10px;
   border-radius:10px;
   background:#f8f9fb;
+  margin-bottom:8px;
 }
 
+/* ラベル */
 label{
   font-size:13px;
   opacity:0.8;
 }
 
-/* 数量 */
+/* ±＋入力 */
+.counter{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+button.qty{
+  width:28px;
+  height:28px;
+  border:none;
+  border-radius:6px;
+  background:#333;
+  color:#fff;
+}
+
 .item-qty{
-  width:60px;
-  padding:6px;
-  border-radius:8px;
-  border:1px solid #ddd;
+  width:50px;
   text-align:center;
+  border-radius:6px;
+  border:1px solid #ddd;
+  padding:4px;
 }
 
 /* 合計 */
@@ -144,35 +147,24 @@ label{
   padding:16px;
   border-radius:12px;
 }
-
-.summary-item{
-  font-size:13px;
-  margin:5px 0;
-  opacity:0.85;
-}
 </style>
 </head>
 
 <body>
 
-<!-- 言語 -->
 <div class="lang-switch">
   <img src="images/IMG_jp.JPG" id="flag-ja" class="flag active" onclick="setLang('ja')">
   <img src="images/IMG_kr.JPG" id="flag-ko" class="flag" onclick="setLang('ko')">
 </div>
 
-<!-- 商品 -->
 <div id="goods-list"></div>
 
-<!-- 合計 -->
 <div id="total">TOTAL</div>
 
-<!-- リセット -->
 <div class="reset-wrap">
   <button class="reset-btn" onclick="resetAll()">RESET</button>
 </div>
 
-<!-- サマリー -->
 <div id="summary">
   <h3 id="summary-title"></h3>
   <div id="summary-list"></div>
@@ -181,7 +173,7 @@ label{
 <script>
 let currentLang="ja";
 let selections={};
-const STORAGE_KEY="cnblue_goods_final_v1";
+const KEY="cnblue_goods_final_v2";
 
 /* テキスト */
 const texts={
@@ -189,7 +181,7 @@ const texts={
   ko:{total:"합계",summary:"선택한 상품",none:"없음",yen:"엔"}
 };
 
-/* 商品データ（あなたの完全反映） */
+/* 商品 */
 const goods=[
   {name:{ja:"LEDブレスレット",ko:"LED 팔찌"},price:2000,types:[]},
   {name:{ja:"Tシャツ",ko:"티셔츠"},price:4000,types:["A black","B white"]},
@@ -203,21 +195,21 @@ const goods=[
   {name:{ja:"フライトタグキーホルダー",ko:"플라이트태그 키링"},price:1000,types:["A YOKOHAMA","B KOBE"]},
   {name:{ja:"IDフォトケース",ko:"ID포토카드 케이스"},price:1800,types:["A YONGHWA","B MINHYUK","C JUNGSHIN"]},
   {name:{ja:"アクリルスタンド",ko:"아크릴 스탠드"},price:2300,types:["A YONGHWA","B MINHYUK","C JUNGSHIN"]},
-  {name:{ja:"ランダム缶バッジ6種",ko:"랜덤 캔 뱃지"},price:500,types:[]},
-  {name:{ja:"ランダムアクリルチャーム6種",ko:"랜덤 키링"},price:800,types:[]},
-  {name:{ja:"ランダムトレカ9種",ko:"랜덤 포카"},price:300,types:[]}
+  {name:{ja:"ランダム缶バッジ",ko:"랜덤 캔뱃지"},price:500,types:[]},
+  {name:{ja:"ランダムキーホルダー",ko:"랜덤 키링"},price:800,types:[]},
+  {name:{ja:"ランダムトレカ",ko:"랜덤 포카"},price:300,types:[]}
 ];
 
 const container=document.getElementById("goods-list");
 
 /* 保存 */
 function save(){
-  localStorage.setItem(STORAGE_KEY,JSON.stringify(selections));
+  localStorage.setItem(KEY,JSON.stringify(selections));
 }
 
 /* 読み込み */
 function load(){
-  const d=localStorage.getItem(STORAGE_KEY);
+  const d=localStorage.getItem(KEY);
   if(d) selections=JSON.parse(d);
 }
 
@@ -229,7 +221,16 @@ function resetAll(){
   update();
 }
 
-/* 数量 */
+/* ± */
+function change(btn,diff){
+  const input=btn.parentElement.querySelector("input");
+  let v=Number(input.value||0);
+  v=Math.max(0,v+diff);
+  input.value=v;
+  saveQty(input);
+}
+
+/* 入力 */
 function saveQty(el){
   selections[el.dataset.key]=Number(el.value)||0;
   save();
@@ -254,13 +255,21 @@ function render(){
         body+=`
         <div class="variant">
           <label>${t}</label>
-          <input type="number" min="0"
-            value="${val}"
-            class="item-qty"
-            data-key="${key}"
-            data-price="${g.price}"
-            data-name="${g.name[currentLang]}"
-            oninput="saveQty(this)">
+
+          <div class="counter">
+            <button class="qty" onclick="change(this,-1)">−</button>
+
+            <input type="number"
+              value="${val}"
+              class="item-qty"
+              data-key="${key}"
+              data-price="${g.price}"
+              data-name="${g.name[currentLang]}"
+              oninput="saveQty(this)">
+
+            <button class="qty" onclick="change(this,1)">＋</button>
+          </div>
+
         </div>`;
       });
     }else{
@@ -270,22 +279,27 @@ function render(){
       body=`
       <div class="variant">
         <label>${g.name[currentLang]}</label>
-        <input type="number" min="0"
-          value="${val}"
-          class="item-qty"
-          data-key="${key}"
-          data-price="${g.price}"
-          data-name="${g.name[currentLang]}"
-          oninput="saveQty(this)">
+
+        <div class="counter">
+          <button class="qty" onclick="change(this,-1)">−</button>
+
+          <input type="number"
+            value="${val}"
+            class="item-qty"
+            data-key="${key}"
+            data-price="${g.price}"
+            data-name="${g.name[currentLang]}"
+            oninput="saveQty(this)">
+
+          <button class="qty" onclick="change(this,1)">＋</button>
+        </div>
       </div>`;
     }
 
     card.innerHTML=`
-      <div class="item-top">
-        <div class="item-title">${g.name[currentLang]}</div>
-        <div class="item-price">${g.price}円</div>
-      </div>
-      <div class="item-body">${body}</div>
+      <div class="item-title">${g.name[currentLang]}</div>
+      <div class="item-price">${g.price}円</div>
+      ${body}
     `;
 
     container.appendChild(card);
@@ -305,7 +319,7 @@ function update(){
     const p=Number(i.dataset.price);
 
     total+=q*p;
-    list+=`<div class="summary-item">${name} × ${q}</div>`;
+    list+=`<div>${name} × ${q}</div>`;
   });
 
   document.getElementById("total").textContent=
