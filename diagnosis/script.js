@@ -174,7 +174,7 @@ const resultData = {
       },
       {
         title:"Glory Days",
-        youtubeJp:"https://youtu.be/0ASitqUBpWQ?si=kmVq5XzsxKM20vr8"k
+        youtubeJp:"https://youtu.be/0ASitqUBpWQ?si=kmVq5XzsxKM20vr8",
         live:"https://youtu.be/XnCEW9Pyt28?t=809&si=hWoc9vhNxhhp9pyx"
       }
     ]
