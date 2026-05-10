@@ -458,19 +458,22 @@ prevBtn.addEventListener("click", () => {
 document.getElementById("shareBtn")
 .addEventListener("click", () => {
 
+  const result = resultTitle.innerText;
+
   const text =
-`${resultTitle.innerText}タイプでした◎
+`${result}タイプでした🩵
 
-#CNBLUE曲診断`;
+今の気分にぴったりのCNBLUEを見つける🔍
+https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/
 
-  const url =
-"https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/";
+#CNBLUE #CNBLUE曲診断`;
 
   window.open(
-`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`
+`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
   );
 
 });
+
 
 /* 初期表示 */
 
