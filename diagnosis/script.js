@@ -161,7 +161,7 @@ const resultData = {
     desc:"楽しさも可愛さも120点！HAPPYオーラ満載の曲たち。",
     songs:[
       {
-        title:"Face to Face",
+        title:"사소한 것들이 좋아서(Little Things)",
         youtube:"#"
       },
       {
