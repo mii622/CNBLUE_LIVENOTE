@@ -194,7 +194,7 @@ function updateQuiz(){
   progressBar.style.width =
   `${((current + 1) / questions.length) * 100}%`;
 
-  prevBtn.style.display =
+  prevBtn.style.visibility =
   current === 0
   ? "hidden"
   : "visible";
