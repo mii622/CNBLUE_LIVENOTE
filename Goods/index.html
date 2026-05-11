@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<title>CNBLUE グッズ計算</title>
+
+<style>
+body{
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background:linear-gradient(180deg,#3069a6,#1f4f80);
+  color:#fff;
+  margin:0;
+}
+
+/* ヘッダー */
+.header{
+  position:sticky;
+  top:0;
+  background:#3069a6;
+  padding:15px 10px 10px;
+  text-align:center;
+  z-index:10;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,0.15);
+  border-bottom-left-radius:18px;
+  border-bottom-right-radius:18px;
+}
+
+.header::after{
+  background:#fff;
+  opacity:1;
+  content:"";
+  display:block;
+  width:30px;
+  height:3px;
+  border-radius:10px;
+  margin:12px auto 0;
+}
+  .title{
+  font-size:1.4rem;
+  color:#fff;
+  letter-spacing:1.2px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight:500;
+}
+
+.sub{
+  font-size:0.85rem;
+  color:#fff;           /* ← 白にする */
+  opacity:1;            /* ← 薄くならないように */
+  margin-top:6px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight:400;
+}
+/* グリッド */
+.grid{
+  display:grid;
+  grid-template-columns:1fr; /* 明示しとくと安定 */
+  max-width:600px;
+  margin:0 auto;
+  padding:20px;
+  gap:16px;
+}
+
+/* カード */
+.card{
+  background:rgba(255,255,255,0.92);
+  border-radius:18px;
+  overflow:hidden;
+  text-decoration:none;
+  color:#000;
+  transition:0.15s;
+  backdrop-filter:blur(6px);
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.08),
+    0 10px 22px rgba(0,0,0,0.12);
+}
+
+.card:active{
+  transform:scale(0.97);
+}
+
+/* 画像 */
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+/* テキスト */
+.card-body{
+  padding:10px 12px;
+}
+
+.card-title{
+  font-size:0.9rem;;
+  font-weight:500;
+}
+
+.new{
+  background:rgba(48,105,166,0.15);
+  color:#3069a6;
+  font-size:0.65rem;
+  padding:2px 6px;
+  border-radius:999px;
+  margin-left:6px;
+}
+
+.section-title{
+  color:#ffffff;
+  font-size:1.1rem;
+  letter-spacing:1px;
+  margin:10px 5px 0;
+}
+
+/* フッター固定ボタン */
+.bottom-bar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#3069a6;
+  padding:10px;
+  text-align:center;
+  border-bottom:none;
+  backdrop-filter:blur(16px);
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+  background:rgba(255,255,255,0.2);
+}
+
+.home-btn{
+  background:transparent;
+  color:#fff;
+  border:1.5px solid #fff;
+  padding:6px 18px;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:0.9rem;
+}
+</style>
+</head>
+
+<body>
+  <div id="header"></div>
+
+<div class="header">
+  <div class="title">CNBLUE GOODS CALCULATER</div>
+  <div class="sub">ツアーを選択</div>
+</div>
+
+<div class="grid">
+<div class="section-title">LATEST</div>
+
+
+  <!-- 最新 -->
+  <a href="https://mii622.github.io/CNBLUE_LIVENOTE/Goods/3LOGY.html" class="card">
+    <img src="images/3LOGY.JPG">
+    <div class="card-body">
+      <div class="card-title">
+        2026 3LOGY <span class="new">NEW</span>
+      </div>
+    </div>
+  </a>
+
+<div class="section-title">PAST</div>
+
+  
+  <a href="https://mii622.github.io/CNBLUE_LIVENOTE/Goods/onelastday.html" class="card">
+    <img src="images/onelastday.JPG">
+    <div class="card-body">
+      <div class="card-title">2026 One Last Day</div>
+    </div>
+  </a>
+
+  <a href="https://mii622.github.io/CNBLUE_LIVENOTE/Goods/2025xmas.html" class="card">
+    <img src="images/2025xmas.JPG">
+    <div class="card-body">
+      <div class="card-title">2025 XMAS</div>
+    </div>
+  </a>
+
+ <a href="https://mii622.github.io/CNBLUE_LIVENOTE/Goods/2025kingdom.html" class="card">
+    <img src="images/2025kingdom.JPG">
+    <div class="card-body">
+      <div class="card-title">2025 KINGDOM</div>
+    </div>
+  </a>
+  
+  <a href="https://mii622.github.io/CNBLUE_LIVENOTE/Goods/shintouya.html" class="card">
+    <img src="images/shintouya.JPG">
+    <div class="card-body">
+      <div class="card-title">2025 SHINTOUYA</div>
+    </div>
+  </a>
+
+  <a href="https://mii622.github.io/CNBLUE_LIVENOTE/Goods/ourfinedays.html" class="card">
+    <img src="images/ourfinedays.JPG">
+    <div class="card-body">
+      <div class="card-title">2025 Our Fine Days</div>
+    </div>
+  </a>
+</div> 
+
+<div class="bottom-bar">
+  <a href="#" class="home-btn">TOP</a>
+</div>
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+</body>
+</html>
