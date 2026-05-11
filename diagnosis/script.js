@@ -427,9 +427,9 @@ document.getElementById("shareBtn")
   const result = resultTitle.innerText;
 
   const text =
-`${result}タイプでした🩵
+`わたしは${result}タイプでした！
 
-今の気分にぴったりのCNBLUEを見つける🔍
+今の気分にぴったりのCNBLUEを見つける🎧
 https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/
 
 #CNBLUE #CNBLUE曲診断`;
