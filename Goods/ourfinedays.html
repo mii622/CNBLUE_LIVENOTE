@@ -245,7 +245,7 @@ const KEY="cnblue_goods_final_v3";
 /* 商品データ（完全維持・一切変更なし） */
 const goods=[
    { name: "Tシャツ", price: 5500,types:[]},
-      { name: "ボールキャップ", price: 4500,types:[p]},
+      { name: "ボールキャップ", price: 4500,types:[]},
       { name: "MINIYONG'sミニチュアキーリング", price: 3500,types:[]},
       { name: "アクリルペンライト", price: 2500,types:["A black","B white"]},
       { name: "フェイスタオル", price: 2500,types:["A black","B white"]},
@@ -322,7 +322,7 @@ function render(){
               class="item-qty"
               data-key="${key}"
               data-price="${g.price}"
-              data-name="${g.name.ja}"
+              data-name="${g.name}"
               oninput="saveQty(this)">
 
             <button class="qty" onclick="change(this,1)">＋</button>
