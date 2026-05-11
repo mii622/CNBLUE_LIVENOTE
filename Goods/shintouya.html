@@ -53,21 +53,23 @@ body{
 }
 
 .site-header::after{
-  content:"";
+    content:"";
   position:absolute;
-  width:460px;
-  height:460px;
+  width:500px;
+  height:500px;
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);
   border-radius:50%;
   background:
-    url("https://mii622.github.io/CNBLUE_LIVENOTE/Goods/images/moon-texture.jpg")
-    center/cover no-repeat;
-  opacity:0.22;
-  mix-blend-mode:multiply;
-  filter:blur(1px);
+  url("https://mii622.github.io/CNBLUE_LIVENOTE/Goods/images/moon-texture.jpg")
+  55% center / 120% no-repeat;
+  opacity:0.25;
+　mix-blend-mode:multiply;
+  background-position:center;
+  background-size:115%;
   z-index:-2;
+  filter:blur(1.2px);
 }
   
 .main-title{
@@ -271,7 +273,7 @@ const KEY="cnblue_goods_final_v3";
 
 /* 商品データ（完全維持・一切変更なし） */
 const goods=[
-      { name: "wアクリルペンライト", price: 2500 , types:[]},
+      { name: "アクリルペンライト", price: 2500 , types:[]},
       { name: "フェイスタオル", price: 2500 , types:["BLUE","RED"]},
       { name: "サテントート", price: 3000 , types:[]},
       { name: "Tシャツ", price: 4000 , types:[]},
