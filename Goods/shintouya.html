@@ -27,10 +27,33 @@ body{
 
 /* ヘッダー */
 .site-header{
+  position:relative;
+  overflow:hidden;
+
   text-align:center;
-  padding:28px 16px 18px;
+  padding:50px 16px 40px;
+
   color:#090e2a;
+  background:transparent;
+}
+
+/* 真ん中の巨大円 */
+.site-header::before{
+  content:"";
+  position:absolute;
+
+  width:180%;
+  height:320px;
+
   background:#c1d8eb;
+  border-radius:50%;
+
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%);
+
+  z-index:-1;
 }
 
 .main-title{
