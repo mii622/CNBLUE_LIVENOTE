@@ -352,7 +352,12 @@ function update(){
     if(!q) return;
 
     total+=q*Number(i.dataset.price);
-    list+=`<div class="summary-item">${i.dataset.name} × ${q}</div>`;
+    const price = Number(i.dataset.price);
+const subtotal = price * q;
+
+list += `<div class="summary-item">
+  ${i.dataset.name} × ${q} … ${subtotal.toLocaleString()}円
+</div>`;
   });
 
   document.getElementById("total").textContent=
