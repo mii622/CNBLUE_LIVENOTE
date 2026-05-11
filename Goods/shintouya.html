@@ -37,22 +37,30 @@ body{
   z-index:1;
 }
 
+/* 背景の正円 */
+
 .site-header::before{
+
   content:"";
+
   position:absolute;
 
-  width:140%;
-  height:100%;
+  width:500px;
+
+  height:500px;
 
   background:#c1d8eb;
+
   border-radius:50%;
 
-  top:0;
   left:50%;
 
-  transform:translateX(-50%);
+  top:50%;
+
+  transform:translate(-50%,-50%);
 
   z-index:-1;
+
 }
 .main-title{
   font-size:22px;
