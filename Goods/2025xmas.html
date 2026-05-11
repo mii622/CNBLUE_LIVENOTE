@@ -350,8 +350,12 @@ function update(){
     const price = Number(i.dataset.price);
 const subtotal = price * q;
 
+const type = i.closest(".variant").querySelector("label").textContent;
+
 list += `<div class="summary-item">
-  ${i.dataset.name} × ${q} … ${subtotal.toLocaleString()}円
+  ${i.dataset.name}
+  ${type !== i.dataset.name ? `(${type})` : ""}
+   × ${q} … ${subtotal.toLocaleString()}円
 </div>`;
   });
 
