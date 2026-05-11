@@ -6,7 +6,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&family=Unbounded:wght@200..900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
 <title>GOODS CALCULATOR</title>
 
 <style>
@@ -36,14 +37,23 @@ body{
 }
 
 .sub-title{
-  font-family:'Oswald','Noto Sans JP',sans-serif;
+  font-family:"Unbounded", sans-serif;
   font-weight:700;
-  font-size:20px;
+  font-size:26px;
   letter-spacing:4px;
   text-transform:uppercase;
-  text-shadow:0 0 10px rgba(255,255,255,0.15);
   color:#e97520;
-  background:#080402;
+  display:block;
+  padding:6px 14px;
+}
+
+.special-num{
+  font-family:"Rubik Mono One", monospace;
+  font-weight:400;
+  font-size:26px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:#e97520;
   display:block;
   padding:6px 14px;
 }
@@ -178,7 +188,9 @@ button.qty:active{
 <!-- ヘッダー -->
 <header class="site-header">
   <div class="main-title">GOODS CALCULATOR</div>
-  <div class="sub-title">2026 CNBLUE LIVE '3LOGY'</div>
+  <div class="sub-title">
+  2026 CNBLUE LIVE '<span class="special-num">3</span>LOGY'
+</div>
 </header>
 
 <!-- 商品 -->
