@@ -25,7 +25,6 @@ body{
   color:#222;
 }
 
-/* ヘッダー */
 .site-header{
   position:relative;
   overflow:hidden;
@@ -35,27 +34,26 @@ body{
 
   color:#090e2a;
   background:transparent;
+  z-index:1;
 }
 
-/* 真ん中の巨大円 */
 .site-header::before{
   content:"";
   position:absolute;
 
-  width:180%;
-  height:320px;
+  width:140%;
+  height:100%;
 
   background:#c1d8eb;
   border-radius:50%;
 
+  top:0;
   left:50%;
-  top:50%;
 
-  transform:translate(-50%,-50%);
+  transform:translateX(-50%);
 
   z-index:-1;
 }
-
 .main-title{
   font-size:22px;
   font-weight:400;
