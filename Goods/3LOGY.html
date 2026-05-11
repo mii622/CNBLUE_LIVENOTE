@@ -1,1 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<title>GOODS CALCULATOR</title>
+
+<style>
+:root{
+  --theme-color:#e97520; /* ツアーごとに変更 */
+}
+
+body{
+  margin:0;
+  font-family:'Noto Sans JP', sans-serif;
+  background:#080402;
+  color:#222;
+}
+
+/* ヘッダー */
+.site-header{
+  text-align:center;
+  padding:28px 16px 18px;
+  background:var(--theme-color);
+  color:#fff;
+}
+
+.main-title{
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.sub-title{
+  font-size:13px;
+  opacity:0.85;
+  margin-top:6px;
+}
+
+/* 商品 */
+#goods-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  padding:16px;
+  max-width:750px;
+  margin:auto;
+  padding-bottom:40px;
+}
+
+/* カード */
+.item{
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* タイトル */
+.item-title{
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:4px;
+}
+
+.item-price{
+  font-size:13px;
+  opacity:0.6;
+  margin-bottom:10px;
+}
+
+/* 行 */
+.variant{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+  border-radius:10px;
+  background:#f8f9fb;
+  margin-bottom:8px;
+}
+
+label{
+  font-size:13px;
+  opacity:0.8;
+}
+
+/* ±ボタン（柔らかく） */
+.counter{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+button.qty{
+  width:28px;
+  height:28px;
+  border:none;
+  border-radius:8px;
+  background:#e9edf2;
+  color:#555;
+  font-size:16px;
+  font-weight:600;
+}
+
+button.qty:active{
+  transform:scale(0.95);
+  background:#dde3ea;
+}
+
+.item-qty{
+  width:50px;
+  text-align:center;
+  border-radius:6px;
+  border:1px solid #ddd;
+  padding:4px;
+}
+
+/* 合計（リスト上・柔らかい） */
+#total{
+  margin:20px auto 10px;
+  text-align:center;
+  font-size:16px;
+  font-weight:700;
+  background:#fff;
+  color:#333;
+  padding:14px;
+  max-width:750px;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* リセット */
+.reset-wrap{
+  text-align:center;
+  margin:10px 0 20px;
+}
+
+.reset-btn{
+  background:#e97520;
+  border:none;
+  color:#fff;
+  padding:10px 16px;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+/* サマリー */
+#summary{
+  max-width:750px;
+  margin:10px auto 80px;
+  background:#fff;
+  padding:16px;
+  border-radius:12px;
+}
+
+.summary-item{
+  font-size:13px;
+  margin:5px 0;
+  opacity:0.85;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="main-title">GOODS CALCULATOR</div>
+  <div class="sub-title">2026 CNBLUE LIVE '3LOGY'</div>
+</header>
+
+<!-- 商品 -->
+<div id="goods-list"></div>
+
+<!-- 合計（リストの上） -->
+<div id="total">TOTAL</div>
+
+<!-- リセット -->
+<div class="reset-wrap">
+  <button class="reset-btn" onclick="resetAll()">RESET</button>
+</div>
+
+<!-- サマリー -->
+<div id="summary">
+  <h3>選んだ内容</h3>
+  <div id="summary-list"></div>
+</div>
+
+<script>
+let selections={};
+const KEY="cnblue_goods_final_v3";
+
+/* 商品データ（完全維持・一切変更なし） */
+const goods=[
+  {name:{ja:"LEDブレスレット",ko:"LED 팔찌"},price:2000,types:[]},
+  {name:{ja:"Tシャツ",ko:"티셔츠"},price:4000,types:["A black","B white"]},
+  {name:{ja:"オーバーサイズTシャツ",ko:"오버사이즈 티셔츠"},price:5000,types:[]},
+  {name:{ja:"フェイスタオル",ko:"페이스타월"},price:2500,types:["A black","B orange"]},
+  {name:{ja:"ラウンドボストンバッグ",ko:"라운드 보스턴백"},price:5000,types:[]},
+  {name:{ja:"パスポートケース",ko:"여권 케이스"},price:3000,types:[]},
+  {name:{ja:"マルチポーチ",ko:"멀티 파우치"},price:2000,types:[]},
+  {name:{ja:"ロープキーホルダー",ko:"로프 키링"},price:1500,types:["A black","B orange"]},
+  {name:{ja:"クリアバンド",ko:"투명 밴드"},price:1500,types:["A black","B orange"]},
+  {name:{ja:"フライトタグキーホルダー",ko:"플라이트태그 키링"},price:1000,types:["A YOKOHAMA","B KOBE"]},
+  {name:{ja:"IDフォトケース",ko:"ID포토카드 케이스"},price:1800,types:["A YONGHWA","B MINHYUK","C JUNGSHIN"]},
+  {name:{ja:"アクリルスタンド",ko:"아크릴 스탠드"},price:2300,types:["A YONGHWA","B MINHYUK","C JUNGSHIN"]},
+  {name:{ja:"ランダム缶バッジ",ko:"랜덤 캔뱃지"},price:500,types:[]},
+  {name:{ja:"ランダムキーホルダー",ko:"랜덤 키링"},price:800,types:[]},
+  {name:{ja:"ランダムトレカ",ko:"랜덤 포카"},price:300,types:[]}
+];
+
+const container=document.getElementById("goods-list");
+
+/* 保存 */
+function save(){
+  localStorage.setItem(KEY,JSON.stringify(selections));
+}
+
+/* 読み込み */
+function load(){
+  const d=localStorage.getItem(KEY);
+  if(d) selections=JSON.parse(d);
+}
+
+/* リセット */
+function resetAll(){
+  selections={};
+  save();
+  render();
+  update();
+}
+
+/* ±操作 */
+function change(btn,diff){
+  const input=btn.parentElement.querySelector("input");
+  let v=Number(input.value||0);
+  v=Math.max(0,v+diff);
+  input.value=v;
+  saveQty(input);
+}
+
+/* 入力 */
+function saveQty(el){
+  selections[el.dataset.key]=Number(el.value)||0;
+  save();
+  update();
+}
+
+/* 描画 */
+function render(){
+  container.innerHTML="";
+
+  goods.forEach((g,i)=>{
+    const card=document.createElement("div");
+    card.className="item";
+
+    let body="";
+
+    if(g.types.length){
+      g.types.forEach(t=>{
+        const key=`${i}-${t}`;
+        const val=selections[key]||0;
+
+        body+=`
+        <div class="variant">
+          <label>${t}</label>
+
+          <div class="counter">
+            <button class="qty" onclick="change(this,-1)">−</button>
+
+            <input type="number"
+              value="${val}"
+              class="item-qty"
+              data-key="${key}"
+              data-price="${g.price}"
+              data-name="${g.name.ja}"
+              oninput="saveQty(this)">
+
+            <button class="qty" onclick="change(this,1)">＋</button>
+          </div>
+
+        </div>`;
+      });
+    }else{
+      const key=`${i}-single`;
+      const val=selections[key]||0;
+
+      body=`
+      <div class="variant">
+        <label>${g.name.ja}</label>
+
+        <div class="counter">
+          <button class="qty" onclick="change(this,-1)">−</button>
+
+          <input type="number"
+            value="${val}"
+            class="item-qty"
+            data-key="${key}"
+            data-price="${g.price}"
+            data-name="${g.name.ja}"
+            oninput="saveQty(this)">
+
+          <button class="qty" onclick="change(this,1)">＋</button>
+        </div>
+      </div>`;
+    }
+
+    card.innerHTML=`
+      <div class="item-title">${g.name.ja}</div>
+      <div class="item-price">${g.price}円</div>
+      ${body}
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+/* 合計 */
+function update(){
+  let total=0;
+  let list="";
+
+  document.querySelectorAll(".item-qty").forEach(i=>{
+    const q=Number(i.value)||0;
+    if(!q) return;
+
+    total+=q*Number(i.dataset.price);
+    list+=`<div class="summary-item">${i.dataset.name} × ${q}</div>`;
+  });
+
+  document.getElementById("total").textContent=
+    `合計: ${total.toLocaleString()} 円`;
+
+  document.getElementById("summary-list").innerHTML=
+    list || "なし";
+}
+
+/* 初期 */
+load();
+render();
+update();
+</script>
+
+</body>
+</html>
