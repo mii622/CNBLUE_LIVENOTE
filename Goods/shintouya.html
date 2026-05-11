@@ -40,50 +40,35 @@ body{
 /* 背景の正円 */
 
 .site-header::before{
-
   content:"";
-
   position:absolute;
-
   width:500px;
-
   height:500px;
-
   background:#c1d8eb;
-
   border-radius:50%;
-
   left:50%;
-
   top:50%;
-
   transform:translate(-50%,-50%);
-
   z-index:-3;
 }
 
 .site-header::after{
   content:"";
   position:absolute;
-
   width:500px;
   height:500px;
-
   left:50%;
   top:50%;
-
   transform:translate(-50%,-50%);
-
   border-radius:50%;
-
   background:
     url("https://mii622.github.io/CNBLUE_LIVENOTE/Goods/images/moon-texture.jpg")
     center/cover;
-
-  opacity:0.8;
-
+  opacity:0.25;
+mix-blend-mode:multiply;
   z-index:-2;
 }
+  
 .main-title{
   font-size:22px;
   font-weight:400;
