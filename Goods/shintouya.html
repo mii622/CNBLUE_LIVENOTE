@@ -56,7 +56,7 @@ body{
   font-family: "Italiana", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size:28px;
+  font-size:36px;
   text-transform:none;
   color:#090e2a;
   display:inline;
@@ -235,8 +235,7 @@ const KEY="cnblue_goods_final_v3";
 /* 商品データ（完全維持・一切変更なし） */
 const goods=[
       { name: "アクリルペンライト", price: 2500 , types:[]},
-      { name: "フェイスタオル BLUE", price: 2500 , types:["BLUE","RED"]},
-      { name: "フェイスタオル RED", price: 2500 , types:[]},
+      { name: "フェイスタオル", price: 2500 , types:["BLUE","RED"]},
       { name: "サテントート", price: 3000 , types:[]},
       { name: "Tシャツ", price: 4000 , types:[]},
       { name: "ロングTシャツ", price: 5000 , types:[]},
@@ -370,8 +369,12 @@ function update(){
     const price = Number(i.dataset.price);
 const subtotal = price * q;
 
+const type = i.closest(".variant").querySelector("label").textContent;
+
 list += `<div class="summary-item">
-  ${i.dataset.name} × ${q} … ${subtotal.toLocaleString()}円
+  ${i.dataset.name}
+  ${type !== i.dataset.name ? `(${type})` : ""}
+   × ${q} … ${subtotal.toLocaleString()}円
 </div>`;
   });
 
