@@ -55,21 +55,19 @@ body{
 .site-header::after{
   content:"";
   position:absolute;
-  width:500px;
-  height:500px;
+  width:460px;
+  height:460px;
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);
   border-radius:50%;
   background:
-  url("https://mii622.github.io/CNBLUE_LIVENOTE/Goods/images/moon-texture.jpg")
-  55% center / 120% no-repeat;
+    url("https://mii622.github.io/CNBLUE_LIVENOTE/Goods/images/moon-texture.jpg")
+    center/cover no-repeat;
   opacity:0.22;
-　mix-blend-mode:multiply;
-  background-position:center;
-  background-size:115%;
+  mix-blend-mode:multiply;
+  filter:blur(1px);
   z-index:-2;
-  filter:blur(1.2px);
 }
   
 .main-title{
