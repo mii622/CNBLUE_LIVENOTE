@@ -337,7 +337,7 @@ function render(){
 
       body=`
       <div class="variant">
-        <label>${g.name.ja}</label>
+        <label>${g.name}</label>
 
         <div class="counter">
           <button class="qty" onclick="change(this,-1)">−</button>
@@ -347,7 +347,7 @@ function render(){
             class="item-qty"
             data-key="${key}"
             data-price="${g.price}"
-            data-name="${g.name.ja}"
+            data-name="${g.name}"
             oninput="saveQty(this)">
 
           <button class="qty" onclick="change(this,1)">＋</button>
@@ -356,7 +356,7 @@ function render(){
     }
 
     card.innerHTML=`
-      <div class="item-title">${g.name.ja}</div>
+      <div class="item-title">${g.name}</div>
       <div class="item-price">${g.price}円</div>
       ${body}
     `;
