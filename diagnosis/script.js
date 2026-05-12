@@ -430,7 +430,7 @@ document.getElementById("shareBtn")
 `わたしは${result}タイプでした！
 
 今の気分にぴったりのCNBLUEを見つける🎧
-https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/
+https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
 
 #CNBLUE #CNBLUE曲診断`;
 
