@@ -687,6 +687,43 @@ for(let i=1;i<=6;i++){
   }
 
 }
+     /* Q2〜Q5 choices */
+
+  for(let q=2;q<=5;q++){
+
+    for(let c=1;c<=6;c++){
+
+      const el =
+      document.getElementById(`q${q}c${c}`);
+
+      if(el && textData[lang][`q${q}c${c}`]){
+
+        el.innerHTML =
+        textData[lang][`q${q}c${c}`];
+
+      }
+
+    }
+
+  }
+
+  /* フォント切り替え */
+
+  if(lang === "ko"){
+
+    document.body.style.fontFamily =
+    "'Noto Sans KR', sans-serif";
+
+  }
+
+  else{
+
+    document.body.style.fontFamily =
+    "'Noto Sans JP', sans-serif";
+
+  }
+
+}
 
 /* restartボタン */
 
@@ -694,12 +731,5 @@ document.getElementById("restartBtn").innerHTML =
 lang === "ja"
 ? "↻ 診断トップに戻る"
 : "↻ 처음으로 돌아가기";
-
-/* フォント切り替え */
-
-document.body.style.fontFamily =
-lang === "ko"
-? "'Noto Sans KR', sans-serif"
-: "'Noto Sans JP', sans-serif";
 
 }
