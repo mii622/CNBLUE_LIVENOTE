@@ -421,34 +421,42 @@ prevBtn.addEventListener("click", () => {
    ▼ シェア
 ========================= */
 
-document.getElementById("shareBtn") 
+document.getElementById("shareBtn")
 .addEventListener("click", () => {
 
   const result = resultTitle.innerText;
 
-const text =
-currentLang === "ja"
+  let text = "";
 
-? `わたしは${result}タイプでした！
+  if(currentLang === "ko"){
 
-今の気分にぴったりのCNBLUEを見つける🎧
-https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
-
-#CNBLUE #CNBLUE曲診断`
-
-: `나는 ${result} 타입!
+    text =
+`나의 결과는 ${result} 타입!
 
 지금 기분에 딱 맞는 CNBLUE를 찾아보세요🎧
 https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
 
 #CNBLUE #CNBLUE추천곡진단`;
 
+  }
+
+  else{
+
+    text =
+`わたしは${result}タイプでした！
+
+今の気分にぴったりのCNBLUEを見つける🎧
+https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
+
+#CNBLUE #CNBLUE曲診断`;
+
+  }
+
   window.open(
 `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
   );
 
 });
-
 
 /* 初期表示 */
 
@@ -618,6 +626,8 @@ function setLanguage(lang){
   ? textData[lang].resultBtn
   : textData[lang].next;
 
+  /* タイトル */
+
   for(let i=1;i<=5;i++){
 
     document.getElementById(`q${i}Title`).innerHTML =
@@ -625,71 +635,9 @@ function setLanguage(lang){
 
   }
 
-  for(let i=1;i<=6;i++){
+  /* 選択肢 */
 
-    const el =
-    document.getElementById(`q1c${i}`);
-
-    if(el){
-      el.innerHTML =
-      textData[lang][`q1c${i}`];
-    }
-
-  }
-   /* Q2 */
-for(let i=1;i<=5;i++){
-
-  const el =
-  document.getElementById(`q2c${i}`);
-
-  if(el){
-    el.innerHTML =
-    textData[lang][`q2c${i}`];
-  }
-
-}
-
-/* Q3 */
-for(let i=1;i<=6;i++){
-
-  const el =
-  document.getElementById(`q3c${i}`);
-
-  if(el){
-    el.innerHTML =
-    textData[lang][`q3c${i}`];
-  }
-
-}
-
-/* Q4 */
-for(let i=1;i<=6;i++){
-
-  const el =
-  document.getElementById(`q4c${i}`);
-
-  if(el){
-    el.innerHTML =
-    textData[lang][`q4c${i}`];
-  }
-
-}
-
-/* Q5 */
-for(let i=1;i<=6;i++){
-
-  const el =
-  document.getElementById(`q5c${i}`);
-
-  if(el){
-    el.innerHTML =
-    textData[lang][`q5c${i}`];
-  }
-
-}
-     /* Q2〜Q5 choices */
-
-  for(let q=2;q<=5;q++){
+  for(let q=1;q<=5;q++){
 
     for(let c=1;c<=6;c++){
 
@@ -707,6 +655,23 @@ for(let i=1;i<=6;i++){
 
   }
 
+  /* フォント */
+
+  if(lang === "ko"){
+
+    document.body.style.fontFamily =
+    "'Noto Sans KR', sans-serif";
+
+  }
+
+  else{
+
+    document.body.style.fontFamily =
+    "'Noto Sans JP', sans-serif";
+
+  }
+
+}
   /* フォント切り替え */
 
   if(lang === "ko"){
