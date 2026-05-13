@@ -655,23 +655,13 @@ function setLanguage(lang){
 
   }
 
-  /* フォント */
+  /* restartボタン */
 
-  if(lang === "ko"){
+  document.getElementById("restartBtn").innerHTML =
+  lang === "ja"
+  ? "↻ 診断トップに戻る"
+  : "↻ 처음으로 돌아가기";
 
-    document.body.style.fontFamily =
-    "'Noto Sans KR', sans-serif";
-
-  }
-
-  else{
-
-    document.body.style.fontFamily =
-    "'Noto Sans JP', sans-serif";
-
-  }
-
-}
   /* フォント切り替え */
 
   if(lang === "ko"){
@@ -687,14 +677,5 @@ function setLanguage(lang){
     "'Noto Sans JP', sans-serif";
 
   }
-
-}
-
-/* restartボタン */
-
-document.getElementById("restartBtn").innerHTML =
-lang === "ja"
-? "↻ 診断トップに戻る"
-: "↻ 처음으로 돌아가기";
 
 }
