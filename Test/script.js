@@ -601,6 +601,9 @@ CNBLUE를 찾아보세요`,
 /* =========================
    ▼ 言語切り替え
 ========================= */
+/* =========================
+   ▼ 言語切り替え
+========================= */
 
 function setLanguage(lang){
 
@@ -655,14 +658,7 @@ function setLanguage(lang){
 
   }
 
-  /* restartボタン */
-
-  document.getElementById("restartBtn").innerHTML =
-  lang === "ja"
-  ? "↻ 診断トップに戻る"
-  : "↻ 처음으로 돌아가기";
-
-  /* フォント切り替え */
+  /* フォント */
 
   if(lang === "ko"){
 
@@ -677,5 +673,12 @@ function setLanguage(lang){
     "'Noto Sans JP', sans-serif";
 
   }
+
+  /* restartボタン */
+
+  document.getElementById("restartBtn").innerHTML =
+  lang === "ja"
+  ? "↻ 診断トップに戻る"
+  : "↻ 처음으로 돌아가기";
 
 }
