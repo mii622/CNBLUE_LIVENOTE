@@ -278,7 +278,7 @@ function showResult(topCategories){
 
   resultTitle.innerHTML =
   topCategories.map(
-    cat => resultData[cat].title
+    cat => resultData[currentLang][cat].title
   ).join(" × ");
 
   resultBlocks.innerHTML = "";
@@ -291,7 +291,7 @@ topCategories.forEach(cat => {
   block.classList.add("result-block");
 
    const songs =
-resultData[cat].songs;
+resultData[currentLang][cat].songs;
 
 let songCount = 4;
 
@@ -316,7 +316,7 @@ songs.slice(0,songCount);
     <div class="result-section">
 
       <p class="result-text">
-        ${resultData[cat].desc}
+        ${resultData[currentLang][cat].desc}
       </p>
 
       <div class="song-list">
