@@ -426,13 +426,22 @@ document.getElementById("shareBtn")
 
   const result = resultTitle.innerText;
 
-  const text =
-`わたしは${result}タイプでした！
+const text =
+currentLang === "ja"
+
+? `わたしは${result}タイプでした！
 
 今の気分にぴったりのCNBLUEを見つける🎧
 https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
 
-#CNBLUE #CNBLUE曲診断`;
+#CNBLUE #CNBLUE曲診断`
+
+: `나는 ${result} 타입!
+
+지금 기분에 딱 맞는 CNBLUE를 찾아보세요🎧
+https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
+
+#CNBLUE #CNBLUE추천곡진단`;
 
   window.open(
 `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
@@ -627,5 +636,70 @@ function setLanguage(lang){
     }
 
   }
+   /* Q2 */
+for(let i=1;i<=5;i++){
+
+  const el =
+  document.getElementById(`q2c${i}`);
+
+  if(el){
+    el.innerHTML =
+    textData[lang][`q2c${i}`];
+  }
+
+}
+
+/* Q3 */
+for(let i=1;i<=6;i++){
+
+  const el =
+  document.getElementById(`q3c${i}`);
+
+  if(el){
+    el.innerHTML =
+    textData[lang][`q3c${i}`];
+  }
+
+}
+
+/* Q4 */
+for(let i=1;i<=6;i++){
+
+  const el =
+  document.getElementById(`q4c${i}`);
+
+  if(el){
+    el.innerHTML =
+    textData[lang][`q4c${i}`];
+  }
+
+}
+
+/* Q5 */
+for(let i=1;i<=6;i++){
+
+  const el =
+  document.getElementById(`q5c${i}`);
+
+  if(el){
+    el.innerHTML =
+    textData[lang][`q5c${i}`];
+  }
+
+}
+
+/* restartボタン */
+
+document.getElementById("restartBtn").innerHTML =
+lang === "ja"
+? "↻ 診断トップに戻る"
+: "↻ 처음으로 돌아가기";
+
+/* フォント切り替え */
+
+document.body.style.fontFamily =
+lang === "ko"
+? "'Noto Sans KR', sans-serif"
+: "'Noto Sans JP', sans-serif";
 
 }
