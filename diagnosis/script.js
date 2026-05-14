@@ -733,8 +733,7 @@ document.getElementById("shareBtn")
 지금 기분에 딱 맞는 CNBLUE를 찾아보세요🎧
 https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
 
-const hashtag = "#CNBLUE";
-const hashtag = "#CNBLUE추천곡진단";
+#CNBLUE #CNBLUE추천곡진단`;
 
 
   }
