@@ -854,6 +854,29 @@ function setLanguage(lang){
   }
 
 }
+/* 結果画面も再描画 */
+
+  if(resultContainer.style.display === "block"){
+
+    const currentResults =
+    resultTitle.innerText
+    .split(" × ");
+
+    const categories =
+    Object.keys(resultData.ja).filter(key => {
+
+      return (
+        resultData.ja[key].title === currentResults[0] ||
+        resultData.ko[key].title === currentResults[0] ||
+        currentResults.includes(resultData.ja[key].title) ||
+        currentResults.includes(resultData.ko[key].title)
+      );
+
+    });
+
+    showResult(categories);
+
+  }
 
 /* =========================
    ▼ 初期表示
