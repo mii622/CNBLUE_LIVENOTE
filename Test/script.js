@@ -250,9 +250,9 @@ function updateQuiz(){
   : "visible";
 
   nextBtn.textContent =
-  current === questions.length - 1
-  ? "結果を見る →"
-  : "次へ →";
+current === questions.length - 1
+? textData[currentLang].resultBtn
+: textData[currentLang].next;
 
 }
 
