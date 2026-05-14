@@ -1,18 +1,32 @@
-const wrapper = document.getElementById("questionWrapper");
-const questions = document.querySelectorAll(".question");
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
-const progressBar = document.getElementById("progressBar");
-const resultContainer = document.getElementById("resultContainer");
-const resultTitle = document.getElementById("resultTitle");
-const resultBlocks = document.getElementById("resultBlocks");
+const wrapper =
+document.getElementById("questionWrapper");
 
-/* =========================
-   ▼ 言語設定
-========================= */
+const questions =
+document.querySelectorAll(".question");
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+const prevBtn =
+document.getElementById("prevBtn");
+
+const progressBar =
+document.getElementById("progressBar");
+
+const resultContainer =
+document.getElementById("resultContainer");
+
+const resultTitle =
+document.getElementById("resultTitle");
+
+const resultBlocks =
+document.getElementById("resultBlocks");
 
 let currentLang = "ja";
 let current = 0;
+
+/* ★追加：結果保持（ここ重要） */
+let lastTopCategories = [];
 
 /* =========================
    ▼ テキストデータ
@@ -475,28 +489,32 @@ const resultData = {
   }
 
 };
-
 /* =========================
-   ▼ 画面更新
+   ▼ 表示更新
 ========================= */
 
-function updateQuiz() {
-  wrapper.style.transform = `translateX(-${current * 100}%)`;
-  progressBar.style.width = `${((current + 1) / questions.length) * 100}%`;
+function updateQuiz(){
 
-  prevBtn.style.visibility = current === 0 ? "hidden" : "visible";
+  wrapper.style.transform =
+  `translateX(-${current * 100}%)`;
+
+  progressBar.style.width =
+  `${((current + 1) / questions.length) * 100}%`;
+
+  prevBtn.style.visibility =
+  current === 0 ? "hidden" : "visible";
 
   nextBtn.textContent =
-    current === questions.length - 1
-      ? textData[currentLang].resultBtn
-      : textData[currentLang].next;
+  current === questions.length - 1
+  ? textData[currentLang].resultBtn
+  : textData[currentLang].next;
 }
 
 /* =========================
-   ▼ 回答チェック
+   ▼ 回答確認
 ========================= */
 
-function isAnswered() {
+function isAnswered(){
   return questions[current].querySelector("input[type='radio']:checked");
 }
 
@@ -504,28 +522,33 @@ function isAnswered() {
    ▼ 結果計算
 ========================= */
 
-function calculateResult() {
+function calculateResult(){
+
   const scores = {
-    hype: 0,
-    support: 0,
-    emo: 0,
-    band: 0,
-    soft: 0,
-    happy: 0
+    hype:0,
+    support:0,
+    emo:0,
+    band:0,
+    soft:0,
+    happy:0
   };
 
   document.querySelectorAll("input[type='radio']:checked")
-    .forEach(input => {
-      const type = input.value;
-      const point = Number(input.dataset.point);
-      scores[type] += point;
-    });
+  .forEach(input => {
+
+    const type = input.value;
+    const point = Number(input.dataset.point);
+
+    scores[type] += point;
+  });
 
   const maxScore = Math.max(...Object.values(scores));
 
-  const topCategories = Object.keys(scores).filter(
-    key => scores[key] === maxScore
-  );
+  const topCategories =
+  Object.keys(scores).filter(key => scores[key] === maxScore);
+
+  /* ★保存 */
+  lastTopCategories = topCategories;
 
   showResult(topCategories);
 }
@@ -534,31 +557,29 @@ function calculateResult() {
    ▼ 結果表示
 ========================= */
 
-function showResult(topCategories) {
+function showResult(topCategories){
 
   document.querySelector(".quiz-container").style.display = "none";
   resultContainer.style.display = "block";
 
   resultTitle.innerHTML =
-    topCategories.map(cat =>
-      resultData[currentLang][cat].title
-    ).join(" × ");
+  topCategories.map(cat => resultData[currentLang][cat].title).join(" × ");
 
   resultBlocks.innerHTML = "";
 
   topCategories.forEach(cat => {
 
+    const block = document.createElement("div");
+    block.classList.add("result-block");
+
     const songs = resultData[currentLang][cat].songs;
 
     let songCount = 4;
-    if (topCategories.length === 2) songCount = 3;
-    if (topCategories.length === 3) songCount = 2;
-    if (topCategories.length >= 4) songCount = 1;
+    if(topCategories.length === 2) songCount = 3;
+    if(topCategories.length === 3) songCount = 2;
+    if(topCategories.length >= 4) songCount = 1;
 
     const displaySongs = songs.slice(0, songCount);
-
-    const block = document.createElement("div");
-    block.className = "result-block";
 
     block.innerHTML = `
       <div class="result-section">
@@ -567,33 +588,35 @@ function showResult(topCategories) {
         </p>
 
         <div class="song-list">
+
           ${displaySongs.map(song => `
             <div class="song-card">
+
               <h3>${song.title}</h3>
 
               <div class="song-links">
+
                 ${song.youtubeJp ? `
-                  <a href="${song.youtubeJp}" target="_blank">
-                    ${textData[currentLang].youtube}
-                    ${song.youtubeKr ? textData[currentLang].youtubeJp : ""}
-                  </a>
-                ` : ""}
+                <a href="${song.youtubeJp}" target="_blank">
+                  ${textData[currentLang].youtube}
+                  ${song.youtubeKr ? textData[currentLang].youtubeJp : ""}
+                </a>` : ""}
 
                 ${song.youtubeKr ? `
-                  <a href="${song.youtubeKr}" target="_blank">
-                    ${textData[currentLang].youtube}
-                    ${song.youtubeJp ? textData[currentLang].youtubeKr : ""}
-                  </a>
-                ` : ""}
+                <a href="${song.youtubeKr}" target="_blank">
+                  ${textData[currentLang].youtube}
+                  ${song.youtubeJp ? textData[currentLang].youtubeKr : ""}
+                </a>` : ""}
 
                 ${song.live ? `
-                  <a href="${song.live}" target="_blank">
-                    ${textData[currentLang].live}
-                  </a>
-                ` : ""}
+                <a href="${song.live}" target="_blank">
+                  ${textData[currentLang].live}
+                </a>` : ""}
+
               </div>
             </div>
           `).join("")}
+
         </div>
       </div>
     `;
@@ -601,20 +624,21 @@ function showResult(topCategories) {
     resultBlocks.appendChild(block);
   });
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top:0, behavior:"smooth" });
 }
 
 /* =========================
-   ▼ ボタン処理
+   ▼ ボタン
 ========================= */
 
 nextBtn.addEventListener("click", () => {
-  if (!isAnswered()) {
+
+  if(!isAnswered()){
     alert(textData[currentLang].alert);
     return;
   }
 
-  if (current < questions.length - 1) {
+  if(current < questions.length - 1){
     current++;
     updateQuiz();
   } else {
@@ -623,7 +647,7 @@ nextBtn.addEventListener("click", () => {
 });
 
 prevBtn.addEventListener("click", () => {
-  if (current > 0) {
+  if(current > 0){
     current--;
     updateQuiz();
   }
@@ -633,19 +657,19 @@ prevBtn.addEventListener("click", () => {
    ▼ シェア
 ========================= */
 
-document.getElementById("shareBtn").addEventListener("click", () => {
+document.getElementById("shareBtn")
+.addEventListener("click", () => {
 
   const result = resultTitle.innerText;
 
-  const text =
-    currentLang === "ko"
-      ? `나의 결과는 ${result} 타입!
+  let text = currentLang === "ko"
+  ? `나의 결과는 ${result} 타입!
 
 지금 기분에 딱 맞는 CNBLUE를 찾아보세요🎧
 https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
 
 #CNBLUE #CNBLUE추천곡진단`
-      : `わたしは${result}タイプでした！
+  : `わたしは${result}タイプでした！
 
 今の気分にぴったりのCNBLUEを見つける🎧
 https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
@@ -661,55 +685,66 @@ https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
    ▼ リスタート
 ========================= */
 
-document.getElementById("restartBtn").addEventListener("click", () => {
+document.getElementById("restartBtn")
+.addEventListener("click", () => {
   location.reload();
 });
 
 /* =========================
-   ▼ 言語切替
+   ▼ 言語切り替え
 ========================= */
 
-function setLanguage(lang) {
+function setLanguage(lang){
 
   currentLang = lang;
 
-  document.getElementById("mainTitle").innerHTML = textData[lang].mainTitle;
-  document.getElementById("siteSubtitle").innerHTML = textData[lang].subtitle;
-  document.getElementById("resultSub").innerHTML = textData[lang].resultSub;
-  document.getElementById("shareText").innerHTML = textData[lang].share;
+  document.getElementById("mainTitle").innerHTML =
+  textData[lang].mainTitle;
 
-  document.getElementById("prevBtn").innerHTML = textData[lang].prev;
+  document.getElementById("siteSubtitle").innerHTML =
+  textData[lang].subtitle;
+
+  document.getElementById("resultSub").innerHTML =
+  textData[lang].resultSub;
+
+  document.getElementById("shareText").innerHTML =
+  textData[lang].share;
+
+  document.getElementById("prevBtn").innerHTML =
+  textData[lang].prev;
 
   document.getElementById("nextBtn").innerHTML =
-    current === questions.length - 1
-      ? textData[lang].resultBtn
-      : textData[lang].next;
+  current === questions.length - 1
+  ? textData[lang].resultBtn
+  : textData[lang].next;
 
-  document.getElementById("restartBtn").innerHTML = textData[lang].restart;
+  document.getElementById("restartBtn").innerHTML =
+  textData[lang].restart;
 
-  for (let i = 1; i <= 5; i++) {
+  for(let i=1;i<=5;i++){
     document.getElementById(`q${i}Title`).innerHTML =
-      textData[lang][`q${i}`];
+    textData[lang][`q${i}`];
   }
 
-  for (let q = 1; q <= 5; q++) {
-    for (let c = 1; c <= 6; c++) {
+  for(let q=1;q<=5;q++){
+    for(let c=1;c<=6;c++){
       const el = document.getElementById(`q${q}c${c}`);
-      if (el) {
+      if(el){
         el.innerHTML = textData[lang][`q${q}c${c}`];
       }
     }
   }
 
   document.body.style.fontFamily =
-    lang === "ko"
-      ? "'Noto Sans KR', sans-serif"
-      : "'Noto Sans JP', sans-serif";
+  lang === "ko"
+  ? "'Noto Sans KR', sans-serif"
+  : "'Noto Sans JP', sans-serif";
 
-  /* 結果再描画 */
-  if (resultContainer.style.display === "block") {
-    calculateResult();
+  /* ★結果再描画（ここが本体修正） */
+  if(resultContainer.style.display === "block"){
+    showResult(lastTopCategories);
   }
+
 }
 
 /* =========================
