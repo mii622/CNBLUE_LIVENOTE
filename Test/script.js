@@ -741,9 +741,10 @@ function setLanguage(lang){
   : "'Noto Sans JP', sans-serif";
 
   /* ★結果再描画（ここが本体修正） */
-  if(resultContainer.style.display === "block"){
-    showResult(lastTopCategories);
-  }
+  if (lastTopCategories.length > 0) {
+  showResult(lastTopCategories);
+}
+   
 
 }
 
