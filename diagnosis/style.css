@@ -309,3 +309,39 @@ body{
   padding:24px 18px;
   border:1px solid #e2ebfa;
 }
+.lang-switch{
+
+  display:flex;
+  justify-content:center;
+  gap:10px;
+
+  margin:20px 0;
+
+}
+
+.lang-btn{
+
+  border:none;
+  background:#ffffff;
+
+  padding:8px 16px;
+
+  border-radius:999px;
+
+  font-size:14px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  box-shadow:
+  0 2px 8px rgba(0,0,0,0.08);
+
+  transition:0.2s;
+
+}
+
+.lang-btn:hover{
+
+  transform:translateY(-2px);
+
+}
