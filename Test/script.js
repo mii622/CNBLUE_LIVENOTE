@@ -740,13 +740,10 @@ function setLanguage(lang){
   ? "'Noto Sans KR', sans-serif"
   : "'Noto Sans JP', sans-serif";
 
-/* ★結果再描画（ここ） */
-if (lastTopCategories.length > 0) {
+if(resultContainer.style.display === "block"){
   showResult(lastTopCategories);
-}
-}
-   
 
+}
 }
 
 /* =========================
