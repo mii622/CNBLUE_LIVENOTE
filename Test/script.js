@@ -740,9 +740,11 @@ function setLanguage(lang){
   ? "'Noto Sans KR', sans-serif"
   : "'Noto Sans JP', sans-serif";
 
-  /* ★結果再描画（ここが本体修正） */
+setTimeout(() => {
   if (lastTopCategories.length > 0) {
-  showResult(lastTopCategories);
+    showResult(lastTopCategories);
+  }
+}, 0);
 }
    
 
