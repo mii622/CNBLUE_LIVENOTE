@@ -24,6 +24,8 @@ document.getElementById("resultBlocks");
 
 let current = 0;
 
+let lastResultCategories = [];
+
 /* =========================
    ▼ 曲データ
 ========================= */
@@ -260,7 +262,8 @@ function calculateResult(){
     key => scores[key] === maxScore
   );
 
-  showResult(topCategories);
+  lastResultCategories = topCategories;
+showResult(topCategories);
 
 }
 
