@@ -735,7 +735,6 @@ https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
 
 #CNBLUE #CNBLUE추천곡진단`;
 
-
   }
 
   else{
