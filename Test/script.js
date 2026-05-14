@@ -852,6 +852,7 @@ function setLanguage(lang){
     "'Noto Sans JP', sans-serif";
 
   }
+}
 /* 結果画面も再描画 */
 
   if(resultContainer.style.display === "block"){
@@ -860,8 +861,7 @@ function setLanguage(lang){
     resultTitle.innerText
     .split(" × ");
 
-    const categories =const categories =
-Object.keys(resultData[currentLang]).filter(key => {
+    const categories = Object.keys(resultData[currentLang]).filter(key => {
    
       return (
         resultData.ja[key].title === currentResults[0] ||
