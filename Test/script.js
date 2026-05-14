@@ -1,5 +1,3 @@
-
-
 const wrapper =
 document.getElementById("questionWrapper");
 
