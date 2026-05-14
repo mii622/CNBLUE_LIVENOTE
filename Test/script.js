@@ -496,7 +496,7 @@ const resultData = {
 function updateQuiz(){
 
   wrapper.style.transform =
-  `translateX(-${current * 100}%)`;
+  `translateX(-${state.current * 100}%)`;
 
   progressBar.style.width =
   `${((state.current + 1) / questions.length) * 100}%`;
@@ -520,7 +520,7 @@ function updateQuiz(){
 function isAnswered(){
 
   const checked =
-  questions[state,current].querySelector(
+  questions[state.current].querySelector(
     "input[type='radio']:checked"
   );
 
@@ -566,7 +566,7 @@ function calculateResult(){
   Object.keys(scores).filter(
     key => scores[key] === maxScore
   );
-  state,lastTopCategories = topCategories;
+  state.lastTopCategories = topCategories;
   showResult(topCategories);
 
 }
@@ -830,7 +830,7 @@ function setLanguage(lang){
   /* フォント */
     document.body.style.fontFamily =
     lang === "ko"
-    ? "'Noto Sans KR', sans-serif";
+    ? "'Noto Sans KR', sans-serif"
     : "'Noto Sans JP', sans-serif";
 /* 結果画面も再描画 */
 if(state.lastTopCategories.length > 0){
