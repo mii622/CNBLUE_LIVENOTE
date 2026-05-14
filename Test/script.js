@@ -22,6 +22,8 @@ document.getElementById("resultTitle");
 const resultBlocks =
 document.getElementById("resultBlocks");
 
+let lastTopCategories = [];
+
 /* =========================
    ▼ 言語設定
 ========================= */
@@ -577,6 +579,7 @@ function calculateResult(){
 ========================= */
 
 function showResult(topCategories){
+  lastTopCategories = topCategories; // ←追加
 
   document.querySelector(".quiz-container")
   .style.display = "none";
@@ -852,29 +855,11 @@ function setLanguage(lang){
     "'Noto Sans JP', sans-serif";
 
   }
-}
 /* 結果画面も再描画 */
-
-  if(resultContainer.style.display === "block"){
-
-    const currentResults =
-    resultTitle.innerText
-    .split(" × ");
-
-    const categories = Object.keys(resultData[currentLang]).filter(key => {
-   
-      return (
-        resultData.ja[key].title === currentResults[0] ||
-        resultData.ko[key].title === currentResults[0] ||
-        currentResults.includes(resultData.ja[key].title) ||
-        currentResults.includes(resultData.ko[key].title)
-      );
-
-    });
-
-    showResult(categories);
-
-  }
+if(resultContainer.style.display === "block"){
+  showResult(lastTopCategories);
+}
+}
 
 /* =========================
    ▼ 初期表示
