@@ -1,3 +1,5 @@
+
+
 const wrapper =
 document.getElementById("questionWrapper");
 
@@ -22,11 +24,11 @@ document.getElementById("resultTitle");
 const resultBlocks =
 document.getElementById("resultBlocks");
 
-let currentLang = "ja";
-let current = 0;
+/* =========================
+   ▼ 言語設定
+========================= */
 
-/* ★追加：結果保持（ここ重要） */
-let lastTopCategories = [];
+let currentLang = "ja";
 
 /* =========================
    ▼ テキストデータ
@@ -489,6 +491,7 @@ const resultData = {
   }
 
 };
+
 /* =========================
    ▼ 表示更新
 ========================= */
@@ -502,12 +505,15 @@ function updateQuiz(){
   `${((current + 1) / questions.length) * 100}%`;
 
   prevBtn.style.visibility =
-  current === 0 ? "hidden" : "visible";
+  current === 0
+  ? "hidden"
+  : "visible";
 
   nextBtn.textContent =
   current === questions.length - 1
   ? textData[currentLang].resultBtn
   : textData[currentLang].next;
+
 }
 
 /* =========================
@@ -515,7 +521,14 @@ function updateQuiz(){
 ========================= */
 
 function isAnswered(){
-  return questions[current].querySelector("input[type='radio']:checked");
+
+  const checked =
+  questions[current].querySelector(
+    "input[type='radio']:checked"
+  );
+
+  return checked;
+
 }
 
 /* =========================
@@ -533,24 +546,32 @@ function calculateResult(){
     happy:0
   };
 
-  document.querySelectorAll("input[type='radio']:checked")
+  document
+  .querySelectorAll(
+    "input[type='radio']:checked"
+  )
   .forEach(input => {
 
-    const type = input.value;
-    const point = Number(input.dataset.point);
+    const type =
+    input.value;
+
+    const point =
+    Number(input.dataset.point);
 
     scores[type] += point;
+
   });
 
-  const maxScore = Math.max(...Object.values(scores));
+  const maxScore =
+  Math.max(...Object.values(scores));
 
   const topCategories =
-  Object.keys(scores).filter(key => scores[key] === maxScore);
-
-  /* ★保存 */
-  lastTopCategories = topCategories;
+  Object.keys(scores).filter(
+    key => scores[key] === maxScore
+  );
 
   showResult(topCategories);
+
 }
 
 /* =========================
@@ -559,30 +580,50 @@ function calculateResult(){
 
 function showResult(topCategories){
 
-  document.querySelector(".quiz-container").style.display = "none";
-  resultContainer.style.display = "block";
+  document.querySelector(".quiz-container")
+  .style.display = "none";
+
+  resultContainer.style.display =
+  "block";
 
   resultTitle.innerHTML =
-  topCategories.map(cat => resultData[currentLang][cat].title).join(" × ");
+  topCategories.map(
+    cat => resultData[currentLang][cat].title
+  ).join(" × ");
 
   resultBlocks.innerHTML = "";
 
   topCategories.forEach(cat => {
 
-    const block = document.createElement("div");
+    const block =
+    document.createElement("div");
+
     block.classList.add("result-block");
 
-    const songs = resultData[currentLang][cat].songs;
+    const songs =
+    resultData[currentLang][cat].songs;
 
     let songCount = 4;
-    if(topCategories.length === 2) songCount = 3;
-    if(topCategories.length === 3) songCount = 2;
-    if(topCategories.length >= 4) songCount = 1;
 
-    const displaySongs = songs.slice(0, songCount);
+    if(topCategories.length === 2){
+      songCount = 3;
+    }
+
+    if(topCategories.length === 3){
+      songCount = 2;
+    }
+
+    if(topCategories.length >= 4){
+      songCount = 1;
+    }
+
+    const displaySongs =
+    songs.slice(0,songCount);
 
     block.innerHTML = `
+
       <div class="result-section">
+
         <p class="result-text">
           ${resultData[currentLang][cat].desc}
         </p>
@@ -590,6 +631,7 @@ function showResult(topCategories){
         <div class="song-list">
 
           ${displaySongs.map(song => `
+
             <div class="song-card">
 
               <h3>${song.title}</h3>
@@ -598,59 +640,90 @@ function showResult(topCategories){
 
                 ${song.youtubeJp ? `
                 <a href="${song.youtubeJp}" target="_blank">
+
                   ${textData[currentLang].youtube}
                   ${song.youtubeKr ? textData[currentLang].youtubeJp : ""}
-                </a>` : ""}
+
+                </a>
+                ` : ""}
 
                 ${song.youtubeKr ? `
                 <a href="${song.youtubeKr}" target="_blank">
+
                   ${textData[currentLang].youtube}
                   ${song.youtubeJp ? textData[currentLang].youtubeKr : ""}
-                </a>` : ""}
+
+                </a>
+                ` : ""}
 
                 ${song.live ? `
                 <a href="${song.live}" target="_blank">
+
                   ${textData[currentLang].live}
-                </a>` : ""}
+
+                </a>
+                ` : ""}
 
               </div>
+
             </div>
+
           `).join("")}
 
         </div>
+
       </div>
+
     `;
 
     resultBlocks.appendChild(block);
+
   });
 
-  window.scrollTo({ top:0, behavior:"smooth" });
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
 }
 
 /* =========================
-   ▼ ボタン
+   ▼ ボタン処理
 ========================= */
 
 nextBtn.addEventListener("click", () => {
 
   if(!isAnswered()){
+
     alert(textData[currentLang].alert);
     return;
+
   }
 
   if(current < questions.length - 1){
+
     current++;
     updateQuiz();
-  } else {
-    calculateResult();
+
   }
+
+  else{
+
+    calculateResult();
+
+  }
+
 });
 
 prevBtn.addEventListener("click", () => {
+
   if(current > 0){
+
     current--;
     updateQuiz();
+
   }
+
 });
 
 /* =========================
@@ -662,32 +735,48 @@ document.getElementById("shareBtn")
 
   const result = resultTitle.innerText;
 
-  let text = currentLang === "ko"
-  ? `나의 결과는 ${result} 타입!
+  let text = "";
+
+  if(currentLang === "ko"){
+
+    text =
+`나의 결과는 ${result} 타입!
 
 지금 기분에 딱 맞는 CNBLUE를 찾아보세요🎧
 https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
 
-#CNBLUE #CNBLUE추천곡진단`
-  : `わたしは${result}タイプでした！
+#CNBLUE #CNBLUE추천곡진단`;
+
+  }
+
+  else{
+
+    text =
+`わたしは${result}タイプでした！
 
 今の気分にぴったりのCNBLUEを見つける🎧
 https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
 
 #CNBLUE #CNBLUE曲診断`;
 
+  }
+
   window.open(
     `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
   );
+
 });
 
 /* =========================
    ▼ リスタート
 ========================= */
 
-document.getElementById("restartBtn")
+document
+.getElementById("restartBtn")
 .addEventListener("click", () => {
+
   location.reload();
+
 });
 
 /* =========================
@@ -721,33 +810,76 @@ function setLanguage(lang){
   document.getElementById("restartBtn").innerHTML =
   textData[lang].restart;
 
+  /* 質問 */
+
   for(let i=1;i<=5;i++){
+
     document.getElementById(`q${i}Title`).innerHTML =
     textData[lang][`q${i}`];
+
   }
+
+  /* 選択肢 */
 
   for(let q=1;q<=5;q++){
+
     for(let c=1;c<=6;c++){
-      const el = document.getElementById(`q${q}c${c}`);
-      if(el){
-        el.innerHTML = textData[lang][`q${q}c${c}`];
+
+      const el =
+      document.getElementById(`q${q}c${c}`);
+
+      if(el && textData[lang][`q${q}c${c}`]){
+
+        el.innerHTML =
+        textData[lang][`q${q}c${c}`];
+
       }
+
     }
+
   }
 
-  document.body.style.fontFamily =
-  lang === "ko"
-  ? "'Noto Sans KR', sans-serif"
-  : "'Noto Sans JP', sans-serif";
+  /* フォント */
 
-if(resultContainer.style.display === "block"){
-  showResult(lastTopCategories);
+  if(lang === "ko"){
 
+    document.body.style.fontFamily =
+    "'Noto Sans KR', sans-serif";
+
+  }
+
+  else{
+
+    document.body.style.fontFamily =
+    "'Noto Sans JP', sans-serif";
+
+  }
 }
-}
+/* 結果画面も再描画 */
+
+  if(resultContainer.style.display === "block"){
+
+    const currentResults =
+    resultTitle.innerText
+    .split(" × ");
+
+    const categories = Object.keys(resultData[currentLang]).filter(key => {
+   
+      return (
+        resultData.ja[key].title === currentResults[0] ||
+        resultData.ko[key].title === currentResults[0] ||
+        currentResults.includes(resultData.ja[key].title) ||
+        currentResults.includes(resultData.ko[key].title)
+      );
+
+    });
+
+    showResult(categories);
+
+  }
 
 /* =========================
-   ▼ 初期化
+   ▼ 初期表示
 ========================= */
 
 setLanguage("ja");
