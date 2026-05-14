@@ -22,13 +22,12 @@ document.getElementById("resultTitle");
 const resultBlocks =
 document.getElementById("resultBlocks");
 
-let lastTopCategories = [];
+const state = {
+  lang: "ja",
+  current: 0,
+  lastTopCategories: []
+};
 
-/* =========================
-   ▼ 言語設定
-========================= */
-
-let currentLang = "ja";
 
 /* =========================
    ▼ テキストデータ
@@ -177,8 +176,6 @@ CNBLUE를 찾아보세요`,
   }
 
 };
-
-let current = 0;
 
 /* =========================
    ▼ 曲データ
@@ -786,7 +783,7 @@ document
 
 function setLanguage(lang){
 
-  currentLang = lang;
+  state.lang = lang;
 
   document.getElementById("mainTitle").innerHTML =
   textData[lang].mainTitle;
@@ -804,7 +801,7 @@ function setLanguage(lang){
   textData[lang].prev;
 
   document.getElementById("nextBtn").innerHTML =
-  current === questions.length - 1
+  state.current === questions.length - 1
   ? textData[lang].resultBtn
   : textData[lang].next;
 
@@ -841,23 +838,15 @@ function setLanguage(lang){
   }
 
   /* フォント */
-
-  if(lang === "ko"){
-
     document.body.style.fontFamily =
-    "'Noto Sans KR', sans-serif";
-
-  }
-
-  else{
-
-    document.body.style.fontFamily =
-    "'Noto Sans JP', sans-serif";
-
-  }
+    lang === "ko"
+    ? "'Noto Sans KR', sans-serif";
+    : "'Noto Sans JP', sans-serif";
 /* 結果画面も再描画 */
-if(resultContainer.style.display === "block"){
-  showResult(lastTopCategories);
+if(state.lastTopCategories.length > 0){
+   requestAnimationFrame(() => {
+      showResult([...state.lastTopCategories]);
+   });
 }
 }
 
