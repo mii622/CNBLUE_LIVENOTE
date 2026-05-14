@@ -22,11 +22,12 @@ document.getElementById("resultTitle");
 const resultBlocks =
 document.getElementById("resultBlocks");
 
-/* =========================
-   ▼ 言語設定
-========================= */
+const state = {
+  lang: "ja",
+  current: 0,
+  lastTopCategories: []
+};
 
-let currentLang = "ja";
 
 /* =========================
    ▼ テキストデータ
@@ -175,8 +176,6 @@ CNBLUE를 찾아보세요`,
   }
 
 };
-
-let current = 0;
 
 /* =========================
    ▼ 曲データ
@@ -497,20 +496,20 @@ const resultData = {
 function updateQuiz(){
 
   wrapper.style.transform =
-  `translateX(-${current * 100}%)`;
+  `translateX(-${state.current * 100}%)`;
 
   progressBar.style.width =
-  `${((current + 1) / questions.length) * 100}%`;
+  `${((state.current + 1) / questions.length) * 100}%`;
 
   prevBtn.style.visibility =
-  current === 0
+  state.current === 0
   ? "hidden"
   : "visible";
 
   nextBtn.textContent =
-  current === questions.length - 1
-  ? textData[currentLang].resultBtn
-  : textData[currentLang].next;
+  state.current === questions.length - 1
+  ? textData[state.lang].resultBtn
+  : textData[state.lang].next;
 
 }
 
@@ -521,7 +520,7 @@ function updateQuiz(){
 function isAnswered(){
 
   const checked =
-  questions[current].querySelector(
+  questions[state.current].querySelector(
     "input[type='radio']:checked"
   );
 
@@ -567,7 +566,7 @@ function calculateResult(){
   Object.keys(scores).filter(
     key => scores[key] === maxScore
   );
-
+  state.lastTopCategories = topCategories;
   showResult(topCategories);
 
 }
@@ -577,6 +576,7 @@ function calculateResult(){
 ========================= */
 
 function showResult(topCategories){
+  state.lastTopCategories = topCategories; // ←追加
 
   document.querySelector(".quiz-container")
   .style.display = "none";
@@ -585,8 +585,7 @@ function showResult(topCategories){
   "block";
 
   resultTitle.innerHTML =
-  topCategories.map(
-    cat => resultData[currentLang][cat].title
+  topCategories.map(cat => resultData[state.lang][cat].title
   ).join(" × ");
 
   resultBlocks.innerHTML = "";
@@ -599,21 +598,12 @@ function showResult(topCategories){
     block.classList.add("result-block");
 
     const songs =
-    resultData[currentLang][cat].songs;
+    resultData[state.lang][cat].songs;
 
     let songCount = 4;
-
-    if(topCategories.length === 2){
-      songCount = 3;
-    }
-
-    if(topCategories.length === 3){
-      songCount = 2;
-    }
-
-    if(topCategories.length >= 4){
-      songCount = 1;
-    }
+    if(topCategories.length === 2) songCount = 3;
+    if(topCategories.length === 3) songCount = 2;
+    if(topCategories.length >= 4) songCount = 1;
 
     const displaySongs =
     songs.slice(0,songCount);
@@ -623,7 +613,7 @@ function showResult(topCategories){
       <div class="result-section">
 
         <p class="result-text">
-          ${resultData[currentLang][cat].desc}
+          ${resultData[state.lang][cat].desc}
         </p>
 
         <div class="song-list">
@@ -639,8 +629,8 @@ function showResult(topCategories){
                 ${song.youtubeJp ? `
                 <a href="${song.youtubeJp}" target="_blank">
 
-                  ${textData[currentLang].youtube}
-                  ${song.youtubeKr ? textData[currentLang].youtubeJp : ""}
+                  ${textData[state.lang].youtube}
+                  ${song.youtubeKr ? textData[state.lang].youtubeJp : ""}
 
                 </a>
                 ` : ""}
@@ -648,8 +638,8 @@ function showResult(topCategories){
                 ${song.youtubeKr ? `
                 <a href="${song.youtubeKr}" target="_blank">
 
-                  ${textData[currentLang].youtube}
-                  ${song.youtubeJp ? textData[currentLang].youtubeKr : ""}
+                  ${textData[state.lang].youtube}
+                  ${song.youtubeJp ? textData[state.lang].youtubeKr : ""}
 
                 </a>
                 ` : ""}
@@ -657,7 +647,7 @@ function showResult(topCategories){
                 ${song.live ? `
                 <a href="${song.live}" target="_blank">
 
-                  ${textData[currentLang].live}
+                  ${textData[state.lang].live}
 
                 </a>
                 ` : ""}
@@ -693,14 +683,14 @@ nextBtn.addEventListener("click", () => {
 
   if(!isAnswered()){
 
-    alert(textData[currentLang].alert);
+    alert(textData[state.lang].alert);
     return;
 
   }
 
-  if(current < questions.length - 1){
+  if(state.current < questions.length - 1){
 
-    current++;
+    state.current++;
     updateQuiz();
 
   }
@@ -715,9 +705,9 @@ nextBtn.addEventListener("click", () => {
 
 prevBtn.addEventListener("click", () => {
 
-  if(current > 0){
+  if(state.current > 0){
 
-    current--;
+    state.current--;
     updateQuiz();
 
   }
@@ -735,7 +725,7 @@ document.getElementById("shareBtn")
 
   let text = "";
 
-  if(currentLang === "ko"){
+  if(state.lang === "ko"){
 
     text =
 `나의 결과는 ${result} 타입!
@@ -783,7 +773,7 @@ document
 
 function setLanguage(lang){
 
-  currentLang = lang;
+  state.lang = lang;
 
   document.getElementById("mainTitle").innerHTML =
   textData[lang].mainTitle;
@@ -801,7 +791,7 @@ function setLanguage(lang){
   textData[lang].prev;
 
   document.getElementById("nextBtn").innerHTML =
-  current === questions.length - 1
+  state.current === questions.length - 1
   ? textData[lang].resultBtn
   : textData[lang].next;
 
@@ -838,45 +828,16 @@ function setLanguage(lang){
   }
 
   /* フォント */
-
-  if(lang === "ko"){
-
     document.body.style.fontFamily =
-    "'Noto Sans KR', sans-serif";
-
-  }
-
-  else{
-
-    document.body.style.fontFamily =
-    "'Noto Sans JP', sans-serif";
-
-  }
-
-     /* 結果画面も再描画 */
-
-  if(resultContainer.style.display === "block"){
-
-    const currentResults =
-    resultTitle.innerText
-    .split(" × ");
-
-    const categories =
-    Object.keys(resultData.ja).filter(key => {
-
-      return (
-        resultData.ja[key].title === currentResults[0] ||
-        resultData.ko[key].title === currentResults[0] ||
-        currentResults.includes(resultData.ja[key].title) ||
-        currentResults.includes(resultData.ko[key].title)
-      );
-
-    });
-
-    showResult(categories);
-
-  }
-
+    lang === "ko"
+    ? "'Noto Sans KR', sans-serif"
+    : "'Noto Sans JP', sans-serif";
+/* 結果画面も再描画 */
+if(state.lastTopCategories.length > 0){
+   requestAnimationFrame(() => {
+      showResult([...state.lastTopCategories]);
+   });
+}
 }
 
 /* =========================
