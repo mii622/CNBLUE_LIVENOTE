@@ -1,1 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZG2G4761S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-QZG2G4761S');
+</script>
+<title>3LOGY</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body {
+ font-family: 'Noto Sans JP', sans-serif; 
+ background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
+ margin: 0;
+ padding: 20px;
+ line-height: 1.6;
+  padding-top:0;
+}
+
+/* コンテナ */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding-top:0;
+}
+
+/* タイトル */
+ .title-box{
+  text-align:center;
+  margin-bottom:18px;
+  padding:10px 16px 18px;
+  border-bottom:none;
+ }
+
+/* LIVE REPORT */
+ .page-label{
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:3px;
+  color:#6b7cff;
+  opacity:0.8;
+
+  position:relative;
+  display:inline-block;
+  margin-bottom:4px;
+}
+
+.page-label::after{
+  content:"";
+  display:block;
+  width:36px;
+  height:2px;
+  margin:8px auto 0;
+  background:linear-gradient(90deg,#6b7cff,#a9c8ff);
+  border-radius:2px;
+}
+
+ .tour-name{
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:2px;
+  line-height:1.4;
+  margin:10px 0 6px;
+  margin-top:16px;
+  color:#2b2f3a;
+  opacity:0.92;
+  /* ちょい高級感 */
+  text-shadow:0 2px 10px rgba(0,0,0,0.05);
+ }
+ 
+ .tour-date{
+  font-size:13px;
+  color:#888;
+  letter-spacing:0.5px;
+ }
+
+/* バナー */
+.banner {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 8px 0 20px;
+  display: none;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  display: none;
+}
+/* カード */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid #f3f4f6;
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  border-left: 5px solid #6b7cff;
+  padding-left: 10px;
+}
+
+/* ボタン */
+.button {
+  display: inline-block;
+  background: linear-gradient(135deg, #6b7cff, #a9c8ff);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* 会場 */
+.venue-box {
+  margin-top: 10px;
+}
+
+.venue-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* セトリ */
+.spoiler {
+  background: #f8f9fb;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.highlight li {
+  margin-bottom: 6px;
+}
+ .section-title{
+  margin: 10px 0;
+ }
+ .setlist-box{
+  background:#fff;
+  border-radius:16px;
+  padding:14px 16px;
+  margin:20px 0;
+}
+
+.setlist-box summary{
+  cursor:pointer;
+  font-weight:700;
+  font-size:1rem;
+  color:#4d6c8a;
+  list-style:none;
+}
+
+.setlist-box summary::-webkit-details-marker{
+  display:none;
+}
+
+.setlist-box summary::after{
+  content:"＋";
+  float:right;
+}
+
+.setlist-box[open] summary::after{
+  content:"－";
+}
+
+.setlist-box ol{
+  margin-top:16px;
+  padding-left:20px;
+}
+
+.setlist-box li{
+  margin-bottom:8px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ✔ 共通ヘッダー -->
+<div id="header"></div>
+
+<div class="container">
+
+  <!-- タイトル -->
+  <div class="title-box">
+
+    <div class="page-label">LIVE REPORT</div>
+
+    <div class="tour-name">
+      FNC BAND KINGDOM 2026
+    </div>
+
+    <div class="tour-date">
+      2026/7/11,7/13 @ ぴあアリーナMM<br>
+    </div>
+
+  </div>
+
+  <!-- バナー -->
+  <div class="banner">
+    <img src="../images/3LOGY.png">
+  </div>
+
+  <!-- 基本情報 -->
+  <div class="card">
+    <h2>基本情報</h2>
+    <p>横浜：2025/7/11 16:00開演・7/12 14:00開演 @ぴあアリーナMM</p>
+  </div>
+
+  <!-- 会場 -->
+   <div class="card">
+    <h2>会場メモ</h2>
+  <div class="venue-box">
+  <p class="venue-name">《ぴあアリーナMM》</p>
+
+  <a href="https://pia-arena-mm.jp" target="_blank" class="venue-link">
+    ↗ 会場の公式サイトを見る
+  </a>
+
+  <p class="venue-text">
+    どこの座席でも見やすい！<br>
+    グッズ列は1F屋外(屋根あり)<br>
+    桜木町駅からはデッキを通れば信号なしでスムーズ！
+  </p>
+<a href="/CNBLUE_LIVENOTE/venues/pia.html">
+    ↗ ぴあアリーナの会場まとめを見る
+  </a>
+
+  </div>
+    </div>
+
+  <!-- グッズ -->
+  <div class="card">
+    <h2>グッズ</h2>
+    <p>グッズ金額を計算できます</p>
+    <a href="" class="button">
+      グッズ計算はこちら
+    </a>
+  </div>
+  
+</div>
+<!-- ✔ 共通ヘッダー読み込み -->
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+
+</body>
+</html>
