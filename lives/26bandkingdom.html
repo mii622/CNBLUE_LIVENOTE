@@ -27,33 +27,23 @@ body {
 }
 
   .countdown-box {
-
   text-align:center;
-
   padding:20px;
-
   border-radius:18px;
 
 }
 
 .countdown-label {
-
   font-size:0.8rem;
-
   letter-spacing:2px;
-
   opacity:0.7;
 
 }
 
 #countdown {
-
   font-size:2rem;
-
   font-weight:700;
-
   letter-spacing:3px;
-
   margin-top:8px;
 
 }
@@ -311,8 +301,10 @@ fetch("../header.html")
 </script>
 
   <script>
-  const liveDate =
-new Date("2026-07-11T16:00:00");
+  <script>
+
+const liveDate =
+new Date("2026-07-11T15:00:00");
 
 const countdown =
 document.getElementById("countdown");
@@ -341,14 +333,19 @@ function updateCountdown() {
   const minutes =
   Math.floor((diff / (1000 * 60)) % 60);
 
+  const seconds =
+  Math.floor((diff / 1000) % 60);
+
   countdown.textContent =
-  `${days}D ${hours}H ${minutes}M`;
+    `${days}D ${hours}H ${minutes}M ${seconds}S`;
 
 }
 
 updateCountdown();
 
-setInterval(updateCountdown, 60000);
+setInterval(updateCountdown, 1000);
+
+</script>
     </script>
 </body>
 </html>
