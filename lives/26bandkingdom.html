@@ -326,57 +326,84 @@ fetch("../header.html")
   });
 </script>
 
-  <script>
 
-const liveDate =
-new Date("2026-07-11T15:00:00");
+<script>
+
+const day1Start =
+new Date("2026-07-11T16:00:00");
+
+const day1End =
+new Date("2026-07-11T22:00:00");
+
+const day2Start =
+new Date("2026-07-12T14:00:00");
+
+const day2End =
+new Date("2026-07-12T20:00:00");
 
 const countdown =
 document.getElementById("countdown");
 
-function updateCountdown() {
-
-  const now = new Date();
-
-  const diff = liveDate - now;
-
-  if (diff <= 0) {
-
-    countdown.textContent =
-    "ON TOUR";
-
-    return;
-
-  }
-
+function formatCountdown(diff){
   const days =
   Math.floor(diff / (1000 * 60 * 60 * 24));
-
   const hours =
   Math.floor((diff / (1000 * 60 * 60)) % 24);
-
   const minutes =
   Math.floor((diff / (1000 * 60)) % 60);
-
   const seconds =
   Math.floor((diff / 1000) % 60);
-
-  
-    countdown.innerHTML =
-`
-<span>${String(days).padStart(2,'0')}</span>
-<b>:</b>
-<span>${String(hours).padStart(2,'0')}</span>
-<b>:</b>
-<span>${String(minutes).padStart(2,'0')}</span>
-<b>:</b>
-<span>${String(seconds).padStart(2,'0')}</span>
-`;
-
+  return `
+  <span>${String(days).padStart(2,'0')}</span>
+  <b>:</b>
+  <span>${String(hours).padStart(2,'0')}</span>
+  <b>:</b>
+  <span>${String(minutes).padStart(2,'0')}</span>
+  <b>:</b>
+  <span>${String(seconds).padStart(2,'0')}</span>
+  `;
 }
 
-updateCountdown();
+function updateCountdown() {
+  const now = new Date();
 
+  // DAY1前
+  if (now < day1Start) {
+    const diff = day1Start - now;
+    countdown.innerHTML =
+    formatCountdown(diff);
+    return;
+  }
+
+  // DAY1公演中
+  if (now >= day1Start &&
+      now < day1End) {
+    countdown.textContent =
+    "STAGE ON";
+    return;
+  }
+
+  // DAY2まで
+  if (now >= day1End &&
+      now < day2Start) {
+    const diff = day2Start - now;
+    countdown.innerHTML =
+    formatCountdown(diff);
+    return;
+  }
+
+  // DAY2公演中
+  if (now >= day2Start &&
+      now < day2End) {
+    countdown.textContent =
+    "STAGE ON";
+    return;
+  }
+  // 終演後
+  countdown.textContent =
+  "THANK YOU";
+}
+updateCountdown();
 setInterval(updateCountdown, 1000);
 
 </script>
