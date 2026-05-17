@@ -303,7 +303,7 @@ fetch("../header.html")
   <script>
 
 const liveDate =
-new Date("2026-07-11T15:00:00:00");
+new Date("2026-07-11T15:00:00");
 
 const countdown =
 document.getElementById("countdown");
@@ -335,8 +335,12 @@ function updateCountdown() {
   const seconds =
   Math.floor((diff / 1000) % 60);
 
-  countdown.textContent =
-    `${days}D ${hours}H ${minutes}M ${seconds}S`;
+  
+    countdown.textContent =
+`${String(days).padStart(2, '0')}D
+ ${String(hours).padStart(2, '0')}H
+ ${String(minutes).padStart(2, '0')}M
+ ${String(seconds).padStart(2, '0')}S`;
 
 }
 
