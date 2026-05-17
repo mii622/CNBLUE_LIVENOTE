@@ -26,6 +26,38 @@ body {
   padding-top:0;
 }
 
+  .countdown-box {
+
+  text-align:center;
+
+  padding:20px;
+
+  border-radius:18px;
+
+}
+
+.countdown-label {
+
+  font-size:0.8rem;
+
+  letter-spacing:2px;
+
+  opacity:0.7;
+
+}
+
+#countdown {
+
+  font-size:2rem;
+
+  font-weight:700;
+
+  letter-spacing:3px;
+
+  margin-top:8px;
+
+}
+
 /* コンテナ */
 .container {
   max-width: 800px;
@@ -226,7 +258,17 @@ body {
     <h2>基本情報</h2>
     <p>横浜：2025/7/11 16:00開演・7/12 14:00開演 @ぴあアリーナMM</p>
   </div>
+<div class="countdown-box">
 
+  <p class="countdown-label">
+    BAND KINGDOM STARTS IN
+  </p>
+
+  <div id="countdown">
+    00 : 00 : 00
+  </div>
+
+</div>
   <!-- 会場 -->
    <div class="card">
     <h2>会場メモ</h2>
@@ -268,5 +310,43 @@ fetch("../header.html")
   });
 </script>
 
+  const liveDate =
+new Date("2026-07-11T15:00:00");
+
+const countdown =
+document.getElementById("countdown");
+
+function updateCountdown() {
+
+  const now = new Date();
+
+  const diff = liveDate - now;
+
+  if (diff <= 0) {
+
+    countdown.textContent =
+    "ON TOUR";
+
+    return;
+
+  }
+
+  const days =
+  Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  const hours =
+  Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+  const minutes =
+  Math.floor((diff / (1000 * 60)) % 60);
+
+  countdown.textContent =
+  `${days}D ${hours}H ${minutes}M`;
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 60000);
 </body>
 </html>
