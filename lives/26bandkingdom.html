@@ -39,6 +39,7 @@ body {
   padding:26px 18px;
   margin-bottom:26px;
   text-align:center;
+  text-transform: uppercase;
   box-shadow:0 6px 18px rgba(0,0,0,0.12);
 }
 
@@ -429,10 +430,10 @@ const day1End =
 new Date("2026-05-18T21:29:00");
 
 const day2Start =
-new Date("2026-05-18T21:29:30");
+new Date("2026-05-18T21:34:30");
 
 const day2End =
-new Date("2026-05-18T21:30:00");
+new Date("2026-05-18T21:35:00");
 
 const countdown =
 document.getElementById("countdown");
@@ -472,7 +473,7 @@ function updateCountdown() {
   if (now >= day1Start &&
       now < day1End) {
     countdown.textContent =
-    "STAGE ON";
+    "STAGE ON!";
     return;
   }
 
@@ -489,12 +490,12 @@ function updateCountdown() {
   if (now >= day2Start &&
       now < day2End) {
     countdown.textContent =
-    "STAGE ON";
+    "STAGE ON!";
     return;
   }
   // 終演後
   countdown.textContent =
-  "THANK YOU";
+  "THANK YOU!";
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
