@@ -240,13 +240,33 @@ body {
 .setlist-box li{
   margin-bottom:8px;
 }
+  
   .check-list{
   display:flex;
   flex-direction:column;
   gap:10px;
   margin-top:14px;
 }
+.check-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
+.check-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.delete-btn{
+  border:none;
+  background:none;
+  color:#999;
+  font-size:18px;
+}
+
+  cursor:pointer;
 .check-item{
   display:flex;
   align-items:center;
@@ -521,39 +541,48 @@ function saveItems(){
 }
 
 function renderItems(){
-
   checkList.innerHTML = "";
-
   items.forEach((item,index)=>{
-
     const div =
-    document.createElement("label");
+    document.createElement("div");
 
     div.className =
     "check-item";
 
     div.innerHTML = `
-      <input type="checkbox"
-      ${item.checked ? "checked" : ""}>
-      <span>${item.text}</span>
+      <label class="check-left">
+        <input type="checkbox"
+        ${item.checked ? "checked" : ""}>
+        <span>${item.text}</span>
+
+      </label>
+      ${
+        item.custom
+        ? `<button class="delete-btn">×</button>`
+        : ""
+      }
     `;
 
     const checkbox =
     div.querySelector("input");
-
     checkbox.addEventListener("change",()=>{
-
       items[index].checked =
       checkbox.checked;
-
       saveItems();
-
     });
 
+    const deleteBtn =
+    div.querySelector(".delete-btn");
+
+    if(deleteBtn){
+      deleteBtn.addEventListener("click",()=>{
+        items.splice(index,1);
+        saveItems();
+        renderItems();
+      });
+    }
     checkList.appendChild(div);
-
   });
-
 }
 
 addBtn.addEventListener("click",()=>{
@@ -564,11 +593,9 @@ addBtn.addEventListener("click",()=>{
   if(!text) return;
 
   items.push({
-
-    text:text,
-
-    checked:false
-
+  text:text,
+  checked:false,
+  custom:true
   });
 
   saveItems();
