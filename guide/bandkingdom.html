@@ -173,6 +173,25 @@ strong {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(0,0,0,0.2);
 }
+.btn-outline {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 24px; /* ←追加 */
+  padding: 12px 14px;  /* 少しだけ余白増やす */
+  border: 1.5px solid #9bb7ff; /* 見やすく */
+  color: #666; /* テキスト色も統一 */
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-outline:hover {
+  background: #f3f6ff;
+  border-color: #6b7cff;
+  color: #4a5fd6;
+}
 
 /* スマホ */
 @media (max-width: 600px) {
@@ -205,6 +224,10 @@ strong {
 
 <p class="site-subtitle">
 BAND KINGDOMが初めての方へ、これさえ押さえればOKなポイントをまとめました🎸</p>
+  <a href="/CNBLUE_LIVENOTE/guide/index.html" class="btn-outline">
+      CNBLUE初心者ガイドはこちら →
+  </a>
+
 
 
 <div class="container">
