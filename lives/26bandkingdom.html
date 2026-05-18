@@ -240,6 +240,55 @@ body {
 .setlist-box li{
   margin-bottom:8px;
 }
+  .check-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:14px;
+}
+
+.check-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:15px;
+}
+
+.check-item input[type="checkbox"]{
+  width:18px;
+  height:18px;
+  accent-color:#0c6bca;
+}
+
+.add-area{
+  display:flex;
+  gap:8px;
+  margin-top:18px;
+}
+
+#newItem{
+  flex:1;
+  border:none;
+  border-radius:10px;
+  padding:10px 12px;
+  background:#f3f6fb;
+  font-size:14px;
+}
+
+#addBtn{
+  border:none;
+  border-radius:10px;
+  padding:10px 14px;
+  background:#0c6bca;
+  color:white;
+  font-size:14px;
+}
+
+.save-text{
+  font-size:11px;
+  color:#888;
+  margin-top:14px;
+}
 </style>
 </head>
 
@@ -315,6 +364,31 @@ body {
     <a href="" class="button">
       グッズ計算はこちら
     </a>
+  </div>
+
+  <div class="card">
+
+  <h2>持ち物リスト</h2>
+
+  <div class="check-list" id="checkList"></div>
+
+  <div class="add-area">
+
+    <input
+      type="text"
+      id="newItem"
+      placeholder="持ち物を追加">
+
+    <button id="addBtn">
+      ＋追加
+    </button>
+
+  </div>
+
+  <p class="save-text">
+    ※このリストは端末内にのみ保存されます
+  </p>
+
   </div>
   
 </div>
@@ -408,5 +482,105 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 </script>
+
+  <script>
+
+const defaultItems = [
+
+  "スマホ",
+  "現金",
+  "ペンライト",
+  "モバイルバッテリー",
+  "ペンラの電池"
+
+];
+
+let items =
+JSON.parse(localStorage.getItem("liveCheckItems"))
+|| defaultItems.map(text => ({
+  text,
+  checked:false
+}));
+
+const checkList =
+document.getElementById("checkList");
+
+const newItem =
+document.getElementById("newItem");
+
+const addBtn =
+document.getElementById("addBtn");
+
+function saveItems(){
+
+  localStorage.setItem(
+    "liveCheckItems",
+    JSON.stringify(items)
+  );
+
+}
+
+function renderItems(){
+
+  checkList.innerHTML = "";
+
+  items.forEach((item,index)=>{
+
+    const div =
+    document.createElement("label");
+
+    div.className =
+    "check-item";
+
+    div.innerHTML = `
+      <input type="checkbox"
+      ${item.checked ? "checked" : ""}>
+      <span>${item.text}</span>
+    `;
+
+    const checkbox =
+    div.querySelector("input");
+
+    checkbox.addEventListener("change",()=>{
+
+      items[index].checked =
+      checkbox.checked;
+
+      saveItems();
+
+    });
+
+    checkList.appendChild(div);
+
+  });
+
+}
+
+addBtn.addEventListener("click",()=>{
+
+  const text =
+  newItem.value.trim();
+
+  if(!text) return;
+
+  items.push({
+
+    text:text,
+
+    checked:false
+
+  });
+
+  saveItems();
+
+  renderItems();
+
+  newItem.value = "";
+
+});
+
+renderItems();
+
+  </script>
 </body>
 </html>
