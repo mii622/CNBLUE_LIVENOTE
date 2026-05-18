@@ -502,7 +502,6 @@ setInterval(updateCountdown, 1000);
 </script>
 
   <script>
-localStorage.removeItem("liveCheckItems");
 const defaultItems = [
 
   "スマホ",
@@ -517,7 +516,8 @@ let items =
 JSON.parse(localStorage.getItem("liveCheckItems"))
 || defaultItems.map(text => ({
   text,
-  checked:false
+  checked:false,
+  custom:false
 }));
 
 const checkList =
@@ -555,9 +555,9 @@ function renderItems(){
 
       </label>
       ${
-        item.custom
-        ? `<button class="delete-btn">×</button>`
-        : ""
+        item.custom !== false
+? `<button class="delete-btn">×</button>`
+: ""
       }
     `;
 
