@@ -170,6 +170,7 @@ body {
   box-shadow: 0 10px 24px rgba(0,0,0,0.06);
   border: 1px solid #f3f4f6;
   transform: translateY(-2px);
+  position:relative;
 }
 
 .card h2 {
@@ -189,6 +190,20 @@ body {
   text-decoration: none;
   margin-top: 10px;
   font-size: 14px;
+}
+
+.beginner-link{
+  position:absolute;
+  top:18px;
+  right:18px;
+  font-size:11px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#eef4ff;
+  color:#4d6c8a;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
 
 /* 会場 */
@@ -400,6 +415,12 @@ body {
 
   <h2>持ち物リスト</h2>
 
+  <a href="/guide/beginner.html"
+     class="beginner-link">
+    初めての人はこちら
+  </a>
+
+  <h2>持ち物リスト</h2>
   <div class="check-list" id="checkList"></div>
 
   <div class="add-area">
