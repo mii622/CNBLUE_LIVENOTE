@@ -743,7 +743,7 @@ https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
 `わたしは${result}タイプでした！
 
 今の気分にぴったりのCNBLUEを見つける🎧
-https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
+https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/index.html?v=1
 
 #CNBLUE #CNBLUE曲診断`;
 
