@@ -731,7 +731,7 @@ document.getElementById("shareBtn")
 `나의 결과는 ${result} 타입!
 
 지금 기분에 딱 맞는 CNBLUE를 찾아보세요🎧
-https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v
+https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/?v=1
 
 #CNBLUE #CNBLUE추천곡진단`;
 
