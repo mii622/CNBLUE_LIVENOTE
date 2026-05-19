@@ -268,6 +268,62 @@ a {
 .sns-button i {
   font-size: 14px;
 }
+.quiz-card{
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  overflow: hidden;
+  margin-bottom: 12px;
+  transition: 0.2s;
+  padding-bottom: 12px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px;
+  border-radius:18px;
+  flex-wrap:nowrap;
+}
+
+.quiz-card img{
+  width:88px;
+  aspect-ratio:1/1;
+
+  object-fit:cover;
+  border-radius:14px;
+
+  flex-shrink:0;
+}
+
+.quiz-content{
+  flex:1;
+  min-width:0;
+}
+
+.quiz-title{
+  font-size:14px;
+  margin-bottom:10px;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.quiz-btn{
+  display:inline-block;
+
+  padding:9px 14px;
+  border-radius:999px;
+
+  background:#6b7cff;
+  color:#fff;
+
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+
+  white-space:nowrap;
+}
 
 </style>
 </head>
@@ -365,16 +421,21 @@ CNBLUEのライブ情報、セトリ、初心者向けガイドなどを
     </a>
   </div>
 
-
+</div>
 <!-- VENUE -->
-  <div class="section">CNBLUE for Your Mood</div>
+  <div class="quiz-card">
+  <img src="images/quiz.jpg" alt="CNBLUE Quiz">
 
-  <div class="card small-card">
-    5つの質問に答えると、今のあなたの気分にぴったりのCNBLUEが見つかります🩵
-     <a href="/CNBLUE_LIVENOTE/diagnosis/index.html" class="btn-outline">
+  <div class="quiz-content">
+    <p class="quiz-label">5つの質問に答えると、今のあなたの気分にぴったりのCNBLUEが見つかります🩵</p>
+
+    <a href="/CNBLUE_LIVENOTE/diagnosis/index.html"
+       class="quiz-btn">
       さっそく診断してみる →
-        </a>
+    </a>
   </div>
+
+</div>
    
   <!-- SNS -->
   <div class="section">SNS</div>
