@@ -46,7 +46,7 @@
   margin: 4px auto 16px;
   max-width: 90%;
 }
-16
+
 /* =====================
    BASE
 ===================== */
@@ -100,8 +100,21 @@ a {
 /* =====================
    HERO
 ===================== */
-.hero img {
-  width: 100%;
+.hero{
+  height: 34vw;
+  min-height: 220px;
+  max-height: 340px;
+
+  overflow:hidden;
+  border-radius:16px;
+  margin: 0 16px;
+}
+
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
   border-radius: 16px;
   margin-bottom: 12px;
 }
