@@ -55,7 +55,7 @@ body{
   font-weight: 400;
   font-style: normal;
   font-size:32px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.05em;
   text-transform:none;
   color:#ffffff;
   display:inline;
@@ -63,7 +63,20 @@ body{
   line-height:1.4;
 }
 
-  
+.bolt{
+  width:10px;
+  height:22px;
+  background:#fff;
+  clip-path:polygon(
+    45% 0%,
+    100% 0%,
+    62% 42%,
+    92% 42%,
+    18% 100%,
+    40% 58%,
+    0% 58%
+  );
+}  
 
 /* 商品 */
 #goods-list{
@@ -205,7 +218,7 @@ button.qty:active{
 <header class="site-header">
   <div class="main-title">GOODS CALCULATOR</div>
   <div class="sub-title">
-  FNC BAND KINGDOM 2026<br>
+  <span class="bolt"></span>FNC BAND KINGDOM 2026<span class="bolt"></span>
   </div>
 </header>
 
