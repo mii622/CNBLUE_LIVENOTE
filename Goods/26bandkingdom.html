@@ -80,6 +80,10 @@ body{
   );
   vertical-align:middle;
 }  
+  .left{
+
+  transform:scaleX(-1);
+  }
 
 /* 商品 */
 #goods-list{
@@ -197,12 +201,12 @@ button.qty:active{
 
 /* サマリー */
 #summary{
+  width:calc(100% - 32px);
   max-width:750px;
   margin:10px auto 80px;
   background:#fff;
   padding:16px;
   border-radius:12px;
-  padding-bottom:100px;
   box-sizing:border-box;
 }
 
@@ -222,7 +226,7 @@ button.qty:active{
 <header class="site-header">
   <div class="main-title">GOODS CALCULATOR</div>
   <div class="sub-title">
-  <span class="bolt"></span>FNC BAND KINGDOM 2026<span class="bolt"></span>
+  <span class="bolt left"></span>FNC BAND KINGDOM 2026<span class="bolt"></span>
   </div>
 </header>
 
