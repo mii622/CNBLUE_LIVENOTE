@@ -117,56 +117,44 @@ h2{
 <script>
 document.querySelectorAll('.card').forEach(card => {
 
-  let state = 0;
+  // 初期状態をHTML側に持たせる（なければ0）
+  if(!card.dataset.state){
+    card.dataset.state = "0";
+  }
 
   card.addEventListener('click', () => {
 
+    let state = Number(card.dataset.state);
     state++;
 
     if(state > 2){
       state = 0;
     }
 
+    card.dataset.state = state;
+
+    // 表示更新
     card.innerHTML = '';
 
     if(state === 1){
 
       const mark = document.createElement('span');
-
       mark.className = 'mark give';
       mark.textContent = '譲';
-
       card.appendChild(mark);
+
     }
 
     if(state === 2){
 
       const mark = document.createElement('span');
-
       mark.className = 'mark want';
       mark.textContent = '求';
-
       card.appendChild(mark);
+
     }
 
   });
-
-});
-</script>
-  <script>
-document.getElementById('saveBtn').addEventListener('click', async () => {
-
-  const target = document.querySelector('.wrapper');
-
-  const canvas = await html2canvas(target, {
-    backgroundColor: null,
-    scale: 2  // 画質UP（重要）
-  });
-
-  const link = document.createElement('a');
-  link.download = 'tradingcards.png';
-  link.href = canvas.toDataURL('image/png');
-  link.click();
 
 });
   </script>
