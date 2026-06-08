@@ -37,19 +37,15 @@ h2{
   cursor:pointer;
 }
   .mark{
-  position:absolute;
-  right:0;
-  bottom:-12px;
-
-  padding:2px 6px;
-  border-radius:10px;
+  padding:2px 8px;
+  border-radius:12px;
 
   font-size:12px;
   font-weight:bold;
 
   color:#fff;
   white-space:nowrap;
-  }
+}
 
 .give{
   background:#e53935;
@@ -57,6 +53,22 @@ h2{
 
 .want{
   background:#1e88e5;
+}
+
+/* 上段は右上 */
+
+.top-card .mark{
+  position:absolute;
+  right:-4px;
+  top:-18px;
+}
+
+/* 下段は右下 */
+
+.bottom-card .mark{
+  position:absolute;
+  right:-4px;
+  bottom:-18px;
 }
 </style>
 </head>
@@ -71,33 +83,32 @@ h2{
 
 <!-- 上段 1～11 -->
 
-<div class="card" style="left:7.5%; top:16%;"></div>
-<div class="card" style="left:15.5%; top:16%;"></div>
-<div class="card" style="left:23.5%; top:16%;"></div>
-<div class="card" style="left:31.5%; top:16%;"></div>
-<div class="card" style="left:39.5%; top:16%;"></div>
+<div class="card top-card" style="left:7.5%; top:16%;"></div>
+<div class="card top-card" style="left:15.5%; top:16%;"></div>
+<div class="card top-card" style="left:23.5%; top:16%;"></div>
+<div class="card top-card" style="left:31.5%; top:16%;"></div>
+<div class="card top-card" style="left:39.5%; top:16%;"></div>
 
-<div class="card" style="left:47.5%; top:16%;"></div>
-<div class="card" style="left:55.5%; top:16%;"></div>
+<div class="card top-card" style="left:47.5%; top:16%;"></div>
+<div class="card top-card" style="left:55.5%; top:16%;"></div>
 
-<div class="card" style="left:62.5%; top:16%;"></div>
-<div class="card" style="left:70.5%; top:16%;"></div>
-<div class="card" style="left:78.5%; top:16%;"></div>
-<div class="card" style="left:86.5%; top:16%;"></div>
+<div class="card top-card" style="left:62.5%; top:16%;"></div>
+<div class="card top-card" style="left:70.5%; top:16%;"></div>
+<div class="card top-card" style="left:78.5%; top:16%;"></div>
+<div class="card top-card" style="left:86.5%; top:16%;"></div>
 
 <!-- 下段 12～20 -->
+<div class="card bottom-card" style="left:14.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:22.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:30.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:38.5%; top:54%;"></div>
 
-<div class="card" style="left:14.5%; top:54%;"></div>
-<div class="card" style="left:22.5%; top:54%;"></div>
-<div class="card" style="left:30.5%; top:54%;"></div>
-<div class="card" style="left:38.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:46.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:54.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:62.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:70.5%; top:54%;"></div>
 
-<div class="card" style="left:46.5%; top:54%;"></div>
-<div class="card" style="left:54.5%; top:54%;"></div>
-<div class="card" style="left:62.5%; top:54%;"></div>
-<div class="card" style="left:70.5%; top:54%;"></div>
-
-<div class="card" style="left:78.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:78.5%; top:54%;"></div>
 </div>
 <script>
 document.querySelectorAll('.card').forEach(card => {
