@@ -4,83 +4,78 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-<title>GOODS CALCULATOR</title>
+<title>座標テスト</title>
 
 <style>
-:root{
-  --theme-color:#e97520; /* ツアーごとに変更 */
-}
-
 body{
-  margin:0;
-  font-family:'Noto Sans JP', sans-serif;
-  background:#f6f7f9;
-  color:#222;
+  margin:20px;
+  font-family:sans-serif;
 }
 
-/* ヘッダー */
-.site-header{
-  text-align:center;
-  padding:28px 16px 18px;
-  background:var(--theme-color);
-  color:#fff;
-}
-
-.main-title{
-  font-size:22px;
-  font-weight:700;
-  letter-spacing:2px;
-}
-
-.sub-title{
-  font-size:13px;
-  opacity:0.85;
-  margin-top:6px;
-}
-
-/* 商品 */
-#goods-list{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:14px;
-  padding:16px;
-  max-width:750px;
+.wrapper{
+  position:relative;
+  max-width:800px;
   margin:auto;
-  padding-bottom:40px;
 }
 
-/* カード */
-.item{
-  background:#fff;
-  border-radius:16px;
-  padding:16px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+.wrapper img{
+  width:100%;
+  display:block;
 }
 
-/* タイトル */
-.item-title{
-  font-size:16px;
-  font-weight:700;
-  margin-bottom:4px;
+/* タップエリア */
+.card{
+  position:absolute;
+  width:12%;
+  height:18%;
+  background:red;
+  opacity:0.4;
+  border:2px solid #fff;
+  box-sizing:border-box;
 }
 
-.item-price{
-  font-size:13px;
-  opacity:0.6;
-  margin-bottom:10px;
+/* 番号表示 */
+.card::after{
+  content:attr(data-num);
+  color:white;
+  font-weight:bold;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
 }
+</style>
+</head>
 
-/* 行 */
-.variant{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px;
-  border-radius:10px;
-  background:#f8f9fb;
+<body>
+
+<h2>トレカ座標テスト</h2>
+
+<div class="wrapper">
+
+  <img src="bandkingdom.jpg" alt="トレカ">
+
+  <!-- とりあえず5枚だけ -->
+
+  <div class="card" data-num="1"
+       style="left:5%; top:5%;"></div>
+
+  <div class="card" data-num="2"
+       style="left:23%; top:5%;"></div>
+
+  <div class="card" data-num="3"
+       style="left:41%; top:5%;"></div>
+
+  <div class="card" data-num="4"
+       style="left:59%; top:5%;"></div>
+
+  <div class="card" data-num="5"
+       style="left:77%; top:5%;"></div>
+
+</div>
+
+</body>
+</html>  background:#f8f9fb;
   margin-bottom:8px;
 }
 
