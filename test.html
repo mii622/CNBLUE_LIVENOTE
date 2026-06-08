@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>座標テスト</title>
+<title>トレカ座標テスト</title>
 
 <style>
 body{
@@ -12,9 +11,14 @@ body{
   font-family:sans-serif;
 }
 
+h2{
+  text-align:center;
+}
+
 .wrapper{
   position:relative;
-  max-width:800px;
+  width:100%;
+  max-width:900px;
   margin:auto;
 }
 
@@ -23,26 +27,23 @@ body{
   display:block;
 }
 
-/* タップエリア */
+/* 座標確認用 */
 .card{
   position:absolute;
-  width:12%;
+  width:6%;
   height:18%;
   background:red;
-  opacity:0.4;
-  border:2px solid #fff;
+  opacity:0.6;
+  border:1px solid #fff;
   box-sizing:border-box;
-}
 
-/* 番号表示 */
-.card::after{
-  content:attr(data-num);
-  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+  font-size:14px;
   font-weight:bold;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
 }
 </style>
 </head>
@@ -53,24 +54,37 @@ body{
 
 <div class="wrapper">
 
-  <img src="bandkingdom.jpg" alt="トレカ">
+<img src="bandkingdom.jpg" alt="トレカ">
 
-  <!-- とりあえず5枚だけ -->
+<!-- 上段 1～11 -->
 
-  <div class="card" data-num="1"
-       style="left:5%; top:5%;"></div>
+<div class="card" style="left:5%; top:8%;">1</div>
+<div class="card" style="left:13%; top:8%;">2</div>
+<div class="card" style="left:21%; top:8%;">3</div>
+<div class="card" style="left:29%; top:8%;">4</div>
+<div class="card" style="left:37%; top:8%;">5</div>
 
-  <div class="card" data-num="2"
-       style="left:23%; top:5%;"></div>
+<div class="card" style="left:45%; top:8%;">6</div>
+<div class="card" style="left:53%; top:8%;">7</div>
+<div class="card" style="left:61%; top:8%;">8</div>
+<div class="card" style="left:69%; top:8%;">9</div>
+<div class="card" style="left:77%; top:8%;">10</div>
 
-  <div class="card" data-num="3"
-       style="left:41%; top:5%;"></div>
+<div class="card" style="left:85%; top:8%;">11</div>
 
-  <div class="card" data-num="4"
-       style="left:59%; top:5%;"></div>
+<!-- 下段 12～20 -->
 
-  <div class="card" data-num="5"
-       style="left:77%; top:5%;"></div>
+<div class="card" style="left:10%; top:45%;">12</div>
+<div class="card" style="left:18%; top:45%;">13</div>
+<div class="card" style="left:26%; top:45%;">14</div>
+<div class="card" style="left:34%; top:45%;">15</div>
+
+<div class="card" style="left:42%; top:45%;">16</div>
+<div class="card" style="left:50%; top:45%;">17</div>
+<div class="card" style="left:58%; top:45%;">18</div>
+<div class="card" style="left:66%; top:45%;">19</div>
+
+<div class="card" style="left:74%; top:45%;">20</div>
 
 </div>
 
