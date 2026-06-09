@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ランダムグッズ　交換用画像作成</title>
+<title>ランダムグッズ　交換探し用画像作成</title>
 
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
@@ -60,7 +60,6 @@ h2{
   position:relative;
   max-width:900px;
   margin:0 auto 40px;
-  padding-top:40px;
 }
 
 /* 左上タイトル */
@@ -79,7 +78,6 @@ h2{
 
   z-index:10;
   pointer-events:none;
-  margin:0;
 }
 
 /* ===== トレカ本体 ===== */
@@ -134,7 +132,7 @@ h2{
 
 <body>
 
-<h2>ランダムグッズ 交換探し用画像作成</h2>
+<h2>ランダムグッズ　交換探し用画像作成</h2>
 
 <div class="subtext">
 交換探し用の画像を作成できます<br>
@@ -144,7 +142,7 @@ h2{
 </div>
 
 <div class="btn-area">
-  <button class="saveBtn">画像を保存</button>
+  <button class="saveBtn">トレカを保存</button>
 </div>
 
 <!-- ===== トレカセクション ===== -->
@@ -227,7 +225,6 @@ document.querySelectorAll('.saveBtn').forEach(btn => {
     const canvas = await html2canvas(section, {
       backgroundColor: null,
       scale: window.devicePixelRatio * 2
-      useCORS: true
     });
 
     const link = document.createElement('a');
