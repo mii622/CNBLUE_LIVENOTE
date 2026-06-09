@@ -2,34 +2,24 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>トレカ</title>
+<title>トレカ生成</title>
 
-<link rel="stylesheet" href="../core/style.css">
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
-<style>
-.wrapper{
-  position:relative;
-}
-.card{
-  position:absolute;
-  width:8%;
-  height:16%;
-}
-.mark{
-  position:absolute;
-  font-size:12px;
-  color:#fff;
-}
-.give{ background:red; }
-.want{ background:blue; }
-</style>
-
+<link rel="stylesheet" href="../core/style.css">
 </head>
+
 <body>
 
 <h2>トレカ生成</h2>
-<button class="saveBtn">保存</button>
+
+<div class="subtext">
+タップで譲→求→クリア / 画像保存できます
+</div>
+
+<div class="btn-area">
+  <button id="saveBtn">画像保存</button>
+</div>
 
 <div class="wrapper">
   <img>
@@ -38,7 +28,7 @@
 <script src="../data/trc.js"></script>
 <script src="../core/app.js"></script>
 <script>
-initGenerator(CONFIG);
+init(CONFIG);
 </script>
 
 </body>
