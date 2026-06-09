@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ランダムグッズ　交換用画像作成</title>
+<title>ランダムグッズ交換用画像作成ツール</title>
 
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
@@ -15,7 +15,7 @@ body{
   color:#222;
 }
 
-/* ===== タイトル ===== */
+/* タイトル */
 h2{
   text-align:center;
   font-size:20px;
@@ -24,28 +24,27 @@ h2{
   letter-spacing:1px;
 }
 
-/* ===== 説明カード ===== */
+/* 説明 */
 .subtext{
-  max-width:700px;
+  max-width:900px;
   margin:0 auto 15px;
-  padding:14px 16px;
-  border-radius:12px;
-  background:#fff;
+  padding:12px 14px;
+  border-radius:10px;
+  background:#ffffff;
   font-size:13px;
-  line-height:1.7;
+  line-height:1.6;
   color:#333;
-  width:calc(100% - 32px);
+  width:calc(100% - 40px);
   box-sizing:border-box;
-  box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* ===== ボタン ===== */
+/* ボタン */
 .btn-area{
   text-align:center;
   margin-bottom:20px;
 }
 
-.saveBtn{
+#saveBtn{
   padding:10px 18px;
   border:none;
   border-radius:10px;
@@ -55,37 +54,16 @@ h2{
   cursor:pointer;
 }
 
-/* ===== セクション ===== */
-.section{
-  position:relative;
-  max-width:900px;
-  margin:0 auto 40px;
+#saveBtn:hover{
+  opacity:0.85;
 }
 
-/* 左上タイトル */
-.section-title{
-  position:absolute;
-  top:4px;
-  left:10px;
-
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:1px;
-
-  background:rgba(255,255,255,0.85);
-  padding:4px 10px;
-  border-radius:8px;
-
-  z-index:10;
-  pointer-events:none;
-  margin:0;
-}
-
-/* ===== トレカ本体 ===== */
+/* トレカエリア */
 .wrapper{
   position:relative;
   width:100%;
-  padding-top:28px;
+  max-width:900px;
+  margin:auto;
 }
 
 .wrapper img{
@@ -134,59 +112,55 @@ h2{
 
 <body>
 
-<h2>ランダムグッズ 交換探し用画像作成</h2>
+<h2>ランダムグッズ交換用画像作成ツール</h2>
 
 <div class="subtext">
-交換探し用の画像を作成できます<br>
+交換探し用の画像が作成できます<br>
 ① カードをタップで「譲 → 求 → クリア」切り替え<br>
-② [画像を保存]ボタンで端末に画像が保存されます<br>
-③ そのままSNSに投稿してOK!
+② マークをつけたら[画像を保存]ボタンで端末に画像が保存されます<br>
+③ そのままSNS投稿に利用してOK!
 </div>
 
 <div class="btn-area">
-  <button class="saveBtn">画像を保存</button>
+  <button id="saveBtn">画像として保存</button>
 </div>
 
-<!-- ===== トレカセクション ===== -->
-<div class="section">
+<div class="wrapper">
 
-  <div class="section-title">トレカ</div>
+<img src="bandkingdom.jpg" alt="トレカ">
 
-  <div class="wrapper">
+<!-- 上段 1～11（そのまま維持） -->
+<div class="card top-card" style="left:7.5%; top:16%;"></div>
+<div class="card top-card" style="left:15.5%; top:16%;"></div>
+<div class="card top-card" style="left:23.5%; top:16%;"></div>
+<div class="card top-card" style="left:31.5%; top:16%;"></div>
+<div class="card top-card" style="left:39.5%; top:16%;"></div>
 
-    <img src="bandkingdom.jpg" alt="トレカ">
+<div class="card top-card" style="left:47.5%; top:16%;"></div>
+<div class="card top-card" style="left:55.5%; top:16%;"></div>
 
-    <!-- 上段 1～11 -->
-    <div class="card top-card" style="left:7.5%; top:16%;"></div>
-    <div class="card top-card" style="left:15.5%; top:16%;"></div>
-    <div class="card top-card" style="left:23.5%; top:16%;"></div>
-    <div class="card top-card" style="left:31.5%; top:16%;"></div>
-    <div class="card top-card" style="left:39.5%; top:16%;"></div>
+<div class="card top-card" style="left:62.5%; top:16%;"></div>
+<div class="card top-card" style="left:70.5%; top:16%;"></div>
+<div class="card top-card" style="left:78.5%; top:16%;"></div>
+<div class="card top-card" style="left:86.5%; top:16%;"></div>
 
-    <div class="card top-card" style="left:47.5%; top:16%;"></div>
-    <div class="card top-card" style="left:55.5%; top:16%;"></div>
-    <div class="card top-card" style="left:62.5%; top:16%;"></div>
-    <div class="card top-card" style="left:70.5%; top:16%;"></div>
-    <div class="card top-card" style="left:78.5%; top:16%;"></div>
-    <div class="card top-card" style="left:86.5%; top:16%;"></div>
+<!-- 下段 12～20（そのまま維持） -->
+<div class="card bottom-card" style="left:14.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:22.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:30.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:38.5%; top:54%;"></div>
 
-    <!-- 下段 12～20 -->
-    <div class="card bottom-card" style="left:14.5%; top:54%;"></div>
-    <div class="card bottom-card" style="left:22.5%; top:54%;"></div>
-    <div class="card bottom-card" style="left:30.5%; top:54%;"></div>
-    <div class="card bottom-card" style="left:38.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:46.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:54.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:62.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:70.5%; top:54%;"></div>
 
-    <div class="card bottom-card" style="left:46.5%; top:54%;"></div>
-    <div class="card bottom-card" style="left:54.5%; top:54%;"></div>
-    <div class="card bottom-card" style="left:62.5%; top:54%;"></div>
-    <div class="card bottom-card" style="left:70.5%; top:54%;"></div>
-    <div class="card bottom-card" style="left:78.5%; top:54%;"></div>
+<div class="card bottom-card" style="left:78.5%; top:54%;"></div>
 
-  </div>
 </div>
 
 <script>
-/* ===== カード状態管理 ===== */
+/* カード状態 */
 document.querySelectorAll('.card').forEach(card => {
 
   card.dataset.state = "0";
@@ -217,24 +191,20 @@ document.querySelectorAll('.card').forEach(card => {
 
 });
 
-/* ===== 画像保存（セクション単位対応） ===== */
-document.querySelectorAll('.saveBtn').forEach(btn => {
+/* 画像保存 */
+document.getElementById('saveBtn').addEventListener('click', async () => {
 
-  btn.addEventListener('click', async () => {
+  const target = document.querySelector('.wrapper');
 
-    const section = btn.closest('.section');
-
-    const canvas = await html2canvas(section, {
-      backgroundColor: null,
-      scale: window.devicePixelRatio * 2
-    });
-
-    const link = document.createElement('a');
-    link.download = 'tradingcards.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-
+  const canvas = await html2canvas(target, {
+    backgroundColor: null,
+    scale: window.devicePixelRatio * 2
   });
+
+  const link = document.createElement('a');
+  link.download = 'tradingcards.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
 
 });
 </script>
