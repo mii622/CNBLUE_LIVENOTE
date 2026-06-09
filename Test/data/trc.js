@@ -1,1 +1,28 @@
+const CONFIG = {
+  image: "../img/bandkingdom.jpg",
 
+  cards: [
+    { left: "7.5%", top: "16%", type: "top" },
+    { left: "15.5%", top: "16%", type: "top" },
+    { left: "23.5%", top: "16%", type: "top" },
+    { left: "31.5%", top: "16%", type: "top" },
+    { left: "39.5%", top: "16%", type: "top" },
+
+    { left: "47.5%", top: "16%", type: "top" },
+    { left: "55.5%", top: "16%", type: "top" },
+    { left: "62.5%", top: "16%", type: "top" },
+    { left: "70.5%", top: "16%", type: "top" },
+    { left: "78.5%", top: "16%", type: "top" },
+    { left: "86.5%", top: "16%", type: "top" },
+
+    { left: "14.5%", top: "54%", type: "bottom" },
+    { left: "22.5%", top: "54%", type: "bottom" },
+    { left: "30.5%", top: "54%", type: "bottom" },
+    { left: "38.5%", top: "54%", type: "bottom" },
+    { left: "46.5%", top: "54%", type: "bottom" },
+    { left: "54.5%", top: "54%", type: "bottom" },
+    { left: "62.5%", top: "54%", type: "bottom" },
+    { left: "70.5%", top: "54%", type: "bottom" },
+    { left: "78.5%", top: "54%", type: "bottom" }
+  ]
+};
