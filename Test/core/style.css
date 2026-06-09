@@ -29,11 +29,11 @@ h2{
   border:none;
   border-radius:10px;
 }
-
 .wrapper{
   position:relative;
+  width:100%;
   max-width:900px;
-  margin:auto;
+  margin:0 auto;
 }
 
 .wrapper img{
