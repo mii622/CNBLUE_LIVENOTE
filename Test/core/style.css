@@ -1,7 +1,7 @@
 body{
   margin:0;
   font-family:sans-serif;
-  background:#ffffff;
+  background:#f3f6fb;
   color:#1f2a37;
   transform:none;
   zoom:1;
@@ -13,7 +13,7 @@ h2{
   text-align:center;
   margin:24px 0 12px 0;
   letter-spacing:1.5px;
-  color:#1d4ed8;
+  color:#6b7cff;
 }
 
 .subtext{
@@ -37,7 +37,7 @@ h2{
 #saveBtn{
   padding:12px 22px;
   font-size:15px;
-  background:#1d4ed8;
+  background:#6b7cff;
   color:#fff;
   border:none;
   border-radius:12px;
