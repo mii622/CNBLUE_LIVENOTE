@@ -24,7 +24,7 @@ h2{
   padding:16px 18px;
   background:#fff;
   border:1px solid #e5eaf2;
-  color:#374151
+  color:#374151;
   border-radius:14px;
   backdrop-filter:blur(6px);
 }
@@ -45,6 +45,7 @@ h2{
 }
 #saveBtn:hover{
   background:#1e40af;
+}
   
 .wrapper{
   width:100%;
