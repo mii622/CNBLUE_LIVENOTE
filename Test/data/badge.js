@@ -2,11 +2,11 @@ const CONFIG = {
   image: "../img/badge.jpg",
 
   cards: [
-    { left: "7.5%", top: "16%", type: "top" },
-    { left: "15.5%", top: "16%", type: "top" },
-    { left: "23.5%", top: "16%", type: "top" },
+    { left: "3.5%", top: "16%", type: "top" },
+    { left: "11.5%", top: "16%", type: "top" },
+    { left: "19.5%", top: "16%", type: "top" },
     { left: "31.5%", top: "16%", type: "top" },
-    { left: "39.5%", top: "16%", type: "top" },
+    { left: "35.5%", top: "16%", type: "top" },
 
     { left: "47.5%", top: "16%", type: "top" },
     { left: "55.5%", top: "16%", type: "top" },
