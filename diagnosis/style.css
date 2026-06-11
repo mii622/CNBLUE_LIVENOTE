@@ -239,7 +239,9 @@ body{
 
 .share-area{
   margin-top:40px;
-  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
 #shareBtn,
