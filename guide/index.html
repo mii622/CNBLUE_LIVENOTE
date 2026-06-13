@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google tag (gtag.js) -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZG2G4761S"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -13,43 +12,36 @@
 
   gtag('config', 'G-QZG2G4761S');
 </script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- OGP -->
-<meta property="og:title" content="GUIDE | CNBLUE LIVE NOTE">
-<meta property="og:description" content="初心者ガイド">
+<title>CNBLUE　ライブガイド</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- OGP -->
+<meta property="og:title" content="VENUES | CNBLUE LIVE NOTE">
+<meta property="og:description" content="CNBLUE　ライブガイド">
 <meta property="og:image" content="https://mii622.github.io/CNBLUE_LIVENOTE/images/ogp/guide.jpg">
 <meta property="og:url" content="https://mii622.github.io/CNBLUE_LIVENOTE/guide/index.html">
 <meta property="og:type" content="website">
 
 <!-- Twitter/X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GUIDE | CNBLUE LIVE NOTE">
-<meta name="twitter:description" content="初心者ガイド">
+<meta name="twitter:title" content="VENUES | CNBLUE LIVE NOTE">
+<meta name="twitter:description" content="CNBLUE　ライブガイド">
 <meta name="twitter:image" content="https://mii622.github.io/CNBLUE_LIVENOTE/images/ogp/guide.jpg">
-  <title>CNBLUE GUIDE</title>
-    <meta name="description"
-content="CNBLUEライブ初心者向けガイド。ライブの雰囲気やあると便利な持ち物をわかりやすく紹介。">
-</head>
-
 <style>
+
+/* =====================
+   BASE
+===================== */
 body {
   font-family: 'Noto Sans JP', sans-serif;
-  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
   margin: 0;
-  padding: 16px;
-  line-height: 2.05;
-  color: #222;
-  -webkit-text-size-adjust: 100%;
+  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
+}
 
-  word-break: normal;
-  overflow-wrap: anywhere;
-}
-.container {
-  max-width: 820px;
-  width: 100%;
-  margin: 0 auto;
-}
+/* =====================
+   HEADER
+===================== */
 .header {
   font-weight: 800;
   font-size: 16px;
@@ -57,7 +49,6 @@ body {
   text-align: center;
   padding: 14px 0;
   color: #6b7cff;
-  position: relative;
 }
 
 .header::after {
@@ -70,342 +61,156 @@ body {
   border-radius: 2px;
   opacity: 0.6;
 }
-  
 
-.site-subtitle{
-
-  font-size: 0.92rem;
-
-  line-height: 1.9;
-
-  color: #666;
-
-  text-align: center;
-
-  margin: 0 auto 28px;
-
-  max-width: 90%;
+/* =====================
+   CONTAINER
+===================== */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 16px;
 }
-/* カード */
-.card {
+
+/* =====================
+   SECTION
+===================== */
+.section {
+  color: #6b7cff;
+  font-weight: 600;
+  font-size: 12px;
+  margin: 22px 4px 10px;
+  border-left: 4px solid #6b7cff;
+  padding-left: 6px;
+}
+
+/* =====================
+   LIST
+===================== */
+.live-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =====================
+   CARD
+===================== */
+.live-item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+
   background: #fff;
   border-radius: 16px;
-  padding: 18px;
-  margin-bottom: 20px;
+  padding: 12px;
+
   box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-  border: 1px solid rgba(0,0,0,0.05);
-}
+  border: 1px solid rgba(0,0,0,0.04);
 
-/* タイトル */
-.main-title {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 900;
-  margin: 10px 0 16px;
-  color: #333;
-}
-
-/* セクションタイトル */
-h1.section-title {
-  font-size: 18px;
-  font-weight: 900;
-  color: #6b7cff;
-  margin: 0 0 16px;
-  border-left: 4px solid #6b7cff;
-  padding-left: 10px;
-  line-height: 1.6;
-}
-
-/* Q */
-.q {
-  font-weight: 700;
-  margin-top: 24px;
-  margin-bottom: 14px;
-  color: #333;
-  line-height: 1.8;
-}
-
-/* A */
-.a {
-  font-weight: 700;
-  color: #2b5cff;
-  margin-top: 4px;
-  margin-bottom: 20px;
-  line-height: 2.1;
-}
-
-/* 区切り */
-hr {
-  border: none;
-  border-top: 1px solid #eee;
-  margin: 26px 0;
-}
-
-/* 段落 */
-p {
-  margin: 0 0 14px;
-}
-
-/* リスト */
-ul {
-  padding-left: 18px;
-}
-
-li {
-  margin-bottom: 8px;
-  line-height: 1.9;
-}
-
-/* 強調 */
-strong {
-  font-weight: 900;
-}
-  .x-area {
-  text-align: center;
-  margin-top: 24px;
-}
-
-.x-text {
-  margin-bottom: 10px;
-}
-
-.x-btn {
-  display: inline-block;
-  background: #000;
-  color: #fff;
-  font-weight: 700;
-  padding: 12px 22px;
-  border-radius: 999px;
   text-decoration: none;
-  transition: 0.25s;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
+  color: #000;
 
-.x-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.2);
-}
-
-.btn-outline {
-  display: block;
-  text-align: center;
-  margin-top: 12px;
-  margin-bottom: 24px; /* ←追加 */
-  padding: 12px 14px;  /* 少しだけ余白増やす */
-  border: 1.5px solid #9bb7ff; /* 見やすく */
-  color: #a3b5c2; /* テキスト色も統一 */
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
   transition: 0.2s;
 }
 
-.btn-outline:hover {
-  background: #f3f6ff;
-  border-color: #6b7cff;
-  color: #4a5fd6;
+.live-item:hover {
+  transform: translateX(4px);
+  background: #eaf0ff;
 }
 
-/* スマホ */
+/* =====================
+   IMAGE（ここ重要）
+===================== */
+.live-item img {
+  width: 170px;   /* ← しっかり大きく */
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  object-position: 50% 40%;
+}
+
+/* =====================
+   TEXT
+===================== */
+.live-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.live-title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #2f3337
+}
+
+.live-sub {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* =====================
+   SP調整
+===================== */
 @media (max-width: 600px) {
-  body {
-    padding: 12px;
-    font-size: 15.5px;
+
+  .live-item img {
+    width: 150px;
+    height: 90px;
   }
 
-  .card {
-    padding: 16px;
+  .live-title {
+    font-size: 14px;
   }
 
-  .main-title {
-    font-size: 18px;
-  }
-
-  h1.section-title {
-    font-size: 16px;
-  }
 }
+
 </style>
 </head>
 
 <body>
-  <div id="header"></div>
 
-  <div class="header">GUIDE</div>
+<!-- ヘッダー（共通読み込み） -->
+<div id="header"></div>
 
-  <h1 class="main-title">CNBLUE初心者ガイド🔰</h1>
-
-<p class="site-subtitle">
-初めての方でもライブが楽しめるポイントをまとめています。
-  </p>
-<a href="/CNBLUE_LIVENOTE/guide/bandkingdom.html" class="btn-outline">
-      FNC BAND KINGDOMガイドはこちら →
-  </a>
-
-
+<div class="header">LIVE GUIDE</div>
 
 <div class="container">
-<div class="card">
+<!-- 2026 -->
 
-<h1 class="section-title">はじめに</h1>
+<div class="live-list">
 
-<p>
-こんにちは！CNBLUEに興味を持ってくださり、
-そしてこのサイトをご覧くださりありがとうございます🩵
-このページでは、CNBLUEのライブが初めて！という方や、1人で行くのが不安、といった方に向けて、
-1オタクが考える"CNBLUEのライブを3倍楽しめる！これさえ押さえればOK初心者ガイド"をご紹介します◎
-</p>
-
-<p>※あくまで中の人による個人的な考えに基づきます</p>
-
-<hr>
-
-<h1 class="section-title">1️⃣これって大丈夫…？初心者の方向けQ&A</h1>
-
-<div class="q">1.そもそも初めてでも楽しめる…？</div>
-
-<p>
-曲を全然知らない、過去のライブを観たことがない、ライブ自体行ったことがない、、それでも本当に楽しい…？
-</p>
-
-<div class="a">A.めっっっっちゃくちゃ楽しいです。</div>
-
-<p>
-CNBLUEは韓国でもフェスや学祭で、
-"CNBLUEを知らない人"に向けた公演を沢山やっています！彼らの得意分野です。
-また、ロックバンドではありますがいわゆるモッシュやダイブみたいなものは全くありません
-(日本の場合はアリーナ含めちゃんと座席があるライブがほとんどです)◎
-ライブ自体初めてという方でも、安心して楽しめると思います♡
-韓国語が分からない…というのも心配無用です。ほとんど韓国語出てきません←<br>
-※MCは通訳なしで日本語ペラペラ、
-最近は韓国語歌詞の日本語訳がスクリーンに映し出される曲も増えてきました！
-</p>
-
-<hr>
-
-<div class="q">2.グッズとかって持ってないとダメ…？</div>
-
-<p>
-ペンライトとかTシャツとかグッズ販売あるけど、
-それを持ってないと会場で浮いちゃう…？
-</p>
-
-<div class="a">A.なくても何にも問題ありません！</div>
-
-<p>
-アイドルみたいなビジュアルですがロックバンドですので、
-うちわやペンライト等は無くて大丈夫です！
-(むしろうちわやボードを掲げることは公式でNGとなっています🙅)
-ちなみに私は韓国公式のペンライト(뛰봉/ティボン)をいつも持っていっていますが、
-大体電池切れか振りすぎて接触が悪くなって途中から拳を掲げています…<br>
-ただ、ペンライトで染まる客席もとっても綺麗です✨️
-日本ではツアーごとに会場でペンライトの販売がありますし、
-私が持っていっている뛰봉は公式オンラインショップ(weverse shop)やQoo10等でも購入できます◎
-</p>
-
-<hr>
-
-<div class="q">3.掛け声とかってあるの…？エバティってなに…？</div>
-
-<div class="a">
-A.掛け声は曲によってはありますが、
-できないと浮くみたいな空気は一切ないのでご安心を！
-</div>
-
-<p>
-韓国では公式に掛け声(응원법)が決まっている曲がありますが、
-やらないと浮いちゃう…みたいなことは全くありません。
-何なら覚えていってもテンション上がりすぎて忘れることもしばしば笑
-</p>
-
-<p>
-掛け声ももちろん楽しいですが、まずはメンバーが叫べ!!(소리 질러/ソリジロ!!)
-と言ったときに思いっきり叫べば大丈夫です◎
-</p>
-
-<p>
-また、最近韓国でも超話題の에바뛰(エバティ)というのは
-"에브리버디 뛰어"(エブリバディティオ)の略で、皆んな跳べ!!という意味です。
-大体ロック系の曲になるとボーカルのヨンファがこの에바뛰を連発するので、
-号令がかかったら叫びながら跳びましょう🦘<br>
-※あまりにも連発して休む暇もないので、韓国ではヨンファは鬼教官と呼ばれています笑
-ちなみにベースのジョンシンも言ってくるのでお見逃しなく👀
-(ほんとにとんでもない回数エバティするので、体力追いつかないと思ったら休みましょう🌱
-跳ばずに叫ぶだけ、ちっちゃく盛り上がるだけでも大丈夫です、ほんとに休ませてくれないので…笑)
-</p>
-
-<hr>
-
-<h1 class="section-title">2️⃣これがあれば楽しめる！持ち物リスト</h1>
-
-<p>
-極端なことを言うと、スマホと楽しむ気持ちさえあれば大丈夫です！
-が、より楽しむために持ってるといいかもと思うものをご紹介します◎
-</p>
-
-<p><strong>〇これは絶対あった方がいい</strong></p>
-<ul>
-<li>スマホ(電子チケット制なので必ず！！)</li>
-<li>モバイルバッテリー(充電切れるとチケット表示できずに入場できなくなっちゃうので)</li>
-<li>飲み物(めちゃくちゃ叫ぶし跳ぶので水分補給だいじ！)</li>
-</ul>
-
-<p><strong>〇グッズを購入したい方</strong></p>
-<ul>
-<li>現金(今のところ、CNBLUEの会場グッズ販売は現金のみ対応です。クレジットカードやQR決済等使えないので要注意⚠️)</li>
-<li>グッズを入れるバッグ(レジ袋の販売はありません)</li>
-</ul>
-
-<p><strong>〇荷物が増えても大丈夫ならこれもあると便利✨️</strong></p>
-<ul>
-<li>レジャーシート(グッズ列に並ぶ方は、大抵長時間外で待つことになるのであると楽です)</li>
-<li>トレカや銀テを入れられる小さい袋(アリーナは銀テゲットのチャンス！グッズのトレカは基本ランダムなので、皆んな現地で大交換会しています)</li>
-<li>足の疲れを癒せるグッズ(特に遠征や泊まりで2日間参加する方！私はplioのマッサージ機持っていってますw)</li>
-</ul>
-
-<hr>
-
-<h1 class="section-title">3️⃣さいごに</h1>
-
-<p>
-ここまで読んでくださった方、ありがとうございます！
-少しでもライブに向けての不安が解消され、ワクワクしていただけたらとても嬉しいです。
-</p>
-
-<p>
-CNBLUEの魅力はライブに尽きると思っています！
-もちろんビジュアルも演技も音源も最高ですが、
-ライブの魅力は一度足を運んでいただけたら必ず感じていただけると確信しています！！
-メンバーも"東西南北、老若男女に好かれるバンドになりたい"と話している通り、
-年齢・性別・国籍etc問わず誰でも楽しめてハッピーな気持ちになれる、それがCNBLUEのライブです。
-きっと1回参加した後には、次のライブ日程を検索していることでしょう。愉快なBOICEが沼でお待ちしています♡笑
-</p>
-
-<p>
-ここに書かれていないこと含め、個別に聞きたい！これも知りたい！
-ということがございましたら、いつでも中の人のXまでご連絡ください！できる限りお答えいたします◎
-</p>
-
-<p>
-皆んなで楽しいオタクライフを送りましょう〜！🩵
-</p>
-
-<div class="x-area">
-  <p class="x-text"><strong>中の人のXはこちら▽</strong></p>
-
-  <a href="https://twitter.com/fumiJYH89" target="_blank" class="x-btn">
-    Xを見る
+  <a href="first.html" class="live-item">
+    <div class="live-text">
+      <div class="live-title">CNBLUE初心者ガイド</div>
+    </div>
   </a>
-</div>
+
+  <a href="bandkindom.html" class="live-item">
+    <div class="live-text">
+      <div class="live-title">FNC BAND KINGDOMガイド
+      </div>
+    </div>
+  </a>
+
+  <a href="solo.html" class="live-item">
+    <div class="live-text">
+      <div class="live-title">おひとりさま参戦ガイド　国内編
+      </div>
+    </div>
+  </a>
 
 </div>
-</div>
+
 <script>
-fetch("../header.html")
+fetch("/CNBLUE_LIVENOTE/header.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
   });
 </script>
+
 </body>
 </html>
