@@ -1,1 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZG2G4761S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QZG2G4761S');
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- OGP -->
+<meta property="og:title" content="GUIDE | CNBLUE LIVE NOTE">
+<meta property="og:description" content="一人参戦ガイド">
+<meta property="og:image" content="https://mii622.github.io/CNBLUE_LIVENOTE/images/ogp/guide.jpg">
+<meta property="og:url" content="https://mii622.github.io/CNBLUE_LIVENOTE/guide/solo.html">
+<meta property="og:type" content="website">
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GUIDE | CNBLUE LIVE NOTE">
+<meta name="twitter:description" content="一人参戦ガイド">
+<meta name="twitter:image" content="https://mii622.github.io/CNBLUE_LIVENOTE/images/ogp/guide.jpg">
+  <title>CNBLUE GUIDE</title>
+    <meta name="description"
+content="CNBLUEライブ一人参戦ガイド。一人でもCNBLUEのライブを楽しむためのポイントや過ごし方を紹介。">
+</head>
+
+<style>
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
+  margin: 0;
+  padding: 16px;
+  line-height: 2.05;
+  color: #222;
+  -webkit-text-size-adjust: 100%;
+
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+.container {
+  max-width: 820px;
+  width: 100%;
+  margin: 0 auto;
+}
+.header {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 14px 0;
+  color: #6b7cff;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #6b7cff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+  
+
+.site-subtitle{
+
+  font-size: 0.92rem;
+
+  line-height: 1.9;
+
+  color: #666;
+
+  text-align: center;
+
+  margin: 0 auto 28px;
+
+  max-width: 90%;
+}
+/* カード */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* タイトル */
+.main-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  margin: 10px 0 16px;
+  color: #333;
+}
+
+/* セクションタイトル */
+h1.section-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: #6b7cff;
+  margin: 0 0 16px;
+  border-left: 4px solid #6b7cff;
+  padding-left: 10px;
+  line-height: 1.6;
+}
+
+/* Q */
+.q {
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* A */
+.a {
+  font-weight: 700;
+  color: #2b5cff;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  line-height: 2.1;
+}
+
+/* 区切り */
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 26px 0;
+}
+
+/* 段落 */
+p {
+  margin: 0 0 14px;
+}
+
+/* リスト */
+ul {
+  padding-left: 18px;
+}
+
+li {
+  margin-bottom: 8px;
+  line-height: 1.9;
+}
+
+/* 強調 */
+strong {
+  font-weight: 900;
+}
+  .x-area {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.x-text {
+  margin-bottom: 10px;
+}
+
+.x-btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.25s;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.x-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.2);
+}
+
+.btn-outline {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 24px; /* ←追加 */
+  padding: 12px 14px;  /* 少しだけ余白増やす */
+  border: 1.5px solid #9bb7ff; /* 見やすく */
+  color: #a3b5c2; /* テキスト色も統一 */
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-outline:hover {
+  background: #f3f6ff;
+  border-color: #6b7cff;
+  color: #4a5fd6;
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+    font-size: 15.5px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .main-title {
+    font-size: 18px;
+  }
+
+  h1.section-title {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <div class="header">GUIDE</div>
+
+  <h1 class="main-title">CNBLUE　おひとりさま参戦ガイド　国内編</h1>
+
+<p class="site-subtitle">
+一人でもCNBLUEのライブを思いきり楽しむためのポイントをまとめています。
+  </p>
+<a href="/CNBLUE_LIVENOTE/guide/index.html" class="btn-outline">
+      他のガイドはこちら →
+  </a>
+
+
+
+<div class="container">
+<div class="card">
+
+<h1 class="section-title">はじめに</h1>
+
+<p>
+こんにちは！このページでは、CNBLUEのライブに毎度一人で参加している私が思う、
+"ライブを一人でも存分に楽しむ方法"をご紹介します！
+行きたいけど一人は…と不安に思っている方が、少しでもライブに行くきっかけになれば嬉しいです♡
+</p>
+
+<p>※あくまで中の人による個人的な考えに基づきます</p>
+
+<hr>
+
+<h1 class="section-title">1.はじめに</h1>
+
+<p>
+チケットは当たるのか、一人で行ってどうやって過ごすのか、会場で浮かないか…
+色々不安に思う点があるかもしれませんが、本当に心配しなくて大丈夫です！！
+チケットはちゃんと当たりますし、一人で来ている人も多いので全く浮きません。
+始まってしまえば1人も4人も関係ないです！
+</p>
+
+<hr>
+
+<h1 class="section-title">2.一人参戦のライブ当日の過ごし方</h1>
+<p>
+とはいえ1人で長い時間過ごすことに不安がある方もいらっしゃると思うので、
+私のパターンをご紹介します😊</p>
+
+<div class="q">①早朝〜グッズ販売開始まで</div>
+
+<p>
+正直ここが一番しんどいかもです。
+特に2日間参加の場合、絶対に1日目でグッズを手に入れておきたいタイプなので、
+朝早くからじっと耐えることからライブの1日がスタートします笑
+ポイントはレジャーシート等座れるものと、何でもいいので暇つぶしになるものを用意すること！
+私は基本CNBLUEの曲を聴きながら仮眠したりゲームしたりしてますが、
+iPadを持っていって本格的にゲームしたり、編み物をしたこともあります🤭
+どうしても一時的に席を外したくなったら、前後の人に声を掛ければOK!
+列が動き出しやすい販売1時間前は避けると安心です◎
+</p>
+
+<hr>
+
+<div class="q">②グッズ購入後〜開場時間</div>
+
+<p>
+ここは完全フリータイム！ですが、意外とやることがあってあっという間です。
+ランダムグッズ開封→交換探しをしながらご飯を食べて休憩→開場時間の1時間前くらいから会場付近で交換の取引
+というのがよくあるパターンな気がします。この間にお友達BOICEさんと会ったりもします🫶
+大事なのは、ライブに向けてしっかり食べて休むこと！
+ちなみに私が大好きな東京ガーデンシアターは、温泉施設が併設されているので、ゆったりお風呂に入って休んだこともあります笑
+自分の好きなように、自由に過ごせるのが一人参戦の魅力です✨️
+</p>
+
+<hr>
+
+<div class="q">③開場〜ライブ</div>
+
+<p>
+会場に入ると、たいてい大きな幕？みたいなライブビジュアルが出ているので記念撮影タイム📸
+私は自分の顔を映すのが苦手なので、ペンライトやうちわを持った手だけ映していますが、
+自分も一緒に撮りたい！という場合は近くのBOICEさんにお願いしてみてください！みんな優しいので撮ってくれます！
+ライブが始まったらもう1人かどうかなんて関係ありません！自由にライブを楽しみましょう💙
+</p>
+
+<hr>
+
+<div class="q">④ライブ後</div>
+
+<p>
+感想を言い合えないのがさみしい…という方もいるかと思います。この想い出を誰かと共有したい…！そんなときはXに来てください！
+同じようなBOICEさんがひたすら感想を上げています、私もその1人です🤣
+流れてくるレポを見て思い出すこともしばしば…(全部記憶に残したいのに、大抵会場を出るときには忘れてる)
+レポを読みつつ、ライブ終わりに上がるメンバーのSNSを見ながら、1人で打ち上げするのもなかなか悪くないです♡
+あと好きなもの食べれるのもポイント！
+</p>
+
+<hr>
+
+<h1 class="section-title">3.一人だからこそ準備しておくといいこと</h1>
+
+<p>
+・ご飯やさんをチェック
+ライブ前後のご飯は何となく決めておくといいです！特に終演後はライブの思い出と1日の疲れであんまり頭が動かないことも…笑
+一人でも入りやすそうなお店か、とりあえず休めるカフェを候補に持っておくととっても楽です👍️
+
+・公式SNSのフォロー+通知ON
+CNBLUE公式のSNS(特にX)をフォローして投稿通知をONにしておくこと！
+グッズ販売開始時間やファンレター受付など、当日のお知らせは大体公式のXで投稿されます。
+一人だと教えてくれる人がいないので、せっかく書いたファンレター出し忘れた！などか無いように、公式のお知らせをチェックしましょう✅️
+</p>
+
+・モバイルバッテリーを忘れずに
+お店を探したり、写真をとったり、暇つぶしをしたり…一人参戦にとってスマホは本当に大事な相棒です🤳
+充電が切れないようにモバイルバッテリーはマスト！コンセントが使えるカフェを調べておくとさらに安心です◎
+<hr>
+
+<h1 class="section-title">4.さいごに</h1>
+
+<p>
+ここまで読んでくださりありがとうございます！少しでも一人参戦への不安がなくなっていれば嬉しいです♡
+もちろん誰かとライブに行くのも楽しいですが、一人参戦には自分のペースで、自分の好きなように楽しめるという良さがあります！
+同じく一人参戦の方が沢山いるので、一人なのがネックで行きづらい…という方はぜひ安心してライブに行っていただけたらと思います！
+自分だけの楽しみ方で、CNBLUEのライブを思いっきり楽しみましょう〜！
+</p>
+
+<p>
+ライブ全般については、こちらの「CNBLUE初心者ガイド」もぜひ参考にしてみてください💙
+</p>
+
+<a href="/CNBLUE_LIVENOTE/guide/first.html" class="btn-outline">
+      CNBLUE初心者ガイドはこちら →
+</a>
+
+
+<div class="x-area">
+  <p class="x-text"><strong>中の人のXはこちら▽</strong></p>
+
+  <a href="https://twitter.com/fumiJYH89" target="_blank" class="x-btn">
+    Xを見る
+  </a>
+</div>
+
+</div>
+</div>
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+</body>
+</html>
