@@ -1,6 +1,6 @@
 {
-  "name": "CNBLUE LIVENOTE",
-  "short_name": "LIVENOTE",
+  "name": "CNBLUE LIVE NOTE",
+  "short_name": "CNBLUE LIVENOTE",
   "start_url": "/CNBLUE_LIVENOTE/",
   "display": "standalone",
   "background_color": "#ffffff",
