@@ -1,1 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZG2G4761S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-QZG2G4761S');
+</script>
+<title>幕張メッセ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- アイコン -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<div id="header"></div>
+<div class="container">
+
+  <!-- タイトル -->
+  <div class="title-box">
+
+    <div class="page-label">
+      VENUE GUIDE
+    </div>
+
+    <div class="venue-title">
+      幕張メッセ
+    </div>
+
+    <div class="venue-subtitle">
+      会場アクセス・周辺情報まとめ
+    </div>
+
+  </div>
+
+  <!-- 会場情報 -->
+  <div class="card">
+
+    <h2>👣 アクセス</h2>
+
+    <a href="https://www.m-messe.co.jp/access/"
+       target="_blank"
+       class="venue-link">
+
+      ↗ 会場の公式サイトを見る
+
+    </a>
+
+      <div class="info-text">
+海浜幕張駅から5分<br>
+メッセと言ってもイベントホールなのか、展示ホールなのか(番号にもよる)でまた歩きます<br>
+道も混みやすいので時間に余裕を持って出発を！<br>
+駅からはデッキがありますが、屋根はないので雨の日は傘必須<br>
+      </div>
+
+    </div>
+
+    <!-- カフェ -->
+  <div class="card">
+    
+  <h2>☕ カフェ</h2>
+  
+      <div class="info-text">
+施設内にレストランがありますが、だいたい混雑してます<br>
+駅前の商業施設やメッセと反対側の駅前にカフェ複数あり<br>
+ただし、幕張で複数イベントがある際はめちゃくちゃ混むので注意<br>
+会場内にデイリーヤマザキあり、大混雑&公演直前には何もなくなるので、利用する場合は早めに！<br>
+      </div>
+
+    </div>
+
+    <!-- ご飯 -->
+  <div class="card">
+  <h2>🍴 ご飯</h2>
+
+      <div class="info-text">
+駅前の商業施設(プレナ幕張)はフードコートからレストランまで選択肢豊富<br>
+※公演後の夜ご飯は空いてればラッキーくらい…閉店も早め<br>
+メッセと反対側の駅前は居酒屋多いので一人にはややハードル高め<br>
+      </div>
+
+    </div>
+
+    <!-- 座席 -->
+  <div class="card">
+  <h2>🪑 座席</h2>
+    <div class="info-section">
+      <div class="info-section">
+      <a href="https://www.m-messe.co.jp/saved/files/document/pdf/1088/1/幕張イベントホール座席表(一式）.pdf"
+       target="_blank"
+       class="venue-link">
+
+      ↗ [イベントホール]会場公式の座席表を見る
+
+    </a>
+
+
+      <div class="info-text">
+[イベントホール]<br>
+アリーナは可動式、スタンドはAブロックがステージ正面(一番遠い)<br>
+3F後方はかなりステージとの距離あり…<br>
+[展示ホール]<br>
+一切段差なし、固定席もなし<br>
+ステージ近くなら最高、離れてたら埋もれがち<br>
+ステージの迫力はあるが、音響がズレやすい<br>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 戻る -->
+  <a href="index.html" class="back-link">
+    ← 会場まとめTOPへ戻る
+  </a>
+
+</div>
+<!-- header.html読み込み -->
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+</body>
+</html>
