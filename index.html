@@ -352,7 +352,39 @@ a {
   background: #2b5cff;
   color: white;
 }
+.top-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px;
+}
 
+.menu-card {
+  display: block;
+  padding: 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  min-height: 64px;
+  transition: 0.15s ease;
+}
+
+.menu-card:active {
+  transform: scale(0.98);
+}
+
+.menu-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.menu-sub {
+  font-size: 13px;
+  opacity: 0.7;
+}
 </style>
 </head>
 
@@ -371,6 +403,24 @@ a {
 CNBLUEのライブ情報、セトリ、初心者向けガイドなどを
 ゆるくまとめている非公式ファンサイトです♡
 </h1>
+<section class="top-menu">
+
+  <a href="first.html" class="menu-card">
+    <div class="menu-title">🔰 初めての人</div>
+    <div class="menu-sub">ライブ初心者の方はまずここ！</div>
+  </a>
+
+  <a href="lives/index.html" class="menu-card">
+    <div class="menu-title">🔍 ライブ情報</div>
+    <div class="menu-sub">会場・公演情報をまとめてチェック</div>
+  </a>
+
+  <a href="goods/index.html" class="menu-card">
+    <div class="menu-title">🔢 グッズ計算</div>
+    <div class="menu-sub">事前に購入金額をシミュレーション</div>
+  </a>
+
+</section>
 <div class="container">
   <!-- LIVE -->
   <div class="section">LIVE</div>
