@@ -4,7 +4,7 @@
   "start_url": "/CNBLUE_LIVENOTE/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#6ec6ff",
+  "theme_color": "#afcbda",
   "icons": [
     {
       "src": "icon-192.png",
