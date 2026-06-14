@@ -5,4 +5,62 @@
     <loc>https://mii622.github.io/CNBLUE_LIVENOTE/</loc>
   </url>
 
+  <!-- GUIDE -->
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/guide/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/guide/first.html</loc>
+  </url>
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/guide/solo.html</loc>
+  </url>
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/guide/bandkingdom.html</loc>
+  </url>
+
+  <!-- LIVE -->
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/lives/list.html</loc>
+  </url>
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/lives/25kingdom.html</loc>
+  </url>
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/lives/26bandkingdom.html</loc>
+  </url>
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/lives/3LOGY.html</loc>
+  </url>
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/lives/onelastday.html</loc>
+  </url>
+
+  <!-- VENUES -->
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/venues/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/venues/budokan.html</loc>
+  </url>
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/venues/garden.html</loc>
+  </url>
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/venues/pacifico.html</loc>
+  </url>
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/venues/pia.html</loc>
+  </url>
+
+  <!-- GOODS -->
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/Goods/index.html</loc>
+  </url>
+
+  <!-- DIAGNOSIS -->
+  <url>
+    <loc>https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/index.html</loc>
+  </url>
+
 </urlset>
