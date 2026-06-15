@@ -3,210 +3,543 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ランダムグッズ交換用画像作成ツール</title>
+<meta name="description"
+content="CNBLUEのライブに参加する全ての人向け、会場情報やグッズ計算、おすすめ曲などのまとめサイト。初めてでも楽しめる！">
 
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<!-- OGP -->
+<meta property="og:title" content="HOME | CNBLUE LIVE NOTE">
+<meta property="og:description" content=HOME">
+<meta property="og:image" content="https://mii622.github.io/CNBLUE_LIVENOTE/images/ogp/top.jpg">
+<meta property="og:url" content="https://mii622.github.io/CNBLUE_LIVENOTE/index.html">
+<meta property="og:type" content="website">
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HOME | CNBLUE LIVE NOTE">
+<meta name="twitter:description" content="HOME">
+<meta name="twitter:image" content="https://mii622.github.io/CNBLUE_LIVENOTE/images/ogp/top.jpg">
+
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZG2G4761S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QZG2G4761S');
+</script>
+<link rel="manifest" href="/CNBLUE_LIVENOTE/manifest.json">
+<meta name="theme-color" content="#afcbda">
+<title>CNBLUE LIVE NOTE</title>
+
+<!-- フォント -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+<!-- アイコン -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body{
-  margin:0;
-  font-family:sans-serif;
-  background:#f5f6fa;
-  color:#222;
+   .site-subtitle{
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.9;
+  color: #666;
+  text-align: center;
+  margin: 10px auto 10px;
+  max-width: 90%;
 }
 
-/* タイトル */
-h2{
-  text-align:center;
-  font-size:20px;
-  font-weight:700;
-  margin:20px 0 10px;
-  letter-spacing:1px;
+/* =====================
+   BASE
+===================== */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
 }
 
-/* 説明 */
-.subtext{
-  max-width:900px;
-  margin:0 auto 15px;
-  padding:12px 14px;
-  border-radius:10px;
-  background:#ffffff;
-  font-size:13px;
-  line-height:1.6;
-  color:#333;
-  width:calc(100% - 40px);
-  box-sizing:border-box;
+a {
+  font-family: "Noto Sans JP", sans-serif;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* ボタン */
-.btn-area{
-  text-align:center;
-  margin-bottom:20px;
+/* =====================
+   HEADER
+===================== */
+.main-title {
+  font-family: "Boogaloo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 22px 0 10px;
+  color: #6b7cff;
+  position: relative;
 }
 
-#saveBtn{
-  padding:10px 18px;
-  border:none;
-  border-radius:10px;
-  background:#222;
-  color:#fff;
-  font-size:14px;
-  cursor:pointer;
+.main-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: #6b7cff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  opacity: 0.6;
 }
 
-#saveBtn:hover{
-  opacity:0.85;
+/* =====================
+   CONTAINER
+===================== */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 16px;
 }
 
-/* トレカエリア */
-.wrapper{
-  position:relative;
+/* =====================
+   HERO
+===================== */
+.hero{
+  height: 34vw;
+  min-height: 220px;
+  max-height: 340px;
+
+  overflow:hidden;
+}
+
+.hero img{
   width:100%;
-  max-width:900px;
-  margin:auto;
-}
-
-.wrapper img{
-  width:100%;
+  height:90%;
+  object-fit:cover;
   display:block;
 }
 
-/* カード */
-.card{
-  position:absolute;
-  width:8%;
-  height:16%;
-  background:transparent;
-  cursor:pointer;
+/* =====================
+   SECTION TITLE
+===================== */
+.section {
+  margin-top: 28px;
+  margin-bottom: 8px;
+  padding-left: 4px;
+  color: #6b7cff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 16px;
+  margin: 22px 4px 10px;
+  border-left: 4px solid #6b7cff;
+  letter-spacing: 1px;
 }
 
-/* ラベル */
-.mark{
-  padding:2px 8px;
-  border-radius:12px;
+.section + .card {
+  margin-top: 8px;
+}
+
+/* =====================
+   CARD（共通）
+===================== */
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  overflow: hidden;
+  margin-bottom: 12px;
+  transition: 0.2s;
+  padding-bottom: 12px;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card-body {
+  padding: 12px;
+}
+
+.title {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.sub {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* =====================
+   LIVE IMAGE
+===================== */
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+/* リスト全体 */
+.live-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding:0 14px 14px;
+}
+
+.live-list:hover {
+  transform: translateY(-2px);
+}
+
+/* 左画像 */
+.live-list img {
+  width: 228px;
+  height: 128px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* 右テキスト */
+.live-text {
+  font-family: "Noto Sans JP", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.live-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.live-item:hover {
+  transform: translateX(4px);
+  background: #eaf0ff;
+}
+
+.live-item img {
+  width: 110px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* =====================
+   BUTTON
+===================== */
+.btn-outline {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid #80a3ff;
+  color: #80a3ff;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-outline:hover {
+  background: #80a3ff;
+  color: white;
+}
+
+/* =====================
+   SMALL CARD
+===================== */
+.small-card {
+  padding: 14px;
+}
+
+/* =====================
+   SNS
+===================== */
+.sns-text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.sns-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0F1419;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.sns-button:hover {
+  transform: translateY(-2px);
+  background: #000;
+}
+
+.sns-button i {
+  font-size: 14px;
+}
+.quiz-card{
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  overflow: hidden;
+  margin-bottom: 12px;
+  transition: 0.2s;
+  padding-bottom: 12px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px;
+  border-radius:18px;
+  flex-wrap:nowrap;
+}
+
+.quiz-card img{
+  width:88px;
+  aspect-ratio:1/1;
+
+  object-fit:cover;
+  border-radius:14px;
+
+  flex-shrink:0;
+}
+
+.quiz-content{
+  flex:1;
+  min-width:0;
+}
+
+.quiz-title{
+  font-size:14px;
+  margin-bottom:10px;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.quiz-btn{
+  display:inline-block;
+  padding:9px 14px;
+  border-radius:999px;
+  border: 1px solid #2b5cff;
+  color: #2b5cff;
+
+  text-decoration:none;
   font-size:12px;
-  font-weight:bold;
-  color:#fff;
+  font-weight:600;
+  transition: 0.2s;
   white-space:nowrap;
 }
-
-.give{ background:#e53935; }
-.want{ background:#1e88e5; }
-
-/* 上段 */
-.top-card .mark{
-  position:absolute;
-  right:0px;
-  top:-18px;
+.quiz-btn:hover {
+  background: #2b5cff;
+  color: white;
+}
+.top-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px;
 }
 
-/* 下段 */
-.bottom-card .mark{
-  position:absolute;
-  right:2px;
-  bottom:-18px;
+.menu-card {
+  display: block;
+  padding: 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  box-shadow:0 10px 24px rgba(0,0,0,0.06);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  min-height: 64px;
+  transition: 0.2s;
 }
 
+.menu-card:active {
+  transform: scale(0.98);
+}
+
+.menu-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.menu-sub {
+  font-size: 13px;
+  opacity: 0.7;
+}
 </style>
 </head>
 
 <body>
 
-<h2>ランダムグッズ交換用画像作成ツール</h2>
+<!-- ヘッダー読み込み -->
+<div id="header"></div>
 
-<div class="subtext">
-交換探し用の画像が作成できます<br>
-① カードをタップで「譲 → 求 → クリア」切り替え<br>
-② マークをつけたら[画像を保存]ボタンで端末に画像が保存されます<br>
-③ そのままSNS投稿に利用してOK!
+  <!-- HERO -->
+  <div class="hero">
+    <img src="images/top.jpg">
+  </div>
+   
+      
+<h1 class="site-subtitle">
+※テスト※のライブ情報、セトリ、初心者向けガイドなどを
+ゆるくまとめている非公式ファンサイトです♡
+</h1>
+<section class="top-menu">
+
+  <a href="guide/first.html" class="menu-card">
+    <div class="menu-title">🔰 初めての人</div>
+    <div class="menu-sub">ライブ初心者の方はまずこちら！</div>
+  </a>
+
+  <a href="lives/list.html" class="menu-card">
+    <div class="menu-title">🔍 ライブ情報</div>
+    <div class="menu-sub">会場・公演情報をまとめてチェック</div>
+  </a>
+
+  <a href="Goods/index.html" class="menu-card">
+    <div class="menu-title">🔢 グッズ計算</div>
+    <div class="menu-sub">事前に購入金額をシミュレーション</div>
+  </a>
+
+</section>
+
+</section>
+<div class="container">
+  <!-- LIVE -->
+  <div class="section">LIVE</div>
+  <div class="card">
+
+    <div class="live-list">
+       <a href="/CNBLUE_LIVENOTE/lives/26bandkingdom.html" class="live-item">
+        <img src="images/26bandkingdom.jpg">
+        <div class="live-text">
+          <div class="live-title">FNC BAND KINGDOM 2026</div>
+          <div class="live-sub">ライブ情報まとめ</div>
+        </div>
+      </a>
+
+      <a href="/CNBLUE_LIVENOTE/lives/3LOGY.html" class="live-item">
+        <img src="images/3logy.jpg">
+        <div class="live-text">
+          <div class="live-title">2026 CNBLUE LIVE '3LOGY'</div>
+          <div class="live-sub">セトリ・レポ</div>
+        </div>
+      </a>
+
+      <a href="/CNBLUE_LIVENOTE/lives/onelastday.html" class="live-item">
+        <img src="images/old.jpg">
+        <div class="live-text">
+          <div class="live-title">2026 JUNG YONGHWA SOLO LIVE IN JAPAN "One Last Day"</div>
+          <div class="live-sub">セトリ・レポ</div>
+        </div>
+      </a>
+
+    <a href="/CNBLUE_LIVENOTE/lives/list.html" class="btn-outline">
+      一覧を見る →
+    </a>
+     </div>
+     </div>
+
+  <!-- GOODS -->
+  <div class="section">GOODS</div>
+
+  <div class="card small-card">
+    グッズ一覧と合計金額が計算できます!
+    <a href="/CNBLUE_LIVENOTE/Goods/index.html" class="btn-outline">
+      グッズ計算ツールはこちら →
+    </a>
+  </div>
+
+  <!-- VENUE -->
+  <div class="section">VENUE</div>
+
+  <div class="card small-card">
+    近くのカフェやアクセス情報など、実際に足を運んだオタク視点でのポイントをまとめています◎
+     <a href="/CNBLUE_LIVENOTE/venues/index.html" class="btn-outline">
+      会場まとめはこちら →
+        </a>
+  </div>
+
+  <!-- GUIDE -->
+  <div class="section">GUIDE</div>
+
+  <div class="card small-card">
+    CNBLUEのライブに初めて行く!という方へ、ライブが3倍楽しくなるポイントをまとめました♡
+    <a href="/CNBLUE_LIVENOTE/guide/first.html" class="btn-outline">
+      CNBLUE初心者ガイド →
+    </a>
+<br>
+     FNC BAND KINGDOMが初めての方へ、ここさえ押さえればOK!なポイントをまとめました🎸
+    <a href="/CNBLUE_LIVENOTE/guide/bandkingdom.html" class="btn-outline">
+      FNC BAND KINGDOMガイド →
+    </a>
+<br>
+     他にも、ライブに何度も参加しているファンならではの視点でまとめたガイドを随時更新中です！
+   <a href="/CNBLUE_LIVENOTE/guide/index.html" class="btn-outline">
+      その他のガイドはこちら →
+        </a>
+  </div>
+
+<!-- VENUE -->
+   <div class="section">CNBLUE for Your Mood</div>
+  <div class="quiz-card">
+  <img src="images/quiz.jpg" alt="CNBLUE Quiz">
+
+  <div class="quiz-content">
+    <p class="quiz-label">5つの質問に答えると、今のあなたの気分にぴったりのCNBLUEが見つかります🩵</p>
+
+    <a href="/CNBLUE_LIVENOTE/diagnosis/index.html"
+       class="quiz-btn">
+      さっそく診断してみる →
+    </a>
+  </div>
+     </div>
+   
+  <!-- SNS -->
+  <div class="section">SNS</div>
+  <div class="card small-card">
+
+    <p class="sns-text">
+      Xでもライブレポやリアルタイムの感想を更新しています。<br>
+      気になることやご質問があれば、気軽にXで聞いてください🫶🏻
+    </p>
+
+    <a href="https://x.com/fumijyh89?s=21" target="_blank" class="sns-button">
+      <i class="fa-brands fa-x-twitter"></i>
+      中の人のXはこちら →
+    </a>
+
+  </div>
 </div>
 
-<div class="btn-area">
-  <button id="saveBtn">画像として保存</button>
-</div>
-
-<div class="wrapper">
-
-<img src="bandkingdom.jpg" alt="トレカ">
-
-<!-- 上段 1～11（そのまま維持） -->
-<div class="card top-card" style="left:7.5%; top:16%;"></div>
-<div class="card top-card" style="left:15.5%; top:16%;"></div>
-<div class="card top-card" style="left:23.5%; top:16%;"></div>
-<div class="card top-card" style="left:31.5%; top:16%;"></div>
-<div class="card top-card" style="left:39.5%; top:16%;"></div>
-
-<div class="card top-card" style="left:47.5%; top:16%;"></div>
-<div class="card top-card" style="left:55.5%; top:16%;"></div>
-
-<div class="card top-card" style="left:62.5%; top:16%;"></div>
-<div class="card top-card" style="left:70.5%; top:16%;"></div>
-<div class="card top-card" style="left:78.5%; top:16%;"></div>
-<div class="card top-card" style="left:86.5%; top:16%;"></div>
-
-<!-- 下段 12～20（そのまま維持） -->
-<div class="card bottom-card" style="left:14.5%; top:54%;"></div>
-<div class="card bottom-card" style="left:22.5%; top:54%;"></div>
-<div class="card bottom-card" style="left:30.5%; top:54%;"></div>
-<div class="card bottom-card" style="left:38.5%; top:54%;"></div>
-
-<div class="card bottom-card" style="left:46.5%; top:54%;"></div>
-<div class="card bottom-card" style="left:54.5%; top:54%;"></div>
-<div class="card bottom-card" style="left:62.5%; top:54%;"></div>
-<div class="card bottom-card" style="left:70.5%; top:54%;"></div>
-
-<div class="card bottom-card" style="left:78.5%; top:54%;"></div>
-
-</div>
-
+<!-- header.html読み込み -->
 <script>
-/* カード状態 */
-document.querySelectorAll('.card').forEach(card => {
-
-  card.dataset.state = "0";
-
-  card.addEventListener('click', () => {
-
-    let state = Number(card.dataset.state);
-    state = (state + 1) % 3;
-
-    card.dataset.state = state;
-    card.innerHTML = '';
-
-    if(state === 1){
-      const mark = document.createElement('span');
-      mark.className = 'mark give';
-      mark.textContent = '譲';
-      card.appendChild(mark);
-    }
-
-    if(state === 2){
-      const mark = document.createElement('span');
-      mark.className = 'mark want';
-      mark.textContent = '求';
-      card.appendChild(mark);
-    }
-
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
   });
-
-});
-
-/* 画像保存 */
-document.getElementById('saveBtn').addEventListener('click', async () => {
-
-  const target = document.querySelector('.wrapper');
-
-  const canvas = await html2canvas(target, {
-    backgroundColor: null,
-    scale: window.devicePixelRatio * 2
-  });
-
-  const link = document.createElement('a');
-  link.download = 'tradingcards.png';
-  link.href = canvas.toDataURL('image/png');
-  link.click();
-
-});
 </script>
 
 </body>
