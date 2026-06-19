@@ -7,7 +7,7 @@ body{
 }
 
 h2{
-  font-size:18px;
+  font-size:16px;
   font-weight:800;
   text-align:center;
   margin:14px 0;
@@ -36,7 +36,7 @@ h2{
 
 #saveBtn{
   padding:12px 22px;
-  font-size:15px;
+  font-size:14px;
   background:#6b7cff;
   color:#fff;
   border:none;
