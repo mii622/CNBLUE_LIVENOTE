@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mii622.github.io/CNBLUE_LIVENOTE/sitemap.xml
+Sitemap: https://mii622.github.io/CNBLUE_LIVENOTE/sitemap_index.xml
