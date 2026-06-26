@@ -1,5 +1,5 @@
 const CONFIG = {
-  image: "../img/badge.jpg",
+  image: "../img/26bkcharm.jpg",
 
   cards: [
     { left: "3.5%", top: "16%", type: "top" },
