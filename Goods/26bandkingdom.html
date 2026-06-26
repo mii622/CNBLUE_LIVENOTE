@@ -183,6 +183,17 @@ button.qty:active{
   -webkit-backdrop-filter:blur(10px);
   box-shadow:0 -2px 10px rgba(0,0,0,0.08);
 }
+  .total-price{
+  font-size:16px;
+  font-weight:700;
+}
+
+.total-note{
+  margin-top:2px;
+  font-size:11px;
+  font-weight:400;
+  opacity:0.75;
+}
 
 /* リセット */
 .reset-wrap{
@@ -399,8 +410,10 @@ list += `<div class="summary-item">
 </div>`;
   });
 
-  document.getElementById("total").textContent=
-    `合計: ${total.toLocaleString()} 円`;
+  document.getElementById("total").innerHTML = `
+  <div class="total-price">合計：${total.toLocaleString()} 円</div>
+  <div class="total-note">※ランダム商品20個まで／その他各3個まで</div>
+`;
 
   document.getElementById("summary-list").innerHTML=
     list || "なし";
