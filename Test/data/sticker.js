@@ -5,7 +5,7 @@ const CONFIG = {
   cardHeight: "60%",
 
   cards: [
-    { left: "6%", top: "16%", type: "top" },
+    { left: "2%", top: "16%", type: "top" },
     { left: "24%", top: "20%", type: "top" },
     { left: "43%", top: "16%", type: "top" },
     { left: "62%", top: "20%", type: "top" },
