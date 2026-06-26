@@ -11,9 +11,9 @@ const CONFIG = {
 
     { left: "55.5%", top: "16%", type: "top" },
     { left: "60.5%", top: "16%", type: "top" },
-    { left: "76.5%", top: "16%", type: "top" },
-    { left: "82.5%", top: "16%", type: "top" },
-    { left: "88.5%", top: "16%", type: "top" },
+    { left: "74.5%", top: "16%", type: "top" },
+    { left: "83.5%", top: "16%", type: "top" },
+    { left: "90.5%", top: "16%", type: "top" },
  
 
     { left: "11.5%", top: "54%", type: "bottom" },
@@ -23,7 +23,7 @@ const CONFIG = {
     { left: "45.5%", top: "54%", type: "bottom" },
     { left: "54.5%", top: "54%", type: "bottom" },
     { left: "63.5%", top: "54%", type: "bottom" },
-    { left: "71.5%", top: "54%", type: "bottom" },
-    { left: "80.5%", top: "54%", type: "bottom" }
+    { left: "72.5%", top: "54%", type: "bottom" },
+    { left: "81.5%", top: "54%", type: "bottom" }
   ]
 };
