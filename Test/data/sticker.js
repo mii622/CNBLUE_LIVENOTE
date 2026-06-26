@@ -3,6 +3,8 @@ const CONFIG = {
 
   cardWidth: "20%",
   cardHeight: "60%",
+  markTop: "-8px",
+  markRight: "8px",
 
   cards: [
     { left: "2%", top: "16%", type: "top" },
