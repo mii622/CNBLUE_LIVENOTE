@@ -1,8 +1,8 @@
 const CONFIG = {
   image: "../img/26bksticker.jpg",
 
-  cardWidth: "18%",
-  cardHeight: "34%",
+  cardWidth: "20%",
+  cardHeight: "60%",
 
   cards: [
     { left: "6%", top: "16%", type: "top" },
