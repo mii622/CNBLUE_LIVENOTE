@@ -334,6 +334,33 @@ body {
   color:#888;
   margin-top:14px;
 }
+.exchange-card{
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid #f3f4f6;
+  transform: translateY(-2px);
+  position:relative;
+  background:linear-gradient(
+    180deg,
+    #f8fbff 0%,
+    #eef5ff 100%
+  );
+}
+  .exchange-sample{
+  width:100%;
+  border-radius:12px;
+  margin:12px 0;
+  display:block;
+  }
+  .exchange-card h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  border-left: 5px solid #6b7cff;
+  padding-left: 10px;
+  }
+  
 </style>
 </head>
 
@@ -350,7 +377,7 @@ body {
     <div class="page-label">LIVE REPORT</div>
 
     <div class="tour-name">
-      FNC BAND KINGDOM 2026
+      ※テスト※ KINGDOM 2026
     </div>
 
     <div class="tour-date">
@@ -380,7 +407,22 @@ body {
     <p>横浜：2026/7/11 16:00開演・7/12 14:00開演 @ぴあアリーナMM</p>
   </div>
 
-  <!-- 会場 -->
+  <!-- グッズ -->
+  <div class="card">
+    <h2>グッズ</h2>
+    <p>購入予定金額をシミュレーションできます</p>
+    <a href="https://mii622.github.io/CNBLUE_LIVENOTE/Goods/26bandkingdom.html" class="button">
+      グッズ計算はこちら
+    </a>
+  </div>
+
+  <div class="exchange-card">
+    <h2>交換用画像ジェネレーター</h2>
+    <p>ランダムグッズの交換探し用画像をつくれます！</p>
+    coming soon...
+  </div>
+  
+<!-- 会場 -->
    <div class="card">
     <h2>会場メモ</h2>
   <div class="venue-box">
@@ -401,31 +443,13 @@ body {
 
   </div>
     </div>
-   <div class="card">
-    <h2>おすすめ曲診断</h2>
-    <p>CNBLUEのおすすめ曲を予習したい方へ<br>
-       あなたにぴったりのCNBLUEが見つかります🩵</p>
-     <a href="https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/index.html" class="button">
-      曲診断をしてみる
-       </a>
-  </div>
-
-  <!-- グッズ -->
-  <div class="card">
-    <h2>グッズ</h2>
-    <p>グッズ金額を計算できます</p>
-    <a href="" class="button">
-      グッズ計算はこちら
-    </a>
-  </div>
-
   <div class="card">
 
   <h2>持ち物リスト</h2>
 
   <a href="/CNBLUE_LIVENOTE/guide/bandkingdom.html"
      class="beginner-link">
-    初参加の人はこちら🔰
+    初参加ガイドもみる🔰
   </a>
 
   <div class="check-list" id="checkList"></div>
@@ -448,7 +472,14 @@ body {
   </p>
 
   </div>
-  
+  <div class="card">
+    <h2>おすすめ曲診断</h2>
+    <p>CNBLUEのおすすめ曲を予習したい方へ<br>
+       ライブ前にお気に入り曲を見つけよう🩵</p>
+     <a href="https://mii622.github.io/CNBLUE_LIVENOTE/diagnosis/index.html" class="button">
+      曲診断をしてみる
+       </a>
+  </div>
 </div>
 <!-- ✔ 共通ヘッダー読み込み -->
 <script>
