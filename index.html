@@ -385,7 +385,34 @@ a {
 
 .menu-sub {
   font-size: 13px;
-  opacity: 0.7;
+  opacity: 0.95;
+}
+.special-card{
+  background:
+    linear-gradient(135deg,#5f73ff 0%,#8fb8ff 100%);
+  color:white;
+  margin-bottom:40px;
+}
+
+.special-card .menu-sub{
+  color:white;
+}
+
+.days-badge{
+  display:inline-block;
+
+  margin-bottom:10px;
+
+  padding:4px 10px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,0.25);
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1px;
 }
 </style>
 </head>
@@ -402,9 +429,22 @@ a {
    
       
 <h1 class="site-subtitle">
-CNBLUEのライブ情報、セトリ、初心者向けガイドなどを
+※テスト※のライブ情報、セトリ、初心者向けガイドなどを
 ゆるくまとめている非公式ファンサイトです♡
 </h1>
+<section class="top-menu">
+
+ <a href="lives/test_bandkingdom.html"
+   class="menu-card special-card">
+
+  <div id="days-left" class="days-badge"></div>
+  <div class="menu-title">
+    FNC BAND KINGDOM 2026 完全準備まとめ</div>
+  <div class="menu-sub">
+    グッズ・会場・持ち物をまとめてチェック →</div>
+ </a>
+</section>
+   
 <section class="top-menu">
 
   <a href="guide/first.html" class="menu-card">
@@ -541,6 +581,32 @@ fetch("header.html")
     document.getElementById("header").innerHTML = data;
   });
 </script>
+<script>
 
+const liveDate =
+new Date("2026-07-11T00:00:00");
+
+const today =
+new Date();
+
+const diff =
+Math.ceil(
+(liveDate - today)
+/
+(1000 * 60 * 60 * 24)
+);
+
+let text;
+
+if(diff > 0){
+  text = `⚡️あと${diff}日！`;
+}else{
+  text = `🎉 本日開催`;
+}
+
+document.getElementById("days-left")
+.textContent = text;
+
+</script>
 </body>
 </html>
