@@ -12,8 +12,11 @@ function init(config){
     const card = document.createElement('div');
     card.className = 'card ' + pos.type + '-card';
 
-    card.style.left = pos.left;
-    card.style.top = pos.top;
+    
+card.style.left = pos.left;
+card.style.top = pos.top;
+card.style.width = config.cardWidth || "8%";
+card.style.height = config.cardHeight || "16%";
 
     card.dataset.state = "0";
 
