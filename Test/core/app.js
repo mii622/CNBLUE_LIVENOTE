@@ -32,8 +32,13 @@ card.style.height = config.cardHeight || "16%";
         const m = document.createElement('span');
         m.className = 'mark give';
         m.textContent = '譲';
-        m.style.top = config.markTop || "-18px";
-        m.style.right = config.markRight || "0px";
+      if (pos.type === "top") {
+  m.style.top = config.markTop || "-18px";
+} else {
+  m.style.bottom = config.markBottom || "-18px";
+}
+
+m.style.right = config.markRight || (pos.type === "top" ? "0px" : "2px");
         card.appendChild(m);
       }
 
@@ -41,8 +46,13 @@ card.style.height = config.cardHeight || "16%";
         const m = document.createElement('span');
         m.className = 'mark want';
         m.textContent = '求';
-        m.style.top = config.markTop || "-18px";
-        m.style.right = config.markRight || "0px";
+        if (pos.type === "top") {
+  m.style.top = config.markTop || "-18px";
+} else {
+  m.style.bottom = config.markBottom || "-18px";
+}
+
+m.style.right = config.markRight || (pos.type === "top" ? "0px" : "2px");
         card.appendChild(m);
       }
 
