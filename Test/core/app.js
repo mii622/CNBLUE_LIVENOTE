@@ -33,7 +33,7 @@ card.style.height = config.cardHeight || "16%";
         m.className = 'mark give';
         m.textContent = '譲';
         m.style.top = config.markTop || "-18px";
-        m.style.right = config.markRight || "20px";
+        m.style.right = config.markRight || "0px";
         card.appendChild(m);
       }
 
@@ -42,7 +42,7 @@ card.style.height = config.cardHeight || "16%";
         m.className = 'mark want';
         m.textContent = '求';
         m.style.top = config.markTop || "-18px";
-        m.style.right = config.markRight || "20px";
+        m.style.right = config.markRight || "0px";
         card.appendChild(m);
       }
 
