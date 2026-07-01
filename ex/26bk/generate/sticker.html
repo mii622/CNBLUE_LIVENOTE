@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>交換用画像ジェネレーター|特典ステッカー</title>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../core/style.css">
+</head>
+
+<body>
+
+<h2>交換用画像ジェネレーター|特典ステッカー</h2>
+
+<div class="subtext">
+  グッズ購入特典ステッカー交換探し用の画像を作成できます◎<br>
+  ①タップでラベル[譲→求→クリア]を切り替え(各バンドの写真辺りをタップ)<br>
+  ②ラベルをつけたら[画像保存]ボタンをタップ<br>
+  ③完成！保存した画像はご自由にSNS投稿にお使いください♡
+</div>
+
+<div class="btn-area">
+  <button id="saveBtn">画像保存</button>
+</div>
+
+<div class="wrapper">
+  <img>
+</div>
+
+<script src="../data/sticker.js"></script>
+<script src="../core/app.js"></script>
+<script>
+init(CONFIG);
+</script>
+
+</body>
+</html>
