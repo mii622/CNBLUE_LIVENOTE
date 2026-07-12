@@ -437,7 +437,6 @@ CNBLUEのライブ情報、セトリ、初心者向けガイドなどを
  <a href="lives/26bandkingdom.html"
    class="menu-card special-card">
 
-  <div id="days-left" class="days-badge"></div>
   <div class="menu-title">
     FNC BAND KINGDOM 2026 完全準備まとめ</div>
   <div class="menu-sub">
@@ -580,33 +579,6 @@ fetch("header.html")
   .then(data => {
     document.getElementById("header").innerHTML = data;
   });
-</script>
-<script>
-
-const liveDate =
-new Date("2026-07-11T00:00:00");
-
-const today =
-new Date();
-
-const diff =
-Math.ceil(
-(liveDate - today)
-/
-(1000 * 60 * 60 * 24)
-);
-
-let text;
-
-if(diff > 0){
-  text = `⚡️あと${diff}日！`;
-}else{
-  text = `🎉 本日開催`;
-}
-
-document.getElementById("days-left")
-.textContent = text;
-
 </script>
 </body>
 </html>
