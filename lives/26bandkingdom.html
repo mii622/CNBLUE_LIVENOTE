@@ -376,57 +376,73 @@ body {
   text-decoration: none; /* ←下線消す */
   white-space: nowrap;   /* ←改行防止 */
   }
-  .page-menu{
-    background:#fff;
-    border-radius:18px;
-    padding:20px 16px;
-    margin:24px 0;
-    box-shadow:0 8px 24px rgba(0,0,0,.06);
+.live-toolbar{
+    margin:24px 0 30px;
 }
 
-.page-menu-title{
+.live-toolbar-title{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:16px;
+
+    color:#6b7cff;
     font-size:14px;
     font-weight:700;
-    color:#6b7cff;
-    margin-bottom:18px;
 }
 
-.page-menu-grid{
+.live-toolbar-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    row-gap:18px;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
 
-.page-menu-item{
+.toolbar-item{
     display:flex;
     flex-direction:column;
     align-items:center;
+    gap:8px;
     text-decoration:none;
     color:#444;
-    gap:8px;
 }
 
-.icon-circle{
-    width:56px;
-    height:56px;
+.toolbar-icon{
+    width:58px;
+    height:58px;
     border-radius:50%;
-    background:#eef4ff;
     display:flex;
-    justify-content:center;
     align-items:center;
-    color:#6b7cff;
+    justify-content:center;
     font-size:22px;
     transition:.2s;
 }
 
-.page-menu-item:active .icon-circle{
+.toolbar-item:active .toolbar-icon{
     transform:scale(.92);
-    background:#dfe9ff;
 }
 
-.page-menu-item span{
+.toolbar-item span{
     font-size:12px;
     font-weight:600;
+}
+  .goods .toolbar-icon{
+    background:#FFF6E8;
+    color:#DD8A00;
+}
+
+.trade .toolbar-icon{
+    background:#F4EEFF;
+    color:#8B5CF6;
+}
+
+.venue .toolbar-icon{
+    background:#E8F8FF;
+    color:#0096C7;
+}
+
+.items .toolbar-icon{
+    background:#EEF4FF;
+    color:#6B7CFF;
 }
   html{
     scroll-behavior:smooth;
@@ -471,55 +487,46 @@ body {
     <img src="../images/3LOGY.png">
   </div>
 
-  <div class="page-menu-title">
-    ショートカット
+<div class="live-toolbar">
+
+  <div class="live-toolbar-title">
+    <i class="fa-solid fa-bolt"></i>
+    当日よく使う
   </div>
 
-  <div class="page-menu-grid">
+  <div class="live-toolbar-grid">
 
-    <a href="#info" class="page-menu-item">
-      <div class="icon-circle">
-        <i class="fa-solid fa-circle-info"></i>
-      </div>
-      <span>基本情報</span>
-    </a>
-
-    <a href="#setlist" class="page-menu-item">
-      <div class="icon-circle">
-        <i class="fa-solid fa-music"></i>
-      </div>
-      <span>セトリ</span>
-    </a>
-
-    <a href="#goods" class="page-menu-item">
-      <div class="icon-circle">
+    <a href="#goods" class="toolbar-item goods">
+      <div class="toolbar-icon">
         <i class="fa-solid fa-calculator"></i>
       </div>
-      <span>グッズ計算</span>
+      <span>グッズ</span>
     </a>
 
-    <a href="#trade" class="page-menu-item">
-      <div class="icon-circle">
+    <a href="#trade" class="toolbar-item trade">
+      <div class="toolbar-icon">
         <i class="fa-solid fa-right-left"></i>
       </div>
-      <span>交換用画像</span>
+      <span>交換</span>
     </a>
 
-    <a href="#venue" class="page-menu-item">
-      <div class="icon-circle">
+    <a href="#venue" class="toolbar-item venue">
+      <div class="toolbar-icon">
         <i class="fa-solid fa-location-dot"></i>
       </div>
       <span>会場</span>
     </a>
 
-    <a href="#items" class="page-menu-item">
-      <div class="icon-circle">
+    <a href="#items" class="toolbar-item items">
+      <div class="toolbar-icon">
         <i class="fa-solid fa-suitcase"></i>
       </div>
       <span>持ち物</span>
     </a>
 
   </div>
+
+</div>
 
 </div>
   <!-- 基本情報 -->
