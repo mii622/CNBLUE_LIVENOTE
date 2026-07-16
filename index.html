@@ -352,40 +352,59 @@ a {
   background: #2b5cff;
   color: white;
 }
-.top-menu {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 16px;
+.quick-menu{
+    margin:32px 0;
 }
 
-.menu-card {
-  display: block;
-  padding: 18px;
-  border-radius: 16px;
-  text-decoration: none;
-  color: inherit;
-  background: white;
-  box-shadow:0 10px 24px rgba(0,0,0,0.06);
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  min-height: 64px;
-  transition: 0.2s;
+.quick-menu h2{
+    font-size:14px;
+    letter-spacing:2px;
+    color:#6f7cff;
+    margin-bottom:14px;
 }
 
-.menu-card:active {
-  transform: scale(0.98);
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
 }
 
-.menu-title {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 4px;
+.quick-item{
+    background:#fff;
+    border-radius:18px;
+    padding:18px 10px;
+    text-decoration:none;
+    color:#333;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.06);
+    transition:.2s;
 }
 
-.menu-sub {
-  font-size: 13px;
-  opacity: 0.95;
+.quick-item:active{
+    transform:scale(.97);
+}
+
+.quick-item i{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#eef3ff;
+    color:#6f7cff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:20px;
+}
+
+.quick-item span{
+    font-size:13px;
+    font-weight:600;
 }
 .special-card{
   background:
@@ -444,23 +463,41 @@ CNBLUEのライブ情報、セトリ、初心者向けガイドなどを
  </a>
 </section>
    
-<section class="top-menu">
+<!-- Quick Menu -->
+<section class="quick-menu">
+  <h2>QUICK MENU</h2>
 
-  <a href="guide/first.html" class="menu-card">
-    <div class="menu-title">🔰 初めての人</div>
-    <div class="menu-sub">ライブ初心者の方はまずこちら！</div>
-  </a>
+  <div class="quick-grid">
+    <a href="live/index.html" class="quick-item">
+      <i class="fa-solid fa-music"></i>
+      <span>LIVE</span>
+    </a>
 
-  <a href="lives/list.html" class="menu-card">
-    <div class="menu-title">🔍 ライブ情報</div>
-    <div class="menu-sub">会場・公演情報をまとめてチェック</div>
-  </a>
+    <a href="goods/index.html" class="quick-item">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span>GOODS</span>
+    </a>
 
-  <a href="Goods/index.html" class="menu-card">
-    <div class="menu-title">🔢 グッズ計算</div>
-    <div class="menu-sub">事前に購入金額をシミュレーション</div>
-  </a>
+    <a href="venue/index.html" class="quick-item">
+      <i class="fa-solid fa-location-dot"></i>
+      <span>VENUE</span>
+    </a>
 
+    <a href="guide/index.html" class="quick-item">
+      <i class="fa-solid fa-book-open"></i>
+      <span>GUIDE</span>
+    </a>
+
+    <a href="diagnosis/index.html" class="quick-item">
+      <i class="fa-solid fa-heart"></i>
+      <span>診断</span>
+    </a>
+
+    <a href="#sns" class="quick-item">
+      <i class="fa-brands fa-x-twitter"></i>
+      <span>SNS</span>
+    </a>
+  </div>
 </section>
 
 </section>
