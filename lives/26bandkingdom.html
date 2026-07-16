@@ -377,96 +377,60 @@ body {
   white-space: nowrap;   /* ←改行防止 */
   }
   .page-menu{
-
     background:#fff;
-
     border-radius:18px;
-
     padding:20px 16px;
-
     margin:24px 0;
-
     box-shadow:0 8px 24px rgba(0,0,0,.06);
-
 }
 
 .page-menu-title{
-
     font-size:14px;
-
     font-weight:700;
-
     color:#6b7cff;
-
     margin-bottom:18px;
-
 }
 
 .page-menu-grid{
-
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     row-gap:18px;
-
 }
 
 .page-menu-item{
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     text-decoration:none;
-
     color:#444;
-
     gap:8px;
-
 }
 
 .icon-circle{
-
     width:56px;
-
     height:56px;
-
     border-radius:50%;
-
     background:#eef4ff;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     color:#6b7cff;
-
     font-size:22px;
-
     transition:.2s;
-
 }
 
 .page-menu-item:active .icon-circle{
-
     transform:scale(.92);
-
     background:#dfe9ff;
-
 }
 
 .page-menu-item span{
-
     font-size:12px;
-
     font-weight:600;
-
 }
+  html{
+    scroll-behavior:smooth;
+  }
 </style>
 </head>
 
@@ -532,14 +496,14 @@ body {
       <div class="icon-circle">
         <i class="fa-solid fa-calculator"></i>
       </div>
-      <span>グッズ</span>
+      <span>グッズ計算</span>
     </a>
 
     <a href="#trade" class="page-menu-item">
       <div class="icon-circle">
         <i class="fa-solid fa-right-left"></i>
       </div>
-      <span>交換</span>
+      <span>交換用画像</span>
     </a>
 
     <a href="#venue" class="page-menu-item">
@@ -556,23 +520,16 @@ body {
       <span>持ち物</span>
     </a>
 
-    <a href="#songs" class="page-menu-item">
-      <div class="icon-circle">
-        <i class="fa-solid fa-headphones"></i>
-      </div>
-      <span>おすすめ曲</span>
-    </a>
-
   </div>
 
 </div>
   <!-- 基本情報 -->
-  <div class="card">
+  <div id="info" class="card">
     <h2>基本情報</h2>
     <p>横浜：2026/7/11 16:00開演・7/12 14:00開演 @ぴあアリーナMM</p>
   </div>
 <!-- セトリ -->
-  <div class="card">
+  <div id="setlist" class="card">
     <h2>セットリスト（ネタバレあり）</h2>
     <div class="spoiler">
       <p style="font-size:11px; color:#aaa; margin-bottom:10px;">
@@ -595,7 +552,7 @@ body {
     </div>
   </div>
   <!-- グッズ -->
-  <div class="card">
+  <div id="goods" class="card">
     <h2>グッズ</h2>
     <p>購入予定金額をシミュレーションできます</p>
     <a href="https://mii622.github.io/CNBLUE_LIVENOTE/Goods/26bandkingdom.html" class="button">
@@ -603,7 +560,7 @@ body {
     </a>
   </div>
 
-  <div class="exchange-card">
+  <div id="trade" class="exchange-card">
     <h2>交換用画像ジェネレーター</h2>
     <p>画像をタップして"譲""求"を付けるだけ！
 ランダムグッズごとに交換画像を作成して、そのままSNSで使えます◎</p>
@@ -622,7 +579,7 @@ body {
   </div>
   
 <!-- 会場 -->
-   <div class="card">
+   <div id="venue" class="card">
     <h2>会場メモ</h2>
   <div class="venue-box">
   <p class="venue-name">《ぴあアリーナMM》</p>
@@ -642,7 +599,7 @@ body {
 
   </div>
     </div>
-  <div class="card">
+  <div id="items" class="card">
 
   <h2>持ち物リスト</h2>
 
