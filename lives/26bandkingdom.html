@@ -376,6 +376,97 @@ body {
   text-decoration: none; /* ←下線消す */
   white-space: nowrap;   /* ←改行防止 */
   }
+  .page-menu{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:20px 16px;
+
+    margin:24px 0;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.06);
+
+}
+
+.page-menu-title{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#6b7cff;
+
+    margin-bottom:18px;
+
+}
+
+.page-menu-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    row-gap:18px;
+
+}
+
+.page-menu-item{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:#444;
+
+    gap:8px;
+
+}
+
+.icon-circle{
+
+    width:56px;
+
+    height:56px;
+
+    border-radius:50%;
+
+    background:#eef4ff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#6b7cff;
+
+    font-size:22px;
+
+    transition:.2s;
+
+}
+
+.page-menu-item:active .icon-circle{
+
+    transform:scale(.92);
+
+    background:#dfe9ff;
+
+}
+
+.page-menu-item span{
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
 </style>
 </head>
 
@@ -415,7 +506,66 @@ body {
   <div class="banner">
     <img src="../images/3LOGY.png">
   </div>
+<div class="page-menu">
 
+  <div class="page-menu-title">
+    このページでできること
+  </div>
+
+  <div class="page-menu-grid">
+
+    <a href="#info" class="page-menu-item">
+      <div class="icon-circle">
+        <i class="fa-solid fa-circle-info"></i>
+      </div>
+      <span>基本情報</span>
+    </a>
+
+    <a href="#setlist" class="page-menu-item">
+      <div class="icon-circle">
+        <i class="fa-solid fa-music"></i>
+      </div>
+      <span>セトリ</span>
+    </a>
+
+    <a href="#goods" class="page-menu-item">
+      <div class="icon-circle">
+        <i class="fa-solid fa-calculator"></i>
+      </div>
+      <span>グッズ</span>
+    </a>
+
+    <a href="#trade" class="page-menu-item">
+      <div class="icon-circle">
+        <i class="fa-solid fa-right-left"></i>
+      </div>
+      <span>交換</span>
+    </a>
+
+    <a href="#venue" class="page-menu-item">
+      <div class="icon-circle">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+      <span>会場</span>
+    </a>
+
+    <a href="#items" class="page-menu-item">
+      <div class="icon-circle">
+        <i class="fa-solid fa-suitcase"></i>
+      </div>
+      <span>持ち物</span>
+    </a>
+
+    <a href="#songs" class="page-menu-item">
+      <div class="icon-circle">
+        <i class="fa-solid fa-headphones"></i>
+      </div>
+      <span>おすすめ曲</span>
+    </a>
+
+  </div>
+
+</div>
   <!-- 基本情報 -->
   <div class="card">
     <h2>基本情報</h2>
