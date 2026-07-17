@@ -447,9 +447,6 @@ body {
     background:#EEF4FF;
     color:#6B7CFF;
 }
-  html{
-    scroll-behavior:smooth;
-  }
 </style>
 </head>
 
@@ -853,5 +850,19 @@ addBtn.addEventListener("click",()=>{
 renderItems();
 
   </script>
-</body>
+  <script>
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+
+    const target = document.querySelector(link.getAttribute("href"));
+
+    window.scrollTo({
+      top: target.offsetTop - 10,
+      behavior: "smooth"
+    });
+  });
+});
+  </script>
+  <body>
 </html>
