@@ -530,7 +530,8 @@ CNBLUEのライブ情報、セトリ、初心者向けガイドなどを
    class="menu-card special-card">
 
   <div class="menu-title">
-    FNC BAND KINGDOM 2026 完全準備まとめ</div>
+     <div id="days-left" class="days-badge"></div>
+    3LOGY IN JAPAN 追加公演 完全準備まとめ</div>
   <div class="menu-sub">
     グッズ・会場・持ち物をまとめてチェック →</div>
  </a>
@@ -681,7 +682,33 @@ CNBLUEのライブ情報、セトリ、初心者向けガイドなどを
 
   </div>
 </div>
+<script>
 
+const liveDate =
+new Date("2026-08-17T00:00:00");
+
+const today =
+new Date();
+
+const diff =
+Math.ceil(
+(liveDate - today)
+/
+(1000 * 60 * 60 * 24)
+);
+
+let text;
+
+if(diff > 0){
+  text = `⚡️あと${diff}日！`;
+}else{
+  text = `🎉 本日開催`;
+}
+
+document.getElementById("days-left")
+.textContent = text;
+
+</script>
 <!-- header.html読み込み -->
 <script>
 fetch("header.html")
