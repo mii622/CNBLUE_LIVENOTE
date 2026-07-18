@@ -39,55 +39,54 @@ content="CNBLUEのライブグッズ計算サイト">
 <title>CNBLUE グッズ計算</title>
 
 <style>
-body{
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  background:linear-gradient(180deg,#3069a6,#1f4f80);
-  color:#fff;
-  margin:0;
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
 }
 
-/* ヘッダー */
-.header{
-  position:sticky;
-  top:0;
-  background:#3069a6;
-  padding:15px 10px 10px;
-  text-align:center;
-  z-index:10;
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(255,255,255,0.15);
-  border-bottom-left-radius:18px;
-  border-bottom-right-radius:18px;
+/* =====================
+   HEADER
+===================== */
+.header {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 14px 0;
+  color: #6b7cff;
 }
 
-.header::after{
-  background:#fff;
-  opacity:1;
-  content:"";
-  display:block;
-  width:30px;
-  height:3px;
-  border-radius:10px;
-  margin:12px auto 0;
-}
-  .title{
-  font-size:1.4rem;
-  color:#fff;
-  letter-spacing:1.2px;
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-weight:500;
+.header::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #6b7cff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  opacity: 0.6;
 }
 
-.sub{
-  font-size:0.85rem;
-  color:#fff;           /* ← 白にする */
-  opacity:1;            /* ← 薄くならないように */
-  margin-top:6px;
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-weight:400;
+/* =====================
+   CONTAINER
+===================== */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 16px;
+}
+
+/* =====================
+   SECTION
+===================== */
+.section {
+  color: #6b7cff;
+  font-weight: 600;
+  font-size: 12px;
+  margin: 22px 4px 10px;
+  border-left: 4px solid #6b7cff;
+  padding-left: 6px;
 }
 /* グリッド */
 .grid{
@@ -177,15 +176,11 @@ body{
 </head>
 
 <body>
+  <div class="header">GOODS CALCULATOR</div>
+
+<div class="container">
+<div class="section">LATEST</div>
   <div id="header"></div>
-
-<div class="header">
-  <div class="title">CNBLUE GOODS CALCULATER</div>
-  <div class="sub">ツアーを選択</div>
-</div>
-
-<div class="grid">
-<div class="section-title">LATEST</div>
 
 
   <!-- 最新 -->
@@ -198,8 +193,8 @@ body{
     </div>
   </a>
   
-
-<div class="section-title">PAST</div>
+<div class="section">PAST</div>
+  <div id="header"></div>
 <a href="https://mii622.github.io/CNBLUE_LIVENOTE/Goods/3LOGY.html" class="card">
     <img src="images/3LOGY.JPG">
     <div class="card-body">
