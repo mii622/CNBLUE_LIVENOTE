@@ -176,6 +176,8 @@ body {
 </head>
 
 <body>
+  <!-- ヘッダー（共通読み込み） -->
+<div id="header"></div>
   <div class="header">GOODS CALCULATOR</div>
 
 <div class="container">
@@ -237,5 +239,12 @@ body {
     </div>
   </a>
 </div> 
+  <script>
+fetch("/CNBLUE_LIVENOTE/header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+  </script>
 </body>
 </html>
