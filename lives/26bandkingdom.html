@@ -745,23 +745,65 @@ setInterval(updateCountdown, 1000);
 </script>
 
   <script>
-const defaultItems = [
+const packingId =
+"live_bandkingdom2026";
 
-  "スマホ",
-  "現金",
-  "ペンライト",
-  "モバイルバッテリー",
-  "ペンラの電池"
 
+let packingLists =
+JSON.parse(
+localStorage.getItem("packing_lists")
+)
+|| [];
+
+
+// KINGDOMのリストを探す
+
+let currentList =
+packingLists.find(
+list => list.id === packingId
+);
+
+
+// なければ作成
+
+if(!currentList){
+
+currentList = {
+
+id: packingId,
+
+name:"FNC BAND KINGDOM 2026",
+
+type:"live",
+
+items:[],
+
+checked:{}
+
+};
+
+
+packingLists.push(currentList);
+
+
+localStorage.setItem(
+"packing_lists",
+JSON.stringify(packingLists)
+);
+
+}
+let basicItems =
+JSON.parse(
+localStorage.getItem("packing_basic")
+)
+||
+[
+"スマホ",
+"現金",
+"ペンライト",
+"モバイルバッテリー",
+"ペンラの電池"
 ];
-
-let items =
-JSON.parse(localStorage.getItem("liveCheckItems"))
-|| defaultItems.map(text => ({
-  text,
-  checked:false,
-  custom:false
-}));
 
 const checkList =
 document.getElementById("checkList");
@@ -774,16 +816,51 @@ document.getElementById("addBtn");
 
 function saveItems(){
 
-  localStorage.setItem(
-    "liveCheckItems",
-    JSON.stringify(items)
-  );
+localStorage.setItem(
+"packing_lists",
+JSON.stringify(packingLists)
+);
+
 
 }
+function getDisplayItems(){
 
+return [
+
+...basicItems.map(text=>({
+
+text:text,
+
+checked:
+currentList.checked[text]
+||
+false,
+
+type:"basic"
+
+})),
+
+
+...currentList.items.map(item=>({
+
+text:item.text,
+
+checked:item.checked,
+
+type:"custom"
+
+}))
+
+];
+
+}
 function renderItems(){
   checkList.innerHTML = "";
-  items.forEach((item,index)=>{
+  const items =
+getDisplayItems();
+
+
+items.forEach((item,index)=>{
     const div =
     document.createElement("div");
 
@@ -807,9 +884,35 @@ function renderItems(){
     const checkbox =
     div.querySelector("input");
     checkbox.addEventListener("change",()=>{
-      items[index].checked =
-      checkbox.checked;
-      saveItems();
+      if(item.type==="basic"){
+
+
+currentList.checked[item.text]
+=
+checkbox.checked;
+
+
+}else{
+
+
+let target =
+currentList.items.find(
+x=>x.text===item.text
+);
+
+
+if(target){
+
+target.checked =
+checkbox.checked;
+
+}
+
+
+}
+
+
+saveItems();
     });
 
     const deleteBtn =
@@ -833,11 +936,13 @@ addBtn.addEventListener("click",()=>{
 
   if(!text) return;
 
-  items.push({
-  text:text,
-  checked:false,
-  custom:true
-  });
+  currentList.items.push({
+
+text:text,
+
+checked:false
+
+});
 
   saveItems();
 
