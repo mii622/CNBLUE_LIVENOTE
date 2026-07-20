@@ -565,11 +565,21 @@ class="add-btn">
 
 
 // 基本セット
-let basicItems =
+let savedBasic =
 JSON.parse(
 localStorage.getItem("packing_basic")
+);
+
+
+let basicItems =
+savedBasic
+?
+savedBasic.map(item =>
+  typeof item === "string"
+  ? item
+  : item.text
 )
-||
+:
 [
 "スマホ",
 "現金",
@@ -577,7 +587,6 @@ localStorage.getItem("packing_basic")
 "モバイルバッテリー",
 "ペンラの電池"
 ];
-
 
 
 // 作成リスト
