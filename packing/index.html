@@ -572,7 +572,9 @@ div.innerHTML=`
 
 <span>${list.name}</span>
 
-<span>＋</span>
+<span class="toggle">
+${currentId === list.id ? "−" : "＋"}
+</span>
 
 `;
 
@@ -594,6 +596,25 @@ area.appendChild(div);
 // 開く
 
 function openList(id){
+
+
+// すでに開いているものを押したら閉じる
+
+if(currentId === id){
+
+currentId=null;
+
+document
+.getElementById("openArea")
+.style.display="none";
+
+
+renderLists();
+
+return;
+
+}
+
 
 currentId=id;
 
@@ -617,7 +638,7 @@ list.name;
 
 
 renderOpen(list);
-
+renderLists();
 
 }
 
