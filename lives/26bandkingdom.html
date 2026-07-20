@@ -916,15 +916,58 @@ saveItems();
     });
 
     const deleteBtn =
-    div.querySelector(".delete-btn");
+div.querySelector(".delete-btn");
 
-    if(deleteBtn){
-      deleteBtn.addEventListener("click",()=>{
-        items.splice(index,1);
-        saveItems();
-        renderItems();
-      });
-    }
+
+if(deleteBtn){
+
+deleteBtn.addEventListener("click",()=>{
+
+
+// 基本セットの場合
+
+if(item.type==="basic"){
+
+
+basicItems =
+basicItems.filter(
+text=>text !== item.text
+);
+
+
+localStorage.setItem(
+"packing_basic",
+JSON.stringify(basicItems)
+);
+
+
+
+}
+
+
+// 個別追加の場合
+
+else{
+
+
+currentList.items =
+currentList.items.filter(
+x=>x.text !== item.text
+);
+
+
+saveItems();
+
+
+}
+
+
+renderItems();
+
+
+});
+
+}
     checkList.appendChild(div);
   });
 }
