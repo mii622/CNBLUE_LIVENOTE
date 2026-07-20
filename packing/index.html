@@ -792,26 +792,16 @@ if(!name)return;
 
 
 lists.push({
-
 id:
 "custom_"
 +
 Date.now(),
-
-
 name:name,
-
-
+type:"custom",
 // 個別追加分だけ保存
-
 items:[],
-
-
 // 基本セットのチェック状態
-
 checked:{}
-
-
 });
 
 
@@ -848,7 +838,11 @@ area.innerHTML="";
 
 
 
-lists.forEach(list=>{
+lists
+.filter(
+list=>list.visible!==false
+)
+.forEach(list=>{
 
 
 const div =
@@ -889,15 +883,26 @@ deleteBtn.onclick=(e)=>{
 
   e.stopPropagation();
 
-  if(!confirm("このリストを削除しますか？")){
-    return;
+  if(list.type==="live"){
+
+    if(!confirm("このライブの持ち物リストを一覧から非表示にしますか？")){
+      return;
+    }
+
+    list.visible = false;
+
+  }else{
+
+    if(!confirm("このリストを削除しますか？")){
+      return;
+    }
+
+    lists = lists.filter(
+      x => x.id !== list.id
+    );
+
   }
 
-  lists = lists.filter(
-    x => x.id !== list.id
-  );
-
-  // 開いていたリストなら閉じる
   if(currentId === list.id){
     currentId = null;
     document.getElementById("openArea").style.display = "none";
