@@ -885,13 +885,29 @@ ${currentId === list.id ? "−" : "＋"}
 const deleteBtn =
 div.querySelector(".list-delete");
 
-  deleteBtn.onclick=(e)=>{
+deleteBtn.onclick=(e)=>{
 
-e.stopPropagation(); // ＋が開かないようにする
+  e.stopPropagation();
 
-// ここで削除処理
+  if(!confirm("このリストを削除しますか？")){
+    return;
+  }
+
+  lists = lists.filter(
+    x => x.id !== list.id
+  );
+
+  // 開いていたリストなら閉じる
+  if(currentId === list.id){
+    currentId = null;
+    document.getElementById("openArea").style.display = "none";
+  }
+
+  save();
+  renderLists();
 
 };
+  
 div.onclick=()=>{
 
 
