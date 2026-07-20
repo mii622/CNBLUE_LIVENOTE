@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>持ち物リスト</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<style>
+
+body{
+font-family:'Noto Sans JP',sans-serif;
+background:linear-gradient(180deg,#f9fafc 0%,#f5f7ff 100%);
+margin:0;
+padding:20px;
+color:#1e242a;
+}
+
+
+.container{
+max-width:800px;
+margin:auto;
+}
+
+
+/* タイトル */
+
+.title-box{
+text-align:center;
+margin-bottom:25px;
+padding:10px 16px 18px;
+}
+
+
+.page-label{
+font-size:14px;
+font-weight:600;
+letter-spacing:3px;
+color:#6b7cff;
+}
+
+
+.page-label::after{
+content:"";
+display:block;
+width:36px;
+height:2px;
+margin:8px auto;
+background:linear-gradient(90deg,#6b7cff,#a9c8ff);
+}
+
+
+.title{
+font-size:28px;
+font-weight:800;
+color:#2b2f3a;
+}
+
+
+/* カード */
+
+.card{
+
+background:white;
+border-radius:16px;
+padding:22px;
+margin-bottom:18px;
+
+box-shadow:
+0 10px 24px rgba(0,0,0,0.06);
+
+border:1px solid #f3f4f6;
+
+}
+
+
+/* 見出し */
+
+.card h2{
+
+font-size:16px;
+border-left:5px solid #6b7cff;
+padding-left:10px;
+
+}
+
+
+/* リスト */
+
+.check-list{
+
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-top:15px;
+
+}
+
+
+.check-item{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:15px;
+
+}
+
+
+.check-left{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+}
+
+
+input[type="checkbox"]{
+
+width:18px;
+height:18px;
+accent-color:#0c6bca;
+
+}
+
+
+
+.delete-btn{
+
+border:none;
+background:#eef4ff;
+color:#6b7cff;
+
+width:24px;
+height:24px;
+
+border-radius:50%;
+
+cursor:pointer;
+
+}
+
+
+/* 追加 */
+
+.add-area{
+
+display:flex;
+gap:8px;
+margin-top:18px;
+
+}
+
+
+.add-area input{
+
+flex:1;
+
+border:none;
+
+background:#f3f6fb;
+
+padding:10px 12px;
+
+border-radius:10px;
+
+font-size:14px;
+
+}
+
+
+.add-btn{
+
+border:none;
+
+background:#1492ff;
+
+color:white;
+
+padding:10px 14px;
+
+border-radius:10px;
+
+}
+
+
+/* 作成 */
+
+.create-area{
+
+display:flex;
+gap:8px;
+margin-top:15px;
+
+}
+
+
+.create-area input{
+
+flex:1;
+
+border:none;
+
+background:#f3f6fb;
+
+padding:12px;
+
+border-radius:10px;
+
+}
+
+
+.create-btn{
+
+border:none;
+
+background:linear-gradient(135deg,#6b7cff,#a9c8ff);
+
+color:white;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+}
+
+
+
+.list-card{
+
+background:#f8fbff;
+
+padding:14px;
+
+border-radius:12px;
+
+margin-top:12px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+
+.save-text{
+
+font-size:11px;
+color:#888;
+margin-top:14px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="title-box">
+
+<div class="page-label">
+PACKING LIST
+</div>
+
+<div class="title">
+持ち物リスト
+</div>
+
+</div>
+
+
+
+<!-- 基本セット -->
+
+<div class="card">
+
+
+<h2>
+基本セット
+</h2>
+
+
+<div id="basicList"
+class="check-list">
+</div>
+
+
+<div class="add-area">
+
+<input
+id="basicInput"
+placeholder="基本セットに追加">
+
+<button
+class="add-btn"
+id="basicAdd">
+
+＋追加
+
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<!-- 新規作成 -->
+
+<div class="card">
+
+<h2>
+新しいリストを作成
+</h2>
+
+
+<p>
+ライブページがない公演や、遠征・フェス用のリストを作成できます。
+</p>
+
+
+<div class="create-area">
+
+<input
+id="listName"
+placeholder="例：サマソニ2026">
+
+
+<button
+class="create-btn"
+id="createBtn">
+
+作成
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<!-- 作成済み -->
+
+<div class="card">
+
+<h2>
+作成したリスト
+</h2>
+
+
+<div id="
