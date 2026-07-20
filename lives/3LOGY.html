@@ -686,8 +686,10 @@ setInterval(updateCountdown, 1000);
 
 </script>
   <script>
-const packingId =
-"live_bandkingdom2026";
+// ===== ライブごとに変更 =====
+const packingId = "live_3LOGY2026";
+const packingName = "CNBLUE 3LOGY IN JAPAN 2026";
+// ===========================
 
 
 let packingLists =
@@ -710,7 +712,7 @@ list => list.id === packingId
 if(!currentList){
 currentList = {
 id: packingId,
-name:"FNC BAND KINGDOM 2026",
+name: packingName,
 type:"live",
 items:[],
 checked:{}
