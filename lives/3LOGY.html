@@ -327,6 +327,27 @@ body {
   color:#888;
   margin-top:14px;
 }
+.beginner-link,
+.common-link{
+font-size:11px;
+padding:6px 10px;
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
+white-space:nowrap;
+text-align:center;
+}
+
+
+.beginner-link{
+background:#eef4ff;
+color:#4d6c8a;
+}
+
+.common-link{
+background:#f5f0ff;
+color:#7b5cc7;
+}
 </style>
 </head>
 
@@ -431,9 +452,15 @@ body {
     </a>
   </div>
 
-  <div class="card">
+   <div id="items" class="card">
 
   <h2>持ち物リスト</h2>
+    <div class="item-menu">
+   <a href="/CNBLUE_LIVENOTE/packing/index.html"
+     class="common-link">
+    共通アイテムを編集⚙️
+   </a>
+    </div>   
 
   <div class="check-list" id="checkList"></div>
 
@@ -451,10 +478,12 @@ body {
   </div>
 
   <p class="save-text">
-    ※このリストは端末内にのみ保存されます
+    ・このリストは端末内にのみ保存されます<br>
+    ・この公演に持っていきたいアイテムを入力→追加ボタンでリストを編集できます<br>
+    ・共通アイテムを編集する際は右上のボタンを押してください
   </p>
 
-  </div>
+   </div>
 
   <!-- セトリ -->
   <div class="card">
@@ -646,25 +675,57 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 </script>
-
   <script>
-const defaultItems = [
+const packingId =
+"live_bandkingdom2026";
 
-  "スマホ",
-  "現金",
-  "ペンライト",
-  "モバイルバッテリー",
-  "ペンラの電池"
 
+let packingLists =
+JSON.parse(
+localStorage.getItem("packing_lists")
+)
+|| [];
+
+
+// KINGDOMのリストを探す
+
+let currentList =
+packingLists.find(
+list => list.id === packingId
+);
+
+
+// なければ作成
+
+if(!currentList){
+currentList = {
+id: packingId,
+name:"FNC BAND KINGDOM 2026",
+type:"live",
+items:[],
+checked:{}
+};
+
+packingLists.push(currentList);
+
+localStorage.setItem(
+"packing_lists",
+JSON.stringify(packingLists)
+);
+
+}
+let basicItems =
+JSON.parse(
+localStorage.getItem("packing_basic")
+)
+||
+[
+"スマホ",
+"現金",
+"ペンライト",
+"モバイルバッテリー",
+"ペンラの電池"
 ];
-
-let items =
-JSON.parse(localStorage.getItem("liveCheckItems"))
-|| defaultItems.map(text => ({
-  text,
-  checked:false,
-  custom:false
-}));
 
 const checkList =
 document.getElementById("checkList");
@@ -677,16 +738,46 @@ document.getElementById("addBtn");
 
 function saveItems(){
 
-  localStorage.setItem(
-    "liveCheckItems",
-    JSON.stringify(items)
-  );
+localStorage.setItem(
+"packing_lists",
+JSON.stringify(packingLists)
+);
 
+
+}
+function getDisplayItems(){
+
+return [
+
+...basicItems.map(text=>({
+
+text:text,
+
+checked:
+currentList.checked[text]
+||
+false,
+
+type:"basic"
+
+})),
+
+
+...currentList.items.map(item=>({
+text:item.text,
+checked:item.checked,
+type:"custom"
+}))
+];
 }
 
 function renderItems(){
   checkList.innerHTML = "";
-  items.forEach((item,index)=>{
+  const items =
+getDisplayItems();
+
+
+items.forEach((item,index)=>{
     const div =
     document.createElement("div");
 
@@ -701,57 +792,80 @@ function renderItems(){
 
       </label>
       ${
-        item.custom !== false
+  item.type==="custom"
 ? `<button class="delete-btn">×</button>`
 : ""
-      }
+}
     `;
 
     const checkbox =
     div.querySelector("input");
     checkbox.addEventListener("change",()=>{
-      items[index].checked =
-      checkbox.checked;
-      saveItems();
+      if(item.type==="basic"){
+
+
+currentList.checked[item.text]
+=
+checkbox.checked;
+
+
+}else{
+
+
+let target =
+currentList.items.find(
+x=>x.text===item.text
+);
+
+
+if(target){
+target.checked =
+checkbox.checked;
+}
+}
+
+saveItems();
     });
+const deleteBtn =
+div.querySelector(".delete-btn");
 
-    const deleteBtn =
-    div.querySelector(".delete-btn");
 
-    if(deleteBtn){
-      deleteBtn.addEventListener("click",()=>{
-        items.splice(index,1);
-        saveItems();
-        renderItems();
-      });
-    }
+if(deleteBtn){
+deleteBtn.addEventListener("click",()=>{
+// 基本セットはライブページから変更しない
+if(item.type==="basic"){
+return;
+}
+
+// 個別追加だけ削除
+currentList.items =
+currentList.items.filter(
+x=>x.text !== item.text
+);
+
+saveItems();
+renderItems();
+});
+}
     checkList.appendChild(div);
   });
 }
 
 addBtn.addEventListener("click",()=>{
-
-  const text =
-  newItem.value.trim();
-
+const text =
+newItem.value.trim();
   if(!text) return;
-
-  items.push({
-  text:text,
-  checked:false,
-  custom:true
-  });
+currentList.items.push({
+text:text,
+checked:false
+});
 
   saveItems();
-
   renderItems();
-
-  newItem.value = "";
-
+newItem.value = "";
 });
 
 renderItems();
-
   </script>
 
 </body>
