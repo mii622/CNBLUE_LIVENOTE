@@ -875,10 +875,11 @@ items.forEach((item,index)=>{
 
       </label>
       ${
-        item.custom !== false
+        ${
+  item.type==="custom"
 ? `<button class="delete-btn">×</button>`
 : ""
-      }
+}
     `;
 
     const checkbox =
@@ -924,31 +925,16 @@ if(deleteBtn){
 deleteBtn.addEventListener("click",()=>{
 
 
-// 基本セットの場合
+// 基本セットはライブページから変更しない
 
 if(item.type==="basic"){
 
-
-basicItems =
-basicItems.filter(
-text=>text !== item.text
-);
-
-
-localStorage.setItem(
-"packing_basic",
-JSON.stringify(basicItems)
-);
-
-
+return;
 
 }
 
 
-// 個別追加の場合
-
-else{
-
+// 個別追加だけ削除
 
 currentList.items =
 currentList.items.filter(
@@ -957,10 +943,6 @@ x=>x.text !== item.text
 
 
 saveItems();
-
-
-}
-
 
 renderItems();
 
