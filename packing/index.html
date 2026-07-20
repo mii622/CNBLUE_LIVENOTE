@@ -864,16 +864,34 @@ div.innerHTML=`
 ${list.name}
 </span>
 
+<div style="display:flex;align-items:center;gap:10px;">
+
+<button
+class="delete-btn list-delete">
+
+<i class="fa-solid fa-trash"></i>
+
+</button>
+
 <span class="toggle">
 
 ${currentId === list.id ? "−" : "＋"}
 
 </span>
 
+</div>
+
 `;
+const deleteBtn =
+div.querySelector(".list-delete");
 
+  deleteBtn.onclick=(e)=>{
 
+e.stopPropagation(); // ＋が開かないようにする
 
+// ここで削除処理
+
+};
 div.onclick=()=>{
 
 
