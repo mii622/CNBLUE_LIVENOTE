@@ -194,57 +194,35 @@ body {
 }
 
 .item-menu{
-
 position:absolute;
-
 top:18px;
-
 right:18px;
-
 display:flex;
-
 flex-direction:column;
-
 gap:8px;
-
 }
 
 
 .beginner-link,
 .common-link{
-
 font-size:11px;
-
 padding:6px 10px;
-
 border-radius:999px;
-
 text-decoration:none;
-
 font-weight:700;
-
 white-space:nowrap;
-
 text-align:center;
-
 }
 
 
 .beginner-link{
-
 background:#eef4ff;
-
 color:#4d6c8a;
-
 }
 
-
 .common-link{
-
 background:#f5f0ff;
-
 color:#7b5cc7;
-
 }
 
 /* 会場 */
@@ -814,24 +792,15 @@ list => list.id === packingId
 // なければ作成
 
 if(!currentList){
-
 currentList = {
-
 id: packingId,
-
 name:"FNC BAND KINGDOM 2026",
-
 type:"live",
-
 items:[],
-
 checked:{}
-
 };
 
-
 packingLists.push(currentList);
-
 
 localStorage.setItem(
 "packing_lists",
@@ -889,18 +858,13 @@ type:"basic"
 
 
 ...currentList.items.map(item=>({
-
 text:item.text,
-
 checked:item.checked,
-
 type:"custom"
-
 }))
-
 ];
-
 }
+
 function renderItems(){
   checkList.innerHTML = "";
   const items =
@@ -949,83 +913,54 @@ x=>x.text===item.text
 
 
 if(target){
-
 target.checked =
 checkbox.checked;
-
 }
-
-
 }
-
 
 saveItems();
     });
-
-    const deleteBtn =
+const deleteBtn =
 div.querySelector(".delete-btn");
 
 
 if(deleteBtn){
-
 deleteBtn.addEventListener("click",()=>{
-
-
 // 基本セットはライブページから変更しない
-
 if(item.type==="basic"){
-
 return;
-
 }
 
-
 // 個別追加だけ削除
-
 currentList.items =
 currentList.items.filter(
 x=>x.text !== item.text
 );
 
-
 saveItems();
-
 renderItems();
-
-
 });
-
 }
     checkList.appendChild(div);
   });
 }
 
 addBtn.addEventListener("click",()=>{
-
-  const text =
-  newItem.value.trim();
-
+const text =
+newItem.value.trim();
   if(!text) return;
-
-  currentList.items.push({
-
+currentList.items.push({
 text:text,
-
 checked:false
-
 });
 
   saveItems();
-
   renderItems();
-
-  newItem.value = "";
-
+newItem.value = "";
 });
 
 renderItems();
-
-  </script>
+</script>
   <script>
   document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener("click", e => {
