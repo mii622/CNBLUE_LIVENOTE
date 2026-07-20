@@ -796,6 +796,7 @@ currentList = {
 id: packingId,
 name:"FNC BAND KINGDOM 2026",
 type:"live",
+visible:true,
 items:[],
 checked:{}
 };
@@ -895,6 +896,7 @@ items.forEach((item,index)=>{
     const checkbox =
     div.querySelector("input");
     checkbox.addEventListener("change",()=>{
+      currentList.visible = true;
       if(item.type==="basic"){
 
 
@@ -950,6 +952,7 @@ const text =
 newItem.value.trim();
   if(!text) return;
 currentList.items.push({
+  currentList.visible = true;
 text:text,
 checked:false
 });
