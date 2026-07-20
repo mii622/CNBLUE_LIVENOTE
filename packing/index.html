@@ -369,4 +369,295 @@ id="createBtn">
 </h2>
 
 
-<div id="
+<div id="customLists">
+
+</div>
+
+
+</div>
+
+
+<p class="save-text">
+
+※このリストは端末内に保存されます
+
+</p>
+
+
+</div>
+
+
+
+<script>
+
+
+// 基本セット
+
+let basicItems =
+JSON.parse(
+localStorage.getItem("packing_basic")
+)
+||
+[
+"スマホ",
+"現金",
+"モバイルバッテリー",
+"ペンライト",
+"ペンラの電池"
+].map(text=>({
+
+text,
+checked:false,
+custom:false
+
+}));
+
+
+
+// 作成リスト
+
+let customLists =
+JSON.parse(
+localStorage.getItem("packing_custom_lists")
+)
+||
+[];
+
+
+
+
+// 保存
+
+function save(){
+
+localStorage.setItem(
+"packing_basic",
+JSON.stringify(basicItems)
+);
+
+
+localStorage.setItem(
+"packing_custom_lists",
+JSON.stringify(customLists)
+);
+
+
+}
+
+
+
+
+// 基本表示
+
+function renderBasic(){
+
+const area=
+document.getElementById("basicList");
+
+area.innerHTML="";
+
+
+basicItems.forEach((item,index)=>{
+
+
+const div=
+document.createElement("div");
+
+
+div.className="check-item";
+
+
+div.innerHTML=`
+
+<label class="check-left">
+
+<span>
+${item.text}
+</span>
+
+</label>
+
+
+<button class="delete-btn">
+×
+</button>
+
+`;
+
+
+div.querySelector(".delete-btn")
+.onclick=()=>{
+
+basicItems.splice(index,1);
+
+save();
+
+renderBasic();
+
+};
+
+
+area.appendChild(div);
+
+
+});
+
+
+}
+
+
+
+
+// 作成リスト表示
+
+function renderLists(){
+
+const area=
+document.getElementById("customLists");
+
+
+area.innerHTML="";
+
+
+customLists.forEach(list=>{
+
+
+const div=
+document.createElement("div");
+
+
+div.className="list-card";
+
+
+div.innerHTML=`
+
+<span>
+${list.name}
+</span>
+
+<span>
+＋
+</span>
+
+`;
+
+
+area.appendChild(div);
+
+
+});
+
+
+}
+
+
+
+// 基本追加
+
+document
+.getElementById("basicAdd")
+.onclick=()=>{
+
+
+const input=
+document.getElementById("basicInput");
+
+
+const text=
+input.value.trim();
+
+
+if(!text)return;
+
+
+
+basicItems.push({
+
+text,
+
+checked:false,
+
+custom:true
+
+});
+
+
+input.value="";
+
+
+save();
+
+renderBasic();
+
+
+};
+
+
+
+// 新規作成
+
+document
+.getElementById("createBtn")
+.onclick=()=>{
+
+
+const input=
+document.getElementById("listName");
+
+
+const name=
+input.value.trim();
+
+
+if(!name)return;
+
+
+
+const id=
+"custom_"
++Date.now();
+
+
+
+customLists.push({
+
+id,
+
+name,
+
+type:"custom",
+
+
+items:
+JSON.parse(
+JSON.stringify(basicItems)
+)
+
+
+});
+
+
+
+input.value="";
+
+
+save();
+
+renderLists();
+
+
+};
+
+
+
+renderBasic();
+
+renderLists();
+
+
+
+</script>
+
+
+</body>
+</html>
