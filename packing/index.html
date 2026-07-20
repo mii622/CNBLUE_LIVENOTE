@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,63 +7,41 @@
 
 <title>持ち物リスト</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 font-family:'Noto Sans JP',sans-serif;
-background:linear-gradient(180deg,#f9fafc 0%,#f5f7ff 100%);
+background:linear-gradient(180deg,#f9fafc,#f5f7ff);
 margin:0;
 padding:20px;
 color:#1e242a;
 }
-
 
 .container{
 max-width:800px;
 margin:auto;
 }
 
-
-/* タイトル */
-
 .title-box{
 text-align:center;
 margin-bottom:25px;
-padding:10px 16px 18px;
 }
-
 
 .page-label{
 font-size:14px;
-font-weight:600;
 letter-spacing:3px;
 color:#6b7cff;
+font-weight:bold;
 }
-
-
-.page-label::after{
-content:"";
-display:block;
-width:36px;
-height:2px;
-margin:8px auto;
-background:linear-gradient(90deg,#6b7cff,#a9c8ff);
-}
-
 
 .title{
 font-size:28px;
 font-weight:800;
-color:#2b2f3a;
+margin-top:10px;
 }
 
-
-/* カード */
 
 .card{
 
@@ -74,14 +51,10 @@ padding:22px;
 margin-bottom:18px;
 
 box-shadow:
-0 10px 24px rgba(0,0,0,0.06);
-
-border:1px solid #f3f4f6;
+0 10px 24px rgba(0,0,0,.06);
 
 }
 
-
-/* 見出し */
 
 .card h2{
 
@@ -92,7 +65,6 @@ padding-left:10px;
 }
 
 
-/* リスト */
 
 .check-list{
 
@@ -109,6 +81,7 @@ margin-top:15px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+
 font-size:15px;
 
 }
@@ -123,7 +96,7 @@ gap:10px;
 }
 
 
-input[type="checkbox"]{
+.check-left input{
 
 width:18px;
 height:18px;
@@ -144,12 +117,9 @@ height:24px;
 
 border-radius:50%;
 
-cursor:pointer;
-
 }
 
 
-/* 追加 */
 
 .add-area{
 
@@ -160,7 +130,7 @@ margin-top:18px;
 }
 
 
-.add-area input{
+input{
 
 flex:1;
 
@@ -168,13 +138,20 @@ border:none;
 
 background:#f3f6fb;
 
-padding:10px 12px;
+padding:10px;
 
 border-radius:10px;
 
-font-size:14px;
+}
+
+
+
+button{
+
+cursor:pointer;
 
 }
+
 
 
 .add-btn{
@@ -191,31 +168,6 @@ border-radius:10px;
 
 }
 
-
-/* 作成 */
-
-.create-area{
-
-display:flex;
-gap:8px;
-margin-top:15px;
-
-}
-
-
-.create-area input{
-
-flex:1;
-
-border:none;
-
-background:#f3f6fb;
-
-padding:12px;
-
-border-radius:10px;
-
-}
 
 
 .create-btn{
@@ -242,22 +194,32 @@ padding:14px;
 
 border-radius:12px;
 
-margin-top:12px;
+margin-top:10px;
+
+cursor:pointer;
 
 display:flex;
 
 justify-content:space-between;
 
-align-items:center;
+}
+
+
+
+.open-area{
+
+display:none;
+
+margin-top:20px;
 
 }
+
 
 
 .save-text{
 
 font-size:11px;
 color:#888;
-margin-top:14px;
 
 }
 
@@ -286,39 +248,32 @@ PACKING LIST
 
 
 
+
 <!-- 基本セット -->
 
 <div class="card">
 
-
-<h2>
-基本セット
-</h2>
-
+<h2>基本セット</h2>
 
 <div id="basicList"
-class="check-list">
-</div>
+class="check-list"></div>
 
 
 <div class="add-area">
 
-<input
-id="basicInput"
+<input id="basicInput"
 placeholder="基本セットに追加">
 
-<button
-class="add-btn"
+<button class="add-btn"
 id="basicAdd">
-
 ＋追加
-
 </button>
 
 </div>
 
 
 </div>
+
 
 
 
@@ -326,34 +281,19 @@ id="basicAdd">
 
 <div class="card">
 
-<h2>
-新しいリストを作成
-</h2>
+<h2>新しいリストを作成</h2>
 
+<div class="add-area">
 
-<p>
-ライブページがない公演や、遠征・フェス用のリストを作成できます。
-</p>
-
-
-<div class="create-area">
-
-<input
-id="listName"
+<input id="newListName"
 placeholder="例：サマソニ2026">
 
-
-<button
-class="create-btn"
+<button class="create-btn"
 id="createBtn">
-
 作成
-
 </button>
 
-
 </div>
-
 
 </div>
 
@@ -364,23 +304,45 @@ id="createBtn">
 
 <div class="card">
 
-<h2>
-作成したリスト
-</h2>
+<h2>作成したリスト</h2>
+
+<div id="lists"></div>
 
 
-<div id="customLists">
+<div id="openArea"
+class="open-area">
+
+
+<h2 id="openTitle"></h2>
+
+
+<div id="openList"
+class="check-list"></div>
+
+
+<div class="add-area">
+
+<input id="itemInput"
+placeholder="持ち物を追加">
+
+
+<button class="add-btn"
+id="itemAdd">
+＋追加
+</button>
 
 </div>
 
 
 </div>
+
+
+</div>
+
 
 
 <p class="save-text">
-
 ※このリストは端末内に保存されます
-
 </p>
 
 
@@ -391,8 +353,6 @@ id="createBtn">
 <script>
 
 
-// 基本セット
-
 let basicItems =
 JSON.parse(
 localStorage.getItem("packing_basic")
@@ -401,32 +361,29 @@ localStorage.getItem("packing_basic")
 [
 "スマホ",
 "現金",
-"モバイルバッテリー",
 "ペンライト",
+"モバイルバッテリー",
 "ペンラの電池"
-].map(text=>({
-
+]
+.map(text=>({
 text,
-checked:false,
-custom:false
-
+checked:false
 }));
 
 
 
-// 作成リスト
-
-let customLists =
+let lists =
 JSON.parse(
-localStorage.getItem("packing_custom_lists")
+localStorage.getItem("packing_lists")
 )
 ||
 [];
 
 
 
+let currentId=null;
 
-// 保存
+
 
 function save(){
 
@@ -437,17 +394,16 @@ JSON.stringify(basicItems)
 
 
 localStorage.setItem(
-"packing_custom_lists",
-JSON.stringify(customLists)
+"packing_lists",
+JSON.stringify(lists)
 );
-
 
 }
 
 
 
 
-// 基本表示
+// 基本セット表示
 
 function renderBasic(){
 
@@ -460,93 +416,38 @@ area.innerHTML="";
 basicItems.forEach((item,index)=>{
 
 
-const div=
-document.createElement("div");
+area.innerHTML += `
 
-
-div.className="check-item";
-
-
-div.innerHTML=`
-
-<label class="check-left">
+<div class="check-item">
 
 <span>
 ${item.text}
 </span>
 
-</label>
 
-
-<button class="delete-btn">
+<button class="delete-btn"
+onclick="deleteBasic(${index})">
 ×
 </button>
 
+
+</div>
+
 `;
 
+});
 
-div.querySelector(".delete-btn")
-.onclick=()=>{
+}
+
+
+
+function deleteBasic(index){
 
 basicItems.splice(index,1);
 
 save();
 
 renderBasic();
-
-};
-
-
-area.appendChild(div);
-
-
-});
-
-
-}
-
-
-
-
-// 作成リスト表示
-
-function renderLists(){
-
-const area=
-document.getElementById("customLists");
-
-
-area.innerHTML="";
-
-
-customLists.forEach(list=>{
-
-
-const div=
-document.createElement("div");
-
-
-div.className="list-card";
-
-
-div.innerHTML=`
-
-<span>
-${list.name}
-</span>
-
-<span>
-＋
-</span>
-
-`;
-
-
-area.appendChild(div);
-
-
-});
-
 
 }
 
@@ -559,25 +460,21 @@ document
 .onclick=()=>{
 
 
-const input=
+let input=
 document.getElementById("basicInput");
 
 
-const text=
-input.value.trim();
+let text=input.value.trim();
 
 
 if(!text)return;
-
 
 
 basicItems.push({
 
 text,
 
-checked:false,
-
-custom:true
+checked:false
 
 });
 
@@ -591,6 +488,7 @@ renderBasic();
 
 
 };
+
 
 
 
@@ -601,44 +499,42 @@ document
 .onclick=()=>{
 
 
-const input=
-document.getElementById("listName");
-
-
-const name=
-input.value.trim();
+let name=
+document
+.getElementById("newListName")
+.value.trim();
 
 
 if(!name)return;
 
 
 
-const id=
+let id=
 "custom_"
 +Date.now();
 
 
 
-customLists.push({
+lists.push({
 
-id,
+id:id,
 
-name,
+name:name,
 
 type:"custom",
-
 
 items:
 JSON.parse(
 JSON.stringify(basicItems)
 )
 
-
 });
 
 
 
-input.value="";
+document
+.getElementById("newListName")
+.value="";
 
 
 save();
@@ -646,14 +542,211 @@ save();
 renderLists();
 
 
+
 };
+
+
+
+
+// 一覧
+
+function renderLists(){
+
+let area=
+document.getElementById("lists");
+
+area.innerHTML="";
+
+
+lists.forEach(list=>{
+
+
+let div=
+document.createElement("div");
+
+
+div.className="list-card";
+
+
+div.innerHTML=`
+
+<span>${list.name}</span>
+
+<span>＋</span>
+
+`;
+
+
+div.onclick=()=>openList(list.id);
+
+
+
+area.appendChild(div);
+
+
+});
+
+
+}
+
+
+
+// 開く
+
+function openList(id){
+
+currentId=id;
+
+
+let list=
+lists.find(
+x=>x.id===id
+);
+
+
+document
+.getElementById("openArea")
+.style.display="block";
+
+
+document
+.getElementById("openTitle")
+.innerHTML=
+list.name;
+
+
+
+renderOpen(list);
+
+
+}
+
+
+
+
+function renderOpen(list){
+
+let area=
+document.getElementById("openList");
+
+area.innerHTML="";
+
+
+list.items.forEach((item,index)=>{
+
+
+let div=
+document.createElement("div");
+
+
+div.className="check-item";
+
+
+div.innerHTML=`
+
+<label class="check-left">
+
+<input type="checkbox"
+${item.checked?"checked":""}>
+
+<span>${item.text}</span>
+
+</label>
+
+
+<button class="delete-btn">
+×
+</button>
+
+`;
+
+
+
+div.querySelector("input")
+.onchange=e=>{
+
+item.checked=e.target.checked;
+
+save();
+
+};
+
+
+
+div.querySelector(".delete-btn")
+.onclick=()=>{
+
+list.items.splice(index,1);
+
+save();
+
+renderOpen(list);
+
+};
+
+
+
+area.appendChild(div);
+
+
+});
+
+
+}
+
+
+
+
+// リスト追加
+
+document
+.getElementById("itemAdd")
+.onclick=()=>{
+
+
+let input=
+document.getElementById("itemInput");
+
+
+let text=
+input.value.trim();
+
+
+if(!text)return;
+
+
+
+let list=
+lists.find(
+x=>x.id===currentId
+);
+
+
+list.items.push({
+
+text,
+
+checked:false
+
+});
+
+
+input.value="";
+
+
+save();
+
+renderOpen(list);
+
+
+};
+
 
 
 
 renderBasic();
 
 renderLists();
-
 
 
 </script>
