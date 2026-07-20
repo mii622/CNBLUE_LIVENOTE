@@ -952,11 +952,10 @@ const text =
 newItem.value.trim();
   if(!text) return;
 currentList.items.push({
-  currentList.visible = true;
 text:text,
 checked:false
 });
-
+currentList.visible = true;
   saveItems();
   renderItems();
 newItem.value = "";
