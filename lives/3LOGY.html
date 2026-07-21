@@ -358,6 +358,77 @@ color:#4d6c8a;
 background:#f5f0ff;
 color:#7b5cc7;
 }
+  .live-toolbar{
+    margin:24px 0 30px;
+}
+
+.live-toolbar-title{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:16px;
+
+    color:#6b7cff;
+    font-size:14px;
+    font-weight:700;
+}
+
+.live-toolbar-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.toolbar-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:#444;
+}
+
+.toolbar-icon{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    box-shadow:
+        0 6px 14px rgba(0,0,0,.08),
+        inset 0 2px 2px rgba(255,255,255,.9);
+    transition:.2s;
+}
+
+.toolbar-item:active .toolbar-icon{
+    transform:scale(.92);
+}
+
+.toolbar-item span{
+    font-size:12px;
+    font-weight:600;
+}
+  .goods .toolbar-icon{
+    background:#FFF6E8;
+    color:#DD8A00;
+}
+
+.trade .toolbar-icon{
+    background:#F4EEFF;
+    color:#8B5CF6;
+}
+
+.venue .toolbar-icon{
+    background:#E8F8FF;
+    color:#0096C7;
+}
+
+.items .toolbar-icon{
+    background:#EEF4FF;
+    color:#6B7CFF;
+}
 </style>
 </head>
 
@@ -400,7 +471,41 @@ color:#7b5cc7;
   <div class="banner">
     <img src="../images/3LOGY.png">
   </div>
+<div class="live-toolbar">
 
+  <div class="live-toolbar-grid">
+
+    <a href="#goods" class="toolbar-item goods">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-calculator"></i>
+      </div>
+      <span>グッズ計算</span>
+    </a>
+
+    <a href="#trade" class="toolbar-item trade">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-right-left"></i>
+      </div>
+      <span>交換用画像</span>
+    </a>
+
+    <a href="#venue" class="toolbar-item venue">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+      <span>会場メモ</span>
+    </a>
+
+    <a href="#items" class="toolbar-item items">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-suitcase"></i>
+      </div>
+      <span>持ち物</span>
+    </a>
+
+  </div>
+
+</div>
   <!-- 基本情報 -->
   <div class="card">
     <h2>基本情報</h2>
@@ -939,6 +1044,20 @@ newItem.value = "";
 renderItems();
 
 </script>
+   <script>
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+
+    const target = document.querySelector(link.getAttribute("href"));
+
+    window.scrollTo({
+      top: target.offsetTop - 10,
+      behavior: "smooth"
+    });
+  });
+});
+   </script>
 
 </body>
 </html>
