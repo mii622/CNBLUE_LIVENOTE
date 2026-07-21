@@ -685,12 +685,18 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 </script>
-  <script>
-// ===== ライブごとに変更 =====
-const packingId = "live_3LOGY2026";
-const packingName = "CNBLUE 3LOGY IN JAPAN 2026";
-// ===========================
+<script>
 
+// ======================================
+// ライブごとに変更①
+// リストID（他ライブと重複しない名前）
+// ======================================
+
+const packingId =
+"live_3LOGYINJAPAN2026";
+
+
+// ======================================
 
 let packingLists =
 JSON.parse(
@@ -699,7 +705,7 @@ localStorage.getItem("packing_lists")
 || [];
 
 
-// KINGDOMのリストを探す
+// ライブのリストを探す
 
 let currentList =
 packingLists.find(
@@ -711,9 +717,18 @@ list => list.id === packingId
 
 if(!currentList){
 currentList = {
+
 id: packingId,
-name: packingName,
+
+// ======================================
+// ライブごとに変更②
+// マイリストに表示される名前
+// ======================================
+
+name:"3LOGY IN JAPAN",
+
 type:"live",
+visible:true,
 items:[],
 checked:{}
 };
@@ -726,6 +741,8 @@ JSON.stringify(packingLists)
 );
 
 }
+
+
 let basicItems =
 JSON.parse(
 localStorage.getItem("packing_basic")
@@ -739,6 +756,7 @@ localStorage.getItem("packing_basic")
 "ペンラの電池"
 ];
 
+
 const checkList =
 document.getElementById("checkList");
 
@@ -748,6 +766,7 @@ document.getElementById("newItem");
 const addBtn =
 document.getElementById("addBtn");
 
+
 function saveItems(){
 
 localStorage.setItem(
@@ -755,8 +774,9 @@ localStorage.setItem(
 JSON.stringify(packingLists)
 );
 
-
 }
+
+
 function getDisplayItems(){
 
 return [
@@ -774,76 +794,95 @@ type:"basic"
 
 })),
 
-
 ...currentList.items.map(item=>({
+
 text:item.text,
 checked:item.checked,
 type:"custom"
+
 }))
+
 ];
+
 }
 
+
 function renderItems(){
-  checkList.innerHTML = "";
-  const items =
+
+checkList.innerHTML = "";
+
+const items =
 getDisplayItems();
 
 
 items.forEach((item,index)=>{
-    const div =
-    document.createElement("div");
 
-    div.className =
-    "check-item";
+const div =
+document.createElement("div");
 
-    div.innerHTML = `
-      <label class="check-left">
-        <input type="checkbox"
-        ${item.checked ? "checked" : ""}>
-        <span>${item.text}</span>
+div.className =
+"check-item";
 
-      </label>
-      ${
-  item.type==="custom"
+div.innerHTML = `
+<label class="check-left">
+
+<input type="checkbox"
+${item.checked ? "checked" : ""}>
+
+<span>${item.text}</span>
+
+</label>
+
+${
+item.type==="custom"
 ? `<button class="delete-btn">×</button>`
 : ""
 }
-    `;
 
-    const checkbox =
-    div.querySelector("input");
-    checkbox.addEventListener("change",()=>{
-      if(item.type==="basic"){
+`;
 
+const checkbox =
+div.querySelector("input");
+
+checkbox.addEventListener("change",()=>{
+
+currentList.visible = true;
+
+if(item.type==="basic"){
 
 currentList.checked[item.text]
 =
 checkbox.checked;
 
-
 }else{
-
 
 let target =
 currentList.items.find(
 x=>x.text===item.text
 );
 
-
 if(target){
+
 target.checked =
 checkbox.checked;
+
 }
+
 }
 
 saveItems();
-    });
+
+});
+
+
 const deleteBtn =
 div.querySelector(".delete-btn");
 
 
 if(deleteBtn){
+
 deleteBtn.addEventListener("click",()=>{
+
 // 基本セットはライブページから変更しない
 if(item.type==="basic"){
 return;
@@ -856,29 +895,50 @@ x=>x.text !== item.text
 );
 
 saveItems();
+
 renderItems();
+
 });
+
 }
-    checkList.appendChild(div);
-  });
+
+checkList.appendChild(div);
+
+});
+
 }
+
 
 addBtn.addEventListener("click",()=>{
+
 const text =
 newItem.value.trim();
-  if(!text) return;
+
+if(!text) return;
+
 currentList.items.push({
+
 text:text,
+
 checked:false
+
 });
 
-  saveItems();
-  renderItems();
-newItem.value = "";
-});
+// 非表示にしていた場合は再表示
+currentList.visible = true;
+
+saveItems();
 
 renderItems();
-  </script>
+
+newItem.value = "";
+
+});
+
+
+renderItems();
+
+</script>
 
 </body>
 </html>
