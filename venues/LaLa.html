@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZG2G4761S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-QZG2G4761S');
+</script>
+<title>ららアリーナ東京ベイ</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- アイコン -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<div id="header"></div>
+<div class="container">
+
+  <!-- タイトル -->
+  <div class="title-box">
+
+    <div class="page-label">
+      VENUE GUIDE
+    </div>
+
+    <div class="venue-title">
+      ららアリーナ東京ベイ
+    </div>
+
+    <div class="venue-subtitle">
+      会場アクセス・周辺情報まとめ
+    </div>
+
+  </div>
+
+  <!-- 会場情報 -->
+  <div class="card">
+
+    <h2>👣 アクセス</h2>
+
+    <a href="https://lalaarenatokyo-bay.com/"
+       target="_blank"
+       class="venue-link">
+
+      ↗ 会場の公式サイトを見る
+
+    </a>
+
+      <div class="info-text">
+JR南船橋駅から徒歩6分<br>
+※ららぽーと東京ベイとららアリーナを結ぶデッキや連絡通路あり！<br>
+京成線が便利な方は、船橋競馬場駅から無料送迎バスでららぽーと→徒歩でららアリーナへ移動、という手もあり<br>
+(船橋競馬場駅からアリーナまで徒歩だと16分)<br>
+
+      </div>
+
+    </div>
+
+    <!-- カフェ -->
+  <div class="card">
+    
+  <h2>☕ カフェ</h2>
+  
+      <div class="info-text">
+駅直結のららテラスにいくつかカフェあり<br>
+周辺に商業施設が多い！<br>
+      </div>
+
+    </div>
+
+    <!-- ご飯 -->
+  <div class="card">
+  <h2>🍴 ご飯</h2>
+
+      <div class="info-text">
+ららテラスか、少し歩くけど駅反対側のららぽーとが色々充実◎<br>
+隣にあるIKEAのフードコートも良さそう<br>
+      </div>
+
+    </div>
+
+    <!-- 座席 -->
+  <div class="card">
+  <h2>🪑 座席</h2>
+    <div class="info-section">
+ <a href="https://lalaarenatokyo-bay.com/seats/"
+       target="_blank"
+       class="venue-link">
+
+      ↗ 会場公式の座席表を見る
+
+    </a>
+
+      <div class="info-text">
+1Fがアリーナ、2F〜4Fがスタンド<br>
+3Fはほとんど席がない(VIP ROOMメイン)<br>
+入場ゲートの表記はイベント毎に変わる<br>
+スタンド席はドリンクホルダーあり<br>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 戻る -->
+  <a href="index.html" class="back-link">
+    ← 会場まとめTOPへ戻る
+  </a>
+
+</div>
+<!-- header.html読み込み -->
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+</body>
+</html>
