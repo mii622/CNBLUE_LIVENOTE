@@ -272,18 +272,24 @@ a {
   margin-bottom: 12px;
 }
 
-.sns-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #0F1419;
-  color: white;
-  padding: 10px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: 0.2s;
+.sns-button{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+
+  margin-top:10px;
+  width:100%;
+
+  box-sizing:border-box;
+}
+
+.marshmallow-button{
+  background:#ff8fb3;
+}
+
+.marshmallow-button:hover{
+  background:#ff76a2;
 }
 
 .sns-button:hover {
@@ -676,20 +682,31 @@ CNBLUEのライブ情報、セトリ、初心者向けガイドなどを
      </div>
    
   <!-- SNS -->
-  <div id="sns" class="section">SNS</div>
-  <div class="card small-card">
+<div id="sns" class="section">SNS & CONTACT</div>
 
-    <p class="sns-text">
-      Xでもライブレポやリアルタイムの感想を更新しています。<br>
-      気になることやご質問があれば、気軽にXで聞いてください🫶🏻
-    </p>
+<div class="card small-card">
 
-    <a href="https://x.com/fumijyh89?s=21" target="_blank" class="sns-button">
-      <i class="fa-brands fa-x-twitter"></i>
-      中の人のXはこちら →
-    </a>
+  <p class="sns-text">
+    リアルタイムのライブレポや更新情報はXで発信しています📢<br>
+    マシュマロでは匿名で質問・リクエスト・情報提供を受け付けています🫶<br>
+    お気軽にどうぞ！
+  </p>
 
-  </div>
+  <a href="https://x.com/fumiJYH89"
+     target="_blank"
+     class="sns-button">
+    <i class="fa-brands fa-x-twitter"></i>
+    Xを見る
+  </a>
+
+  <a href="https://marshmallow-qa.com/grx4ewqo9gtikjh?t=D5FaVK&utm_medium=url_text&utm_source=promotion"
+     target="_blank"
+     class="sns-button marshmallow-button">
+    <i class="fa-solid fa-envelope"></i>
+    マシュマロを送る
+  </a>
+
+</div>
 </div>
 <script>
 
