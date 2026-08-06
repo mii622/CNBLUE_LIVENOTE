@@ -1,1 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZG2G4761S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QZG2G4761S');
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- OGP -->
+<meta property="og:title" content="GUIDE | CNBLUE LIVE NOTE">
+<meta property="og:description" content="海外フェスガイド">
+<meta property="og:image" content="https://mii622.github.io/CNBLUE_LIVENOTE/images/ogp/guide.jpg">
+<meta property="og:url" content="https://mii622.github.io/CNBLUE_LIVENOTE/guide/festival.html">
+<meta property="og:type" content="website">
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GUIDE | CNBLUE LIVE NOTE">
+<meta name="twitter:description" content="海外フェスガイド">
+<meta name="twitter:image" content="https://mii622.github.io/CNBLUE_LIVENOTE/images/ogp/guide.jpg">
+
+<link rel="manifest" href="/CNBLUE_LIVENOTE/manifest.json">
+<meta name="theme-color" content="#afcbda">
+    
+  <title>CNBLUE GUIDE</title>
+    <meta name="description"
+content="海外ロックフェス初心者による参加ガイド">
+
+<style>
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
+  margin: 0;
+  padding: 16px;
+  line-height: 2.05;
+  color: #222;
+  -webkit-text-size-adjust: 100%;
+
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+.container {
+  max-width: 820px;
+  width: 100%;
+  margin: 0 auto;
+}
+.header {
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 14px 0;
+  color: #6b7cff;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #6b7cff;
+  margin: 8px auto 0;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+  
+
+.site-subtitle{
+
+  font-size: 0.92rem;
+
+  line-height: 1.9;
+
+  color: #666;
+
+  text-align: center;
+
+  margin: 0 auto 28px;
+
+  max-width: 90%;
+}
+/* カード */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* タイトル */
+.main-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  margin: 10px 0 16px;
+  color: #333;
+}
+
+/* セクションタイトル */
+h1.section-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: #6b7cff;
+  margin: 0 0 16px;
+  border-left: 4px solid #6b7cff;
+  padding-left: 10px;
+  line-height: 1.6;
+}
+
+/* Q */
+.q {
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  color: #333;
+  line-height: 1.8;
+}
+
+/* A */
+.a {
+  font-weight: 700;
+  color: #2b5cff;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  line-height: 2.1;
+}
+
+/* 区切り */
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 26px 0;
+}
+
+/* 段落 */
+p {
+  margin: 0 0 14px;
+}
+
+/* リスト */
+ul {
+  padding-left: 18px;
+}
+
+li {
+  margin-bottom: 8px;
+  line-height: 1.9;
+}
+
+/* 強調 */
+strong {
+  font-weight: 900;
+}
+  .x-area {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.x-text {
+  margin-bottom: 10px;
+}
+
+.x-btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.25s;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.x-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.2);
+}
+.marshmallow-button{
+  background:#ff8fb3;
+  display: inline-block;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.25s;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.marshmallow-button:hover{
+  background:#ff76a2;
+}
+
+.btn-outline {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 24px; /* ←追加 */
+  padding: 12px 14px;  /* 少しだけ余白増やす */
+  border: 1.5px solid #9bb7ff; /* 見やすく */
+  color: #a3b5c2; /* テキスト色も統一 */
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-outline:hover {
+  background: #f3f6ff;
+  border-color: #6b7cff;
+  color: #4a5fd6;
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+    font-size: 15.5px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .main-title {
+    font-size: 18px;
+  }
+
+  h1.section-title {
+    font-size: 16px;
+  }
+}
+</style>
+  </head>
+    
+    <body>
+  <div id="header"></div>
+
+  <div class="header">GUIDE</div>
+
+  <h1 class="main-title">初めてフェスへ行く人たちのために<br>
+    海外フェス初参戦オタクの体験記
+</h1>
+
+<p class="site-subtitle">
+  </p>
+<a href="/CNBLUE_LIVENOTE/guide/index.html" class="btn-outline">
+      他のガイドはこちら →
+  </a>
+
+
+
+<div class="container">
+<div class="card">
+
+<h1 class="section-title">はじめに</h1>
+<p>
+このページでは、2025釜山ロックフェスに初めて参加した私が、
+実際に体験して気づいたこと、準備して良かったことなどをまとめています！
+前提として、
+<ul>
+<li>大型フェス未経験(日本も含め)</li>
+<li>野外公演未経験</li>
+<li>海外公演2回目(ヨンファのソロコンのみ)</li>
+</ul>
+という、超初心者が釜山ロックフェスに1人で行ってみたお話ですので、
+海外公演に慣れていない方、フェス初めての方向けの内容となっております。</p>
+<hr>
+<p>
+こんな超ど初心者でしたが、1人でもめっっっちゃくちゃ楽しかったです。
+
+実際に行って感じたのは、<br>
+* 思った以上に暑さとの戦いだった<br>
+* 場所取りは事前の情報収集が大事<br>
+* 水は思っている以上に必要<br>
+* 体力的にはかなりハード<br>
+* それでも「また行きたい！」と思えるくらい楽しかった<br>
+ということ。
+ここからは、実際に準備したことや当日の流れ、
+やって良かったこと・失敗したことをまとめていきます！
+
+</p>
+
+<p>※あくまで中の人による個人的な考えに基づきます</p>
+
+<hr>
+
+<h1 class="section-title">準備したこと</h1>
+
+<p>
+フェス自体初めてだったので、流れも持ち物も全く分からず、
+とにかく過去の参戦レポを調べることから始めました。
+特に心配だったのが、場所取りと服装です。
+ソウルコンに一度参加したことはありますがそのときは完全指定席だったので、
+早い者勝ちで場所取りをするのはZeppぶり…！
+しかもZeppのように入場番号が決まっている訳でもないので、ここが一番心配でした。
+事前に入場までの流れをよく調べたのと、私はCNBLUEだけを目当てに行ったので、
+CNBLUEが出るステージの位置を何度も確認して、昨年の映像を見ながら観覧エリアの形も調べておきました🔍
+服装については、会場が生態公園というだけあって自然豊かな場所、
+かつ過去には大雨で泥まみれになった…とか、虫が結構いる…とかなかなかハードな環境ぽかったので、
+暑さ対策+雨・虫対策を両立できる服装をめちゃくちゃ考えました！
+結果として私が行った日は雨が降らなかったのですが、前日かな？大雨だったようで、
+本当に雨降らなくてありがとう…の気持ちでした。(何せ私の推しは雨男なので、、)
+あとは、できるだけ身軽で行けるように、バッグや持ち物も厳選しました。
+</p>
+
+<hr>
+
+<h1 class="section-title">当日の流れ</h1>
+<p>
+先にお伝えしておくと、私の場合は
+①CNBLUEだけが目当て　②近くで見る>>>快適に過ごす　が条件です。
+なので、ここからは途中でご飯もトイレも行かない！一切場所から離れないハードコースとして私の当日の流れを説明します。
+もちろん、会場は出入り自由ですし、朝から目当てのステージまで同じところにいなきゃいけないというルールはありません。
+が、私はできるだけいい場所でCNBLUEのステージを見たかったので、無条件でハードコースを選びました笑
+
+<strong>◯入場まで</strong><br>
+2025釜山ロックフェス(以下、부락)はステージ関係なく入場列があって、
+開場→チケット確認と持ち物チェック→目当てのステージへ向かう、という流れでした。
+さすがに夜通し並ぶ体力はありませんでしたが、できるだけ近くで見たかったので、
+早めに会場へ向かった…つもりでしたが、到着するとすでに長蛇の列😱
+これ近くで見るの無理では…と思いながら並んでいました。
+入場までもかなり並ぶ時間が長くて、もちろん屋根無しなので、この時点で割ときついな…と思いつつ、
+熱中症にならないギリギリで水分をちょっとずつ摂りながら入場を待っていました。
+
+<strong>◯入場〜場所取り</strong>
+いよいよ開場！チケット画面を見せて腕にリストバンドを巻いてもらい、荷物検査を受けます。
+時間は短いですが、割と中までしっかり見られました。
+私はとにかく場所取りしたかったので、クロークもフードエリアもすっ飛ばして、そのまま一気にステージへ。
+基本的に早く並んでいる人≒前方で見たい人なので、最前列はすでに埋まっていましたが、
+私の希望は中央の柵横だったので、そこめがけて超早歩き(走ると怒られます笑)。
+結果、柵から2列目、前から15番目くらいの位置をゲットしました。
+
+<strong>◯CNBLUEのステージまで</strong>
+ここからはひたすら耐えの時間です。
+もちろん色々なアーティストのステージを見ながらなので楽しさはあるのですが、
+9月の超暑い中に屋根無し水のみで長時間立ちっぱなしなので、かなりキツかったです。
+その場に座り込むと警備の人から座らないで！と言われるので、
+屈伸してるんです的な雰囲気でしゃがんだり立ったりを繰り返していました。
+ただ、ちょうど私の隣(柵真横)の方がめちゃくちゃいい方で、
+その方はCNBLUEより出番が前のバンドのファンだったのですが、私が1人で来ているのを見て、
+「誰のファンですか？」と聞いてくださったんです！CNBLUEだと伝えると、
+自分は推しが出たら会場を出るから、この場所を譲るね！と…！😭本当に神様かと思いました。
+実際、そのバンドが終わった後にかなり人の入れ替わりが激しく、若干流されかけたのですが、
+こっち！と声をかけてくださって、無事柵真横をゲットすることができました🥺
+柵横に移動してからは、トリに向けて人も増えてきてかなり押されましたが、
+気づけば前から1桁台まで…1人だと相方を気にせず流れに身を任せられるのが楽だしラッキーでした。
+水は500ml3本くらい持って行きましたが、全然足りず…
+途中で警備の人がペットボトルを配ってくれて、それを貰って何とか耐えました。
+
+<strong>◯ついにCNBLUE！</strong>
+ここまでほぼ体力を使い切っていましたが、CNBLUEが出てきた途端HP全回復‼︎
+故郷釜山で暴れまくるヨンファさんは本当にかっこよかったです…✨
+ここまで頑張ってよかったと心の底から思いました。
+思いっきり에바뛰もしてあっという間に出番は終わり、そのままステージを出ました。
+에바뛰とCNBLUEの旗を写真撮れるように広げてくださっていたので写真だけ撮って、
+本当はフォトブースとかもあったのですが全く立ち寄る元気もなく会場を後に…
+ちょうど最寄り駅までのシャトルバスが来てくれたので、そのまま乗り込んで爆睡しました。
+부락の会場は駅までかなり遠いので、待ち時間0で来てくれたのはほんとに運が良かったです。</p>
+
+<hr>
+
+<h1 class="section-title">やってよかったこと</h1>
+<p>
+<strong>・あらかじめ取りたい場所のイメージをしていたこと。</strong>
+Zeppやスタンディングもそうですが、迷っている間にどんどん場所が埋まるので、
+第3希望くらいまで考えておいて、その場で悩まないこと！
+  
+<strong>・できる限り涼しい格好をしていったこと。</strong>
+本当に思ってる何倍も暑さによる疲れが大きかったです。
+個人的に以前接触冷感系のインナーを着て汗を吸わずに全身汗だくになった経験があったので、
+あえてコットン素材のインナーにしましたが、大正解でした。
+  
+<strong>・ほんのちょっとだけでも韓国語が話せたこと。</strong>
+話せるというレベルでもないですが、席を譲ってくださったり、
+水を貰いたいアピールをしたりするのに、「ありがとうございます」「私です、ここです」くらいでも
+言えるだけで違うと思います。途中で柵にかけたタオルを落としてしまって、
+저기요と取り敢えず言っていたのですが警備の人に届かず、気づいた近くの方が大声で呼んでくださいました。
+もう間違ってても発音悪くてもいいので、何か言おうとしてる、意思表示だけでもちゃんとするのが大事だと思います。
+</p>
+  
+<hr>
+
+<h1 class="section-title">失敗したこと</h1>
+
+<p>
+<strong>・日焼け対策が甘かった</strong>
+まず日焼け止めを忘れました。最悪ですね。
+虫が大嫌いなので虫除けに気を取られすぎて忘れました。
+UVカットパーカーを持っていましたが、ずっと着てるのも暑いし…ちゃんと日焼けしました。
+あとはキャップだったので首の後ろが暑かったのと、眩しいのもキツかったです。
+今年も夏に韓国のフェスへ行くのでサングラスとアームカバーを用意しました…
+<strong>・バッグの肩紐が細かった</strong>
+小さい斜めがけのポーチと薄っぺらいトートバッグで行きましたが、
+紐が細くて肩に食い込みめちゃくちゃ痛かったです。
+あまりに耐えきれず、途中でトートバッグに入れてトートを首から下げてました(それも痛かった)
+</p>
+
+<h1 class="section-title">さいごに</h1>
+<p>
+失敗もあり、終わってホテルに戻ったときにはしっかり熱中症になっていて夜ご飯も食べずに寝ていましたが、
+それでも本当に楽しくて、行って良かった、また行きたいと思っています◎
+BOICEだけではない、大勢の観客を前にどんどん自分たちの空気にしていって、
+みんなを一つにして盛り上げる、そんなかっこいい姿を見れるのがフェスの醍醐味だと思います。
+ただ、特に屋外のフェスは熱中症と隣り合わせでもあるので、準備を充分にして、くれぐれも無理はしないこと！
+せっかくのフェスで体調を崩してステージ見られない…なんてこともあります。
+実際、私がいたステージでも体調不良で警備に抱えられて退出される方がいらっしゃいました😢
+フェスではゆっくりご飯を食べながらくつろいで見れるピクニックゾーンみたいなエリアもあるので、体調と相談しながら場所を選ぶことをおススメします💓
+
+単独公演とは違った魅力を感じられるフェスも私は大好きです！
+行こうか迷っている方、初めてで不安な方のお役に少しでも立てれば幸いです♡
+そして、CNBLUEがまた日本のフェスに出演することを心から願っています！
+</p>
+
+<hr>
+
+<p>
+ソウルコンについては、こちらの「おひとりさま参戦ガイド　ソウルコン編」もぜひ参考にしてみてください💙
+</p>
+
+<a href="/CNBLUE_LIVENOTE/guide/seoul.html" class="btn-outline">
+      ソウルコン編はこちら →
+</a>
+
+
+<div class="x-area">
+  <p class="x-text"><strong>質問はXやマシュマロにて受け付けております💁🏻‍♀️</strong></p>
+
+  <a href="https://twitter.com/fumiJYH89" target="_blank" class="x-btn">
+    Xを見る
+  </a>
+
+    <a href="https://marshmallow-qa.com/grx4ewqo9gtikjh"
+     target="_blank"
+     class="sns-button marshmallow-button">
+    <i class="fa-solid fa-envelope"></i>
+    マシュマロを送る
+  </a>
+</div>
+
+</div>
+</div>
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+</body>
+</html>
