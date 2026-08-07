@@ -243,27 +243,78 @@ strong {
   margin: 10px 0;
  }
  
-.toc {
+/* 目次 */
+.toc{
   background:#fff;
+  border:1.5px solid #dbe7ff;
   border-radius:16px;
-  padding:14px 16px;
-  margin:20px 0;
+  padding:0;
+  margin:24px 0;
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,.05);
 }
 
-.toc summary {
-  cursor:pointer;
-  font-weight:700;
-  font-size:1rem;
-  color:#4d6c8a;
+/* タイトル部分 */
+.toc summary{
   list-style:none;
+  cursor:pointer;
+  padding:16px 18px;
+  font-weight:700;
+  color:#4d6c8a;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:.25s;
 }
 
-.toc ul {
-  margin-top: 10px;
+/* ▼を消す */
+.toc summary::-webkit-details-marker{
+  display:none;
 }
 
-.toc li {
-  margin-bottom:8px;
+/* 自分で矢印を作る */
+.toc summary::after{
+  content:"▼";
+  font-size:12px;
+  color:#6b7cff;
+  transition:.25s;
+}
+
+/* 開いたら回転 */
+.toc[open] summary::after{
+  transform:rotate(180deg);
+}
+
+/* ホバー */
+.toc summary:hover{
+  background:#f7faff;
+}
+
+/* 中身 */
+.toc ul{
+  list-style:none;
+  margin:0;
+  padding:8px 18px 16px;
+}
+
+.toc li{
+  margin:10px 0;
+}
+
+/* リンク */
+.toc a{
+  display:block;
+  text-decoration:none;
+  color:#444;
+  padding:10px 12px;
+  border-radius:10px;
+  transition:.2s;
+}
+
+.toc a:hover{
+  background:#eef4ff;
+  color:#4a5fd6;
+  padding-left:18px;
 }
 
 </style>
@@ -324,17 +375,16 @@ strong {
   <summary>📖 目次</summary>
 
   <ul>
-    <li><a href="#preparation">1.準備したこと</a></li>
-    <li><a href="#flow">2.当日の流れ</a></li>
-    <li><a href="#good">3.良かったこと</a></li>
-    <li><a href="#mistake">4.失敗したこと</a></li>
-    <li><a href="#last">5.さいごに</a></li>
+    <li><a href="#preparation">📝 準備したこと</a></li>
+    <li><a href="#flow">⏰ 当日の流れ</a></li>
+    <li><a href="#good">✨ やってよかったこと</a></li>
+    <li><a href="#mistake">💦 失敗したこと</a></li>
+    <li><a href="#last">💙 さいごに</a></li>
   </ul>
-
 </details>
 
 
-<h1 class="section-title" id="preparation">1.準備したこと</h1>
+<h1 class="section-title" id="preparation">📝　準備したこと</h1>
 
 <p>
 フェス自体初めてだったので、流れも持ち物も全く分からず、
@@ -355,7 +405,7 @@ CNBLUEが出るステージの位置を何度も確認して、昨年の映像�
 
 <hr>
 
-<h1 class="section-title"id="flow">2.当日の流れ</h1>
+<h1 class="section-title"id="flow">⏰️　当日の流れ</h1>
 <p>
 先にお伝えしておくと、私の場合は
 ①CNBLUEだけが目当て　②近くで見る>>>快適に過ごす　が条件です。<br>
@@ -416,7 +466,7 @@ CNBLUEが出るステージの位置を何度も確認して、昨年の映像�
 
 <hr>
 
-<h1 class="section-title"id="good">やってよかったこと</h1>
+<h1 class="section-title"id="good">✨️　やってよかったこと</h1>
 <p>
 <strong>・あらかじめ取りたい場所のイメージをしていたこと。</strong><br>
 Zeppやスタンディングもそうですが、迷っている間にどんどん場所が埋まるので、
@@ -439,7 +489,7 @@ Zeppやスタンディングもそうですが、迷っている間にどんど�
   
 <hr>
 
-<h1 class="section-title"id="mistake">失敗したこと</h1>
+<h1 class="section-title"id="mistake">💦　失敗したこと</h1>
 
 <p>
 <strong>・日焼け対策が甘かった</strong><br>
@@ -456,7 +506,7 @@ UVカットパーカーを持っていましたが、ずっと着てるのも暑
 あまりに耐えきれず、途中でトートバッグに入れてトートを首から下げてました(それも痛かった)
 </p>
 
-<h1 class="section-title"id="last">さいごに</h1>
+<h1 class="section-title"id="last">💙　さいごに</h1>
 <p>
 失敗もあり、終わってホテルに戻ったときにはしっかり熱中症になっていて夜ご飯も食べずに寝ていましたが、
 それでも本当に楽しくて、行って良かった、また行きたいと思っています◎
