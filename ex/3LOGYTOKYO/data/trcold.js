@@ -7,9 +7,9 @@ const CONFIG = {
   cards: [
     { left: "8.5%", top: "16%", type: "top" },
     { left: "25.5%", top: "16%", type: "top" },
-    { left: "48%", top: "16%", type: "top" },
+    { left: "47.5%", top: "16%", type: "top" },
     { left: "63.5%", top: "16%", type: "top" },
-    { left: "86%", top: "16%", type: "top" },
+    { left: "85%", top: "16%", type: "top" },
     { left: "15.5%", top: "40%", type: "bottom" },
     { left: "36%", top: "40%", type: "bottom" },
     { left: "51%", top: "40%", type: "bottom" },
