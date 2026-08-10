@@ -1,8 +1,8 @@
 const CONFIG = {
   image: "../img/charm.jpg",
 
-  cardWidth: "20%",
-  cardHeight: "60%",
+  cardWidth: "15%",
+  cardHeight: "30%",
   markTop: "-8px",
   markRight: "8px",
 
