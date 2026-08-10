@@ -1,8 +1,8 @@
 const CONFIG = {
   image: "../img/trc.jpg",
 
-  cardWidth: "20%",
-  cardHeight: "60%",
+  cardWidth: "10%",
+  cardHeight: "20%",
   markTop: "-8px",
   markRight: "8px",
 
