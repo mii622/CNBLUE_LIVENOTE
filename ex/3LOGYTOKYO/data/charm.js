@@ -10,7 +10,7 @@ const CONFIG = {
     { left: "8%", top: "16%", type: "top" },
     { left: "46%", top: "16%", type: "top" },
     { left: "80%", top: "16%", type: "top" },
-    { left: "48%", top: "70%", type: "top" },
+    { left: "8%", top: "70%", type: "top" },
     { left: "46%", top: "70%", type: "top" },
     { left: "80%", top: "70%", type: "top" }
   ]
