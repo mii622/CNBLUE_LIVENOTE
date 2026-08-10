@@ -7,11 +7,11 @@ const CONFIG = {
   markRight: "8px",
 
   cards: [
-    { left: "3.5%", top: "16%", type: "top" },
-    { left: "50.5%", top: "16%", type: "top" },
-    { left: "88%", top: "16%", type: "top" },
-    { left: "15.5%", top: "70%", type: "top" },
-    { left: "50.5%", top: "70%", type: "top" },
-    { left: "85.5%", top: "70%", type: "top" }
+    { left: "4%", top: "16%", type: "top" },
+    { left: "46%", top: "16%", type: "top" },
+    { left: "80%", top: "16%", type: "top" },
+    { left: "4%", top: "70%", type: "top" },
+    { left: "46%", top: "70%", type: "top" },
+    { left: "80%", top: "70%", type: "top" }
   ]
 };
