@@ -5,14 +5,14 @@ const CONFIG = {
   cardHeight: "40%",
 
   cards: [
-    { left: "11.5%", top: "16%", type: "top" },
+    { left: "8.5%", top: "16%", type: "top" },
     { left: "25.5%", top: "16%", type: "top" },
-    { left: "50%", top: "16%", type: "top" },
+    { left: "48%", top: "16%", type: "top" },
     { left: "63.5%", top: "16%", type: "top" },
-    { left: "87.5%", top: "16%", type: "top" },
-    { left: "15.5%", top: "35%", type: "bottom" },
-    { left: "37.5%", top: "35%", type: "bottom" },
-    { left: "50.5%", top: "35%", type: "bottom" },
-    { left: "73.5%", top: "35%", type: "bottom" }
+    { left: "86%", top: "16%", type: "top" },
+    { left: "15.5%", top: "40%", type: "bottom" },
+    { left: "36%", top: "40%", type: "bottom" },
+    { left: "51%", top: "40%", type: "bottom" },
+    { left: "73.5%", top: "40%", type: "bottom" }
   ]
 };
