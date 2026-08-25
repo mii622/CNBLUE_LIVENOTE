@@ -1,1 +1,1142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZG2G4761S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-QZG2G4761S');
+</script>
+<title>FULL CIRCLE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+  font-family:'DSEG';
+  src:url('../fonts/DSEG7Classic-Italic.woff2')
+      format('woff2');
+}
+  
+body {
+ font-family: 'Noto Sans JP', sans-serif; 
+ background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
+ margin: 0;
+ padding: 20px;
+ line-height: 1.6;
+  padding-top:0;
+}
+  
+  .countdown-box {
+  background:linear-gradient(135deg, #44527e 0%, #2a3147 100%);
+  border:1px solid rgba(255,160,180,0.18);
+  border-radius:18px;
+  padding:26px 18px;
+  margin-bottom:26px;
+  text-align:center;
+  text-transform: uppercase;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+}
+
+.countdown-label {
+  color:#ffffff;
+  opacity:0.75;
+  font-size:0.72rem;
+  letter-spacing:4px;
+  margin-bottom:18px;
+}
+
+#countdown {
+  font-size: clamp(1.6rem, 6vw, 2.8rem);
+  font-family:'DSEG';
+  color:#1492ff;
+  text-shadow:
+  0 0 4px rgba(12,107,202,0.32),
+  0 0 12px rgba(12,107,202,0.12);
+  line-height:1;
+  text-align:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+}
+
+#countdown span{
+  display:inline-block;
+  min-width:2ch;
+}
+
+#countdown b{
+  font-weight:normal;
+  opacity:0.7;
+}
+  
+.countdown-text{
+  font-family: 'Orbitron', sans-serif;
+  font-weight:700;
+  letter-spacing:4px;
+  text-shadow:
+    0 0 6px rgba(20,146,255,0.28);
+}
+
+body {
+ font-family: 'Noto Sans JP', sans-serif; 
+ background: linear-gradient(180deg, #f9fafc 0%, #f5f7ff 100%);
+ margin: 0;
+ padding: 20px;
+ line-height: 1.6;
+  padding-top:0;
+}
+
+/* コンテナ */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding-top:0;
+}
+
+/* タイトル */
+ .title-box{
+  text-align:center;
+  margin-bottom:18px;
+  padding:10px 16px 18px;
+  border-bottom:none;
+ }
+
+/* LIVE REPORT */
+ .page-label{
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:3px;
+  color:#6b7cff;
+  opacity:0.8;
+
+  position:relative;
+  display:inline-block;
+  margin-bottom:4px;
+}
+
+.page-label::after{
+  content:"";
+  display:block;
+  width:36px;
+  height:2px;
+  margin:8px auto 0;
+  background:linear-gradient(90deg,#6b7cff,#a9c8ff);
+  border-radius:2px;
+}
+
+ .tour-name{
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:2px;
+  line-height:1.4;
+  margin:10px 0 6px;
+  margin-top:16px;
+  color:#2b2f3a;
+  opacity:0.92;
+  /* ちょい高級感 */
+  text-shadow:0 2px 10px rgba(0,0,0,0.05);
+ }
+ 
+ .tour-date{
+  font-size:13px;
+  color:#888;
+  letter-spacing:0.5px;
+ }
+
+/* バナー */
+.banner {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 8px 0 20px;
+  display: none;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  display: none;
+}
+/* カード */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid #f3f4f6;
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  border-left: 5px solid #6b7cff;
+  padding-left: 10px;
+}
+
+/* ボタン */
+.button {
+  display: inline-block;
+  background: linear-gradient(135deg, #6b7cff, #a9c8ff);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.button-tokyo {
+  display: inline-block;
+  background: linear-gradient(135deg, #d7710f, #f3b57c);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* 会場 */
+.venue-box {
+  margin-top: 10px;
+}
+
+.venue-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* セトリ */
+.spoiler {
+  background: #f8f9fb;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.highlight li {
+  margin-bottom: 6px;
+}
+ .section-title{
+  margin: 10px 0;
+ }
+ .setlist-box{
+  background:#fff;
+  border-radius:16px;
+  padding:14px 16px;
+  margin:20px 0;
+}
+
+.setlist-box summary{
+  cursor:pointer;
+  font-weight:700;
+  font-size:1rem;
+  color:#4d6c8a;
+  list-style:none;
+}
+
+.setlist-box summary::-webkit-details-marker{
+  display:none;
+}
+
+.setlist-box summary::after{
+  content:"＋";
+  float:right;
+}
+
+.setlist-box[open] summary::after{
+  content:"－";
+}
+
+.setlist-box ol{
+  margin-top:16px;
+  padding-left:20px;
+}
+
+.setlist-box li{
+  margin-bottom:8px;
+}
+ .check-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:14px;
+}
+.check-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  font-size:15px;
+}
+
+.check-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.delete-btn{
+  border:none;
+  background:#eef4ff;
+  color:#6b7cff;
+  width:24px;
+  height:24px;
+  border-radius:999px;
+  font-size:14px;
+  cursor:pointer;
+}
+  
+.check-item input[type="checkbox"]{
+  width:18px;
+  height:18px;
+  accent-color:#0c6bca;
+}
+
+.add-area{
+  display:flex;
+  gap:8px;
+  margin-top:18px;
+}
+
+#newItem{
+  flex:1;
+  border:none;
+  border-radius:10px;
+  padding:10px 12px;
+  background:#f3f6fb;
+  font-size:14px;
+}
+
+#addBtn{
+  border:none;
+  border-radius:10px;
+  padding:10px 14px;
+  background:#1492ff;
+  color:white;
+  font-size:14px;
+}
+
+.save-text{
+  font-size:11px;
+  color:#888;
+  margin-top:14px;
+}
+
+.item-menu{
+position:absolute;
+top:18px;
+right:18px;
+display:flex;
+flex-direction:column;
+gap:8px;
+  }
+  
+.beginner-link,
+.common-link{
+font-size:11px;
+padding:6px 10px;
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
+white-space:nowrap;
+text-align:center;
+}
+
+
+.beginner-link{
+background:#eef4ff;
+color:#4d6c8a;
+}
+
+.common-link{
+background:#f5f0ff;
+color:#7b5cc7;
+}
+.exchange-card{
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  border: 1px solid #f3f4f6;
+  transform: translateY(-2px);
+  position:relative;
+  background:linear-gradient(
+    180deg,
+    #f8fbff 0%,
+    #eef5ff 100%
+  );
+}
+  .exchange-sample{
+  width:100%;
+  border-radius:12px;
+  margin:12px 0;
+  display:block;
+  }
+  .exchange-card h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  border-left: 5px solid #6b7cff;
+  padding-left: 10px;
+  }
+  .exchangebtn {
+  border: none;
+  background: #ffffff;
+  color: #7ea4de;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: inline-block;
+  text-decoration: none; /* ←下線消す */
+  white-space: nowrap;   /* ←改行防止 */
+  }
+  .live-toolbar{
+    margin:24px 0 30px;
+}
+
+.live-toolbar-title{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:16px;
+
+    color:#6b7cff;
+    font-size:14px;
+    font-weight:700;
+}
+
+.live-toolbar-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.toolbar-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:#444;
+}
+
+.toolbar-icon{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    box-shadow:
+        0 6px 14px rgba(0,0,0,.08),
+        inset 0 2px 2px rgba(255,255,255,.9);
+    transition:.2s;
+}
+
+.toolbar-item:active .toolbar-icon{
+    transform:scale(.92);
+}
+
+.toolbar-item span{
+    font-size:12px;
+    font-weight:600;
+}
+  .goods .toolbar-icon{
+    background:#FFF6E8;
+    color:#DD8A00;
+}
+
+.trade .toolbar-icon{
+    background:#F4EEFF;
+    color:#8B5CF6;
+}
+
+.venue .toolbar-icon{
+    background:#E8F8FF;
+    color:#0096C7;
+}
+
+.items .toolbar-icon{
+    background:#EEF4FF;
+    color:#6B7CFF;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ✔ 共通ヘッダー -->
+<div id="header"></div>
+
+<div class="container">
+
+  <!-- タイトル -->
+  <div class="title-box">
+
+    <div class="page-label">LIVE REPORT</div>
+
+    <div class="tour-name">
+      CNBLUE AUTUMN TOUR 2026 -FULL CIRCLE-
+    </div>
+
+    <div class="tour-date">
+      2026/11/2・11/3 @ 東京ガーデンシアター<br>
+      2026/11/17・11/18 @ 愛知県芸術劇場<br>
+      2026/11/24・11/25 @ グランキューブ大阪
+    </div>
+
+  </div>
+
+  <div class="countdown-box">
+
+  <p class="countdown-label">
+   FULL CIRCLE STARTS IN
+  </p>
+
+  <div id="countdown">
+    00 : 00 : 00 : 00
+  </div>
+</div>
+
+  <!-- バナー -->
+  <div class="banner">
+    <img src="../images/FULL CIRCLE.png">
+  </div>
+<div class="live-toolbar">
+
+  <div class="live-toolbar-grid">
+
+    <a href="#goods" class="toolbar-item goods">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-calculator"></i>
+      </div>
+      <span>グッズ計算</span>
+    </a>
+
+    <a href="#trade" class="toolbar-item trade">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-right-left"></i>
+      </div>
+      <span>交換用画像</span>
+    </a>
+
+    <a href="#venue" class="toolbar-item venue">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+      <span>会場メモ</span>
+    </a>
+
+    <a href="#items" class="toolbar-item items">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-suitcase"></i>
+      </div>
+      <span>持ち物</span>
+    </a>
+
+  </div>
+
+</div>
+  <!-- 基本情報 -->
+  <div class="card">
+    <h2>基本情報</h2>
+    <p>東京：2026/11/2・11/3 @ 東京ガーデンシアター</p>
+    <p>愛知：2026/11/17・11/18 @ 愛知県芸術劇場</p>
+    <p>大阪：2026/11/24・11/25 @ グランキューブ大阪</p>
+  </div>
+
+  <!-- 会場 -->
+     <div id="venue" class="card">
+    <h2>会場メモ</h2>
+  <div class="venue-box">
+    <p class="venue-name">《東京ガーデンシアター》</p>
+
+  <a href="https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/" target="_blank" class="venue-link">
+    ↗ 会場の公式サイトを見る
+  </a>
+
+  <p class="venue-text">
+    メンバーもお気に入り！大きいZeppみたいな会場<br>
+    商業施設とくっついているので、ご飯も時間つぶしも困らない◎<br>
+  </p>
+   <a href="https://mii622.github.io/CNBLUE_LIVENOTE/venues/garden.html" target="_blank" class="venue-link">
+    ↗ 東京ガーデンシアターの会場まとめを見る
+   </a>
+  <p class="venue-name">《愛知県芸術劇場》</p>
+  <a href="https://www-stage.aac.pref.aichi.jp/access.html" target="_blank" class="venue-link">
+    ↗ 会場の公式サイトを見る
+  </a>
+
+  <p class="venue-text">
+  </p>
+ 
+  <p class="venue-name">《グランキューブ大阪》</p>
+
+  <a href="https://www.gco.co.jp/visitor/access/" target="_blank" class="venue-link">
+    ↗ 会場の公式サイトを見る
+  </a>
+
+  <p class="venue-text">
+</p>
+
+  </div>
+    </div>
+
+  <!-- グッズ -->
+    <div id="goods" class="card">
+    <h2>グッズ</h2>
+    <p>グッズ金額を計算できます</p>
+    <a href="https://mii622.github.io/CNBLUE_LIVENOTE/Goods/FULLCIRCLE" class="button">
+      グッズ計算はこちら
+    </a>
+  </div>
+  <div id="trade" class="exchange-card">
+    <h2>交換用画像ジェネレーター</h2>
+    <p>画像をタップして"譲""求"を付けるだけ！
+ランダムグッズごとに交換画像を作成して、そのままSNSで使えます◎</p>
+    <img src="images/sample.jpg"
+       alt="交換画像サンプル"
+       class="exchange-sample">
+    <a href="https://mii622.github.io/CNBLUE_LIVENOTE/ex/FULLCIRCLE/generate/trc.html" class="exchangebtn">
+      トレカ用
+    </a>
+  </div>
+   <div id="items" class="card">
+
+  <h2>持ち物リスト</h2>
+    <div class="item-menu">
+   <a href="/CNBLUE_LIVENOTE/packing/index.html"
+     class="common-link">
+    共通アイテムを編集⚙️
+   </a>
+    </div>   
+
+  <div class="check-list" id="checkList"></div>
+
+  <div class="add-area">
+
+    <input
+      type="text"
+      id="newItem"
+      placeholder="持ち物を追加">
+
+    <button id="addBtn">
+      ＋追加
+    </button>
+
+  </div>
+
+  <p class="save-text">
+    ・このリストは端末内にのみ保存されます<br>
+    ・この公演に持っていきたいアイテムを入力→追加ボタンでリストを編集できます<br>
+    ・共通アイテムを編集する際は右上のボタンを押してください
+  </p>
+
+   </div>
+
+  <!-- セトリ -->
+  <div class="card">
+    <h2>セットリスト（ネタバレあり）</h2>
+    <div class="spoiler">
+      <p style="font-size:11px; color:#aaa; margin-bottom:10px;">
+※本セトリは筆者の記憶およびSNSの投稿を元に再構成しています</p>
+     <details class="setlist-box">
+
+  <summary>セトリを見る</summary>
+      <ol>
+      </ol>
+      </details>　
+    </div>
+  </div>
+  <!-- レポ -->
+  <div class="card">
+    <h2>ハイライト</h2>
+    <ul class="highlight">
+    </ul>
+  </div>
+
+ 
+
+</div>
+<!-- ✔ 共通ヘッダー読み込み -->
+<script>
+fetch("../header.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+</script>
+
+  <script>
+
+const day1Start =
+new Date("2026-11-02T19:00:00");
+
+const day1End =
+new Date("2026-11-02T22:00:00");
+
+const day2Start =
+new Date("2026-11-03T16:00:00");
+
+const day2End =
+new Date("2026-11-03T19:00:00");
+
+const day3Start =
+new Date("2026-11-17T18:00:00");
+
+const day3End =
+new Date("2026-11-17T21:00:00");
+
+const day4Start =
+new Date("2026-11-18T18:00:00");
+
+const day4End =
+new Date("2026-11-18T21:00:00");
+  
+const day5Start =
+new Date("2026-11-24T19:00:00");
+
+const day5End =
+new Date("2026-11-24T22:00:00");
+
+const day6Start =
+new Date("2026-11-25T19:00:00");
+
+const day6End =
+new Date("2026-11-25T22:00:00");
+
+const countdown =
+document.getElementById("countdown");
+
+function formatCountdown(diff){
+  const days =
+  Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours =
+  Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes =
+  Math.floor((diff / (1000 * 60)) % 60);
+  const seconds =
+  Math.floor((diff / 1000) % 60);
+  return `
+  <span>${String(days).padStart(2,'0')}</span>
+  <b>:</b>
+  <span>${String(hours).padStart(2,'0')}</span>
+  <b>:</b>
+  <span>${String(minutes).padStart(2,'0')}</span>
+  <b>:</b>
+  <span>${String(seconds).padStart(2,'0')}</span>
+  `;
+}
+
+function updateCountdown() {
+  const now = new Date();
+
+  // DAY1前
+  if (now < day1Start) {
+    const diff = day1Start - now;
+    countdown.innerHTML =
+    formatCountdown(diff);
+    return;
+  }
+
+  // DAY1公演中
+  if (now >= day1Start &&
+      now < day1End) {
+    countdown.innerHTML =
+`<span class="countdown-text">
+STAGE ON
+</span>`;
+    return;
+  }
+
+  // DAY2まで
+  if (now >= day1End &&
+      now < day2Start) {
+    const diff = day2Start - now;
+    countdown.innerHTML =
+    formatCountdown(diff);
+    return;
+  }
+
+  // DAY2公演中
+  if (now >= day2Start &&
+      now < day2End) {
+    countdown.innerHTML =
+`<span class="countdown-text">
+STAGE ON
+</span>`;
+    return;
+  }
+  // DAY3まで
+  if (now >= day2End &&
+      now < day3Start) {
+    const diff = day3Start - now;
+    countdown.innerHTML =
+    formatCountdown(diff);
+    return;
+  }
+
+  // DAY3公演中
+  if (now >= day3Start &&
+      now < day3End) {
+    countdown.innerHTML =
+`<span class="countdown-text">
+STAGE ON
+</span>`;
+    return;
+  }
+  // DAY4まで
+  if (now >= day3End &&
+      now < day4Start) {
+    const diff = day4Start - now;
+    countdown.innerHTML =
+    formatCountdown(diff);
+    return;
+  }
+
+  // DAY4公演中
+  if (now >= day4Start &&
+      now < day4End) {
+    countdown.innerHTML =
+`<span class="countdown-text">
+STAGE ON
+</span>`;
+    return;
+  }
+  // DAY5まで
+  if (now >= day4End &&
+      now < day5Start) {
+    const diff = day5Start - now;
+    countdown.innerHTML =
+    formatCountdown(diff);
+    return;
+  }
+
+  // DAY5公演中
+  if (now >= day5Start &&
+      now < day5End) {
+    countdown.innerHTML =
+`<span class="countdown-text">
+STAGE ON
+</span>`;
+    return;
+  }
+  // DAY6まで
+  if (now >= day5End &&
+      now < day6Start) {
+    const diff = day6Start - now;
+    countdown.innerHTML =
+    formatCountdown(diff);
+    return;
+  }
+
+  // DAY6公演中
+  if (now >= day6Start &&
+      now < day6End) {
+    countdown.innerHTML =
+`<span class="countdown-text">
+STAGE ON
+</span>`;
+    return;
+  }
+  // 終演後
+  countdown.innerHTML =
+`<span class="countdown-text">
+THANK YOU!
+</span>`;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+</script>
+<script>
+
+// ======================================
+// ライブごとに変更①
+// リストID（他ライブと重複しない名前）
+// ======================================
+
+const packingId =
+"live_FULLCIRCLE";
+
+
+// ======================================
+
+let packingLists =
+JSON.parse(
+localStorage.getItem("packing_lists")
+)
+|| [];
+
+
+// ライブのリストを探す
+
+let currentList =
+packingLists.find(
+list => list.id === packingId
+);
+
+
+// なければ作成
+
+if(!currentList){
+currentList = {
+
+id: packingId,
+
+// ======================================
+// ライブごとに変更②
+// マイリストに表示される名前
+// ======================================
+
+name:"FULL CIRCLE",
+
+type:"live",
+visible:true,
+items:[],
+checked:{}
+};
+
+packingLists.push(currentList);
+
+localStorage.setItem(
+"packing_lists",
+JSON.stringify(packingLists)
+);
+
+}
+
+
+let basicItems =
+JSON.parse(
+localStorage.getItem("packing_basic")
+)
+||
+[
+"スマホ",
+"現金",
+"ペンライト",
+"モバイルバッテリー",
+"ペンラの電池"
+];
+
+
+const checkList =
+document.getElementById("checkList");
+
+const newItem =
+document.getElementById("newItem");
+
+const addBtn =
+document.getElementById("addBtn");
+
+
+function saveItems(){
+
+localStorage.setItem(
+"packing_lists",
+JSON.stringify(packingLists)
+);
+
+}
+
+
+function getDisplayItems(){
+
+return [
+
+...basicItems.map(text=>({
+
+text:text,
+
+checked:
+currentList.checked[text]
+||
+false,
+
+type:"basic"
+
+})),
+
+...currentList.items.map(item=>({
+
+text:item.text,
+checked:item.checked,
+type:"custom"
+
+}))
+
+];
+
+}
+
+
+function renderItems(){
+
+checkList.innerHTML = "";
+
+const items =
+getDisplayItems();
+
+
+items.forEach((item,index)=>{
+
+const div =
+document.createElement("div");
+
+div.className =
+"check-item";
+
+div.innerHTML = `
+<label class="check-left">
+
+<input type="checkbox"
+${item.checked ? "checked" : ""}>
+
+<span>${item.text}</span>
+
+</label>
+
+${
+item.type==="custom"
+? `<button class="delete-btn">×</button>`
+: ""
+}
+
+`;
+
+const checkbox =
+div.querySelector("input");
+
+checkbox.addEventListener("change",()=>{
+
+currentList.visible = true;
+
+if(item.type==="basic"){
+
+currentList.checked[item.text]
+=
+checkbox.checked;
+
+}else{
+
+let target =
+currentList.items.find(
+x=>x.text===item.text
+);
+
+if(target){
+
+target.checked =
+checkbox.checked;
+
+}
+
+}
+
+saveItems();
+
+});
+
+
+const deleteBtn =
+div.querySelector(".delete-btn");
+
+
+if(deleteBtn){
+
+deleteBtn.addEventListener("click",()=>{
+
+// 基本セットはライブページから変更しない
+if(item.type==="basic"){
+return;
+}
+
+// 個別追加だけ削除
+currentList.items =
+currentList.items.filter(
+x=>x.text !== item.text
+);
+
+saveItems();
+
+renderItems();
+
+});
+
+}
+
+checkList.appendChild(div);
+
+});
+
+}
+
+
+addBtn.addEventListener("click",()=>{
+
+const text =
+newItem.value.trim();
+
+if(!text) return;
+
+currentList.items.push({
+
+text:text,
+
+checked:false
+
+});
+
+// 非表示にしていた場合は再表示
+currentList.visible = true;
+
+saveItems();
+
+renderItems();
+
+newItem.value = "";
+
+});
+
+
+renderItems();
+
+</script>
+   <script>
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+
+    const target = document.querySelector(link.getAttribute("href"));
+
+    window.scrollTo({
+      top: target.offsetTop - 10,
+      behavior: "smooth"
+    });
+  });
+});
+   </script>
+
+</body>
+</html>
