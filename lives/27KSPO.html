@@ -488,6 +488,111 @@ color:#7b5cc7;
     background:#EEF4FF;
     color:#6B7CFF;
 }
+/* ==============================
+   KSPO GUIDE ACCORDION
+   ============================== */
+
+.ks-guide {
+  margin: 24px 0;
+}
+
+.ks-guide-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #6b7cff;
+  margin: 0 0 14px;
+}
+
+.ks-guide-item {
+  background: #fff;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  border: 1px solid #f3f4f6;
+  overflow: hidden;
+}
+
+.ks-guide-item summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.ks-guide-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.ks-guide-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #eef4ff;
+  color: #6b7cff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.ks-guide-heading {
+  flex: 1;
+}
+
+.ks-guide-heading strong {
+  display: block;
+  font-size: 15px;
+  color: #3f4655;
+}
+
+.ks-guide-heading small {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  color: #8b93a3;
+}
+
+.ks-guide-plus {
+  font-size: 20px;
+  color: #6b7cff;
+  transition: transform .2s ease;
+}
+
+.ks-guide-item[open] .ks-guide-plus {
+  transform: rotate(45deg);
+}
+
+.ks-guide-content {
+  padding: 0 20px 20px 72px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ks-guide-content h3 {
+  font-size: 15px;
+  color: #4d6c8a;
+  margin: 16px 0 6px;
+}
+
+.ks-guide-content p {
+  margin: 0 0 10px;
+}
+
+.ks-guide-content ul {
+  margin: 6px 0 12px;
+  padding-left: 20px;
+}
+
+.ks-guide-content li {
+  margin-bottom: 5px;
+}
 </style>
 </head>
 
@@ -530,8 +635,6 @@ color:#7b5cc7;
 
   <div class="live-toolbar-grid">
 
-    <a href="#goods" class="toolbar-item goods">
-
     <a href="#venue" class="toolbar-item venue">
       <div class="toolbar-icon">
         <i class="fa-solid fa-location-dot"></i>
@@ -544,12 +647,245 @@ color:#7b5cc7;
         <i class="fa-solid fa-suitcase"></i>
       </div>
       <span>持ち物</span>
+      <div class="live-toolbar">
+
+    <a href="#guide-difference" class="toolbar-item items">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-ticket"></i>
+      </div>
+      <span>日本との違い</span>
+    </a>
+
+    <a href="#guide-travel" class="toolbar-item goods">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-plane"></i>
+      </div>
+      <span>旅行準備</span>
+    </a>
+
+    <a href="#guide-useful" class="toolbar-item trade">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-mobile-screen"></i>
+      </div>
+      <span>便利なもの</span>
+    </a>
+
+    <a href="#guide-live" class="toolbar-item venue">
+      <div class="toolbar-icon">
+        <i class="fa-solid fa-music"></i>
+      </div>
+      <span>ライブ当日</span>
     </a>
 
   </div>
 
 </div>
+<!-- KSPO GUIDE -->
+<div class="ks-guide">
 
+  <div class="ks-guide-title">
+    #CNBLUEとKSPOに行こう GUIDE
+  </div>
+
+
+  <!-- ① KSPO -->
+  <details class="ks-guide-item" id="guide-venue">
+
+    <summary>
+
+      <div class="ks-guide-icon">
+        <i class="fa-solid fa-location-dot"></i>
+      </div>
+
+      <div class="ks-guide-heading">
+        <strong>KSPO DOMEってどこ？</strong>
+        <small>場所・アクセス・周辺情報</small>
+      </div>
+
+      <div class="ks-guide-plus">＋</div>
+
+    </summary>
+
+    <div class="ks-guide-content">
+
+      <h3>KSPO DOMEとは？</h3>
+
+      <p>
+        韓国・ソウルにある大型公演会場。
+        まずは「どこにあるの？」からチェックしてみよう！
+      </p>
+
+      <h3>日本からのアクセス</h3>
+
+      <p>
+        空港からソウル市内、そしてKSPO DOMEまでの
+        行き方をまとめます。
+      </p>
+
+    </div>
+
+  </details>
+
+
+  <!-- ② 日本との違い -->
+  <details class="ks-guide-item" id="guide-difference">
+
+    <summary>
+
+      <div class="ks-guide-icon">
+        <i class="fa-solid fa-ticket"></i>
+      </div>
+
+      <div class="ks-guide-heading">
+        <strong>日本公演と何が違う？</strong>
+        <small>チケッティング・当日の流れ</small>
+      </div>
+
+      <div class="ks-guide-plus">＋</div>
+
+    </summary>
+
+    <div class="ks-guide-content">
+
+      <h3>チケッティング編</h3>
+
+      <p>
+        韓国公演のチケットの取り方や、
+        日本公演との違いをまとめます。
+      </p>
+
+      <h3>当日の流れ編</h3>
+
+      <p>
+        会場到着から入場、開演、終演後まで。
+        日本公演との違いも紹介します。
+      </p>
+
+    </div>
+
+  </details>
+
+
+  <!-- ③ 飛行機・ホテル -->
+  <details class="ks-guide-item" id="guide-travel">
+
+    <summary>
+
+      <div class="ks-guide-icon">
+        <i class="fa-solid fa-plane"></i>
+      </div>
+
+      <div class="ks-guide-heading">
+        <strong>飛行機・ホテルを予約しよう</strong>
+        <small>予約のタイミング・選び方</small>
+      </div>
+
+      <div class="ks-guide-plus">＋</div>
+
+    </summary>
+
+    <div class="ks-guide-content">
+
+      <h3>飛行機</h3>
+
+      <p>
+        どの空港を使う？いつ予約する？
+        公演日程に合わせて考えてみよう。
+      </p>
+
+      <h3>ホテル</h3>
+
+      <p>
+        KSPOへのアクセスや、
+        公演後の移動も考えたホテル選びを紹介します。
+      </p>
+
+    </div>
+
+  </details>
+
+
+  <!-- ④ 韓国で役立つもの -->
+  <details class="ks-guide-item" id="guide-useful">
+
+    <summary>
+
+      <div class="ks-guide-icon">
+        <i class="fa-solid fa-mobile-screen"></i>
+      </div>
+
+      <div class="ks-guide-heading">
+        <strong>韓国で役立つもの</strong>
+        <small>アプリ・交通・お金など</small>
+      </div>
+
+      <div class="ks-guide-plus">＋</div>
+
+    </summary>
+
+    <div class="ks-guide-content">
+
+      <h3>あると便利なアプリ</h3>
+
+      <p>
+        地図・翻訳・交通など、
+        韓国旅行で役立つアプリを紹介します。
+      </p>
+
+      <h3>交通・支払い</h3>
+
+      <p>
+        韓国での移動やお金の準備についてまとめます。
+      </p>
+
+    </div>
+
+  </details>
+
+
+  <!-- ⑤ ライブ当日 -->
+  <details class="ks-guide-item" id="guide-live">
+
+    <summary>
+
+      <div class="ks-guide-icon">
+        <i class="fa-solid fa-music"></i>
+      </div>
+
+      <div class="ks-guide-heading">
+        <strong>ライブ当日の準備</strong>
+        <small>持ち物・服装・当日の動き</small>
+      </div>
+
+      <div class="ks-guide-plus">＋</div>
+
+    </summary>
+
+    <div class="ks-guide-content">
+
+      <h3>持ち物</h3>
+
+      <p>
+        韓国ライブに持っていきたいものをチェック！
+      </p>
+
+      <h3>冬のソウル対策</h3>
+
+      <p>
+        2月のソウルでの服装や防寒についてまとめます。
+      </p>
+
+      <h3>ライブ当日の流れ</h3>
+
+      <p>
+        会場到着から終演後までの動きを紹介します。
+      </p>
+
+    </div>
+
+  </details>
+
+</div>
   <!-- 会場 -->
      <div id="venue" class="card">
     <h2>会場メモ</h2>
