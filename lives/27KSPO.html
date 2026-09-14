@@ -603,6 +603,25 @@ color:#7b5cc7;
 .ks-guide-content li {
   margin-bottom: 5px;
 }
+  .btn-outline {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 24px; /* ←追加 */
+  padding: 12px 14px;  /* 少しだけ余白増やす */
+  border: 1.5px solid #9bb7ff; /* 見やすく */
+  color: #a3b5c2; /* テキスト色も統一 */
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-outline:hover {
+  background: #f3f6ff;
+  border-color: #6b7cff;
+  color: #4a5fd6;
+}
 </style>
 </head>
 
@@ -942,11 +961,10 @@ color:#7b5cc7;
       <div class="ks-guide-heading">
         <strong>おひとりさまガイド　ソウルコン編</strong>
         <small>私の実体験を元にした参戦ガイドです！</small>
-        <div class="ks-guide-content">
-        <a href="https://mii622.github.io/CNBLUE_LIVENOTE/guide/seoul.html" target="_blank" class="venue-link">
-    ↗ ソウルコンの参戦ガイドを見る
-  </a>
-          </div>
+        <a href="/CNBLUE_LIVENOTE/guide/seoul.html" class="btn-outline">
+      ソウルコンガイドはこちら →
+</a>
+    
       </div>
      </div>
 <!-- ✔ 共通ヘッダー読み込み -->
