@@ -23,7 +23,19 @@
 :root{
   --theme-color:f6f5f4; /* ツアーごとに変更 */
 }
-
+ @font-face {
+  font-family: 'NewYork';
+  src: url('/CNBLUE_LIVENOTE/fonts/NewYork.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+  
+ @font-face {
+  font-family: 'Typoliner-RW-Light';
+  src: url('/CNBLUE_LIVENOTE/fonts/Typoliner-RW-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 body{
   padding-bottom:80px;
   margin:0;
@@ -48,7 +60,18 @@ body{
 }
 
 .sub-title{
-  font-family:"Unbounded", sans-serif;
+  font-family:"NewYork", sans-serif;
+  font-weight:700;
+  font-size:24px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#e97520;
+  display:inline;
+  padding:6px 14px;
+  line-height:1.4;
+}
+  .tour-title{
+  font-family:"Typoliner-RW-Light", sans-serif;
   font-weight:700;
   font-size:24px;
   letter-spacing:2px;
@@ -199,8 +222,8 @@ button.qty:active{
 <header class="site-header">
   <div class="main-title">GOODS CALCULATOR</div>
   <div class="sub-title">
-  CNBLUE AUTUMN TOUR 2026<br>
-  FULL CIRCLE
+  CNBLUE AUTUMN TOUR 2026<br></div>
+  <div class="tour-title">FULL CIRCLE</div>
 </div>
 </header>
 
