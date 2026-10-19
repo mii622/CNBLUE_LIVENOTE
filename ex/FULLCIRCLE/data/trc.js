@@ -1,5 +1,5 @@
 const CONFIG = {
-  image: "../img/FULLCIRCLE.jpg",
+  image: "../img/trc.jpg",
 
   cardWidth: "10%",
   cardHeight: "20%",
