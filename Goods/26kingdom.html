@@ -59,29 +59,43 @@ body{
   margin-bottom:20px;
 }
 
-.sub-title{
-  font-family: "Cinzel", sans-serif;
-  font-weight: 400;
+.sub-title,
+.sub-title-deco {
+  font-weight: 700; /* 立体感を出すため少し太めにするのがコツ！ */
   font-style: normal;
-  font-size:32px;
+  font-size: 32px;
   letter-spacing: 0.05em;
-  text-transform:none;
-  color:#DAA520;
-  display:inline;
-  padding:6px 14px;
-  line-height:1.4;
+  text-transform: none;
+  display: inline-block; /* グラデーションと影を綺麗に効かせるため */
+  padding: 6px 14px;
+  line-height: 1.4;
+
+  /* 1. 金属っぽいゴールドのグラデーション */
+  background: linear-gradient(
+    to bottom,
+    #fff3b8 0%,    /* 一番上のハイライト */
+    #f6d365 25%,   /* 明るい金 */
+    #d49b27 55%,   /* 落ち着いた金 */
+    #8c5a08 85%,   /* 下側の深い影色 */
+    #e0aa3e 100%   /* 下フチの照り返し */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 2. 立体的な厚みとドロップシャドウ（background-clip使用時はfilterを使うのがポイント！） */
+  filter: 
+    drop-shadow(0px 1px 0px #5c3a00)   /* 文字のすぐ下の硬い厚み（1px分） */
+    drop-shadow(0px 2px 0px #3a2300)   /* さらに深い厚み（2px分） */
+    drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.85)) /* 背景から浮かせる濃い影 */
+    drop-shadow(0px 0px 12px rgba(255, 215, 100, 0.35)); /* ほんのり金色の発光 */
 }
-.sub-title-deco{
-  font-family: "Cinzel Decorative", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size:32px;
-  letter-spacing: 0.05em;
-  text-transform:none;
-  color:#DAA520;
-  display:inline;
-  padding:6px 14px;
-  line-height:1.4;
+
+.sub-title {
+  font-family: "Cinzel", serif;
+}
+
+.sub-title-deco {
+  font-family: "Cinzel Decorative", serif;
 }
 
 .bolt{
