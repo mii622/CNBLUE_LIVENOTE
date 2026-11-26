@@ -56,7 +56,7 @@ body{
   font-size:22px;
   font-weight:400;
   letter-spacing:2px;
-  margin-bottom:20px;
+  margin-bottom:14px;
 }
 
 .sub-title{
@@ -83,6 +83,16 @@ body{
   padding:6px 14px;
   line-height:1.4;
 }
+/* 立体ゴールドタイトルSVG */
+.gold-title-svg{
+  display:block;
+  width:100%;
+  max-width:560px;
+  height:auto;
+  margin:0 auto;
+  overflow:visible;
+}
+
 
 /* 商品 */
 #goods-list{
@@ -235,10 +245,76 @@ button.qty:active{
 <!-- ヘッダー -->
 <header class="site-header">
   <div class="main-title">GOODS CALCULATOR</div>
-  <div class="sub-title">
-  2026 FNC KINGDOM<br>
-  <div class="sub-title-deco">THE FLOATING BAZAAR</div>
-  </div>
+
+  <svg class="gold-title-svg" viewBox="0 0 760 155" role="img" aria-label="2026 FNC KINGDOM THE FLOATING BAZAAR">
+    <defs>
+      <!-- 金属ゴールド本体グラデーション -->
+      <linearGradient id="kingdom-gold-fill" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#fff8c9" />
+        <stop offset="22%" stop-color="#f5c84c" />
+        <stop offset="52%" stop-color="#a16914" />
+        <stop offset="82%" stop-color="#593303" />
+        <stop offset="100%" stop-color="#d99f2b" />
+      </linearGradient>
+
+      <!-- 内側のキラッと光る極細フチグラデーション -->
+      <linearGradient id="kingdom-gold-rim" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff" />
+        <stop offset="50%" stop-color="#ffe27a" />
+        <stop offset="100%" stop-color="#b07519" />
+      </linearGradient>
+
+      <!-- パキッとした立体段差＋影 -->
+      <filter id="kingdom-hard-3d" x="-10%" y="-10%" width="120%" height="130%">
+        <feDropShadow dx="0" dy="2.5" stdDeviation="0" flood-color="#140b00" flood-opacity="1" />
+        <feDropShadow dx="0" dy="5" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.85" />
+      </filter>
+    </defs>
+
+    <!-- 1行目：2026 FNC KINGDOM -->
+    <g filter="url(#kingdom-hard-3d)">
+      <text x="50%" y="48" text-anchor="middle"
+            font-family="'Cinzel', serif" font-weight="700" font-size="38" letter-spacing="2.5"
+            stroke="#120900" stroke-width="5" stroke-linejoin="round" fill="none">
+        2026 FNC KINGDOM
+      </text>
+      <text x="50%" y="48" text-anchor="middle"
+            font-family="'Cinzel', serif" font-weight="700" font-size="38" letter-spacing="2.5"
+            stroke="url(#kingdom-gold-rim)" stroke-width="1.5" stroke-linejoin="round" fill="none">
+        2026 FNC KINGDOM
+      </text>
+      <text x="50%" y="48" text-anchor="middle"
+            font-family="'Cinzel', serif" font-weight="700" font-size="38" letter-spacing="2.5"
+            fill="url(#kingdom-gold-fill)">
+        2026 FNC KINGDOM
+      </text>
+    </g>
+
+    <!-- 2行目：THE FLOATING BAZAAR -->
+    <g filter="url(#kingdom-hard-3d)">
+      <text x="50%" y="116" text-anchor="middle"
+            font-family="'Cinzel', serif" font-weight="700" font-size="50" letter-spacing="2.5"
+            stroke="#120900" stroke-width="6.5" stroke-linejoin="round" fill="none">
+        <tspan font-family="'Cinzel Decorative', serif" font-size="58">T</tspan>HE
+        <tspan font-family="'Cinzel Decorative', serif" font-size="58">F</tspan>LOATIN<tspan font-family="'Cinzel Decorative', serif" font-size="58">G</tspan>
+        <tspan font-family="'Cinzel Decorative', serif" font-size="58">B</tspan>AZAA<tspan font-family="'Cinzel Decorative', serif" font-size="58">R</tspan>
+      </text>
+      <text x="50%" y="116" text-anchor="middle"
+            font-family="'Cinzel', serif" font-weight="700" font-size="50" letter-spacing="2.5"
+            stroke="url(#kingdom-gold-rim)" stroke-width="1.8" stroke-linejoin="round" fill="none">
+        <tspan font-family="'Cinzel Decorative', serif" font-size="58">T</tspan>HE
+        <tspan font-family="'Cinzel Decorative', serif" font-size="58">F</tspan>LOATIN<tspan font-family="'Cinzel Decorative', serif" font-size="58">G</tspan>
+        <tspan font-family="'Cinzel Decorative', serif" font-size="58">B</tspan>AZAA<tspan font-family="'Cinzel Decorative', serif" font-size="58">R</tspan>
+      </text>
+      <text x="50%" y="116" text-anchor="middle"
+            font-family="'Cinzel', serif" font-weight="700" font-size="50" letter-spacing="2.5"
+            fill="url(#kingdom-gold-fill)">
+        <tspan font-family="'Cinzel Decorative', serif" font-size="58">T</tspan>HE
+        <tspan font-family="'Cinzel Decorative', serif" font-size="58">F</tspan>LOATIN<tspan font-family="'Cinzel Decorative', serif" font-size="58">G</tspan>
+        <tspan font-family="'Cinzel Decorative', serif" font-size="58">B</tspan>AZAA<tspan font-family="'Cinzel Decorative', serif" font-size="58">R</tspan>
+      </text>
+    </g>
+  </svg>
 </header>
 
 <!-- 商品 -->
