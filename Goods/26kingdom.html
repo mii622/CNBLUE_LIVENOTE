@@ -61,33 +61,21 @@ body{
 
 .sub-title,
 .sub-title-deco {
-  font-weight: 700; /* 立体感を出すため少し太めにするのがコツ！ */
-  font-style: normal;
+  font-weight: 700;
   font-size: 32px;
   letter-spacing: 0.05em;
-  text-transform: none;
-  display: inline-block; /* グラデーションと影を綺麗に効かせるため */
+  display: inline-block;
   padding: 6px 14px;
   line-height: 1.4;
+  color: #f3c64f; /* パキッとした明るいゴールド */
 
-  /* 1. 金属っぽいゴールドのグラデーション */
-  background: linear-gradient(
-    to bottom,
-    #fff3b8 0%,    /* 一番上のハイライト */
-    #f6d365 25%,   /* 明るい金 */
-    #d49b27 55%,   /* 落ち着いた金 */
-    #8c5a08 85%,   /* 下側の深い影色 */
-    #e0aa3e 100%   /* 下フチの照り返し */
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* 2. 立体的な厚みとドロップシャドウ（background-clip使用時はfilterを使うのがポイント！） */
-  filter: 
-    drop-shadow(0px 1px 0px #5c3a00)   /* 文字のすぐ下の硬い厚み（1px分） */
-    drop-shadow(0px 2px 0px #3a2300)   /* さらに深い厚み（2px分） */
-    drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.85)) /* 背景から浮かせる濃い影 */
-    drop-shadow(0px 0px 12px rgba(255, 215, 100, 0.35)); /* ほんのり金色の発光 */
+  /* ぼかし0pxの影をずらして立体感（エンボス・ベベル感）を出す */
+  text-shadow:
+    0px -1px 0px #fff6cc,       /* 上のフチのハイライト（ぷっくり感の正体！） */
+    0px 1px 0px #9e6b0b,        /* 下の段差1 */
+    0px 2px 0px #6e4704,        /* 下の段差2 */
+    0px 3px 0px #3d2500,        /* 一番下の濃いフチ */
+    0px 5px 6px rgba(0,0,0,0.75); /* 背景との境界影 */
 }
 
 .sub-title {
