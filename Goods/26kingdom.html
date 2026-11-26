@@ -246,72 +246,47 @@ button.qty:active{
 <header class="site-header">
   <div class="main-title">GOODS CALCULATOR</div>
 
-  <svg class="gold-title-svg" viewBox="0 0 760 155" role="img" aria-label="2026 FNC KINGDOM THE FLOATING BAZAAR">
+  <svg class="gold-title-svg" viewBox="0 0 640 155" role="img" aria-label="2026 FNC KINGDOM THE FLOATING BAZAAR">
     <defs>
-      <!-- 金属ゴールド本体グラデーション -->
-      <linearGradient id="kingdom-gold-fill" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stop-color="#fff8c9" />
-        <stop offset="22%" stop-color="#f5c84c" />
-        <stop offset="52%" stop-color="#a16914" />
-        <stop offset="82%" stop-color="#593303" />
-        <stop offset="100%" stop-color="#d99f2b" />
+      <!-- 明るい黄金色のグラデーション -->
+      <linearGradient id="poster-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#fffbe0" />
+        <stop offset="35%" stop-color="#f7d060" />
+        <stop offset="70%" stop-color="#d4982a" />
+        <stop offset="100%" stop-color="#fce08b" />
       </linearGradient>
 
-      <!-- 内側のキラッと光る極細フチグラデーション -->
-      <linearGradient id="kingdom-gold-rim" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stop-color="#ffffff" />
-        <stop offset="50%" stop-color="#ffe27a" />
-        <stop offset="100%" stop-color="#b07519" />
-      </linearGradient>
+      <!-- 3Dエンボス光沢＋くっきり影＋金のオーラ -->
+      <filter id="poster-emboss" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="blur" />
 
-      <!-- パキッとした立体段差＋影 -->
-      <filter id="kingdom-hard-3d" x="-10%" y="-10%" width="120%" height="130%">
-        <feDropShadow dx="0" dy="2.5" stdDeviation="0" flood-color="#140b00" flood-opacity="1" />
-        <feDropShadow dx="0" dy="5" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.85" />
+        <feSpecularLighting in="blur" surfaceScale="4" specularConstant="1.1" specularExponent="25" lighting-color="#fff8d6" result="specOut">
+          <fePointLight x="320" y="-120" z="180" />
+        </feSpecularLighting>
+        <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specClip" />
+
+        <feComposite in="SourceGraphic" in2="specClip" operator="arithmetic" k1="0" k2="1" k3="0.85" k4="0" result="litGold" />
+
+        <feDropShadow dx="0" dy="2" stdDeviation="1" flood-color="#1a0d00" flood-opacity="0.95" />
+        <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#ffcf54" flood-opacity="0.45" />
+        <feMerge>
+          <feMergeNode />
+          <feMergeNode in="litGold" />
+        </feMerge>
       </filter>
     </defs>
 
-    <!-- 1行目：2026 FNC KINGDOM -->
-    <g filter="url(#kingdom-hard-3d)">
-      <text x="50%" y="48" text-anchor="middle"
-            font-family="'Cinzel', serif" font-weight="700" font-size="38" letter-spacing="2.5"
-            stroke="#120900" stroke-width="5" stroke-linejoin="round" fill="none">
+    <g filter="url(#poster-emboss)" fill="url(#poster-gold)" stroke="#241200" stroke-width="1.2" paint-order="stroke">
+      <!-- 1段目：2026 FNC KINGDOM -->
+      <text x="50%" y="46" text-anchor="middle" transform="scale(0.95, 1.08)" transform-origin="320 38"
+            font-family="'Cinzel', serif" font-weight="600" font-size="34" letter-spacing="3">
         2026 FNC KINGDOM
       </text>
-      <text x="50%" y="48" text-anchor="middle"
-            font-family="'Cinzel', serif" font-weight="700" font-size="38" letter-spacing="2.5"
-            stroke="url(#kingdom-gold-rim)" stroke-width="1.5" stroke-linejoin="round" fill="none">
-        2026 FNC KINGDOM
-      </text>
-      <text x="50%" y="48" text-anchor="middle"
-            font-family="'Cinzel', serif" font-weight="700" font-size="38" letter-spacing="2.5"
-            fill="url(#kingdom-gold-fill)">
-        2026 FNC KINGDOM
-      </text>
-    </g>
 
-    <!-- 2行目：THE FLOATING BAZAAR -->
-    <g filter="url(#kingdom-hard-3d)">
-      <text x="50%" y="116" text-anchor="middle"
-            font-family="'Cinzel', serif" font-weight="700" font-size="50" letter-spacing="2.5"
-            stroke="#120900" stroke-width="6.5" stroke-linejoin="round" fill="none">
-        <tspan font-family="'Cinzel Decorative', serif" font-size="58">T</tspan>HE
-        <tspan font-family="'Cinzel Decorative', serif" font-size="58">F</tspan>LOATIN<tspan font-family="'Cinzel Decorative', serif" font-size="58">G</tspan>
-        <tspan font-family="'Cinzel Decorative', serif" font-size="58">B</tspan>AZAA<tspan font-family="'Cinzel Decorative', serif" font-size="58">R</tspan>
-      </text>
-      <text x="50%" y="116" text-anchor="middle"
-            font-family="'Cinzel', serif" font-weight="700" font-size="50" letter-spacing="2.5"
-            stroke="url(#kingdom-gold-rim)" stroke-width="1.8" stroke-linejoin="round" fill="none">
-        <tspan font-family="'Cinzel Decorative', serif" font-size="58">T</tspan>HE
-        <tspan font-family="'Cinzel Decorative', serif" font-size="58">F</tspan>LOATIN<tspan font-family="'Cinzel Decorative', serif" font-size="58">G</tspan>
-        <tspan font-family="'Cinzel Decorative', serif" font-size="58">B</tspan>AZAA<tspan font-family="'Cinzel Decorative', serif" font-size="58">R</tspan>
-      </text>
-      <text x="50%" y="116" text-anchor="middle"
-            font-family="'Cinzel', serif" font-weight="700" font-size="50" letter-spacing="2.5"
-            fill="url(#kingdom-gold-fill)">
-        <tspan font-family="'Cinzel Decorative', serif" font-size="58">T</tspan>HE
-        <tspan font-family="'Cinzel Decorative', serif" font-size="58">F</tspan>LOATIN<tspan font-family="'Cinzel Decorative', serif" font-size="58">G</tspan>
-        <tspan font-family="'Cinzel Decorative', serif" font-size="58">B</tspan>AZAA<tspan font-family="'Cinzel Decorative', serif" font-size="58">R</tspan>
+      <!-- 2段目：THE FLOATING BAZAAR -->
+      <text x="50%" y="114" text-anchor="middle" transform="scale(0.92, 1.12)" transform-origin="320 104"
+            font-family="'Cinzel', serif" font-weight="600" font-size="46" letter-spacing="2">
+        <tspan font-family="'Cinzel Decorative', serif" font-size="54">T</tspan>HE <tspan font-family="'Cinzel Decorative', serif" font-size="54">F</tspan>LOATIN<tspan font-family="'Cinzel Decorative', serif" font-size="54">G</tspan> <tspan font-family="'Cinzel Decorative', serif" font-size="54">B</tspan>AZAA<tspan font-family="'Cinzel Decorative', serif" font-size="54">R</tspan>
       </text>
     </g>
   </svg>
