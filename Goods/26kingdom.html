@@ -328,6 +328,19 @@ const goods=[
   { name:"ランダムトレカB(ACTOR&DANCE)22種", price:300, types:[] },
 ];
 
+const groupColors = {
+  A: "#FFF8D9",
+  B: "#E4F2FC",
+  C: "#EFF0EF",
+  D: "#FCE8E8",
+  E: "#E7F5EA",
+  F: "#FFF1D9",
+  G: "#FCE8EF",
+  H: "#F8EDF2",
+  I: "#E2F5F9",
+  J: "#EFF6E2"
+};
+
 const container=document.getElementById("goods-list");
 
 /* 保存 */
@@ -381,8 +394,9 @@ function render(){
         const val=selections[key]||0;
 
         body+=`
-        <div class="variant">
-          <label>${t}</label>
+        <div class="variant"
+  style="background:${groupColors[t[0]] || '#f8f9fb'}">
+  <label>${t}</label>
 
           <div class="counter">
             <button class="qty" onclick="change(this,-1)">−</button>
